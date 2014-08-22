@@ -1,0 +1,614 @@
+// ================
+// SLOT 2 - Pistols
+// ================
+
+ACTOR DualPistolsClip1 : Ammo
+{
+   Inventory.MaxAmount 17
+}
+ACTOR DualPistolsClip2 : Ammo
+{
+   Inventory.MaxAmount 17
+}
+
+ACTOR SinglePistol : CashWeapon replaces Pistol
+{
+	Weapon.SelectionOrder 180
+	Weapon.AmmoType1 "DualPistolsClip1"
+	Weapon.AmmoUse1 1
+	Weapon.AmmoGive1 0
+	Weapon.AmmoType2 "PistolAmmo"
+	Weapon.AmmoUse2 0
+	Weapon.AmmoGive2 0
+	Weapon.Kickback 40
+	Weapon.SlotNumber 2
+	AttackSound "weapons/gloxfire"
+	+AMMO_OPTIONAL
+	+NOAUTOFIRE
+	Decal BulletChip
+	States
+	{
+	Ready:
+		GLOK A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		Goto Ready
+	Deselect:
+		GLOK A 1 A_Lower
+		Loop
+	Select:
+		GLOK A 1 A_Raise
+		Loop
+	Fire:
+		GLOK A 0 A_JumpIfNoAmmo("DryFire") // Prevent the player firing if he's out of ammo
+		GLOK A 0 A_GunFlash
+		GLOK B 1 BRIGHT A_FireBullets(4,2,-1,7.5,"BulletPuff",1)
+		TECG C 0 A_SetPitch(pitch - 0.4)
+		GLOK C 1 BRIGHT A_AlertMonsters
+		TECG C 0 A_SetPitch(pitch - 0.3)
+		GLOK D 1
+		TECG C 0 A_SetPitch(pitch + 0.4)
+		GLOK A 1
+		Goto Ready
+	DryFire:
+		GLOK A 1 A_PlaySound("weapons/dryfire", 5)
+		GLOK A 1
+		Goto Ready
+	Reload:
+		GLOK A 0 A_JumpIfInventory("DualPistolsClip1", 17, 2)
+		GLOK A 0 A_JumpIfInventory("PistolAmmo", 1, 2)
+		GLOK A 1
+		Goto Ready
+		GLKR A 1 Offset(1,33)
+		GLKR A 1 Offset(2,34)
+		GLKR B 1 Offset(3,34)
+		GLKR B 1 Offset(4,33) A_PlaySound("weapons/gloxout", 6)
+		GLKR C 1 Offset(4,32)
+		GLKR C 1 Offset(5,32)
+		GLKR D 1 Offset(6,33)
+		GLKR D 1 Offset(7,35)
+		GLKR E 1 Offset(8,37)
+		GLKR E 1 Offset(7,38)
+		GLKR E 1 Offset(6,39)
+		GLKR E 1 Offset(5,40)
+		GLKR E 1 Offset(4,41)
+		GLKR E 1 Offset(3,42)
+		GLKR E 1 Offset(2,43)
+		GLKR E 1 Offset(1,44)
+		GLKR E 1 Offset(-1,45)
+		GLKR E 1 Offset(-3,46)
+		GLKR F 1 Offset(-2,44) A_PlaySound("weapons/gloxin")
+		GLKR F 1 Offset(-1,42)
+	ReloadWork:
+		GLKR A 0 A_TakeInventory("PistolAmmo", 1)
+		GLKR A 0 A_GiveInventory("DualPistolsClip1", 1)
+		GLKR A 0 A_JumpIfInventory("DualPistolsClip1", 17, "ReloadFinish1")
+		GLKR A 0 A_JumpIfInventory("PistolAmmo", 1, "ReloadWork")
+	ReloadFinish1:
+		GLKR G 1 Offset(1,41)
+		GLKR G 1 Offset(2,40)
+		GLKR H 1 Offset(3,39)
+		GLKR H 1 Offset(4,41)
+		GLKR I 1 Offset(5,43)
+		GLKR I 1 Offset(6,40)
+		GLKR J 1 Offset(4,37)
+		GLKR J 1 Offset(2,35)
+		GLOK A 1 Offset(1,34)
+		GLOK A 1 Offset(1,33)
+		Goto Ready
+	}
+}
+
+ACTOR DualPistols : CashWeapon // An experiment in Die Hard 2-style dualies.
+{
+	Weapon.AmmoType1 "DualPistolsClip1"
+	Weapon.AmmoUse1 1
+	Weapon.AmmoGive1 0
+	Weapon.AmmoType2 "DualPistolsClip2"
+	Weapon.AmmoUse2 1
+	Weapon.AmmoGive2 0
+	Weapon.SlotNumber 2
+	AttackSound "weapons/gloxfire"
+	+AMMO_OPTIONAL
+	+NOAUTOFIRE
+	Decal BulletChip
+	States
+	{
+	Select:
+		DGLK A 1 A_Raise
+		Loop
+	Deselect:
+		DGLK A 1 A_Lower
+		Loop
+	Ready:
+		DGLK A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		Loop
+	Fire:
+		DGLK A 0 A_JumpIfInventory("DualPistolsClip1", 1, "Fire1")
+		DGLK A 1 A_PlaySound("weapons/dryfire", 5)
+		DGLK A 0 A_Refire
+		Goto Fire2Check
+	Fire1:
+		GLOK A 0 A_GunFlash
+		DGLK B 1 BRIGHT A_FireBullets(6, 2, -1, 7.5, "BulletPuff", 0)
+		TECG C 0 A_SetPitch(pitch - 0.4)
+        DGLK C 1 BRIGHT A_TakeInventory("DualPistolsClip1", 1)
+		TECG C 0 A_SetPitch(pitch - 0.5)
+		DGLK D 1 A_AlertMonsters
+		TECG C 0 A_SetPitch(pitch - 0.3)
+		DGLK A 0 A_Refire
+	Hold:
+		DGLK A 1
+		DGLK A 0 A_Refire
+	Fire2Check:
+		DGLK A 0 A_JumpIfInventory("DualPistolsClip2", 1, "Fire2")
+		DGLK A 1 A_PlaySound("weapons/dryfire", 5)
+		Goto Ready
+	Fire2:
+		GLOK A 0 A_GunFlash
+		DGLK E 0 A_AlertMonsters
+		DGLK E 0 BRIGHT A_FireBullets(6, 2, -1, 7.5, "BulletPuff", 0)
+		TECG C 0 A_SetPitch(pitch - 0.4)
+		DGLK E 1 A_WeaponReady
+		TECG C 0 A_SetPitch(pitch - 0.5)
+        DGLK F 0 BRIGHT A_TakeInventory("DualPistolsClip2", 1)
+		DGLK F 1 A_WeaponReady
+		TECG C 0 A_SetPitch(pitch - 0.3)
+		DGLK G 1 A_WeaponReady
+		Goto Ready
+	Reload:
+		DGLK A 0 A_JumpIfInventory("DualPistolsClip1", 17, "ReloadCheck2")
+		DGLK A 0 A_JumpIfInventory("PistolAmmo", 1, "Reload1")
+	ReloadCheck2:
+		DGLK A 0 A_JumpIfInventory("DualPistolsClip2", 17, "NoReload")
+		DGLK A 0 A_JumpIfInventory("PistolAmmo", 1, "Reload2FromIdle")
+	NoReload:
+		DGLK A 1
+		Goto Ready
+	Reload1:
+		DGRR A 1 Offset(1,33)
+		DGRR A 1 Offset(2,34)
+		DGRR B 1 Offset(3,34)
+		DGRR B 1 Offset(4,33) A_PlaySound("weapons/gloxout", 6)
+		DGRR C 1 Offset(4,32)
+		DGRR C 1 Offset(5,32)
+		DGRR D 1 Offset(6,33)
+		DGRR D 1 Offset(7,35)
+		DGRR E 1 Offset(8,37)
+		DGRR E 1 Offset(7,38)
+		DGRR E 1 Offset(6,39)
+		DGRR E 1 Offset(5,40)
+		DGRR E 1 Offset(4,41)
+		DGRR E 1 Offset(3,42)
+		DGRR E 1 Offset(2,43)
+		DGRR E 1 Offset(1,44)
+		DGRR E 1 Offset(-1,45)
+		DGRR E 1 Offset(-3,46)
+		DGRR F 1 Offset(-2,44) A_PlaySound("weapons/gloxin")
+		DGRR F 1 Offset(-1,42)
+	ReloadWork:
+		DGRR A 0 A_TakeInventory("PistolAmmo", 1)
+		DGRR A 0 A_GiveInventory("DualPistolsClip1", 1)
+		DGRR A 0 A_JumpIfInventory("DualPistolsClip1", 17, "ReloadFinish1")
+		DGRR A 0 A_JumpIfInventory("PistolAmmo", 1, "ReloadWork")
+	ReloadFinish1:
+		DGRR G 1 Offset(1,41)
+		DGRR G 1 Offset(2,40)
+		DGRR H 1 Offset(3,39)
+		DGRR H 1 Offset(4,41)
+		DGRR I 1 Offset(5,43)
+		DGRR I 1 Offset(6,40)
+		DGRR J 1 Offset(4,37)
+		DGRR J 1 Offset(2,35)
+		DGRR KLMN 2
+		DGRR A 0 A_JumpIfInventory("DualPistolsClip2", 17, "ReadyReturn")
+		DGRR A 0 A_JumpIfInventory("PistolAmmo", 1, "Reload2")
+	ReadyReturn:
+		TNT1 A 5
+		DGLK A 1 Offset(0,100)
+		DGLK A 1 Offset(0,80)
+		DGLK A 1 Offset(0,65)
+		DGLK A 1 Offset(0,53)
+		DGLK A 1 Offset(0,45)
+		DGLK A 1 Offset(0,40)
+		DGLK A 1 Offset(0,36)
+		Goto Ready
+	Reload2FromIdle:
+		DGLK A 1 Offset(0,36)
+		DGLK A 1 Offset(0,40)
+		DGLK A 1 Offset(0,45)
+		DGLK A 1 Offset(0,53)
+		DGLK A 1 Offset(0,65)
+		DGLK A 1 Offset(0,80)
+		DGLK A 1 Offset(0,100)
+	Reload2:
+		TNT1 A 5 Offset(0,32)
+		DGRL A 1 Offset(-1,33)
+		DGRL A 1 Offset(-2,34)
+		DGRL B 1 Offset(-3,34)
+		DGRL B 1 Offset(-4,33) A_PlaySound("weapons/gloxout", 6)
+		DGRL C 1 Offset(-4,32)
+		DGRL C 1 Offset(-5,32)
+		DGRL D 1 Offset(-6,33)
+		DGRL D 1 Offset(-7,35)
+		DGRL E 1 Offset(-8,37)
+		DGRL E 1 Offset(-7,38)
+		DGRL E 1 Offset(-6,39)
+		DGRL E 1 Offset(-5,40)
+		DGRL E 1 Offset(-4,41)
+		DGRL E 1 Offset(-3,42)
+		DGRL E 1 Offset(-2,43)
+		DGRL E 1 Offset(-1,44)
+		DGRL E 1 Offset(1,45)
+		DGRL E 1 Offset(3,46)
+		DGRL F 1 Offset(2,44) A_PlaySound("weapons/gloxin")
+		DGRL F 1 Offset(1,42)
+	ReloadWork2:
+		DGRL A 0 A_TakeInventory("PistolAmmo", 1)
+		DGRL A 0 A_GiveInventory("DualPistolsClip2", 1)
+		DGRL A 0 A_JumpIfInventory("DualPistolsClip2", 17, "ReloadFinish2")
+		DGRL A 0 A_JumpIfInventory("PistolAmmo", 1, "ReloadWork2")
+	ReloadFinish2:
+		DGRL G 1 Offset(-1,41)
+		DGRL G 1 Offset(-2,40)
+		DGRL H 1 Offset(-3,39)
+		DGRL H 1 Offset(-4,41)
+		DGRL I 1 Offset(-5,43)
+		DGRL I 1 Offset(-6,40)
+		DGRL J 1 Offset(-4,37)
+		DGRL J 1 Offset(-2,35)
+		DGRL K 2 A_WeaponReady(WRF_NOFIRE)
+		DGRL LMNOPQ 2
+		Goto Ready
+	}
+}
+
+ACTOR PistolUpgrade : Inventory
+{
+	Inventory.MaxAmount 1
+}
+
+ACTOR PistolUpgradeGiver : CustomInventory
+{
+	States
+	{
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecute("UpgradePistol")
+		Stop
+	}
+}
+
+ACTOR PistolRefund : CustomInventory
+{
+	States
+	{
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_TakeInventory("SinglePistol", 1)
+		TNT1 A 0 A_GiveInventory("ColdHardCash", 100)
+		TNT1 A 0 A_JumpIfInventory("DualPistols", 1, "TakeThoseToo")
+		Stop
+	TakeThoseToo:
+		TNT1 A 0 A_TakeInventory("DualPistols", 1)
+		TNT1 A 0 A_TakeInventory("PistolUpgrade", 1)
+		TNT1 A 0 A_GiveInventory("ColdHardCash", 50)
+		Stop
+	}
+}
+
+ACTOR PunchGunLoaded : Ammo
+{
+	Inventory.MaxAmount 1
+}
+
+ACTOR PunchGunPuff
+{ 
+	ActiveSound ""
+	AttackSound "weapons/punchgunwall"
+	SeeSound "weapons/punchgunpunch"
+	Scale 0.75
+	RenderStyle Add
+	Alpha 0.9
+	+NOGRAVITY
+	+NOEXTREMEDEATH
+	+PUFFONACTORS
+	States
+	{
+	Spawn:
+		POOF ABCDE 3 
+		Stop
+	Melee:
+		POOF ABCDE 3 
+		Stop
+	Crash:
+		POOF ABCDE 3 
+		Stop
+	}
+}
+
+ACTOR PunchGun : CashWeapon
+{
+	Weapon.AmmoType1 "PunchGunLoaded"
+	Weapon.AmmoUse1 1
+	Weapon.AmmoGive1 0
+	Weapon.AmmoType2 "ShotgunAmmo"
+	Weapon.AmmoUse2 0
+	Weapon.AmmoGive2 0
+	Weapon.SlotNumber 1 // Yes, this is a slot 1 weapon, but it's only in slot2.txt because it comes from machine #2
+	+Weapon.Ammo_Optional
+	+Weapon.Alt_Ammo_Optional
+	Decal "BulletChip"
+	States
+	{
+	Select:
+		PNCI A 1 A_Raise
+		PNCI A 0 A_Raise
+		Loop
+	Deselect:
+		PNCI A 1 A_Lower
+		PNCI A 0 A_Lower
+		Loop
+	Ready:
+		PNCI A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		Loop
+	Fire:
+		PNCI A 1 Offset(-5,40)
+		PNCI A 1 Offset(-12,60)
+		TNT1 A 1
+	Hold:
+		PNCH A 1 Offset(-50,150)
+		PNCH A 1 Offset(-40,120)
+		PNCH A 1 Offset(-30,80)
+		PNCH A 1 Offset(-20,30) A_PlaySound("weapons/punchgunswing", 6)
+		PNCH A 1 A_JumpIfCloser(96, "FireShotgun")
+		Goto JustPunchEm
+	FireShotgun:
+		PNCH A 0 A_JumpIfNoAmmo("JustPunchEm")
+		PNCH A 0 A_PlaySound("weapons/punchgunfire", CHAN_WEAPON)
+		PNCH A 0 A_GunFlash
+		PNCH B 0 A_FireBullets(15, 10, 8, 5, "BulletPuff", 1)
+		PNCH B 0 A_CustomPunch(60, 1, 0, "PunchGunPuff")
+		PNCH B 1 BRIGHT Offset(-15,40)
+		PNCH C 1 BRIGHT Offset(-13,38) A_AlertMonsters
+		Goto DontFireShotgun
+	JustPunchEm:
+		PNCH A 1 Offset(-15,40) A_CustomPunch(60, 1, 0, "PunchGunPuff")
+		PNCH A 1 Offset(-13,38)
+		Goto DontFireShotgun
+	DontFireShotgun:
+		PNCH A 1 Offset(-12,39)
+		PNCH A 1 Offset(-11,40)
+		PNCH A 1 Offset(-12,42)
+		PNCH A 1 Offset(-13,44)
+		PNCH A 1 Offset(-15,47)
+		PNCH A 1 Offset(-17,50)
+		PNCH A 1 Offset(-19,57)
+		PNCH A 1 Offset(-22,65)
+		PNCH A 1 Offset(-25,72)
+		PNCH A 1 Offset(-29,82)
+		PNCH A 1 Offset(-35,90)
+		PNCH A 1 Offset(-42,100)
+		PNCH A 1 Offset(-49,110)
+		PNCH A 1 Offset(-59,111)
+		PNCH A 1 Offset(-70,122)
+		PNCH A 1 Offset(-80,134)
+		PNCH A 1 Offset(-90,150)
+		PNCI A 1 Offset(-12,60)
+		PNCI A 1 Offset(-7,50)
+		PNCI A 1 Offset(-3,40) A_Refire
+		Goto Ready
+	Altfire:
+		PNCH A 1 Offset(-50,150)
+		PNCH A 1 Offset(-30,120)
+		PNCH A 1 Offset(-15,80)
+		PNCH A 1 Offset(-5,60)
+		PNCH D 1 Offset(1,48)
+		PNCH E 1 Offset(2,49)
+		PNCH F 1 Offset(3,50) A_PlaySound("weapons/punchgunclunk", 6)
+		PNCH G 1 Offset(4,51) A_JumpIfInventory("PunchGunLoaded", 1, "PunchShotgun")
+		Goto JustPunchEmAgain
+	PunchShotgun:
+		PNCH A 0 A_PlaySound("weapons/punchgunfire", CHAN_WEAPON)
+		PNCH A 0 A_GunFlash
+		PNCH I 1 BRIGHT Offset(1,54) A_FireBullets(15, 10, 8, 5, "BulletPuff", 1)
+		PNCH J 1 BRIGHT Offset(-2,57) A_TakeInventory("PunchGunLoaded", 1)
+		PNCH K 1 Offset(-1,55) A_AlertMonsters
+		PNCH F 1 Offset(-9,51)
+		PNCH E 1 Offset(-11,52)
+		PNCH D 1 Offset(-14,54)
+		Goto PunchDontShotgun
+	JustPunchEmAgain:
+		PNCH L 1 Offset(-1,50)
+		PNCH M 1 Offset(-3,49)
+		PNCH K 1 Offset(-5,48)
+		PNCH F 1 Offset(-9,51)
+		PNCH E 1 Offset(-11,52)
+		PNCH D 1 Offset(-14,54)
+		Goto PunchDontShotgun
+	PunchDontShotgun:
+		PNCH A 1 Offset(-17,56)
+		PNCH A 1 Offset(-22,65)
+		PNCH A 1 Offset(-29,82)
+		PNCH A 1 Offset(-42,100)
+		PNCH A 1 Offset(-49,110)
+		PNCH A 1 Offset(-59,111)
+		PNCH A 1 Offset(-70,122)
+		PNCH A 1 Offset(-80,134)
+		PNCH A 1 Offset(-90,150)
+		PNCI A 1 Offset(-12,60)
+		PNCI A 1 Offset(-7,50)
+		PNCI A 1 Offset(-3,40) A_Refire
+		Goto Ready
+	Reload:
+		PNCI A 0 A_JumpIfInventory("PunchGunLoaded", 1, 2)
+		PNCI A 0 A_JumpIfInventory("ShotgunAmmo", 1, 2)
+		PNCI A 1 A_WeaponReady(WRF_NOFIRE)
+		Goto Ready
+		PNCH A 1 Offset(-45,115)
+		PNCH A 1 Offset(-40,105)
+		PNCH A 1 Offset(-22,100)
+		PNCH A 1 Offset(-10,95)
+		PNCH A 1 Offset(-7,90)
+		PNCR A 1 Offset(-3,89)
+		PNCR B 1 Offset(-2,89)
+		PNCR C 1 Offset(-1,89)
+		PNCR D 1 Offset(1,90)
+		PNCR E 1 Offset(3,91)
+		PNCR F 1 Offset(4,92)
+		PNCR G 1 Offset(5,93)
+		PNCR H 1 Offset(6,94) A_PlaySound("weapons/punchgunload")
+		PNCR I 1 Offset(5,94) A_TakeInventory("ShotgunAmmo", 1)
+		PNCR J 1 Offset(3,92) A_GiveInventory("PunchGunLoaded", 1)
+		PNCH A 1 Offset(-5,90)
+		PNCH A 1 Offset(-10,100)
+		PNCH A 1 Offset(-16,110)
+		PNCH A 1 Offset(-24,111)
+		PNCI A 1 Offset(-12,60)
+		PNCI A 1 Offset(-7,50)
+		PNCI A 1 Offset(-3,40) A_Refire
+		Goto Ready
+	}
+}
+
+ACTOR PunchGunRefund : CustomInventory
+{
+	States
+	{
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("ColdHardCash", 37)
+		Stop
+	}
+}
+
+ACTOR KestrelAmmo : Ammo
+{
+	+IGNORESKILL
+	Inventory.MaxAmount 7
+}
+
+ACTOR KestrelMagnum : CashWeapon
+{
+	Weapon.AmmoType1 "KestrelAmmo"
+	Weapon.AmmoUse1 1
+	Weapon.AmmoGive1 0
+	Weapon.AmmoType2 "HeavyPistolAmmo"
+	Weapon.AmmoUse2 0
+	Weapon.AmmoGive2 0
+	Weapon.SlotNumber 2
+	AttackSound "Kestrel/Fire"
+	+AMMO_OPTIONAL
+	+NOAUTOFIRE
+	States
+	{
+	Select:
+		XPSG A 1 A_Raise
+		Loop
+	Deselect:
+		XPSG A 1 A_Lower
+		Loop
+	Ready:
+		XPSG A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		Loop
+	Fire:
+		XPSG A 0 A_JumpIfNoAmmo("Dryfire")
+		XPSG A 0 A_AlertMonsters
+		XPSF A 1 BRIGHT A_FireBullets(1,1,-1,(30),"BulletPuff",1)
+		XPSF B 1 BRIGHT Offset(3,35) A_SetPitch(pitch - 0.5)
+		XPSG A 0 A_SetAngle(angle - 0.1)
+		XPSG A 0 A_JumpIfNoAmmo("FireEmpty")
+		XPSF C 1 BRIGHT Offset(4,36) A_SetPitch(pitch - 1.0)
+		XPSG A 0 A_SetAngle(angle - 0.1)
+		XPSG C 1 BRIGHT Offset(5,37) A_SetPitch(pitch - 1.7)
+		XPSG A 0 A_SetAngle(angle - 0.2)
+		XPSF C 1 BRIGHT Offset(4,38) A_SetPitch(pitch - 2.5)
+	FireComplete:
+		XPSG A 0 A_SetAngle(angle - 0.3)
+		XPSG B 1 Offset(3,37) A_SetPitch(pitch - 1.5)
+		XPSG A 0 A_SetAngle(angle - 0.2)
+		XPSG B 1 Offset(4,36) A_SetPitch(pitch - 0.8)
+		XPSG A 0 A_SetAngle(angle - 0.1)
+		XPSG B 1 Offset(3,35) A_SetPitch(pitch - 0.4)
+		XPSG A 0 A_SetAngle(angle + 0.1)
+		XPSG A 1 Offset(1,34) A_SetPitch(pitch + 0.3)
+		XPSG A 0 A_SetAngle(angle + 0.2)
+		XPSG A 1 Offset(-1,31) A_SetPitch(pitch + 0.6)
+		XPSG A 0 A_SetAngle(angle + 0.3)
+		XPSG A 1 Offset(-2,30) A_SetPitch(pitch + 1.0)
+		XPSG A 0 A_SetAngle(angle + 0.2)
+		XPSG A 1 Offset(-1,31) A_SetPitch(pitch + 1.5)
+		XPSG A 0 A_SetAngle(angle + 0.1)
+		XPSG A 1 Offset(0,32) A_SetPitch(pitch + 0.8)
+		XPSG A 0 A_SetAngle(angle + 0.1)
+		XPSG A 1
+		Goto Ready
+	FireEmpty:
+		XPSF D 1 BRIGHT Offset(4,36) A_SetPitch(pitch - 1.0)
+		XPSG A 0 A_SetAngle(angle - 0.1)
+		XPSG D 1 BRIGHT Offset(5,37) A_SetPitch(pitch - 1.7)
+		XPSG A 0 A_SetAngle(angle - 0.2)
+		XPSF D 1 BRIGHT Offset(4,38) A_SetPitch(pitch - 2.5)
+		Goto FireComplete
+	Dryfire:
+		XPSG A 1 A_PlaySound("weapons/dryfire", 5)
+		Goto Ready
+	Reload:
+		XPSG A 0 A_JumpIfInventory("KestrelAmmo",7,2)
+		XPSG A 0 A_JumpIfInventory("HeavyPistolAmmo",1,2)
+		XPSG A 1
+		Goto Ready
+		XPSG A 1 Offset(1,33)
+		XPSG A 1 Offset(2,34)
+		XPSG B 1 Offset(3,34)
+		XPSG B 1 Offset(4,33) A_PlaySound("Kestrel/Clipout", 6)
+		XPSG D 1 Offset(4,32)
+		XPSG D 1 Offset(5,32)
+		XPSG D 1 Offset(6,33)
+		XPSG D 1 Offset(7,35)
+		XPSG D 1 Offset(8,37)
+		XPSG D 1 Offset(9,38)
+		XPSG D 1 Offset(10,39)
+		XPSG D 1 Offset(5,40)
+		XPSG D 1 Offset(4,41)
+		XPSG D 1 Offset(3,43)
+		XPSG D 1 Offset(2,46)
+		XPSG D 1 Offset(1,50)
+		XPSG D 1 Offset(-1,55)
+		XPSG D 1 Offset(-3,61)
+		XPSG D 1 Offset(-2,68)
+		XPSG D 1 Offset(-1,76)
+	ReloadWork:
+		TNT1 A 0 A_TakeInventory("HeavyPistolAmmo",1)
+		TNT1 A 0 A_GiveInventory("KestrelAmmo",1)
+		TNT1 A 0 A_JumpIfInventory("KestrelAmmo",7,"ReloadFinish")
+		TNT1 A 0 A_JumpIfInventory("HeavyPistolAmmo",1,"ReloadWork")
+	ReloadFinish:
+		XPSG C 1 Offset(1,80) A_PlaySound("Kestrel/Clipin", 5)
+		XPSG C 1 Offset(2,83)
+		XPSG C 1 Offset(3,85)
+		XPSG C 1 Offset(4,86)
+		XPSG C 1 Offset(5,84)
+		XPSG C 1 Offset(6,81)
+		XPSG C 1 Offset(4,74)
+		XPSG C 1 Offset(2,65)
+		XPSG C 1 Offset(1,52)
+		XPSG C 1 Offset(1,46)
+		XPSG B 1 Offset(1,42)
+		XPSG B 1 Offset(1,39)
+		XPSG A 1 Offset(1,37)
+		XPSG A 1 Offset(1,35)
+		XPSG A 1 Offset(1,34)
+		XPSG A 1 Offset(1,33)
+		Goto Ready
+	}
+}
+
+ACTOR KestrelRefund : CustomInventory
+{
+	States
+	{
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("ColdHardCash", 150)
+		Stop
+	}
+}

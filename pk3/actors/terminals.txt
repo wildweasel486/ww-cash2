@@ -1,0 +1,150 @@
+// Weapon terminals. They take your money, they give you stuff.
+
+// LEVEL 1 TERMINAL: TOOLS AND FIRST AID
+ACTOR CashTerminalLevel1 : SwitchableDecoration replaces Chainsaw
+{
+	+USESPECIAL
+	+NOPAIN
+	+SHOOTABLE
+	+NOBLOOD
+	+DONTDRAIN
+	Scale 0.4
+	Radius 16
+	Height 56
+	Health 200
+	Mass 0x7fffffff
+	DamageFactor Telefrag, 0.0
+	Speed 0
+	States
+	{
+	Spawn:
+		DIS1 A 0
+		DIS1 AAAAA 0 A_SpawnItemEx("CHCSmallCoin", 0,0,8, random(-2,2),random(-2,2),2, random(0,359), SXF_NOCHECKPOSITION, 32)
+		DIS1 AAA 0 A_SpawnItemEx("CHCMediumCoin", 0,0,8, random(-2,2),random(-2,2),2, random(0,359), SXF_NOCHECKPOSITION, 96)
+		DIS1 A 0 A_SpawnItemEx("CHCLargeCoin", 0,0,8, random(-2,2),random(-2,2),2, random(0,359), SXF_NOCHECKPOSITION, 160)
+		DIS1 A 0 A_Jump(256, "SpawnLoop")
+	SpawnLoop:
+		DIS1 A -1
+		Stop
+	Death.Thief:
+		DIS1 AAAAA 0 A_SpawnItemEx("CHCLargeCoin", 0,0,8, random(-2,2),random(-2,2),2, random(0,359), SXF_NOCHECKPOSITION, 32)
+		DIS1 AAA 0 A_SpawnItemEx("CHCSmallBill", 0,0,8, random(-2,2),random(-2,2),2, random(0,359), SXF_NOCHECKPOSITION, 96)
+		DIS1 A 0 A_SpawnItemEx("CHCMediumBill", 0,0,8, random(-2,2),random(-2,2),2, random(0,359), SXF_NOCHECKPOSITION, 160)
+	Death:
+		BEXP B 0 A_ChangeFlag(USESPECIAL, 0)
+		BEXP B 0 A_SetScale(1.5, 1.5)
+		BEXP C 5 BRIGHT A_PlaySound("world/barrelx")
+		BEXP DE 5 BRIGHT
+		Stop
+	}
+}
+
+// LEVEL 2 TERMINAL: HANDGUNS AND OTHER SIDEARMS
+ACTOR CashTerminalLevel2 : CashTerminalLevel1 replaces Shotgun
+{
+	States
+	{
+	SpawnLoop:
+		DIS2 A -1
+		Stop
+	}
+}
+
+// LEVEL 3 TERMINAL: RIFLES
+ACTOR CashTerminalLevel3 : CashTerminalLevel1 replaces SuperShotgun
+{
+	States
+	{
+	Spawnloop:
+		DIS3 A -1
+		Stop
+	}
+}
+
+// LEVEL 4 TERMINAL: AUTOMATICS
+ACTOR CashTerminalLevel4 : CashTerminalLevel1 replaces Chaingun
+{
+	States
+	{
+	Spawnloop:
+		DIS4 A -1
+		Stop
+	}
+}
+
+// LEVEL 5 TERMINAL: EXPLOSIVES
+ACTOR CashTerminalLevel5 : CashTerminalLevel1 replaces RocketLauncher
+{
+	States
+	{
+	Spawnloop:
+		DIS5 A -1
+		Stop
+	}
+}
+
+// LEVEL 6 TERMINAL: ENERGY WEAPONS
+ACTOR CashTerminalLevel6 : CashTerminalLevel1 replaces PlasmaRifle
+{
+	States
+	{
+	Spawnloop:
+		DIS6 A -1
+		Stop
+	}
+}
+
+// LEVEL 7 TERMINAL: POWER WEAPONS
+ACTOR CashTerminalLevel7 : CashTerminalLevel1 replaces BFG9000
+{
+	States
+	{
+	Spawnloop:
+		DIS7 A -1
+		Stop
+	}
+}
+
+// PENTAGRAM TERMINAL: HELL
+ACTOR CashTerminalLevelPentagram : CashTerminalLevel1 replaces Berserk
+{
+	States
+	{
+	Spawnloop:
+		DIS8 A -1
+		Stop
+	}
+}
+
+// AMMO TERMINAL: PLENTY OF BOOLIT!
+ACTOR CashTerminalLevelAmmo : CashTerminalLevel1
+{
+	States
+	{
+	Spawnloop:
+		DIS9 A -1
+		Stop
+	}
+}
+
+// ARMOR TERMINAL: PROTECTION, MAN!
+ACTOR CashTerminalLevelArmor : CashTerminalLevel1
+{
+	ConversationID 1337
+	States
+	{
+	Spawnloop:
+		DISA A -1
+		Stop
+	}
+}
+
+// This SHOULD spawn the same terminal on both armors
+ACTOR ArmorSpawner : RandomSpawner replaces GreenArmor
+{
+	DropItem "CashTerminalLevelArmor"
+}
+ACTOR ArmorSpawner2 : RandomSpawner replaces BlueArmor
+{
+	DropItem "CashTerminalLevelArmor"
+}

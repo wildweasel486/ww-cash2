@@ -1,0 +1,38 @@
+#include "actors/terminals.txt"
+#include "actors/cash.txt"
+#include "actors/cashspawners.txt"
+#include "actors/misc.txt"
+#include "actors/weapons/ammotypes.txt"
+#include "actors/weapons/slot1.txt"
+#include "actors/weapons/slot2.txt"
+#include "actors/weapons/slot3.txt"
+#include "actors/weapons/slot4.txt"
+#include "actors/weapons/slot5.txt"
+#include "actors/weapons/slot6.txt"
+#include "actors/weapons/slot7.txt"
+#include "actors/inventory.txt"
+
+DamageType BloodDonor
+{
+	NoArmor
+}
+
+ACTOR WWCashPlayer : DoomPlayer
+{
+	// Make sure all newly defined weapons that reload are included here so they start with ammo.
+	Player.StartItem DualPistolsClip1 17
+	Player.StartItem DualPistolsClip2 17
+	Player.StartItem PumpShotgunClip 6
+	Player.StartItem PugRifleClip 30
+	Player.StartItem RecoillessRockets 1
+	Player.StartItem SMGClip 32
+	Player.StartItem PunchGunLoaded 1
+	Player.StartItem KestrelAmmo 7
+	Player.StartItem BattleRifleClip 10
+	// Initial equipment.
+	Player.StartItem SinglePistol
+	Player.StartItem MartialArts
+	Player.StartItem PistolAmmo 51
+	Player.StartItem ColdHardCash 100
+	Player.StartItem CHCPDA
+}

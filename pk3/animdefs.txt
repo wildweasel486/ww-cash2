@@ -1,0 +1,6 @@
+texture SPINCR1
+	pic SPINCR1 tics 2
+	pic SPINCR2 tics 2
+	pic SPINCR3 tics 2
+	pic SPINCR4 tics 2
+	pic SPINCR5 tics 2

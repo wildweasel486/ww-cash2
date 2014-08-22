@@ -1,0 +1,87 @@
+statusbar fullscreen, fullscreenoffsets // ZDoom HUD
+{
+	//inventory
+	drawimage "INVENBOX", 0, -46;
+	drawselectedinventory alwaysshowcounter, centerbottom, DANCOOKFONT3, 21, -4, 40, -44, Untranslated, 1;
+	
+    //health
+	drawimage "STATBAR", 45, -46;
+    drawnumber 3, DANCOOKFONT2, untranslated, health, alignment(right), 111, -42, 1;
+    
+	//armor
+	DrawImage "ARMOROFF", 66, -12;
+	DrawSwitchableImage armortype CHCBasicArmor, "nullimage", "ARMORGRN", 66, -12;
+	DrawSwitchableImage armortype CHCAdvancedArmor, "nullimage", "ARMORBLU", 66, -12;
+	drawnumber 3, DANCOOKFONT2, untranslated, armor, alignment(right), whennotzero, 111, -19, 1;
+	
+	//money
+	drawimage "MONEYBR2", -13, -14;
+	drawimage "MONEYBAR", -97, -14;
+	//drawimage "SPINCR1", -13, -12;
+	drawstring SMALLFONT, grey, "cr", -3, -12;
+	drawnumber 11, SMALLFONT, green, ColdHardCash, alignment(right), -17, -11, 1;
+
+    //ammo
+	UsesAmmo
+	{
+		IsSelected not DualPistols
+		{
+			drawimage "AMMOBAR3", -84, -36;
+			drawnumber 3, DANCOOKFONT2, untranslated, ammo1, alignment(right), -3, -32, 1;
+			drawimage "AMMOBAR4", -48, -52;
+			drawnumber 4, DANCOOKFONT3, untranslated, ammo2, alignment(right), -6, -49;
+			drawimage "AMMOBAR5", -84, -52;
+			drawstring SMALLFONT, DarkGrey, "ammo", -49, -52;
+			drawstring SMALLFONT, grey, Ammo2tag, -49, -45;
+			
+			drawswitchableimage weaponslot 1, "STGNUM1", "STYSNUM1", -80, -33; 
+			drawswitchableimage weaponslot 2, "STGNUM2", "STYSNUM2", -75, -33; 
+			drawswitchableimage weaponslot 3, "STGNUM3", "STYSNUM3", -70, -33;
+			drawswitchableimage weaponslot 4, "STGNUM4", "STYSNUM4", -80, -27;
+			drawswitchableimage weaponslot 5, "STGNUM5", "STYSNUM5", -75, -27;
+			drawswitchableimage weaponslot 6, "STGNUM6", "STYSNUM6", -70, -27;
+			drawswitchableimage weaponslot 7, "STGNUM7", "STYSNUM7", -80, -21;
+			drawswitchableimage weaponslot 8, "STGNUM8", "STYSNUM8", -75, -21;
+			drawswitchableimage weaponslot 9, "STGNUM9", "STYSNUM9", -70, -21;
+		}
+		IsSelected DualPistols
+		{
+			drawimage "AMMOBAR2", -37, -36;
+			drawimage "AMMOBAR1", -97, -36;
+			drawnumber 3, DANCOOKFONT2, untranslated, ammo1, alignment(right), -3, -32, 1;
+			drawnumber 5, DANCOOKFONT2, untranslated, ammo2, alignment(right), -44, -32, 1;
+			drawimage "AMMOBAR4", -48, -52;
+			drawnumber 4, DANCOOKFONT3, untranslated, ammo PistolAmmo, alignment(right), -6, -49;
+			drawimage "AMMOBAR5", -84, -52;
+			drawstring SMALLFONT, DarkGrey, "ammo", -49, -52;
+			drawstring SMALLFONT, grey, "Pistol", -49, -45;
+			
+			drawswitchableimage weaponslot 1, "STGNUM1", "STYSNUM1", -93, -33; 
+			drawswitchableimage weaponslot 2, "STGNUM2", "STYSNUM2", -88, -33; 
+			drawswitchableimage weaponslot 3, "STGNUM3", "STYSNUM3", -83, -33;
+			drawswitchableimage weaponslot 4, "STGNUM4", "STYSNUM4", -93, -27;
+			drawswitchableimage weaponslot 5, "STGNUM5", "STYSNUM5", -88, -27;
+			drawswitchableimage weaponslot 6, "STGNUM6", "STYSNUM6", -83, -27;
+			drawswitchableimage weaponslot 7, "STGNUM7", "STYSNUM7", -93, -21;
+			drawswitchableimage weaponslot 8, "STGNUM8", "STYSNUM8", -88, -21;
+			drawswitchableimage weaponslot 9, "STGNUM9", "STYSNUM9", -83, -21;
+		}
+	}
+	UsesAmmo Not
+	{
+		drawimage "AMMOBAR3", -84, -36;
+		drawstring DANCOOKFONT1, untranslated, "n/a", -3, -36, 1;
+		
+		drawswitchableimage weaponslot 1, "STGNUM1", "STYSNUM1", -80, -33; 
+		drawswitchableimage weaponslot 2, "STGNUM2", "STYSNUM2", -75, -33; 
+		drawswitchableimage weaponslot 3, "STGNUM3", "STYSNUM3", -70, -33;
+		drawswitchableimage weaponslot 4, "STGNUM4", "STYSNUM4", -80, -27;
+		drawswitchableimage weaponslot 5, "STGNUM5", "STYSNUM5", -75, -27;
+		drawswitchableimage weaponslot 6, "STGNUM6", "STYSNUM6", -70, -27;
+		drawswitchableimage weaponslot 7, "STGNUM7", "STYSNUM7", -80, -21;
+		drawswitchableimage weaponslot 8, "STGNUM8", "STYSNUM8", -75, -21;
+		drawswitchableimage weaponslot 9, "STGNUM9", "STYSNUM9", -70, -21;
+	}
+    
+    drawkeybar 6, vertical, reverserows, auto, -10, 2, 0, 3, auto;
+}

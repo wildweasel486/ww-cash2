@@ -1,0 +1,202 @@
+ACTOR CashBonus1 : RandomSpawner replaces HealthBonus
+{
+	DropItem "CHCSmallCoin"
+}
+
+ACTOR CashBonus2 : RandomSpawner replaces ArmorBonus
+{
+	DropItem "CHCSmallCoin"
+}
+
+ACTOR CashZombieman : Zombieman replaces Zombieman
+{
+	DropItem "CHCSmallCoin"
+	DropItem "CHCSmallCoin" 128
+	DropItem "DroppedPistolAmmo", 192
+	DropItem "DroppedHeavyPistolAmmo", 30
+}
+
+ACTOR CashShotgunguy : Shotgunguy replaces Shotgunguy
+{
+	DropItem "CHCSmallCoin"
+	DropItem "CHCSmallCoin"
+	DropItem "CHCSmallCoin" 128
+	DropItem "DroppedShotgunAmmo", 160
+}
+
+ACTOR CashDoomimp : Doomimp replaces Doomimp
+{
+	DropItem "CHCMediumCoin"
+	DropItem "CHCSmallCoin" 128
+}
+
+ACTOR CashChaingunguy : Chaingunguy replaces Chaingunguy
+{
+	DropItem "CHCMediumCoin"
+	DropItem "CHCSmallCoin"
+	DropItem "CHCSmallCoin" 128
+	DropItem "DroppedLightRifleAmmo", 128
+	DropItem "DroppedHeavyRifleAmmo", 45
+}
+
+ACTOR CashDemon : Demon replaces Demon
+{
+	DropItem "CHCMediumCoin"
+	DropItem "CHCSmallCoin"
+	DropItem "CHCSmallCoin"
+	DropItem "CHCSmallCoin"
+	DropItem "CHCSmallCoin"
+}
+
+ACTOR CashSpectre : Spectre replaces Spectre
+{
+	DropItem "CHCLargeCoin"
+}
+
+ACTOR CashCaco : Cacodemon replaces Cacodemon
+{
+	DropItem "CHCLargeCoin"
+	DropItem "CHCLargeCoin"
+	DropItem "CHCMediumCoin"
+}
+
+ACTOR CashKnight : HellKnight replaces HellKnight 
+{
+	DropItem "CHCLargeCoin"
+	DropItem "CHCLargeCoin"
+}
+
+ACTOR CashFatso : Fatso replaces Fatso
+{
+	DropItem "CHCSmallBill"
+	DropItem "CHCLargeCoin"
+	DropItem "CHCMediumCoin"
+	DropItem "CHCMediumCoin"
+	DropItem "CHCSmallCoin"
+	DropItem "CHCSmallCoin"
+	DropItem "CHCSmallCoin"
+	DropItem "CHCSmallCoin"
+}
+
+ACTOR Cashtron : Arachnotron replaces Arachnotron
+{
+	DropItem "CHCLargeCoin"
+	DropItem "CHCLargeCoin"
+	DropItem "CHCMediumCoin"
+	DropItem "CHCSmallCoin"
+	DropItem "CHCSmallCoin"
+	DropItem "CHCSmallCoin"
+	DropItem "CHCSmallCoin"
+}
+
+ACTOR CashRevvy : Revenant replaces Revenant
+{
+	DropItem "CHCLargeCoin"
+	DropItem "CHCMediumCoin"
+}
+
+ACTOR CashElemental : PainElemental replaces PainElemental
+{
+	DropItem "CHCSmallBill"
+}
+
+ACTOR CashVile : Archvile replaces Archvile
+{
+	DropItem "CHCMediumBill"
+	DropItem "CHCSmallBill"
+	DropItem "CHCLargeCoin"
+	DropItem "CHCMediumCoin"
+	DropItem "CHCSmallCoin"
+}
+
+ACTOR CashBaron : BaronOfHell replaces BaronOfHell
+{
+	DropItem "CHCLargeBill"
+	DropItem "CHCMediumBill"
+	DropItem "CHCSmallBill"
+	DropItem "CHCLargeCoin"
+	DropItem "CHCMediumCoin"
+	DropItem "CHCSmallCoin"
+}
+
+ACTOR Cashberdemon : Cyberdemon replaces Cyberdemon
+{
+	DropItem "CHCLargeBill"
+	DropItem "CHCMediumBill"
+	DropItem "CHCSmallBill"
+	DropItem "CHCLargeCoin"
+	DropItem "CHCMediumCoin"
+	DropItem "CHCSmallCoin"
+	DropItem "CHCLargeBill"
+	DropItem "CHCMediumBill"
+	DropItem "CHCSmallBill"
+	DropItem "CHCLargeCoin"
+	DropItem "CHCMediumCoin"
+	DropItem "CHCSmallCoin"
+}
+
+ACTOR SpiderCashtermind : SpiderMastermind replaces SpiderMastermind
+{
+	DropItem "CHCLargeBill"
+	DropItem "CHCMediumBill"
+	DropItem "CHCSmallBill"
+	DropItem "CHCLargeCoin"
+	DropItem "CHCMediumCoin"
+	DropItem "CHCSmallCoin"
+	DropItem "CHCLargeBill"
+	DropItem "CHCMediumBill"
+	DropItem "CHCSmallBill"
+	DropItem "CHCLargeCoin"
+	DropItem "CHCMediumCoin"
+	DropItem "CHCSmallCoin"
+}
+
+ACTOR CashNazi : WolfensteinSS replaces WolfensteinSS
+{
+	DropItem "CHCSmallCoin"
+	DropItem "CHCSmallCoin"
+	DropItem "CHCSmallCoin"
+	DropItem "CHCMediumCoin"
+	DropItem "CHCMediumCoin"
+	DropItem "CHCMediumCoin"
+}
+
+ACTOR BriefcaseOrMachine : RandomSpawner replaces Backpack
+{
+	DropItem "CashTerminalLevelAmmo"
+	DropItem "CHCBriefcaseFullaDosh"
+}
+
+ACTOR MoneyFromClip : RandomSpawner replaces Clip
+{
+	Dropitem "CHCMediumCoin"
+}
+ACTOR MoneyFromAmmoBox : RandomSpawner replaces ClipBox
+{
+	Dropitem "CHCSmallBill"
+}
+ACTOR MoneyFromShell : RandomSpawner replaces Shell
+{
+	Dropitem "CHCLargeCoin"
+}
+ACTOR MoneyFromShellBox : RandomSpawner replaces ShellBox
+{
+	Dropitem "CHCMediumBill"
+}
+
+ACTOR MoneyFromRocket : RandomSpawner replaces RocketAmmo
+{
+	Dropitem "CHCSmallBill"
+}
+ACTOR MoneyFromRocketBox : RandomSpawner replaces RocketBox
+{
+	Dropitem "CHCLargeBill"
+}
+ACTOR MoneyFromCell : RandomSpawner replaces Cell
+{
+	Dropitem "CHCLargeCoin"
+}
+ACTOR MoneyFromCellPack : RandomSpawner replaces CellPack
+{
+	Dropitem "CHCLargeBill"
+}

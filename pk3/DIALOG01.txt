@@ -1,0 +1,1412 @@
+namespace = "ZDoom";
+//include = "SCRIPT00";
+
+// ================================
+// = Quartermaster.mil PDA Access =
+// ================================
+conversation
+{
+	actor = "PDAMenuActor";
+	page
+	{
+		name = "Quine 5000 PDA";
+		dialog = "$SHOPPDA_MAIN";
+		choice
+		{
+			text = "$SHOPPDA_ITEM1NAME";
+			nextpage = 2;
+		}
+		choice
+		{
+			text = "$SHOPPDA_ITEM2NAME";
+			nextpage = 3;
+		}
+		choice
+		{
+			text = "$SHOPPDA_ITEM3NAME";
+			nextpage = 4;
+		}
+		choice
+		{
+			text = "$SHOPPDA_ITEM4NAME";
+			nextpage = 5;
+		}
+	}
+	page
+	{
+		name = "$SHOPPDA_ITEM1NAME";
+		dialog = "$SHOPPDA_ITEM1DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "ArtiCarePackageMedical";
+			nextpage = 2;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 400;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+	page
+	{
+		name = "$SHOPPDA_ITEM2NAME";
+		dialog = "$SHOPPDA_ITEM2DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "ArtiCarePackagePistol";
+			nextpage = 3;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 300;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+	page
+	{
+		name = "$SHOPPDA_ITEM3NAME";
+		dialog = "$SHOPPDA_ITEM3DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "ArtiCarePackageShotgun";
+			nextpage = 4;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 350;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+	page
+	{
+		name = "$SHOPPDA_ITEM4NAME";
+		dialog = "$SHOPPDA_ITEM4DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "ArtiCarePackageRifle";
+			nextpage = 5;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 500;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+}
+
+// ==================
+// = LEVEL 1: TOOLS =
+// ==================
+conversation
+{
+	actor = "CashTerminalLevel1";
+	page
+	{
+		name = "Vending Machine (Tools & Supplies)";
+		dialog = "$SHOP1_MAIN";
+		choice
+		{
+			text = "$SHOP1_ITEM1NAME"; // Medipatch
+			nextpage = 2;
+		}
+		choice
+		{
+			text = "$SHOP1_ITEM3NAME"; // KNOIFE!
+			nextpage = 3;
+		}
+		choice
+		{
+			text = "$SHOP1_ITEM2NAME"; // Crowbar
+			nextpage = 4;
+		}
+		choice
+		{
+			text = "$SHOP1_ITEM4NAME"; // Fire Axe
+			nextpage = 5;
+		}
+	}
+	page
+	{
+		name = "$SHOP1_ITEM1NAME";
+		dialog = "$SHOP1_ITEM1DESC";
+		choice
+		{
+			text = "Purchase (25 CR/10% HP)";
+			giveitem = "Stimpack";
+			nextpage = 2;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 25;
+			}
+		}
+		choice
+		{
+			text = "Donate Blood (5% HP/10 CR)";
+			giveitem = "BloodDonor";
+			nextpage = 2;
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+	page
+	{
+		name = "$SHOP1_ITEM3NAME";
+		dialog = "$SHOP1_ITEM3DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "CHCKnife";
+			nextpage = 3;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 50;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_SELL";
+			giveitem = "KnifeRefund";
+			nextpage = 3;
+			nomessage = "$SHOP_NOSELL";
+			yesmessage = "$SHOP_ITEMSOLD";
+			cost
+			{
+				item = "CHCKnife";
+				amount = 1;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+	page
+	{
+		name = "$SHOP1_ITEM2NAME";
+		dialog = "$SHOP1_ITEM2DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "Crowbar";
+			nextpage = 4;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 60;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_SELL";
+			giveitem = "CrowbarRefund";
+			nextpage = 4;
+			nomessage = "$SHOP_NOSELL";
+			yesmessage = "$SHOP_ITEMSOLD";
+			cost
+			{
+				item = "Crowbar";
+				amount = 1;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+	page
+	{
+		name = "$SHOP1_ITEM4NAME";
+		dialog = "$SHOP1_ITEM4DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "FireAxe";
+			nextpage = 5;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 90;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_SELL";
+			giveitem = "FireAxeRefund";
+			nextpage = 5;
+			nomessage = "$SHOP_NOSELL";
+			yesmessage = "$SHOP_ITEMSOLD";
+			cost
+			{
+				item = "FireAxe";
+				amount = 1;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+}
+
+// =====================
+// = LEVEL 2: HANDGUNS =
+// =====================
+conversation
+{
+	actor = "CashTerminalLevel2";
+	page
+	{
+		name = "Vending Machine (Sidearms)";
+		dialog = "$SHOP2_MAIN";
+		choice
+		{
+			text = "$SHOP2_ITEM1NAME"; // Glox
+			nextpage = 2;
+		}
+		choice
+		{
+			text = "$SHOP2_ITEM2NAME"; // Punchgun
+			nextpage = 3;
+		}
+		choice
+		{
+			text = "$SHOP2_ITEM3NAME"; // Magnum
+			nextpage = 4;
+		}
+		choice
+		{
+			text = "$SHOP_AMMO1LABEL";
+			displaycost = true;
+			giveitem = "PistolAmmo";
+			nextpage = 1;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 15;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_AMMO6LABEL";
+			displaycost = true;
+			giveitem = "HeavyPistolAmmo";
+			nextpage = 1;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 20;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_AMMO2LABEL";
+			displaycost = true;
+			giveitem = "ShotgunAmmo";
+			nextpage = 1;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 25;
+			}
+		}
+	}
+	page
+	{
+		name = "$SHOP2_ITEM1NAME";
+		dialog = "$SHOP2_ITEM1DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "SinglePistol";
+			nextpage = 2;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 200;
+			}
+		}
+		choice
+		{
+			text = "Buy Upgrade";
+			displaycost = true;
+			giveitem = "PistolUpgradeGiver";
+			nextpage = 2;
+			nomessage = "You need 100 CR and the Glox to purchase this upgrade.";
+			yesmessage = "$SHOP_UPGRADEBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 100;
+			}
+			cost
+			{
+				item = "SinglePistol";
+				amount = 1;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_SELL";
+			giveitem = "PistolRefund";
+			nextpage = 2;
+			nomessage = "$SHOP_NOSELL";
+			yesmessage = "$SHOP_ITEMSOLD";
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+	page
+	{
+		name = "$SHOP2_ITEM2NAME";
+		dialog = "$SHOP2_ITEM2DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "PunchGun";
+			nextpage = 3;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 75;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_SELL";
+			giveitem = "PunchGunRefund";
+			nextpage = 3;
+			nomessage = "$SHOP_NOSELL";
+			yesmessage = "$SHOP_ITEMSOLD";
+			cost
+			{
+				item = "PunchGun";
+				amount = 1;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+	page
+	{
+		name = "$SHOP2_ITEM3NAME";
+		dialog = "$SHOP2_ITEM3DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "KestrelMagnum";
+			nextpage = 4;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 300;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_SELL";
+			giveitem = "KestrelRefund";
+			nextpage = 4;
+			nomessage = "$SHOP_NOSELL";
+			yesmessage = "$SHOP_ITEMSOLD";
+			cost
+			{
+				item = "KestrelMagnum";
+				amount = 1;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+}
+
+// ===================
+// = LEVEL 3: RIFLES = 
+// ===================
+conversation
+{
+	actor = "CashTerminalLevel3";
+	page
+	{
+		name = "Vending Machine (Rifles)";
+		dialog = "$SHOP3_MAIN";
+		choice
+		{
+			text = "$SHOP3_ITEM1NAME"; // Shotgun
+			nextpage = 2;
+		}
+		choice
+		{
+			text = "$SHOP3_ITEM2NAME"; // SMG
+			nextpage = 3;
+		}
+		choice
+		{
+			text = "$SHOP3_ITEM3NAME"; // LAR
+			nextpage = 4;
+		}
+		choice
+		{
+			text = "$SHOP_AMMO1LABEL";
+			displaycost = true;
+			giveitem = "PistolAmmo";
+			nextpage = 1;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 15;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_AMMO2LABEL";
+			displaycost = true;
+			giveitem = "ShotgunAmmo";
+			nextpage = 1;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 25;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_AMMO6LABEL";
+			displaycost = true;
+			giveitem = "HeavyPistolAmmo";
+			nextpage = 1;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 20;
+			}
+		}
+	}
+	page
+	{
+		name = "$SHOP3_ITEM1NAME";
+		dialog = "$SHOP3_ITEM1DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "PumpShotgun";
+			nextpage = 2;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 400;
+			}
+		}
+		choice
+		{
+			text = "Buy Upgrade";
+			displaycost = true;
+			giveitem = "PumpShotgunUpgradeGiver";
+			nextpage = 2;
+			nomessage = "You need 600 CR and the Pump Shotgun to purchase this upgrade.";
+			yesmessage = "$SHOP_UPGRADEBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 600;
+			}
+			cost
+			{
+				item = "PumpShotgun";
+				amount = 1;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_SELL";
+			giveitem = "PumpShotgunRefund";
+			nextpage = 2;
+			nomessage = "$SHOP_NOSELL";
+			yesmessage = "$SHOP_ITEMSOLD";
+			cost
+			{
+				item = "PumpShotgun";
+				amount = 1;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+	page
+	{
+		name = "$SHOP3_ITEM2NAME";
+		dialog = "$SHOP3_ITEM2DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "CHCSMG";
+			nextpage = 3;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 350;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_SELL";
+			giveitem = "CHCSMGRefund";
+			nextpage = 3;
+			nomessage = "$SHOP_NOSELL";
+			yesmessage = "$SHOP_ITEMSOLD";
+			cost
+			{
+				item = "CHCSMG";
+				amount = 1;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+	page
+	{
+		name = "$SHOP3_ITEM3NAME";
+		dialog = "$SHOP3_ITEM3DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "LeverActionRifle";
+			nextpage = 4;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 250;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_SELL";
+			giveitem = "LeverActionRefund";
+			nextpage = 4;
+			nomessage = "$SHOP_NOSELL";
+			yesmessage = "$SHOP_ITEMSOLD";
+			cost
+			{
+				item = "LeverActionRifle";
+				amount = 1;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+}
+
+// =========================
+// = LEVEL 4: MACHINE GUNS =
+// =========================
+conversation
+{
+	actor = "CashTerminalLevel4";
+	page
+	{
+		name = "Vending Machine (Machine Guns)";
+		dialog = "$SHOP4_MAIN";
+		choice
+		{
+			text = "$SHOP4_ITEM1NAME"; // Pugnose
+			nextpage = 2;
+		}
+		choice
+		{
+			text = "$SHOP4_ITEM3NAME"; // Battle Rifle
+			nextpage = 3;
+		}
+		choice
+		{
+			text = "$SHOP4_ITEM2NAME"; // SMG (Bargain)
+			nextpage = 4;
+		}
+		choice
+		{
+			text = "$SHOP_AMMO3LABEL";
+			displaycost = true;
+			giveitem = "LightRifleAmmo";
+			nextpage = 1;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 35;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_AMMO4LABEL";
+			displaycost = true;
+			giveitem = "HeavyRifleAmmo";
+			nextpage = 1;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 50;
+			}
+		}
+	}
+	page
+	{
+		name = "$SHOP4_ITEM1NAME";
+		dialog = "$SHOP4_ITEM1DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "PugRifle";
+			nextpage = 2;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 500;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_SELL";
+			giveitem = "PugRifleRefund";
+			nextpage = 2;
+			nomessage = "$SHOP_NOSELL";
+			yesmessage = "$SHOP_ITEMSOLD";
+			cost
+			{
+				item = "PugRifle";
+				amount = 1;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+	page
+	{
+		name = "$SHOP4_ITEM3NAME";
+		dialog = "$SHOP4_ITEM3DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "BattleRifle";
+			nextpage = 3;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 800;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_SELL";
+			giveitem = "BattleRifleRefund";
+			nextpage = 3;
+			nomessage = "$SHOP_NOSELL";
+			yesmessage = "$SHOP_ITEMSOLD";
+			cost
+			{
+				item = "BattleRifle";
+				amount = 1;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+	page
+	{
+		name = "$SHOP4_ITEM2NAME";
+		dialog = "$SHOP4_ITEM2DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "CHCSMG";
+			nextpage = 4;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 250;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_SELL";
+			giveitem = "CHCSMGRefundBargain";
+			nextpage = 4;
+			nomessage = "$SHOP_NOSELL";
+			yesmessage = "$SHOP_ITEMSOLD";
+			cost
+			{
+				item = "CHCSMG";
+				amount = 1;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+}
+
+// =======================
+// = LEVEL 5: EXPLOSIVES =
+// =======================
+conversation
+{
+	actor = "CashTerminalLevel5";
+	page
+	{
+		name = "Vending Machine (Explosives)";
+		dialog = "$SHOP5_MAIN";
+		choice
+		{
+			text = "$SHOP5_ITEM1NAME"; // Recoilless (replace later)
+			nextpage = 2;
+		}
+		choice
+		{
+			text = "$SHOP5_ITEM2NAME";
+			displaycost = true;
+			giveitem = "ArtiHandGrenade";
+			nextpage = 1;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 75;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_AMMO5LABEL";
+			displaycost = true;
+			giveitem = "RecoillessRockets";
+			nextpage = 1;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 200;
+			}
+		}
+	}
+	page
+	{
+		name = "$SHOP5_ITEM1NAME";
+		dialog = "$SHOP5_ITEM1DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "RecoillessRifle";
+			nextpage = 2;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 2000;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_SELL";
+			giveitem = "RecoillessRifleRefund";
+			nextpage = 2;
+			nomessage = "$SHOP_NOSELL";
+			yesmessage = "$SHOP_ITEMSOLD";
+			cost
+			{
+				item = "RecoillessRifle";
+				amount = 1;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+}
+
+// ===================
+// = LEVEL 6: ENERGY =
+// ===================
+conversation
+{
+	actor = "CashTerminalLevel6";
+	page
+	{
+		name = "Vending Machine (Energy)";
+		dialog = "$SHOP6_MAIN";
+		choice
+		{
+			text = "$SHOP6_ITEM1NAME"; // Blaster
+			nextpage = 2;
+		}
+	}
+	page
+	{
+		name = "$SHOP6_ITEM1NAME";
+		dialog = "$SHOP6_ITEM1DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "MOBlasterGiver";
+			nextpage = 2;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 100;
+			}
+		}
+		choice
+		{
+			text = "Recycle (25 CR Refund)";
+			giveitem = "MOBlasterRefund";
+			nextpage = 2;
+			nomessage = "You haven't got a Blaster to recycle.";
+			yesmessage = "Blaster recycled. Deposit refunded.";
+			cost
+			{
+				item = "MOBlasterInInventory";
+				amount = 1;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+}
+
+// =========================
+// = LEVEL 7: SUPERWEAPONS =
+// =========================
+conversation
+{
+	actor = "CashTerminalLevel7";
+	page
+	{
+		name = "Vending Machine (Super Weapons)";
+		dialog = "$SHOP7_MAIN";
+		choice
+		{
+			text = "$SHOP7_ITEM1NAME"; // TestSuperWeapon (replace later)
+			nextpage = 2;
+		}
+	}
+	page
+	{
+		name = "$SHOP7_ITEM1NAME";
+		dialog = "$SHOP7_ITEM1DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "TestSuperWeapon";
+			nextpage = 2;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 25000;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+}
+
+// ==============
+// = LEVEL HELL =
+// ==============
+conversation
+{
+	actor = "CashTerminalLevelPentagram";
+	page
+	{
+		name = "$SHOPHELL_NAME";
+		dialog = "$SHOPHELL_MAIN";
+		choice
+		{
+			text = "$SHOPHELL_ITEM1NAME";
+			nextpage = 2;
+		}
+		choice
+		{
+			text = "$SHOPHELL_ITEM2NAME";
+			nextpage = 3;
+		}
+		choice
+		{
+			text = "$SHOPHELL_ITEM3NAME";
+			nextpage = 4;
+		}
+		choice
+		{
+			text = "$SHOPHELL_ITEM4NAME";
+			nextpage = 5;
+		}
+		choice
+		{
+			text = "$SHOPHELL_ITEM5NAME";
+			nextpage = 6;
+		}
+	}
+	page // hurricane fist
+	{
+		name = "$SHOPHELL_ITEM1NAME";
+		dialog = "$SHOPHELL_ITEM1DESC";
+		choice
+		{
+			text = "Buy Upgrade";
+			displaycost = true;
+			giveitem = "FistUpgradeGiver";
+			nextpage = 2;
+			nomessage = "fOul vAgrANt! BEGONE wiTh yoU!";
+			yesmessage = "we hOpE yOu like it...hehe";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 1000;
+			}
+		}
+		choice
+		{
+			text = "PaY wiTH yOUR blOOd!! for 65% HP";
+			giveitem = "FistUpgradeGiverPWYB";
+			nextpage = 2;
+		}
+		choice
+		{
+			text = "FLEE.";
+			nextpage = 1;
+		}
+	}
+	page // hemophilia
+	{
+		name = "$SHOPHELL_ITEM2NAME";
+		dialog = "$SHOPHELL_ITEM2DESC";
+		choice
+		{
+			text = "Buy Upgrade";
+			displaycost = true;
+			giveitem = "KnifeUpgradeGiver";
+			nextpage = 3;
+			nomessage = "fOul vAgrANt! BEGONE wiTh yoU!";
+			yesmessage = "we hOpE yOu like it...hehe";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 1500;
+			}
+			cost
+			{
+				item = "CHCKnife";
+				amount = 1;
+			}
+		}
+		choice
+		{
+			text = "PaY wiTH yOUR blOOd!! for 75% HP";
+			giveitem = "KnifeUpgradeGiverPWYB";
+			nextpage = 3;
+		}
+		choice
+		{
+			text = "FLEE.";
+			nextpage = 1;
+		}
+	}
+	page // crowbar thief
+	{
+		name = "$SHOPHELL_ITEM3NAME";
+		dialog = "$SHOPHELL_ITEM3DESC";
+		choice
+		{
+			text = "Buy Upgrade";
+			displaycost = true;
+			giveitem = "CrowbarUpgradeGiver";
+			nextpage = 4;
+			nomessage = "fOul vAgrANt! BEGONE wiTh yoU!";
+			yesmessage = "we hOpE yOu like it...hehe";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 2000;
+			}
+			cost
+			{
+				item = "Crowbar";
+				amount = 1;
+			}
+		}
+		choice
+		{
+			text = "PaY wiTH yOUR blOOd!! for 85% HP";
+			giveitem = "CrowbarUpgradeGiverPWYB";
+			nextpage = 4;
+		}
+		choice
+		{
+			text = "FLEE.";
+			nextpage = 1;
+		}
+	}
+	page // fire axe
+	{
+		name = "$SHOPHELL_ITEM4NAME";
+		dialog = "$SHOPHELL_ITEM4DESC";
+		choice
+		{
+			text = "Buy Upgrade";
+			displaycost = true;
+			giveitem = "FireAxeUpgradeGiver";
+			nextpage = 5;
+			nomessage = "fOul vAgrANt! BEGONE wiTh yoU!";
+			yesmessage = "we hOpE yOu like it...hehe";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 1750;
+			}
+		}
+		choice
+		{
+			text = "PaY wiTH yOUR blOOd!! for 80% HP";
+			giveitem = "FireAxeUpgradeGiverPWYB";
+			nextpage = 5;
+		}
+		choice
+		{
+			text = "FLEE.";
+			nextpage = 1;
+		}
+	}
+	page // double damage
+	{
+		name = "$SHOPHELL_ITEM5NAME";
+		dialog = "$SHOPHELL_ITEM5DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "StrengthGiver";
+			nextpage = 6;
+			nomessage = "fOul vAgrANt! BEGONE wiTh yoU!";
+			yesmessage = "we hOpE yOu like it...hehe";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 1000;
+			}
+		}
+		choice
+		{
+			text = "PaY wiTH yOUR blOOd!! for 50% HP";
+			giveitem = "StrengthGiverPWYB";
+			nextpage = 6;
+		}
+		choice
+		{
+			text = "FLEE.";
+			nextpage = 1;
+		}
+	}
+}
+
+// =================
+// = ARMOR MACHINE =
+// =================
+conversation
+{
+	actor = "CashTerminalLevelArmor";
+	page
+	{
+		name = "Vending Machine (Armor)";
+		dialog = "$SHOPARMOR_MAIN";
+		choice
+		{
+			text = "$SHOPARMOR_ITEM1NAME"; // Basic armor
+			nextpage = 2;
+		}
+		choice
+		{
+			text = "$SHOPARMOR_ITEM2NAME"; // Advanced armor
+			nextpage = 3;
+		}
+	}
+	page
+	{
+		name = "$SHOPARMOR_ITEM1NAME";
+		dialog = "$SHOPARMOR_ITEM1DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "CHCBasicArmor";
+			nextpage = 2;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 75;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+	page
+	{
+		name = "$SHOPARMOR_ITEM2NAME";
+		dialog = "$SHOPARMOR_ITEM2DESC";
+		choice
+		{
+			text = "Purchase";
+			displaycost = true;
+			giveitem = "CHCAdvancedArmor";
+			nextpage = 3;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 150;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_GOBACK";
+			nextpage = 1;
+		}
+	}
+}
+
+// =================
+// = AMMO TERMINAL =
+// =================
+conversation
+{
+	actor = "CashTerminalLevelAmmo";
+	page
+	{
+		name = "$SHOPAMMO_NAME";
+		dialog = "$SHOPAMMO_MAIN";
+		choice
+		{
+			text = "$SHOP_AMMO1LABEL";
+			displaycost = true;
+			giveitem = "PistolAmmo";
+			nextpage = 1;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 10;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_AMMO6LABEL";
+			displaycost = true;
+			giveitem = "HeavyPistolAmmo";
+			nextpage = 1;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 12;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_AMMO2LABEL";
+			displaycost = true;
+			giveitem = "ShotgunAmmo";
+			nextpage = 1;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 15;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_AMMO3LABEL";
+			displaycost = true;
+			giveitem = "LightRifleAmmo";
+			nextpage = 1;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 20;
+			}
+		}
+		choice
+		{
+			text = "$SHOP_AMMO4LABEL";
+			displaycost = true;
+			giveitem = "HeavyRifleAmmo";
+			nextpage = 1;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 38;
+			}
+		}
+		choice
+		{
+			text = "$SHOP5_ITEM2NAME";
+			displaycost = true;
+			giveitem = "ArtiHandGrenade";
+			nextpage = 1;
+			nomessage = "$SHOP_NOMONEY";
+			yesmessage = "$SHOP_ITEMBOUGHT";
+			cost
+			{
+				item = "ColdHardCash";
+				amount = 60;
+			}
+		}
+	}
+}

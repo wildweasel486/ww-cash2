@@ -1,0 +1,147 @@
+// For loose ammos only. Should prevent a lot of clutter in the ammo terminal
+// if I try to minimize the amount of calibers available.
+
+ACTOR PistolAmmo : Ammo
+{
+	Inventory.Amount 30
+	Inventory.MaxAmount 0x7fffffff
+	Inventory.Icon CLIPA0
+	Inventory.PickupMessage "Picked up 30 pistol ammo."
+	Tag "Pistol"
+	States
+	{
+	Spawn:
+		CLIP A -1
+		Stop
+	}
+}
+
+ACTOR DroppedPistolAmmo : CustomInventory
+{
+	Inventory.PickupMessage "Picked up some pistol ammo."
+	States
+	{
+	Spawn:
+		CLIP A -1
+		Stop
+	Pickup:
+		CLIP A 0 A_GiveInventory("PistolAmmo", random(6,15))
+		Stop
+	}
+}
+
+ACTOR HeavyPistolAmmo : Ammo
+{
+	Inventory.Amount 14
+	Inventory.MaxAmount 0x7fffffff
+	Inventory.Icon CLIPA0
+	Inventory.PickupMessage "Picked up 14 Magnum ammo."
+	Tag "Magnm"
+	States
+	{
+	Spawn:
+		CLIP A -1
+		Stop
+	}
+}
+
+ACTOR DroppedHeavyPistolAmmo : CustomInventory
+{
+	Inventory.PickupMessage "Picked up some Magnum ammo."
+	States
+	{
+	Spawn:
+		CLIP A -1
+		Stop
+	Pickup:
+		CLIP A 0 A_GiveInventory("HeavyPistolAmmo", random(1,4))
+		Stop
+	}
+}
+
+ACTOR ShotgunAmmo : Ammo
+{
+	Inventory.Amount 10
+	Inventory.MaxAmount 0x7fffffff
+	Inventory.Icon SHELA0
+	Inventory.PickupMessage "Picked up 10 shotgun ammo."
+	Tag "Shotg."
+	States
+	{
+	Spawn:
+		SHEL A -1
+		Stop
+	}
+}
+
+ACTOR DroppedShotgunAmmo : CustomInventory
+{
+	Inventory.PickupMessage "Picked up a shotgun shell."
+	States
+	{
+	Spawn:
+		SHEL A -1
+		Stop
+	Pickup:
+		SHEL A 0 A_GiveInventory("ShotgunAmmo", 1)
+		Stop
+	}
+}
+
+ACTOR LightRifleAmmo : Ammo
+{
+	Inventory.MaxAmount 0x7fffffff
+	Inventory.Amount 45
+	Inventory.Icon ASSAA0
+	Inventory.PickupMessage "Picked up 45 light rifle ammo."
+	Tag "L.Rifle"
+	States
+	{
+	Spawn:
+		CLIP A -1
+		Loop
+	}
+}
+
+ACTOR DroppedLightRifleAmmo : CustomInventory
+{
+	Inventory.PickupMessage "Picked up some light rifle ammo."
+	States
+	{
+	Spawn:
+		CLIP A -1
+		Stop
+	Pickup:
+		CLIP A 0 A_GiveInventory("LightRifleAmmo", random(3,10))
+		Stop
+	}
+}
+
+ACTOR HeavyRifleAmmo : Ammo
+{
+	Inventory.MaxAmount 0x7fffffff
+	Inventory.Amount 15
+	Inventory.Icon ASSAA0
+	Inventory.PickupMessage "Picked up 15 heavy rifle ammo."
+	Tag "H.Rifle"
+	States
+	{
+	Spawn:
+		CLIP A -1
+		Loop
+	}
+}
+
+ACTOR DroppedHeavyRifleAmmo : CustomInventory
+{
+	Inventory.PickupMessage "Picked up some heavy rifle ammo."
+	States
+	{
+	Spawn:
+		CLIP A -1
+		Stop
+	Pickup:
+		CLIP A 0 A_GiveInventory("HeavyRifleAmmo", random(1,4))
+		Stop
+	}
+}

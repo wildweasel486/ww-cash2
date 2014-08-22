@@ -1,0 +1,53 @@
+// Okay so most of this shit is copy-pasted from gzdoom.pk3's menudef, so
+// if it breaks, I want you to go yell at Graf Zahl about it. Kay? -ww
+
+DEFAULTLISTMENU
+{
+	Font "smallfnt", "Untranslated"
+	Selector "CARDCURS", -32, -4
+	Linespacing 19
+}
+
+LISTMENU "MainMenu"
+{
+	Font "Groove", "Untranslated"
+	StaticText 16, 4, "COLD HARD"
+	StaticText 72, 38, "CASH 2"
+	Font "DANCOOKFONT1", "Untranslated"
+	Position 37, 76
+	TextItem "New", "n", "PlayerclassMenu"
+	TextItem "Options","o", "OptionsMenu"
+	TextItem "Load", "l", "LoadGameMenu"
+	TextItem "Save", "s", "SaveGameMenu"
+	TextItem "Help", "h", "HelpTopicsMenu"
+	TextItem "Quit", "q", "QuitMenu"
+}
+
+ListMenu "EpisodeMenu"
+{
+	NetgameMessage "$NETGAME"
+	Position 48, 63
+	StaticText 84, 38, "Which episode?"
+}
+
+ListMenu "SkillMenu"
+{
+	StaticText 126, 14, "New Game"
+	Font "DANCOOKFONT1"
+	StaticText 34, 32, "How Rich Are You?"
+	Position 16, 50
+}
+
+ListMenu "HelpTopicsMenu"
+{
+	Font "DANCOOKFONT1", "Untranslated"
+	Position 37, 30
+	StaticText 0, 0, "FONT DEBUG"
+	Font "DANCOOKFONT1", "Untranslated"
+	StaticText 4, 35, "AaBbCcDdEeFfGgHhIiJj"
+	StaticText 4, 55, "KkLlMmNnOoPpQqRrSsTt"
+	StaticText 4, 75, "UuVvWwXxYyZz0123456789"
+	
+	StaticText 4, 100, "Daniel Cook is a VERY AWESOME person."
+	StaticText 4, 125, "Seriously: Cook = 100% Awesome!"
+}

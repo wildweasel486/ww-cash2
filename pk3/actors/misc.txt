@@ -1,0 +1,85 @@
+ACTOR NewBulletPuff : BulletPuff replaces BulletPuff
+{
+	+NoExtremeDeath
+}
+
+ACTOR CashWeapon : Weapon
+{
+	Weapon.BobStyle Alpha
+	Weapon.BobSpeed 2.5
+	Weapon.BobRangeX 0.2
+	Weapon.BobRangeY 0.5
+	Inventory.Icon "UNKNA0" // if no icon defined, show <!> instead.
+	Decal "BulletChip"
+	+Weapon.NoAlert
+	States
+	{
+	Flash:
+		TNT1 A 1 BRIGHT A_Light2
+		TNT1 A 1 BRIGHT A_Light1
+		TNT1 A 1 BRIGHT A_Light0
+		Stop
+	}
+}
+
+ACTOR CHCBasicArmor : BasicArmorPickup
+{
+	Armor.SaveAmount 100
+	Armor.SavePercent 40
+	Inventory.PickupMessage "Picked up a suit of Basic Armor."
+	States
+	{
+	Spawn:
+		ARM1 A -1
+		Stop
+	}
+}
+
+ACTOR CHCAdvancedArmor : BasicArmorPickup
+{
+	Armor.SaveAmount 200
+	Armor.SavePercent 66
+	Inventory.PickupMessage "Picked up a suit of Advanced Armor."
+	States
+	{
+	Spawn:
+		ARM2 A -1
+		Stop
+	}
+}
+
+ACTOR BloodDonor : CustomInventory
+{
+	States
+	{
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecute("DonateBlood")
+		Stop
+	}
+}
+
+ACTOR PowerDoubleDamage : PowerDamage
+{
+	damagefactor "normal", 2.0
+	damagefactor "BloodDonor", 1.0
+}
+
+ACTOR StrengthGiver : PowerupGiver
+{
+	Powerup.Type DoubleDamage
+	powerup.color "00 00 55" 0.25
+	Powerup.Duration 3150
+	inventory.maxamount 0
+	+AUTOACTIVATE
+}
+
+ACTOR StrengthGiverPWYB : CustomInventory
+{
+	States
+	{
+	Pickup:
+		TNT1 A 0 ACS_NamedExecute("StrengthPWYB")
+		Stop
+	}
+}

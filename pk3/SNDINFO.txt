@@ -1,0 +1,145 @@
+$random pickups/coin { coin1 coin2 coin3 }
+$random pickups/mcoin { mcoin1 mcoin2 }
+$random pickups/coinpile { coinstack1 coinstack2 }
+pickups/bill bill
+pickups/bigbill bigbill
+coin1 coin1
+coin2 coin2
+coin3 coin3
+mcoin1 mcoin1
+mcoin2 mcoin2
+coinstack1 coinstk1
+coinstack2 coinstk2
+
+weapons/dryfire DRYFIRE
+
+// Inventory
+
+grenade/throw grnpin
+$random grenade/bounce { grenade/bounce1 grenade/bounce2 grenade/bounce3 grenade/bounce4 }
+grenade/bounce1 grnbnce1
+grenade/bounce2 grnbnce2
+grenade/bounce3 grnbnce3
+grenade/bounce4 grnbnce4
+$random grenade/explode { grenade/explode1 grenade/explode2 grenade/explode3 }
+grenade/explode1 grnblst1
+grenade/explode2 grnblst2
+grenade/explode3 grnblst3
+$limit grenade/explode 0
+grenade/elecexplode grnelec
+$limit grenade/elecexplode 0
+grenade/pickup grnpick
+grenade/melee grnhit
+
+beacon/beep BEACON
+
+// Slot 1
+
+$random fist/miss { fm1 fm2 }
+fm1 dspmiss1
+fm2 dspmiss2
+$random fist/hit { fist/weakhit fist/medhit fist/hardhit }
+fist/weakhit dspuncha
+fist/medhit dspunchb
+fist/hardhit dspunchc
+fist/wall dspwall
+
+Knife/Stab KnifeStb
+Knife/Wall KnifeWal
+Knife/Miss KnifeMis
+
+crowbar/swing CBRSWING
+crowbar/hit CBRHIT
+$random crowbar/wall { crowbar/wall1 crowbar/wall2 }
+crowbar/wall1 CBRwall1
+crowbar/wall2 CBRwall2
+
+Axe/Swing Axeswing
+Axe/Wall Axewall
+Axe/Flesh Axeflesh
+
+// Slot 2
+
+$random weapons/judgefire { JUDGEFIR1 JUDGEFIR2 JUDGEFIR3 }
+JUDGEFIR1 JUDGEFR1
+JUDGEFIR2 JUDGEFR2
+JUDGEFIR3 JUDGEFR3
+weapons/judgeout JUDGEOUT
+weapons/judgein JUDGEIN
+weapons/judgecock JUDGECCK
+
+weapons/gloxfire GLOCKFIR
+weapons/gloxout GLOCKOUT
+weapons/gloxin GLOCKIN
+
+//Kestrel/Fire KestrFir
+//$random Kestrel/Fire { Kestrel1 Kestrel2 }
+Kestrel1 Kestrel1
+Kestrel2 Kestrel2
+$random Kestrel/Fire { SNS501 SNS502 SNS503 }
+SNS501 SNS501
+SNS502 SNS502
+SNS503 SNS503
+Kestrel/Clipout KestrOut
+Kestrel/Clipin KestrIn
+
+weapons/punchgunfire PGUNFIRE
+weapons/punchgunload PGUNLOAD
+weapons/punchgunswing PGUNSWNG
+weapons/punchgunclunk PGUNCLNK
+weapons/punchgunwall PGUNWALL
+weapons/punchgunpunch PGUNHIT
+
+// Slot 3
+
+$random PumpShotgun/Fire { PumpShotgun/Fire1 PumpShotgun/Fire2 PumpShotgun/Fire3 PumpShotgun/Fire4 }
+PumpShotgun/Fire1 PshtFir1
+PumpShotgun/Fire2 PshtFir2
+PumpShotgun/Fire3 PshtFir3
+PumpShotgun/Fire4 PshtFir4
+PumpShotgun/Pump Pshtpump
+PumpShotgun/Load Pshtload
+
+LeverAction/Fire LEVERFIR
+LeverAction/Load LEVERLOD
+LeverAction/Back LEVERBAK
+LeverAction/Fwd LEVERFWD
+
+// Slot 4
+
+weapons/smgfire dssmg1
+weapons/smgback	DSSMGBAK
+weapons/smgout		DSSMGOUT
+weapons/smgin		DSSMGIN
+weapons/smgfwd DSSMGFWD
+
+weapons/tmpfire tmpfire
+weapons/tmpout tmpout
+weapons/tmpin tmpin
+weapons/tmppull tmppull
+
+weapons/m14fire m14fire
+weapons/m14out m14load1
+weapons/m14in m14load2
+weapons/m14back m14load3
+weapons/m14fwd m14load4
+
+// Slot 5
+
+$random weapons/flakfire { flak1 flak2 flak3 }
+flak1 dsflak1
+flak2 dsflak2
+flak3 dsflak3  
+weapons/flakload dsflakld
+
+// Slot 6
+
+$random blaster/fire { blaster1 blaster2 }
+blaster1 lasrsht1
+blaster2 lasrsht2
+$random blaster/explode { blasterexp1 blasterexp2 blasterexp3 }
+blasterexp1 lasrhit1
+blasterexp2 lasrhit2
+blasterexp3 lasrhit3
+
+gauss/fire GAUSSFIR

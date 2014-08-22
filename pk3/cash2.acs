@@ -1,0 +1,197 @@
+#include "zcommon.acs"
+#library "CASH2"
+
+SCRIPT "PDAMenu1" ENTER
+{
+    For (int i = 0; i < 8; i++)
+    {
+        SpawnForced("PDAMenuActor", -32768.0, -32768.0, 0, -17550 + i, 0);
+    }
+}
+ 
+SCRIPT "ActivatePDA" (VOID)
+{
+    StartConversation (-17550 + PlayerNumber (), 0);
+}
+
+SCRIPT "UpgradeFist" (void)
+{
+	int HasUpgrade = CheckInventory("FistUpgrade");
+	if (HasUpgrade == 1)
+	{
+		Delay(2);
+		Print(s:"You've already got that upgrade!");
+		GiveInventory("ColdHardCash", 1000);
+		GiveInventory("MartialArts",1);
+		SetWeapon("MartialArts");
+	}
+	HasUpgrade = CheckInventory("FistUpgrade");
+	if (HasUpgrade == 0)
+	{
+		Delay(2);
+		Print(s:"Upgraded!");
+		GiveInventory("MartialArts",1);
+		GiveInventory("FistUpgrade",1);
+		SetWeapon("MartialArts");
+	}
+}
+
+SCRIPT "UpgradeFistPWYB" (void)
+{
+	int health = GetActorProperty(0, APROP_HEALTH);
+	if (health <= 65)
+	{
+		Print(s:"iT woULd bE a SHAME to kILL YOU lIKe ThiS.\nTRY AgaIn LatER.");
+	}
+	else
+	{
+		GiveInventory("FistUpgradeGiver",1);
+		Thing_Damage2(0, 65, "BloodDonor");
+	}
+}
+
+SCRIPT "UpgradeKnife" (void)
+{
+	int HasUpgrade = CheckInventory("KnifeUpgrade");
+	if (HasUpgrade == 1)
+	{
+		Delay(2);
+		Print(s:"You've already got that upgrade!");
+		GiveInventory("ColdHardCash", 1500);
+		GiveInventory("CHCKnife",1);
+		SetWeapon("CHCKnife");
+	}
+	HasUpgrade = CheckInventory("KnifeUpgrade");
+	if (HasUpgrade == 0)
+	{
+		Delay(2);
+		Print(s:"Upgraded!");
+		GiveInventory("CHCKnife",1);
+		GiveInventory("KnifeUpgrade",1);
+		SetWeapon("CHCKnife");
+	}
+}
+
+SCRIPT "UpgradeKnifePWYB" (void)
+{
+	int health = GetActorProperty(0, APROP_HEALTH);
+	if (health <= 75)
+	{
+		Print(s:"iT woULd bE a SHAME to kILL YOU lIKe ThiS.\nTRY AgaIn LatER.");
+	}
+	else
+	{
+		GiveInventory("KnifeUpgradeGiver",1);
+		Thing_Damage2(0, 75, "BloodDonor");
+	}
+}
+
+SCRIPT "UpgradeCrowbar" (void)
+{
+	int HasUpgrade = CheckInventory("CrowbarUpgrade");
+	if (HasUpgrade == 1)
+	{
+		Delay(2);
+		Print(s:"You've already got that upgrade!");
+		GiveInventory("ColdHardCash", 2000);
+		GiveInventory("Crowbar",1);
+		SetWeapon("Crowbar");
+	}
+	HasUpgrade = CheckInventory("CrowbarUpgrade");
+	if (HasUpgrade == 0)
+	{
+		Delay(2);
+		Print(s:"Upgraded!");
+		GiveInventory("Crowbar",1);
+		GiveInventory("CrowbarUpgrade",1);
+		SetWeapon("Crowbar");
+	}
+}
+
+SCRIPT "UpgradeCrowbarPWYB" (void)
+{
+	int health = GetActorProperty(0, APROP_HEALTH);
+	if (health <= 75)
+	{
+		Print(s:"iT woULd bE a SHAME to kILL YOU lIKe ThiS.\nTRY AgaIn LatER.");
+	}
+	else
+	{
+		GiveInventory("CrowbarUpgradeGiver",1);
+		Thing_Damage2(0, 85, "BloodDonor");
+	}
+}
+
+SCRIPT "UpgradePistol" (void)
+{
+	int HasUpgrade = CheckInventory("PistolUpgrade");
+	if (HasUpgrade == 1)
+	{
+		Delay(2);
+		Print(s:"You've already got that upgrade!");
+		GiveInventory("ColdHardCash", 100);
+		GiveInventory("DualPistols",1);
+		SetWeapon("DualPistols");
+	}
+	HasUpgrade = CheckInventory("PistolUpgrade");
+	if (HasUpgrade == 0)
+	{
+		Delay(2);
+		Print(s:"Upgraded!");
+		GiveInventory("SinglePistol",1);
+		GiveInventory("DualPistols",1);
+		GiveInventory("PistolUpgrade",1);
+		SetWeapon("DualPistols");
+	}
+}
+
+SCRIPT "UpgradePumpShotgun" (void)
+{
+	int HasUpgrade = CheckInventory("PumpShotgunUpgrade");
+	if (HasUpgrade == 1)
+	{
+		Delay(2);
+		Print(s:"You've already got that upgrade!");
+		GiveInventory("ColdHardCash", 600);
+		GiveInventory("PumpShotgun",1);
+		SetWeapon("PumpShotgun");
+	}
+	HasUpgrade = CheckInventory("PumpShotgunUpgrade");
+	if (HasUpgrade == 0)
+	{
+		Delay(2);
+		Print(s:"Upgraded!");
+		GiveInventory("PumpShotgun",1);
+		GiveInventory("PumpShotgunUpgrade",1);
+		SetWeapon("PumpShotgun");
+	}
+}
+
+SCRIPT "DonateBlood" (void)
+{
+	int health = GetActorProperty(0, APROP_HEALTH);
+	if (health <= 5)
+	{
+		Print(s:"Dude, you NEED that blood!");
+	}
+	else
+	{
+		GiveInventory("ColdHardCash",10);
+		Thing_Damage2(0, 5, "BloodDonor");
+		Print(s:"Thank you for your kind donation!");
+	}
+}
+
+SCRIPT "StrengthPWYB" (void)
+{
+	int health = GetActorProperty(0, APROP_HEALTH);
+	if (health <= 50)
+	{
+		Print(s:"iT woULd bE a SHAME to kILL YOU lIKe ThiS.\nTRY AgaIn LatER.");
+	}
+	else
+	{
+		Thing_Damage2(0, 50, "BloodDonor");
+		GiveInventory("StrengthGiver",1);
+	}
+}
