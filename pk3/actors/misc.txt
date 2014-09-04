@@ -83,3 +83,14 @@ ACTOR StrengthGiverPWYB : CustomInventory
 		Stop
 	}
 }
+
+ACTOR ThiefSphere : BlurSphere replaces BlurSphere
+{
+	Translation "250:254=208:223", "16:47=112:127", "168:191=112:127", "192:207=160:167", "240:247=232:235"
+	States
+	{
+	Spawn:
+		PINS ABCD 4
+		Loop
+	}
+}
