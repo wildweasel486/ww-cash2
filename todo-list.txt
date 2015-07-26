@@ -22,3 +22,4 @@ BALANCE ISSUES:
 OTHER SHIT I COULD PROBABLY DO:
 * Weaker monsters randomly drop useless junk instead of cash. IOU notes, gum wrappers, expired coupons, gift receipts, etc.
 * Bigger monsters should occasionally drop really big cash items (Cacoward trophies?) instead of huge piles of small cash.
+* Should cash disappear if it lands on liquid flats or gratings?
