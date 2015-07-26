@@ -1,0 +1,24 @@
+Okay I'm really gonna have to keep up to date on this. Here's some shit I could do to ww-cash2...
+
+HIGH PRIORITY:
+* Shop menu needs redoing. Badly. (Currently have phantombeta looking at it - 7/26/2015)
+* Add weapon durability and associated effects.
+
+MAJOR GAMEPLAY:
+* Offhand melee attacks, maybe? ww-cash classic had those.
+* Side-idea: offhand melee is a weapon slot of its own, can hold one weapon that takes up Zoom button, must sell melee weapon to buy another. Punches by default; knife, crowbar, and fire axe can replace? (or should fire axe be its own selectable weapon?)
+* Not so sure the dual pistols really works; replace that with a burst-fire upgrade instead?
+* Need to eventually populate the rest of the vending machines with non-placeholder weapons but I feel like I should wait until the shop menu's been replaced first because god damn what a pain
+
+AESTHETICS:
+* Could probably stand to rework the recoil. Move it to a Flash state, probably, so it doesn't clutter up the weapon animations and I can just call it with A_GunFlash?
+* Someone (torridGristle?) offered a nicer looking Glox pistol; look into that?
+
+BALANCE ISSUES:
+* Seems like the game gets a lot easier later on; maybe raise prices across the board so it takes longer to get the really good guns
+* Battle Rifle seems too powerful.
+* Lever Action seems less good than the Magnum pistol? Maybe some price/power divergence is in order
+
+OTHER SHIT I COULD PROBABLY DO:
+* Weaker monsters randomly drop useless junk instead of cash. IOU notes, gum wrappers, expired coupons, gift receipts, etc.
+* Bigger monsters should occasionally drop really big cash items (Cacoward trophies?) instead of huge piles of small cash.
