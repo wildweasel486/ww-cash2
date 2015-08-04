@@ -1,0 +1,229 @@
+#library "shoplib"
+#include "zcommon.acs"
+
+str weaponstats[6][4]=
+{
+	//TinyName,Icon,Description,Statistics
+	{
+		"TinyName",
+		"",
+		"WEAPON NAME
+		\nA description of the weapon goes here (flavor
+		\ntext, yada yada yada yada.)",
+		"Ammo Type: boolit
+		\nRate of Fire: kinda sorta really fast
+		\nDamage: mostly meh
+		\nAmmo Efficiency: eats boolits like popcorn"
+	},
+	{
+		"TinyName",
+		"",
+		"WEAPON NAME
+		\nA description of the weapon goes here (flavor
+		\ntext, yada yada yada yada.)",
+		"Ammo Type: boolit
+		\nRate of Fire: kinda sorta really fast
+		\nDamage: mostly meh
+		\nAmmo Efficiency: eats boolits like popcorn"
+	},
+	{
+		"TinyName",
+		"",
+		"WEAPON NAME
+		\nA description of the weapon goes here (flavor
+		\ntext, yada yada yada yada.)",
+		"Ammo Type: boolit
+		\nRate of Fire: kinda sorta really fast
+		\nDamage: mostly meh
+		\nAmmo Efficiency: eats boolits like popcorn"
+	},
+	{
+		"TinyName",
+		"",
+		"WEAPON NAME
+		\nA description of the weapon goes here (flavor
+		\ntext, yada yada yada yada.)",
+		"Ammo Type: boolit
+		\nRate of Fire: kinda sorta really fast
+		\nDamage: mostly meh
+		\nAmmo Efficiency: eats boolits like popcorn"
+	},
+	{
+		"TinyName",
+		"",
+		"WEAPON NAME
+		\nA description of the weapon goes here (flavor
+		\ntext, yada yada yada yada.)",
+		"Ammo Type: boolit
+		\nRate of Fire: kinda sorta really fast
+		\nDamage: mostly meh
+		\nAmmo Efficiency: eats boolits like popcorn"
+	},
+	{
+		"TinyName",
+		"",
+		"WEAPON NAME
+		\nA description of the weapon goes here (flavor
+		\ntext, yada yada yada yada.)",
+		"Ammo Type: boolit
+		\nRate of Fire: kinda sorta really fast
+		\nDamage: mostly meh
+		\nAmmo Efficiency: eats boolits like popcorn"
+	},
+
+};
+int weaponprices[6][4]=
+{
+	{0,0,0,0},
+	{0,0,0,0},
+	{0,0,0,0},
+	{0,0,0,0},
+	{0,0,0,0},
+	{0,0,0,0}
+};
+int productcursorcoords[6]=
+{
+	0.1,64.1,128.1,192.1,256.1,320.1
+};
+int actioncursorcoords[4]=
+{
+	228.1,304.1,380.1,456.1
+};
+
+int menuopen[8];
+int productcursorpos[8];
+int actioncursorpos[8];
+//Shop menu -- Big thanks to Psychic, by Xaser and team
+script "ShopMenu" (void)
+{
+	if(menuopen[PlayerNumber()]||GetActorProperty(0,APROP_Health)<=0)
+	{
+		CloseMenu();
+		terminate;
+	}
+	menuopen[PlayerNumber()]=1;
+	setplayerproperty(0,1,PROP_TOTALLYFROZEN);
+	sethudsize(640,400,0);
+	int input,oldinput,movestart,moveloop,movedelay=6,choicedelay=1;
+	while(1)
+	{
+		if(GetActorProperty(0,APROP_Health)<=0)
+		{
+			CloseMenu();
+			terminate;
+		}
+		input=GetPlayerInput(-1,INPUT_BUTTONS);
+		oldinput=GetPlayerInput(-1,INPUT_OLDBUTTONS);
+		if(!input && !oldinput)
+			choicedelay=0;
+		if((!choicedelay&&(input & BT_FORWARD||input & BT_BACK||input & BT_USE||
+		input & BT_JUMP||input & BT_ATTACK||input & BT_ZOOM||input & BT_LEFT||
+		input & BT_MOVELEFT||input & BT_RIGHT||input & BT_MOVERIGHT))||!menuopen[PlayerNumber()])
+			break;
+		setfont("CONFONT");
+		for(int i=0;i<6;i++)
+		{
+			hudmessage(s:weaponstats[i][0];HUDMSG_PLAIN,0,CR_UNTRANSLATED,31.1,productcursorcoords[i]+3.0,0.03);
+			hudmessage(s:weaponstats[i][1];HUDMSG_PLAIN,0,CR_UNTRANSLATED,31.1,productcursorcoords[i]+12.0,0.03);
+		}
+		hudmessage(s:"Buy it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[0]+4.0,320.1,0.03);
+		hudmessage(s:"Sell it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[1]+4.0,320.1,0.03);
+		hudmessage(s:"Fix it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[2]+4.0,320.1,0.03);
+		hudmessage(s:"Upgrade:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+4.0,320.1,0.03);
+		hudmessage(s:"My cash:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,536.1,320.1,0.03);
+		hudmessage(s:"$",i:CheckInventory("ColdHardCash");HUDMSG_PLAIN,0,CR_UNTRANSLATED,536.1,329.1,0.03);
+		setfont("SHOPFONT");
+		hudmessage(s:"A";HUDMSG_PLAIN,0,CR_UNTRANSLATED,320.0,200.0,0.03);
+		delay(1);
+	}
+	choicedelay=1;
+	while(menuopen[PlayerNumber()])
+	{
+		if(GetActorProperty(0,APROP_Health)<=0)
+		{
+			CloseMenu();
+			terminate;
+		}
+		//Draw the framework of the menu here
+		setfont("CONFONT");
+		for(i=0;i<6;i++)
+		{
+			hudmessage(s:weaponstats[i][0];HUDMSG_PLAIN,0,CR_UNTRANSLATED,31.1,productcursorcoords[i]+3.0,0.03);
+			hudmessage(s:weaponstats[i][1];HUDMSG_PLAIN,0,CR_UNTRANSLATED,31.1,productcursorcoords[i]+12.0,0.03);
+		}
+		hudmessage(s:"Buy it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[0]+4.0,320.1,0.03);
+		hudmessage(s:"Sell it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[1]+4.0,320.1,0.03);
+		hudmessage(s:"Fix it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[2]+4.0,320.1,0.03);
+		hudmessage(s:"Upgrade:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+4.0,320.1,0.03);
+		hudmessage(s:"My cash:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,536.1,320.1,0.03);
+		hudmessage(s:"$",i:weaponprices[productcursorpos[PlayerNumber()]][0];HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[0]+4.0,329.1,0.03);
+		hudmessage(s:"$",i:weaponprices[productcursorpos[PlayerNumber()]][1];HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[1]+4.0,329.1,0.03);
+		hudmessage(s:"$",i:weaponprices[productcursorpos[PlayerNumber()]][2];HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[2]+4.0,329.1,0.03);
+		hudmessage(s:"$",i:weaponprices[productcursorpos[PlayerNumber()]][3];HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+4.0,329.1,0.03);
+		hudmessage(s:"$",i:CheckInventory("ColdHardCash");HUDMSG_PLAIN,0,CR_UNTRANSLATED,536.1,329.1,0.03);
+		hudmessage(s:weaponstats[productcursorpos[PlayerNumber()]][2];HUDMSG_PLAIN,0,CR_UNTRANSLATED,232.1,productcursorcoords[0]+3.0,0.03);
+		hudmessage(s:weaponstats[productcursorpos[PlayerNumber()]][3];HUDMSG_PLAIN,0,CR_UNTRANSLATED,232.1,productcursorcoords[0]+200.0,0.03);
+		setfont("SHOPFONT");
+		hudmessage(s:"1";HUDMSG_PLAIN,0,CR_UNTRANSLATED,28.1,productcursorcoords[productcursorpos[PlayerNumber()]],0.03);
+		hudmessage(s:"2";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[actioncursorpos[PlayerNumber()]],316.1,0.03);
+		hudmessage(s:"A";HUDMSG_PLAIN,0,CR_UNTRANSLATED,320.0,200.0,0.03);
+		input=GetPlayerInput(-1,INPUT_BUTTONS);
+		oldinput=GetPlayerInput(-1,INPUT_OLDBUTTONS);
+		if(!input && oldinput)
+		{
+			movedelay=0;
+			moveloop=0;
+			choicedelay=0;
+		}
+		if(!movedelay)
+		{
+			if(input)
+				movestart=1;
+			if(input & BT_ZOOM)
+			{
+				CloseMenu();
+				terminate;
+			}
+			if(input & BT_BACK)
+				productcursorpos[PlayerNumber()]++;
+			if(input & BT_FORWARD)
+				productcursorpos[PlayerNumber()]--;
+			if(input & BT_RIGHT||input & BT_MOVERIGHT)
+				actioncursorpos[PlayerNumber()]++;
+			if(input & BT_LEFT||input & BT_MOVELEFT)
+				actioncursorpos[PlayerNumber()]--;
+			if(productcursorpos[PlayerNumber()]>5)
+				productcursorpos[PlayerNumber()]=0;
+			if(productcursorpos[PlayerNumber()]<0)
+				productcursorpos[PlayerNumber()]=5;
+			if(actioncursorpos[PlayerNumber()]>3)
+				actioncursorpos[PlayerNumber()]=0;
+			if(actioncursorpos[PlayerNumber()]<0)
+				actioncursorpos[PlayerNumber()]=3;
+		}
+		if(movestart)
+		{
+			if(moveloop)
+				movedelay=3;
+			else
+				movedelay=12;
+			movestart=0;
+			moveloop=1;
+		}
+		if(!choicedelay&&input & BT_ATTACK)
+		{
+			choicedelay=1;
+			//here's where your choice happens
+		}
+		if(movedelay)
+			movedelay--;
+		delay(1);
+	}
+	delay(5);
+	CloseMenu();
+}
+function void CloseMenu(void)
+{
+	setplayerproperty(0,0,PROP_TOTALLYFROZEN);
+	menuopen[PlayerNumber()]=0;
+}
