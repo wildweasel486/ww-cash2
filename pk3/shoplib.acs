@@ -1,10 +1,44 @@
 #library "shoplib"
 #include "zcommon.acs"
 
-str weaponstats[6][4]=
+str weaponstats[6][6]=
 {
-	//TinyName,Icon,Description,Statistics
+	//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
 	{
+		"Health",
+		"",
+		"SHOP1_ITEM1NAME",
+		"",//MedipatchIcon
+		"SHOP1_ITEM1DESC",
+		""
+	},
+	{
+		"Crowbar",
+		"",
+		"SHOP1_ITEM2NAME",
+		"",//CrowbarIcon
+		"SHOP1_ITEM2DESC",
+		""
+	},
+	{
+		"",
+		"",
+		"SHOP1_ITEM3NAME",
+		"",//KnifeIcon
+		"SHOP1_ITEM3DESC",
+		""
+	},
+	{
+		"",
+		"",
+		"SHOP1_ITEM4NAME",
+		"",//FireAxeIcon
+		"SHOP1_ITEM4DESC",
+		""
+	},
+	{
+		"",
+		"",
 		"TinyName",
 		"",
 		"WEAPON NAME
@@ -16,6 +50,8 @@ str weaponstats[6][4]=
 		\nAmmo Efficiency: eats boolits like popcorn"
 	},
 	{
+		"",
+		"",
 		"TinyName",
 		"",
 		"WEAPON NAME
@@ -26,56 +62,22 @@ str weaponstats[6][4]=
 		\nDamage: mostly meh
 		\nAmmo Efficiency: eats boolits like popcorn"
 	},
-	{
-		"TinyName",
-		"",
-		"WEAPON NAME
-		\nA description of the weapon goes here (flavor
-		\ntext, yada yada yada yada.)",
-		"Ammo Type: boolit
-		\nRate of Fire: kinda sorta really fast
-		\nDamage: mostly meh
-		\nAmmo Efficiency: eats boolits like popcorn"
-	},
-	{
-		"TinyName",
-		"",
-		"WEAPON NAME
-		\nA description of the weapon goes here (flavor
-		\ntext, yada yada yada yada.)",
-		"Ammo Type: boolit
-		\nRate of Fire: kinda sorta really fast
-		\nDamage: mostly meh
-		\nAmmo Efficiency: eats boolits like popcorn"
-	},
-	{
-		"TinyName",
-		"",
-		"WEAPON NAME
-		\nA description of the weapon goes here (flavor
-		\ntext, yada yada yada yada.)",
-		"Ammo Type: boolit
-		\nRate of Fire: kinda sorta really fast
-		\nDamage: mostly meh
-		\nAmmo Efficiency: eats boolits like popcorn"
-	},
-	{
-		"TinyName",
-		"",
-		"WEAPON NAME
-		\nA description of the weapon goes here (flavor
-		\ntext, yada yada yada yada.)",
-		"Ammo Type: boolit
-		\nRate of Fire: kinda sorta really fast
-		\nDamage: mostly meh
-		\nAmmo Efficiency: eats boolits like popcorn"
-	},
-
+};
+int weaponamounts[6][5]=
+{
+	//Buy,sell,fix,upgrade,maximum
+	{10,5,0,0,100},
+	{1,1,0,0,1},
+	{0,0,0,0,0},
+	{0,0,0,0,0},
+	{0,0,0,0,0},
+	{0,0,0,0,0}
 };
 int weaponprices[6][4]=
 {
-	{0,0,0,0},
-	{0,0,0,0},
+	//Buy,sell,fix,upgrade
+	{25,10,0,0},
+	{60,30,0,0},
 	{0,0,0,0},
 	{0,0,0,0},
 	{0,0,0,0},
@@ -94,8 +96,11 @@ int menuopen[8];
 int productcursorpos[8];
 int actioncursorpos[8];
 //Shop menu -- Big thanks to Psychic, by Xaser and team
-script "ShopMenu" (void)
+script "ShopMenu"(int machine)
 {
+	/*if(machine==1)
+	{
+	}*/
 	if(menuopen[PlayerNumber()]||GetActorProperty(0,APROP_Health)<=0)
 	{
 		CloseMenu();
@@ -123,8 +128,10 @@ script "ShopMenu" (void)
 		setfont("CONFONT");
 		for(int i=0;i<6;i++)
 		{
-			hudmessage(s:weaponstats[i][0];HUDMSG_PLAIN,0,CR_UNTRANSLATED,31.1,productcursorcoords[i]+3.0,0.03);
-			hudmessage(s:weaponstats[i][1];HUDMSG_PLAIN,0,CR_UNTRANSLATED,31.1,productcursorcoords[i]+12.0,0.03);
+			//TinyName (notice the l: so we can call it from LANGUAGE)
+			hudmessage(l:weaponstats[i][2];HUDMSG_PLAIN,0,CR_UNTRANSLATED,31.1,productcursorcoords[i]+3.0,0.03);
+			//Icon
+			hudmessage(s:weaponstats[i][3];HUDMSG_PLAIN,0,CR_UNTRANSLATED,31.1,productcursorcoords[i]+12.0,0.03);
 		}
 		hudmessage(s:"Buy it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[0]+4.0,320.1,0.03);
 		hudmessage(s:"Sell it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[1]+4.0,320.1,0.03);
@@ -148,8 +155,10 @@ script "ShopMenu" (void)
 		setfont("CONFONT");
 		for(i=0;i<6;i++)
 		{
-			hudmessage(s:weaponstats[i][0];HUDMSG_PLAIN,0,CR_UNTRANSLATED,31.1,productcursorcoords[i]+3.0,0.03);
-			hudmessage(s:weaponstats[i][1];HUDMSG_PLAIN,0,CR_UNTRANSLATED,31.1,productcursorcoords[i]+12.0,0.03);
+			//TinyName
+			hudmessage(l:weaponstats[i][2];HUDMSG_PLAIN,0,CR_UNTRANSLATED,31.1,productcursorcoords[i]+3.0,0.03);
+			//Icon
+			hudmessage(s:weaponstats[i][3];HUDMSG_PLAIN,0,CR_UNTRANSLATED,31.1,productcursorcoords[i]+12.0,0.03);
 		}
 		hudmessage(s:"Buy it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[0]+4.0,320.1,0.03);
 		hudmessage(s:"Sell it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[1]+4.0,320.1,0.03);
@@ -161,8 +170,10 @@ script "ShopMenu" (void)
 		hudmessage(s:"$",i:weaponprices[productcursorpos[PlayerNumber()]][2];HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[2]+4.0,329.1,0.03);
 		hudmessage(s:"$",i:weaponprices[productcursorpos[PlayerNumber()]][3];HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+4.0,329.1,0.03);
 		hudmessage(s:"$",i:CheckInventory("ColdHardCash");HUDMSG_PLAIN,0,CR_UNTRANSLATED,536.1,329.1,0.03);
-		hudmessage(s:weaponstats[productcursorpos[PlayerNumber()]][2];HUDMSG_PLAIN,0,CR_UNTRANSLATED,232.1,productcursorcoords[0]+3.0,0.03);
-		hudmessage(s:weaponstats[productcursorpos[PlayerNumber()]][3];HUDMSG_PLAIN,0,CR_UNTRANSLATED,232.1,productcursorcoords[0]+200.0,0.03);
+		//Wordy description
+		hudmessage(l:weaponstats[productcursorpos[PlayerNumber()]][4];HUDMSG_PLAIN,0,CR_UNTRANSLATED,232.1,productcursorcoords[0]+3.0,0.03);
+		//Basic stats
+		hudmessage(s:weaponstats[productcursorpos[PlayerNumber()]][5];HUDMSG_PLAIN,0,CR_UNTRANSLATED,232.1,productcursorcoords[0]+200.0,0.03);
 		setfont("SHOPFONT");
 		hudmessage(s:"1";HUDMSG_PLAIN,0,CR_UNTRANSLATED,28.1,productcursorcoords[productcursorpos[PlayerNumber()]],0.03);
 		hudmessage(s:"2";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[actioncursorpos[PlayerNumber()]],316.1,0.03);
@@ -213,7 +224,73 @@ script "ShopMenu" (void)
 		if(!choicedelay&&input & BT_ATTACK)
 		{
 			choicedelay=1;
-			//here's where your choice happens
+			//Buy
+			if(actioncursorpos[PlayerNumber()]==0)
+			{
+				//Can't afford it
+				if(CheckInventory("ColdHardCash")<weaponprices[productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]])
+				{
+					setfont("CONFONT");
+					Print(l:"SHOP_NOMONEY");
+					PlaySound(0,"misc/chat2");
+				}
+				//Health full (special case)
+				/*else if(GetActorProperty(0,APROP_Health)>=GetActorProperty(0,APROP_SpawnHealth)&&
+				productcursorpos[PlayerNumber()]==0)	//Health-related item
+				{
+					setfont("CONFONT");
+					Print(l:"TXT_HAVEENOUGH");
+					PlaySound(0,"misc/chat2");
+				}*/
+				//Inventory full
+				else if(CheckInventory(weaponstats[productcursorpos[PlayerNumber()]][0])>=weaponamounts[productcursorpos[PlayerNumber()]][4])
+				{
+					setfont("CONFONT");
+					Print(l:"TXT_HAVEENOUGH");
+					PlaySound(0,"misc/chat2");
+				}
+				//Can buy it
+				else
+				{
+					GiveInventory(weaponstats[productcursorpos[PlayerNumber()]][0],
+						weaponamounts[productcursorpos[PlayerNumber()]][0]);
+					TakeInventory("ColdHardCash",weaponprices[productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+				}
+			}
+			//Sell
+			else if(actioncursorpos[PlayerNumber()]==1)
+			{
+				//Health empty (special case)
+				/*else if(GetActorProperty(0,APROP_Health)<weaponamounts[productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]&&
+				productcursorpos[PlayerNumber()]==0)	//Health-related item
+				{
+					setfont("CONFONT");
+					Print(l:"SHOP_NOSELL");
+					PlaySound(0,"misc/chat2");
+				}*/
+				//Inventory empty
+				if(CheckInventory(weaponstats[productcursorpos[PlayerNumber()]][0])==0)
+				{
+					setfont("CONFONT");
+					Print(l:"SHOP_NOSELL");
+					PlaySound(0,"misc/chat2");
+				}
+				//Can sell it
+				else
+				{
+					TakeInventory(weaponstats[productcursorpos[PlayerNumber()]][0],
+						weaponamounts[productcursorpos[PlayerNumber()]][1]);
+					GiveInventory("ColdHardCash",weaponprices[productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+				}
+			}
+			//Fix
+			else if(actioncursorpos[PlayerNumber()]==2)
+			{
+			}
+			//Upgrade
+			else if(actioncursorpos[PlayerNumber()]==3)
+			{
+			}
 		}
 		if(movedelay)
 			movedelay--;
@@ -226,4 +303,8 @@ function void CloseMenu(void)
 {
 	setplayerproperty(0,0,PROP_TOTALLYFROZEN);
 	menuopen[PlayerNumber()]=0;
+}
+script "debug"(void)
+{
+	printbold(i:weaponamounts[productcursorpos[PlayerNumber()]][4]);
 }
