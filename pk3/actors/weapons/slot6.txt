@@ -1,33 +1,4 @@
-ACTOR MOBlasterGiver : CustomInventory
-{
-	States
-	{
-	Pickup:
-		TNT1 A 0
-		TNT1 A 0 A_GiveInventory("MOBlaster", 1)
-		TNT1 A 0 A_GiveInventory("MOBlasterAmmo", 200)
-		TNT1 A 0 A_GiveInventory("MOBlasterInInventory", 1)
-		Stop
-	}
-}
-
-ACTOR MOBlasterRefund : CustomInventory
-{
-	States
-	{
-	Pickup:
-		TNT1 A 0
-		TNT1 A 0 A_GiveInventory("ColdHardCash", 25)
-		TNT1 A 0 A_TakeInventory("MoBlaster", 1)
-		TNT1 A 0 A_TakeInventory("MoBlasterAmmo", 9999)
-		Stop
-	}
-}
-
-ACTOR MOBlasterInInventory : Inventory
-{
-	Inventory.MaxAmount 1
-}
+ACTOR MOBlasterInInventory : Inventory{}
 
 ACTOR MOBlasterAmmo : Ammo
 {
@@ -40,6 +11,7 @@ ACTOR MOBlaster : CashWeapon
 	Weapon.Kickback 70
 	Weapon.AmmoType "MOBlasterAmmo"
 	Weapon.AmmoUse 1
+	Weapon.AmmoGive 200
 	Weapon.SlotNumber 6
 	+NOAUTOFIRE
 	+AMMO_OPTIONAL
@@ -69,6 +41,7 @@ ACTOR MOBlaster : CashWeapon
 		Stop
 	Dryfire:
 		BLST A 1 A_PlayWeaponSound("empty/pistol")
+		Goto Ready
 	}
 }
 
@@ -79,8 +52,8 @@ ACTOR BlasterShotSpark
 	height 6
 	speed .1
 	RenderStyle ADD
-	Alpha		0.95
-	Mass		0
+	Alpha 0.95
+	Mass 0
 	Scale 0.25
 	+missile
 	+doombounce
@@ -89,7 +62,7 @@ ACTOR BlasterShotSpark
 	States
 	{
 	Spawn:
-		LAS1 A 1 BRIGHT A_FadeOut(0.05, 1)
+		LAS1 A 1 BRIGHT A_FadeOut(0.05)
 		Loop
 	}
 }
@@ -131,7 +104,7 @@ ACTOR BlasterShotTrail
 	States
 	{
 	Spawn:
-		LAS1 A 1 BRIGHT A_FadeOut(0.3, 1)
+		LAS1 A 1 BRIGHT A_FadeOut(0.3)
 		Loop
 	}
 }

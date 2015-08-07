@@ -19,6 +19,7 @@ DamageType BloodDonor
 
 ACTOR WWCashPlayer : DoomPlayer
 {
+	Player.MaxHealth 100
 	// Make sure all newly defined weapons that reload are included here so they start with ammo.
 	Player.StartItem DualPistolsClip1 17
 	Player.StartItem DualPistolsClip2 17

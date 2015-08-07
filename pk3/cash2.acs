@@ -1,185 +1,9 @@
 #include "zcommon.acs"
 #library "CASH2"
 
-SCRIPT "PDAMenu1" ENTER
-{
-    For (int i = 0; i < 8; i++)
-    {
-        SpawnForced("PDAMenuActor", -32768.0, -32768.0, 0, -17550 + i, 0);
-    }
-}
- 
 SCRIPT "ActivatePDA" (VOID)
 {
-    StartConversation (-17550 + PlayerNumber (), 0);
-}
-
-SCRIPT "UpgradeFist" (void)
-{
-	int HasUpgrade = CheckInventory("FistUpgrade");
-	if (HasUpgrade == 1)
-	{
-		Delay(2);
-		Print(s:"You've already got that upgrade!");
-		GiveInventory("ColdHardCash", 1000);
-		GiveInventory("MartialArts",1);
-		SetWeapon("MartialArts");
-	}
-	HasUpgrade = CheckInventory("FistUpgrade");
-	if (HasUpgrade == 0)
-	{
-		Delay(2);
-		Print(s:"Upgraded!");
-		GiveInventory("MartialArts",1);
-		GiveInventory("FistUpgrade",1);
-		SetWeapon("MartialArts");
-	}
-}
-
-SCRIPT "UpgradeFistPWYB" (void)
-{
-	int health = GetActorProperty(0, APROP_HEALTH);
-	if (health <= 65)
-	{
-		Print(s:"iT woULd bE a SHAME to kILL YOU lIKe ThiS.\nTRY AgaIn LatER.");
-	}
-	else
-	{
-		GiveInventory("FistUpgradeGiver",1);
-		Thing_Damage2(0, 65, "BloodDonor");
-	}
-}
-
-SCRIPT "UpgradeKnife" (void)
-{
-	int HasUpgrade = CheckInventory("KnifeUpgrade");
-	if (HasUpgrade == 1)
-	{
-		Delay(2);
-		Print(s:"You've already got that upgrade!");
-		GiveInventory("ColdHardCash", 1500);
-		GiveInventory("CHCKnife",1);
-		SetWeapon("CHCKnife");
-	}
-	HasUpgrade = CheckInventory("KnifeUpgrade");
-	if (HasUpgrade == 0)
-	{
-		Delay(2);
-		Print(s:"Upgraded!");
-		GiveInventory("CHCKnife",1);
-		GiveInventory("KnifeUpgrade",1);
-		SetWeapon("CHCKnife");
-	}
-}
-
-SCRIPT "UpgradeKnifePWYB" (void)
-{
-	int health = GetActorProperty(0, APROP_HEALTH);
-	if (health <= 75)
-	{
-		Print(s:"iT woULd bE a SHAME to kILL YOU lIKe ThiS.\nTRY AgaIn LatER.");
-	}
-	else
-	{
-		GiveInventory("KnifeUpgradeGiver",1);
-		Thing_Damage2(0, 75, "BloodDonor");
-	}
-}
-
-SCRIPT "UpgradeCrowbar" (void)
-{
-	int HasUpgrade = CheckInventory("CrowbarUpgrade");
-	if (HasUpgrade == 1)
-	{
-		Delay(2);
-		Print(s:"You've already got that upgrade!");
-		GiveInventory("ColdHardCash", 2000);
-		GiveInventory("Crowbar",1);
-		SetWeapon("Crowbar");
-	}
-	HasUpgrade = CheckInventory("CrowbarUpgrade");
-	if (HasUpgrade == 0)
-	{
-		Delay(2);
-		Print(s:"Upgraded!");
-		GiveInventory("Crowbar",1);
-		GiveInventory("CrowbarUpgrade",1);
-		SetWeapon("Crowbar");
-	}
-}
-
-SCRIPT "UpgradeCrowbarPWYB" (void)
-{
-	int health = GetActorProperty(0, APROP_HEALTH);
-	if (health <= 75)
-	{
-		Print(s:"iT woULd bE a SHAME to kILL YOU lIKe ThiS.\nTRY AgaIn LatER.");
-	}
-	else
-	{
-		GiveInventory("CrowbarUpgradeGiver",1);
-		Thing_Damage2(0, 85, "BloodDonor");
-	}
-}
-
-SCRIPT "UpgradePistol" (void)
-{
-	int HasUpgrade = CheckInventory("PistolUpgrade");
-	if (HasUpgrade == 1)
-	{
-		Delay(2);
-		Print(s:"You've already got that upgrade!");
-		GiveInventory("ColdHardCash", 100);
-		GiveInventory("DualPistols",1);
-		SetWeapon("DualPistols");
-	}
-	HasUpgrade = CheckInventory("PistolUpgrade");
-	if (HasUpgrade == 0)
-	{
-		Delay(2);
-		Print(s:"Upgraded!");
-		GiveInventory("SinglePistol",1);
-		GiveInventory("DualPistols",1);
-		GiveInventory("PistolUpgrade",1);
-		SetWeapon("DualPistols");
-	}
-}
-
-SCRIPT "UpgradePumpShotgun" (void)
-{
-	int HasUpgrade = CheckInventory("PumpShotgunUpgrade");
-	if (HasUpgrade == 1)
-	{
-		Delay(2);
-		Print(s:"You've already got that upgrade!");
-		GiveInventory("ColdHardCash", 600);
-		GiveInventory("PumpShotgun",1);
-		SetWeapon("PumpShotgun");
-	}
-	HasUpgrade = CheckInventory("PumpShotgunUpgrade");
-	if (HasUpgrade == 0)
-	{
-		Delay(2);
-		Print(s:"Upgraded!");
-		GiveInventory("PumpShotgun",1);
-		GiveInventory("PumpShotgunUpgrade",1);
-		SetWeapon("PumpShotgun");
-	}
-}
-
-SCRIPT "DonateBlood" (void)
-{
-	int health = GetActorProperty(0, APROP_HEALTH);
-	if (health <= 5)
-	{
-		Print(s:"Dude, you NEED that blood!");
-	}
-	else
-	{
-		GiveInventory("ColdHardCash",10);
-		Thing_Damage2(0, 5, "BloodDonor");
-		Print(s:"Thank you for your kind donation!");
-	}
+    ACS_ExecuteAlways(9001,0);
 }
 
 SCRIPT "StrengthPWYB" (void)
@@ -194,4 +18,669 @@ SCRIPT "StrengthPWYB" (void)
 		Thing_Damage2(0, 50, "BloodDonor");
 		GiveInventory("StrengthGiver",1);
 	}
+}
+
+/*actor = "PDAMenuActor";
+name = "Quine 5000 PDA";
+dialog = "$SHOPPDA_MAIN";
+
+actor = "CashTerminalLevel1";
+name = "Vending Machine (Tools & Supplies)";
+dialog = "$SHOP1_MAIN";
+
+actor = "CashTerminalLevel2";
+name = "Vending Machine (Sidearms)";
+dialog = "$SHOP2_MAIN";
+
+actor = "CashTerminalLevel3";
+name = "Vending Machine (Rifles)";
+dialog = "$SHOP3_MAIN";
+
+actor = "CashTerminalLevel4";
+name = "Vending Machine (Machine Guns)";
+dialog = "$SHOP4_MAIN";
+
+actor = "CashTerminalLevel5";
+name = "Vending Machine (Explosives)";
+dialog = "$SHOP5_MAIN";
+
+actor = "CashTerminalLevel6";
+name = "Vending Machine (Energy)";
+dialog = "$SHOP6_MAIN";
+
+actor = "CashTerminalLevel7";
+name = "Vending Machine (Super Weapons)";
+dialog = "$SHOP7_MAIN";
+
+actor = "CashTerminalLevelPentagram";
+name = "$SHOPHELL_NAME";
+dialog = "$SHOPHELL_MAIN";
+
+actor = "CashTerminalLevelAmmo";
+name = "$SHOPAMMO_NAME";
+dialog = "$SHOPAMMO_MAIN";
+
+actor = "CashTerminalLevelArmor";
+name = "Vending Machine (Armor)";
+dialog = "$SHOPARMOR_MAIN";*/
+
+str weaponstats[11][6][6]=
+{
+	//PDA
+	{
+		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
+		{"ArtiCarePackageMedical","","SHOPPDA_ITEM1NAME","","SHOPPDA_ITEM1DESC",""},
+		{"ArtiCarePackagePistol","","SHOPPDA_ITEM2NAME","","SHOPPDA_ITEM2DESC",""},
+		{"ArtiCarePackageShotgun","","SHOPPDA_ITEM3NAME","","SHOPPDA_ITEM3DESC",""},
+		{"ArtiCarePackageRifle","","SHOPPDA_ITEM4NAME","","SHOPPDA_ITEM4DESC",""},
+		{"","","","","",""},
+		{"","","","","",""}
+	},
+	//Machine 1
+	{
+		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
+		{"Health","","SHOP1_ITEM1NAME","","SHOP1_ITEM1DESC",""},
+		{"CHCKnife","","SHOP1_ITEM3NAME","","SHOP1_ITEM3DESC",""},
+		{"Crowbar","","SHOP1_ITEM2NAME","","SHOP1_ITEM2DESC",""},
+		{"FireAxe","","SHOP1_ITEM4NAME","","SHOP1_ITEM4DESC",""},
+		{"","","","","",""},
+		{"","","","","",""}
+	},
+	//Machine 2
+	{
+		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
+		{"SinglePistol","PistolUpgrade","SHOP2_ITEM1NAME","","SHOP2_ITEM1DESC",""},
+		{"PunchGun","","SHOP2_ITEM2NAME","","SHOP2_ITEM2DESC",""},
+		{"KestrelMagnum","","SHOP2_ITEM3NAME","","SHOP2_ITEM2DESC",""},
+		{"PistolAmmo","","SHOP_AMMO1LABEL","","",""},
+		{"HeavyPistolAmmo","","SHOP_AMMO6LABEL","","",""},
+		{"ShotgunAmmo","","SHOP_AMMO2LABEL","","",""}
+	},
+	//Machine 3
+	{
+		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
+		{"PumpShotgun","PumpShotgunUpgrade","SHOP3_ITEM1NAME","","SHOP3_ITEM1DESC",""},
+		{"CHCSMG","","SHOP3_ITEM2NAME","","SHOP3_ITEM2DESC",""},
+		{"LeverActionRifle","","SHOP3_ITEM3NAME","","SHOP3_ITEM3DESC",""},
+		{"PistolAmmo","","SHOP_AMMO1LABEL","","",""},
+		{"ShotgunAmmo","","SHOP_AMMO2LABEL","","",""},
+		{"HeavyPistolAmmo","","SHOP_AMMO6LABEL","","",""}
+	},
+	//Machine 4
+	{
+		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
+		{"PugRifle","","SHOP4_ITEM1NAME","","SHOP4_ITEM1DESC",""},
+		{"BattleRifle","","SHOP4_ITEM3NAME","","SHOP4_ITEM3DESC",""},
+		{"CHCSMG","","SHOP4_ITEM2NAME","","SHOP4_ITEM2DESC",""},
+		{"LightRifleAmmo","","SHOP_AMMO3LABEL","","",""},
+		{"HeavyRifleAmmo","","SHOP_AMMO4LABEL","","",""},
+		{"","","","","",""},
+	},
+	//Machine 5
+	{
+		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
+		{"RecoillessRifle","","SHOP5_ITEM1NAME","","SHOP5_ITEM1DESC",""},
+		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","","",""},
+		{"RecoillessRockets","","SHOP_AMMO5LABEL","","",""},
+		{"","","","","",""},
+		{"","","","","",""},
+		{"","","","","",""},
+	},
+	//Machine 6
+	{
+		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
+		{"MOBlaster","","SHOP6_ITEM1NAME","","",""},
+		{"","","","","",""},
+		{"","","","","",""},
+		{"","","","","",""},
+		{"","","","","",""},
+		{"","","","","",""},
+	},
+	//Machine 7
+	{
+		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
+		{"TestSuperWeapon","","SHOP7_ITEM1NAME","","SHOP7_ITEM1DESC",""},
+		{"","","","","",""},
+		{"","","","","",""},
+		{"","","","","",""},
+		{"","","","","",""},
+		{"","","","","",""},
+	},
+	//Machine 8 (Hell)
+	{
+		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
+		{"FistUpgrade","","SHOPHELL_ITEM1NAME","","",""},
+		{"KnifeUpgrade","","SHOPHELL_ITEM2NAME","","",""},
+		{"CrowbarUpgrade","","SHOPHELL_ITEM3NAME","","",""},
+		{"FireAxeUpgrade","","SHOPHELL_ITEM4NAME","","",""},
+		{"","","SHOPHELL_ITEM5NAME","","",""},
+		{"","","","","",""},
+	},
+	//Machine 9 (Ammo)
+	{
+		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
+		{"PistolAmmo","","SHOP_AMMO1LABEL","","",""},
+		{"HeavyPistolAmmo","","SHOP_AMMO6LABEL","","",""},
+		{"ShotgunAmmo","","SHOP_AMMO2LABEL","","",""},
+		{"LightRifleAmmo","","SHOP_AMMO3LABEL","","",""},
+		{"HeavyRifleAmmo","","SHOP_AMMO4LABEL","","",""},
+		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","","",""},
+	},
+	//Machine 10 (Armor)
+	{
+		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
+		{"CHCBasicArmor","","SHOPARMOR_ITEM1NAME","","SHOPARMOR_ITEM1DESC",""},
+		{"CHCAdvancedArmor","","SHOPARMOR_ITEM2NAME","","SHOPARMOR_ITEM2DESC",""},
+		{"","","","","",""},
+		{"","","","","",""},
+		{"","","","","",""},
+		{"","","","","",""},
+	}
+};
+int weaponamounts[11][6][7]=
+{
+	//PDA
+	{
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
+		{400,0,0,0,1,0,0x7fffffff},
+		{300,0,0,0,1,0,0x7fffffff},
+		{350,0,0,0,1,0,0x7fffffff},
+		{500,0,0,0,1,0,0x7fffffff},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0}
+	},
+	//Machine 1
+	{
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
+		{25,10,0,0,10,5,100},
+		{50,25,0,0,1,1,1},
+		{60,30,0,0,1,1,1},
+		{90,45,0,0,1,1,1},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0}
+	},
+	//Machine 2
+	{
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
+		{200,100,0,100,1,1,1},
+		{75,37,0,0,1,1,1},
+		{300,150,0,0,1,1,1},
+		{15,0,0,0,30,0,0x7fffffff},
+		{20,0,0,0,14,0,0x7fffffff},
+		{25,0,0,0,10,0,0x7fffffff}
+	},
+	//Machine 3
+	{
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
+		{400,250,0,600,1,1,1},
+		{350,175,0,0,1,1,1},
+		{250,125,0,0,1,1,1},
+		{15,0,0,0,30,0,0x7fffffff},
+		{25,0,0,0,10,0,0x7fffffff},
+		{20,0,0,0,14,0,0x7fffffff}
+	},
+	//Machine 4
+	{
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
+		{500,250,0,0,1,1,1},
+		{800,400,0,0,1,1,1},
+		{250,125,0,0,1,1,1},
+		{35,0,0,0,45,0,0x7fffffff},
+		{50,0,0,0,15,0,0x7fffffff},
+		{0,0,0,0,0,0,0}
+	},
+	//Machine 5
+	{
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
+		{2000,1000,0,0,1,1,1},
+		{75,0,0,0,1,0,0x7fffffff},
+		{200,0,0,0,1,0,0x7fffffff},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0}
+	},
+	//Machine 6
+	{
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
+		{100,25,0,0,1,1,1},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0}
+	},
+	//Machine 7
+	{
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
+		{25000,0,0,0,1,0,1},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0}
+	},
+	//Machine 8 (Hell)
+	{
+		//buy,sell,fix,bloodprice,buyamt,sellamt,maxamt
+		{1000,0,0,65,1,0,1},
+		{1500,0,0,75,1,0,1},
+		{2000,0,0,85,1,0,1},
+		{1750,0,0,80,1,0,1},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0}
+	},
+	//Machine 9 (Ammo)
+	{
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
+		{10,0,0,0,30,0,0x7fffffff},
+		{12,0,0,0,14,0,0x7fffffff},
+		{15,0,0,0,10,0,0x7fffffff},
+		{20,0,0,0,45,0,0x7fffffff},
+		{38,0,0,0,15,0,0x7fffffff},
+		{60,0,0,0,1,0,0x7fffffff}
+	},
+	//Machine 10 (Armor)
+	{
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
+		{75,0,0,0,1,0,0},
+		{150,0,0,0,1,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0}
+	},
+};
+int productcursorcoords[6]=
+{
+	0.1,64.1,128.1,192.1,256.1,320.1
+};
+int actioncursorcoords[4]=
+{
+	228.1,304.1,380.1,456.1
+};
+
+int menuopen[8];
+int productcursorpos[8];
+int actioncursorpos[8];
+//Shop menu -- Big thanks to Psychic, by Xaser and team
+//Making it a numbered script until I can figure out how to assign a named to the actors in DECORATE...
+script 9001(int machine)
+{
+	if(menuopen[PlayerNumber()]||GetActorProperty(0,APROP_Health)<=0)
+	{
+		CloseMenu();
+		terminate;
+	}
+	menuopen[PlayerNumber()]=1;
+	setplayerproperty(0,1,PROP_TOTALLYFROZEN);
+	sethudsize(640,400,0);
+	int input,oldinput,movestart,moveloop,movedelay=6,choicedelay=1;
+	while(1)
+	{
+		if(GetActorProperty(0,APROP_Health)<=0)
+		{
+			CloseMenu();
+			terminate;
+		}
+		input=GetPlayerInput(-1,INPUT_BUTTONS);
+		oldinput=GetPlayerInput(-1,INPUT_OLDBUTTONS);
+		if(!input && !oldinput)
+			choicedelay=0;
+		if((!choicedelay&&(input & BT_FORWARD||input & BT_BACK||input & BT_USE||
+		input & BT_JUMP||input & BT_ATTACK||input & BT_ZOOM||input & BT_LEFT||
+		input & BT_MOVELEFT||input & BT_RIGHT||input & BT_MOVERIGHT))||!menuopen[PlayerNumber()])
+			break;
+		setfont("CONFONT");
+		for(int i=0;i<6;i++)
+		{
+			//TinyName (notice the l: so we can call it from LANGUAGE)
+			hudmessage(l:weaponstats[machine][i][2];HUDMSG_PLAIN,0,CR_UNTRANSLATED,31.1,productcursorcoords[i]+3.0,0.03);
+			//Icon
+			hudmessage(s:weaponstats[machine][i][3];HUDMSG_PLAIN,0,CR_UNTRANSLATED,31.1,productcursorcoords[i]+12.0,0.03);
+		}
+		hudmessage(s:"Buy it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[0]+4.0,320.1,0.03);
+		hudmessage(s:"Sell it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[1]+4.0,320.1,0.03);
+		hudmessage(s:"Fix it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[2]+4.0,320.1,0.03);
+		hudmessage(s:"Upgrade:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+4.0,320.1,0.03);
+		hudmessage(s:"My cash:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,536.1,320.1,0.03);
+		hudmessage(s:"$",i:CheckInventory("ColdHardCash");HUDMSG_PLAIN,0,CR_UNTRANSLATED,536.1,329.1,0.03);
+		setfont("SHOPFONT");
+		hudmessage(s:"A";HUDMSG_PLAIN,0,CR_UNTRANSLATED,320.0,200.0,0.03);
+		delay(1);
+	}
+	choicedelay=1;
+	while(menuopen[PlayerNumber()])
+	{
+		if(GetActorProperty(0,APROP_Health)<=0)
+		{
+			CloseMenu();
+			terminate;
+		}
+		//Draw the framework of the menu here
+		setfont("CONFONT");
+		for(i=0;i<6;i++)
+		{
+			//TinyName
+			hudmessage(l:weaponstats[machine][i][2];HUDMSG_PLAIN,0,CR_UNTRANSLATED,31.1,productcursorcoords[i]+3.0,0.03);
+			//Icon
+			hudmessage(s:weaponstats[machine][i][3];HUDMSG_PLAIN,0,CR_UNTRANSLATED,31.1,productcursorcoords[i]+12.0,0.03);
+		}
+		hudmessage(s:"Buy it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[0]+4.0,320.1,0.03);
+		hudmessage(s:"Sell it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[1]+4.0,320.1,0.03);
+		hudmessage(s:"Fix it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[2]+4.0,320.1,0.03);
+		if(machine==8)
+			hudmessage(s:"Blood Price:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+4.0,320.1,0.03);
+		else
+			hudmessage(s:"Upgrade:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+4.0,320.1,0.03);
+		hudmessage(s:"My cash:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,536.1,320.1,0.03);
+		hudmessage(s:"$",i:weaponamounts[machine][productcursorpos[PlayerNumber()]][0];HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[0]+4.0,329.1,0.03);
+		hudmessage(s:"$",i:weaponamounts[machine][productcursorpos[PlayerNumber()]][1];HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[1]+4.0,329.1,0.03);
+		hudmessage(s:"$",i:weaponamounts[machine][productcursorpos[PlayerNumber()]][2];HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[2]+4.0,329.1,0.03);
+		hudmessage(s:"$",i:weaponamounts[machine][productcursorpos[PlayerNumber()]][3];HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+4.0,329.1,0.03);
+		hudmessage(s:"$",i:CheckInventory("ColdHardCash");HUDMSG_PLAIN,0,CR_UNTRANSLATED,536.1,329.1,0.03);
+		//Wordy description
+		hudmessage(l:weaponstats[machine][productcursorpos[PlayerNumber()]][4];HUDMSG_PLAIN,0,CR_UNTRANSLATED,232.1,productcursorcoords[0]+3.0,0.03);
+		//Basic stats
+		hudmessage(s:weaponstats[machine][productcursorpos[PlayerNumber()]][5];HUDMSG_PLAIN,0,CR_UNTRANSLATED,232.1,productcursorcoords[0]+200.0,0.03);
+		setfont("SHOPFONT");
+		hudmessage(s:"1";HUDMSG_PLAIN,0,CR_UNTRANSLATED,28.1,productcursorcoords[productcursorpos[PlayerNumber()]],0.03);
+		hudmessage(s:"2";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[actioncursorpos[PlayerNumber()]],316.1,0.03);
+		hudmessage(s:"A";HUDMSG_PLAIN,0,CR_UNTRANSLATED,320.0,200.0,0.03);
+		input=GetPlayerInput(-1,INPUT_BUTTONS);
+		oldinput=GetPlayerInput(-1,INPUT_OLDBUTTONS);
+		if(!input && oldinput)
+		{
+			movedelay=0;
+			moveloop=0;
+			choicedelay=0;
+		}
+		if(!movedelay)
+		{
+			if(input)
+				movestart=1;
+			if(input & BT_ZOOM)
+			{
+				CloseMenu();
+				terminate;
+			}
+			if(input & BT_BACK)
+				productcursorpos[PlayerNumber()]++;
+			if(input & BT_FORWARD)
+				productcursorpos[PlayerNumber()]--;
+			if(input & BT_RIGHT||input & BT_MOVERIGHT)
+				actioncursorpos[PlayerNumber()]++;
+			if(input & BT_LEFT||input & BT_MOVELEFT)
+				actioncursorpos[PlayerNumber()]--;
+			if(productcursorpos[PlayerNumber()]>5)
+				productcursorpos[PlayerNumber()]=0;
+			if(productcursorpos[PlayerNumber()]<0)
+				productcursorpos[PlayerNumber()]=5;
+			if(actioncursorpos[PlayerNumber()]>3)
+				actioncursorpos[PlayerNumber()]=0;
+			if(actioncursorpos[PlayerNumber()]<0)
+				actioncursorpos[PlayerNumber()]=3;
+		}
+		if(movestart)
+		{
+			if(moveloop)
+				movedelay=3;
+			else
+				movedelay=12;
+			movestart=0;
+			moveloop=1;
+		}
+		if(!choicedelay&&input & BT_ATTACK)
+		{
+			choicedelay=1;
+			setfont("CONFONT");
+			//Hell machine works differently
+			if(machine==8)
+			{
+				//Buy
+				if(actioncursorpos[PlayerNumber()]==0)
+				{
+					//Can't afford it
+					if(CheckInventory("ColdHardCash")<weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]])
+					{
+						Print(s:"fOul vAgrANt! BEGONE wiTh yoU!");
+						PlaySound(0,"misc/chat2");
+					}
+					//Already upgraded
+					else if(CheckInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0])>=weaponamounts[machine][productcursorpos[PlayerNumber()]][6])
+					{
+						Print(l:"You've already got that upgrade!");
+						PlaySound(0,"misc/chat2");
+					}
+					//Can buy it
+					else
+					{
+						Print(l:"we hOpE yOu like it...hehe");
+						GiveInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0],
+							weaponamounts[machine][productcursorpos[PlayerNumber()]][4]);
+						TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+					}
+				}
+				//Sell
+				else if(actioncursorpos[PlayerNumber()]==1)
+				{
+					Print(s:"Can't sell this!");
+					PlaySound(0,"misc/chat2");
+				}
+				//Fix
+				else if(actioncursorpos[PlayerNumber()]==2)
+				{
+				}
+				//Blood Price
+				else if(actioncursorpos[PlayerNumber()]==3)
+				{
+					//Can't afford it
+					if(GetActorProperty(0,APROP_Health)<weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]])
+					{
+						Print(s:"iT woULd bE a SHAME to kILL YOU lIKe ThiS.\nTRY AgaIn LatER.");
+						PlaySound(0,"misc/chat2");
+					}
+					//Already upgraded
+					else if(CheckInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][1]))
+					{
+						Print(l:"You've already got that upgrade!");
+						PlaySound(0,"misc/chat2");
+					}
+					//Can buy it
+					else
+					{
+						Print(l:"we hOpE yOu like it...hehe");
+						GiveInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][1],1);
+						Thing_Damage2(0,weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]],"BloodDoner");
+					}
+				}
+			}
+			else
+			{
+				//Buy
+				if(actioncursorpos[PlayerNumber()]==0)
+				{
+					//Can't afford it
+					if(CheckInventory("ColdHardCash")<weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]])
+					{
+						Print(l:"SHOP_NOMONEY");
+						PlaySound(0,"misc/chat2");
+					}
+					//Health (special case)
+					else if(!StrCmp(weaponstats[machine][productcursorpos[PlayerNumber()]][0],"Health"))
+					{
+						//Health full
+						if(GetActorProperty(0,APROP_Health)>=GetActorProperty(0,APROP_SpawnHealth))
+						{
+							Print(l:"TXT_HAVEENOUGH");
+							PlaySound(0,"misc/chat2");
+						}
+						//Can buy it
+						else
+						{
+							Print(l:"SHOP_ITEMBOUGHT");
+							HealThing(10);
+							TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+						}
+					}
+					//Armor 1 (special case)
+					else if(!StrCmp(weaponstats[machine][productcursorpos[PlayerNumber()]][0],"CHCBasicArmor"))
+					{
+						//Armor full
+						if(CheckInventory("BasicArmor")>=100)
+						{
+							Print(l:"TXT_HAVEENOUGH");
+							PlaySound(0,"misc/chat2");
+						}
+						//Can buy it
+						else
+						{
+							Print(l:"SHOP_ITEMBOUGHT");
+							GiveInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0],
+								weaponamounts[machine][productcursorpos[PlayerNumber()]][4]);
+							TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+						}
+					}
+					//Armor 2 (special case)
+					else if(!StrCmp(weaponstats[machine][productcursorpos[PlayerNumber()]][0],"CHCAdvancedArmor"))
+					{
+						//Armor full
+						if(CheckInventory("BasicArmor")>=200)
+						{
+							Print(l:"TXT_HAVEENOUGH");
+							PlaySound(0,"misc/chat2");
+						}
+						//Can buy it
+						else
+						{
+							Print(l:"SHOP_ITEMBOUGHT");
+							GiveInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0],
+								weaponamounts[machine][productcursorpos[PlayerNumber()]][4]);
+							TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+						}
+					}
+					//Inventory full
+					else if(CheckInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0])>=weaponamounts[machine][productcursorpos[PlayerNumber()]][6])
+					{
+						Print(l:"TXT_HAVEENOUGH");
+						PlaySound(0,"misc/chat2");
+					}
+					//Can buy it
+					else
+					{
+							Print(l:"SHOP_ITEMBOUGHT");
+						GiveInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0],
+							weaponamounts[machine][productcursorpos[PlayerNumber()]][4]);
+						TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+					}
+				}
+				//Sell
+				else if(actioncursorpos[PlayerNumber()]==1)
+				{
+					//Health (special case)
+					if(!StrCmp(weaponstats[machine][productcursorpos[PlayerNumber()]][0],"Health"))
+					{
+						//Health too low
+						if(GetActorProperty(0,APROP_Health)<=5)
+						{
+							Print(s:"Dude, you NEED that blood!");
+							PlaySound(0,"misc/chat2");
+						}
+						//Can sell it
+						else
+						{
+							Print(s:"Thank you for your kind donation!");
+							Thing_Damage2(0,5,"BloodDoner");
+							GiveInventory("ColdHardCash",weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+						}
+					}
+					//Can't be sold
+					else if(weaponamounts[machine][productcursorpos[PlayerNumber()]][5]==0)
+					{
+						Print(s:"Can't sell this!");
+						PlaySound(0,"misc/chat2");
+					}
+					//Inventory empty
+					else if(CheckInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0])==0)
+					{
+						Print(l:"SHOP_NOSELL");
+						PlaySound(0,"misc/chat2");
+					}
+					//Can sell it
+					else
+					{
+						Print(l:"SHOP_ITEMSOLD");
+						//Take the item
+						TakeInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0],
+							weaponamounts[machine][productcursorpos[PlayerNumber()]][5]);
+						//Take the upgrade
+						TakeInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][1],
+							weaponamounts[machine][productcursorpos[PlayerNumber()]][5]);
+						//Glock (special case)
+						if(!StrCmp(weaponstats[machine][productcursorpos[PlayerNumber()]][0],"SinglePistol")&&CheckInventory("DualPistols"))
+						{
+							TakeInventory("DualPistols",1);
+							GiveInventory("ColdHardCash",50);
+						}
+						//MO Blaster (special case
+						if(!StrCmp(weaponstats[machine][productcursorpos[PlayerNumber()]][0],"MOBlaster"))
+							TakeInventory("MoBlasterAmmo",9999);
+						//Give some money
+						GiveInventory("ColdHardCash",weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+					}
+				}
+				//Fix
+				else if(actioncursorpos[PlayerNumber()]==2)
+				{
+				}
+				//Upgrade
+				else if(actioncursorpos[PlayerNumber()]==3)
+				{
+					//Can't afford it
+					if(CheckInventory("ColdHardCash")<weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]])
+					{
+						Print(l:"SHOP_NOMONEY");
+						PlaySound(0,"misc/chat2");
+					}
+					//No upgrade for this item
+					else if(!StrCmp(weaponstats[machine][productcursorpos[PlayerNumber()]][1],""))
+					{
+						Print(s:"No upgrade available!");
+						PlaySound(0,"misc/chat2");
+					}
+					//Don't own the base item
+					else if(!CheckInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0]))
+					{
+						Print(s:"You need the item before you can upgrade!");
+						PlaySound(0,"misc/chat2");
+					}
+					//Already upgraded
+					else if(CheckInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][1]))
+					{
+						Print(l:"You've already got that upgrade!");
+						PlaySound(0,"misc/chat2");
+					}
+					//Can buy it
+					else
+					{
+						Print(l:"SHOP_UPGRADEBOUGHT");
+						GiveInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][1],1);
+						//Glock (special case)
+						if(!StrCmp(weaponstats[machine][productcursorpos[PlayerNumber()]][0],"SinglePistol"))
+							GiveInventory("DualPistols",1);
+						TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+					}
+				}
+			}
+		}
+		if(movedelay)
+			movedelay--;
+		delay(1);
+	}
+	delay(5);
+	CloseMenu();
+}
+function void CloseMenu(void)
+{
+	setplayerproperty(0,0,PROP_TOTALLYFROZEN);
+	menuopen[PlayerNumber()]=0;
 }
