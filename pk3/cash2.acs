@@ -159,12 +159,12 @@ str weaponstats[11][6][6]=
 	//Machine 9 (Ammo)
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
-		{"PistolAmmo","","SHOP_AMMO1LABEL","","",""},
-		{"HeavyPistolAmmo","","SHOP_AMMO6LABEL","","",""},
-		{"ShotgunAmmo","","SHOP_AMMO2LABEL","","",""},
-		{"LightRifleAmmo","","SHOP_AMMO3LABEL","","",""},
-		{"HeavyRifleAmmo","","SHOP_AMMO4LABEL","","",""},
-		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","","",""},
+		{"PistolAmmo","","SHOP_AMMO1LABEL","","SHOP_AMMO1DESC",""},
+		{"HeavyPistolAmmo","","SHOP_AMMO6LABEL","","SHOP_AMMO2DESC",""},
+		{"ShotgunAmmo","","SHOP_AMMO2LABEL","","SHOP_AMMO3DESC",""},
+		{"LightRifleAmmo","","SHOP_AMMO3LABEL","","SHOP_AMMO4DESC",""},
+		{"HeavyRifleAmmo","","SHOP_AMMO4LABEL","","SHOP_AMMO5DESC",""},
+		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","","SHOP_AMMO6DESC",""},
 	},
 	//Machine 10 (Armor)
 	{

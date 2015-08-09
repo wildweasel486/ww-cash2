@@ -43,11 +43,19 @@ SHOPAMMO_NAME = "Bienvenido Al Ammo Bandito!";
 SHOPAMMO_MAIN = "Please make sure ahead of time which type of ammo your weapon needs. \n"
 "The Munitions Department will not give refunds.";
 SHOP_AMMO1LABEL = "30x Pistol Ammo";
+SHOP_AMMO1DESC = "Small-caliber pistol cartridges, intended for basic handguns \n"
+"and light sub-machine guns. ";
 SHOP_AMMO2LABEL = "10x Shotgun Ammo";
+SHOP_AMMO2DESC = "12-gauge shotgun shells, filled with double-aught buckshot.";
 SHOP_AMMO3LABEL = "45x Light Rifle Ammo";
+SHOP_AMMO3DESC = "Rifle ammunition, adhering to NATO 5.56x45mm standard.";
 SHOP_AMMO4LABEL = "10x Heavy Rifle Ammo";
+SHOP_AMMO4DESC = "Rifle ammunition, adhering to NATO 7.62x51mm standard.";
 SHOP_AMMO5LABEL = "1x Recoilless Ammo";
+SHOP_AMMO5DESC = "84mm self-propelled shells for a recoilless rifle.";
 SHOP_AMMO6LABEL = "14x Magnum Ammo";
+SHOP_AMMO6DESC = "High-caliber pistol ammunition, usable in large handguns \n"
+"and lever-action carbines.";
 
 // Shop descriptions (PDA care packages)
 SHOPPDA_MAIN = "Thank you for using Quartermaster.mil, a subsidiary of MerCorp. Please \n"
