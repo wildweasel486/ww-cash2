@@ -9,6 +9,7 @@ MAJOR GAMEPLAY:
 * Side-idea: offhand melee is a weapon slot of its own, can hold one weapon that takes up Zoom button, must sell melee weapon to buy another. Punches by default; knife, crowbar, and fire axe can replace? (or should fire axe be its own selectable weapon?)
 * Not so sure the dual pistols really works; replace that with a burst-fire upgrade instead?
 * Need to eventually populate the rest of the vending machines with non-placeholder weapons but I feel like I should wait until the shop menu's been replaced first because god damn what a pain
+* Disposable weapons, a la Shifter? PS20, etc.?
 
 AESTHETICS:
 * Could probably stand to rework the recoil. Move it to a Flash state, probably, so it doesn't clutter up the weapon animations and I can just call it with A_GunFlash?
@@ -22,4 +23,4 @@ BALANCE ISSUES:
 OTHER SHIT I COULD PROBABLY DO:
 * Weaker monsters randomly drop useless junk instead of cash. IOU notes, gum wrappers, expired coupons, gift receipts, etc.
 * Bigger monsters should occasionally drop really big cash items (Cacoward trophies?) instead of huge piles of small cash.
-* Should cash disappear if it lands on liquid flats or gratings?
+* Should cash disappear if it lands on liquid flats or gratings? (Maybe after a delay, wet money doesn't ALWAYS equal unusable money)
