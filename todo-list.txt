@@ -1,8 +1,13 @@
 Okay I'm really gonna have to keep up to date on this. Here's some shit I could do to ww-cash2...
 
 HIGH PRIORITY:
-* Shop menu needs redoing. Badly. (Thanks, edthebat! -ww 8/8/2015)
 * Add weapon durability and associated effects.
+* The rest of the weapons need adding.
+-- In slot 4: hmm, a heavy machinegun of some kind, or would that be redundant?
+-- In slot 5: Find better sprites for the Recoilless, add disposable LAWs and the incendiary rockets.
+-- In slot 6: Plasma Gatling, Heater Rifle, Gauss Rifle, Plasma Grenades?
+-- In slot 7: Pimp Cane, Golden Gun, Spectrum Cannon (ask Pillowblaster?)
+-- In slot HELL: Gothmog, maybe get new sprites for the Crowbar upgrade
 
 MAJOR GAMEPLAY:
 * Offhand melee attacks, maybe? ww-cash classic had those.
@@ -10,17 +15,26 @@ MAJOR GAMEPLAY:
 * Not so sure the dual pistols really works; replace that with a burst-fire upgrade instead?
 * Need to eventually populate the rest of the vending machines with non-placeholder weapons but I feel like I should wait until the shop menu's been replaced first because god damn what a pain
 * Disposable weapons, a la Shifter? PS20, etc.? (This is what the energy weapons are supposed to be, when they're implemented. -ww)
+* Should dual pistols be tossed in favor of a burst-fire upgrade?
 
 AESTHETICS:
 * Could probably stand to rework the recoil. Move it to a Flash state, probably, so it doesn't clutter up the weapon animations and I can just call it with A_GunFlash?
 * Someone (torridGristle?) offered a nicer looking Glox pistol; look into that?
+* Language strings for shop descriptions need better line breaks; they're escaping the window.
+* Maybe find a slightly larger font for them, too? Is the Tyrian font available in BMF? (Yes it is - but would it clash with the Iron Plague/Hard Vacuum stuff?)
+* Get actual graphics for the shop menus.
+* Lengthen the shop descriptions for anything that had to be cut down for space originally?
+* I'm not sure I like the current Magnum graphics/sounds; maybe replace them with the ones I was using before (Nmn sprites/RE4 sounds?).
 
 BALANCE ISSUES:
 * Seems like the game gets a lot easier later on; maybe raise prices across the board so it takes longer to get the really good guns
 * Battle Rifle seems too powerful.
-* Lever Action seems less good than the Magnum pistol? Maybe some price/power divergence is in order
+* Lever Action seems less good than the Magnum pistol? Maybe some price/power divergence is in order.
 
 OTHER SHIT I COULD PROBABLY DO:
 * Weaker monsters randomly drop useless junk instead of cash. IOU notes, gum wrappers, expired coupons, gift receipts, etc.
 * Bigger monsters should occasionally drop really big cash items (Cacoward trophies?) instead of huge piles of small cash.
 * Should cash disappear if it lands on liquid flats or gratings? (Maybe after a delay, wet money doesn't ALWAYS equal unusable money)
+
+DONE (PROBABLY):
+* Shop menu needs redoing. Badly. (Thanks, edthebat! -ww 8/8/2015)
