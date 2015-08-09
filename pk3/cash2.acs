@@ -330,7 +330,7 @@ script 9001(int machine)
 		input & BT_JUMP||input & BT_ATTACK||input & BT_ZOOM||input & BT_LEFT||
 		input & BT_MOVELEFT||input & BT_RIGHT||input & BT_MOVERIGHT))||!menuopen[PlayerNumber()])
 			break;
-		setfont("CONFONT");
+		setfont("SMALLFONT");
 		for(int i=0;i<6;i++)
 		{
 			//TinyName (notice the l: so we can call it from LANGUAGE)
@@ -357,7 +357,7 @@ script 9001(int machine)
 			terminate;
 		}
 		//Draw the framework of the menu here
-		setfont("CONFONT");
+		setfont("SMALLFONT");
 		for(i=0;i<6;i++)
 		{
 			//TinyName
@@ -432,7 +432,7 @@ script 9001(int machine)
 		if(!choicedelay&&input & BT_ATTACK)
 		{
 			choicedelay=1;
-			setfont("CONFONT");
+			setfont("SMALLFONT");
 			//Hell machine works differently
 			if(machine==8)
 			{
