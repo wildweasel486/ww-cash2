@@ -91,7 +91,7 @@ str weaponstats[11][6][6]=
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
 		{"SinglePistol","PistolUpgrade","SHOP2_ITEM1NAME","","SHOP2_ITEM1DESC",""},
 		{"PunchGun","","SHOP2_ITEM2NAME","","SHOP2_ITEM2DESC",""},
-		{"KestrelMagnum","","SHOP2_ITEM3NAME","","SHOP2_ITEM2DESC",""},
+		{"KestrelMagnum","","SHOP2_ITEM3NAME","","SHOP2_ITEM3DESC",""},
 		{"PistolAmmo","","SHOP_AMMO1LABEL","","",""},
 		{"HeavyPistolAmmo","","SHOP_AMMO6LABEL","","",""},
 		{"ShotgunAmmo","","SHOP_AMMO2LABEL","","",""}
@@ -120,7 +120,7 @@ str weaponstats[11][6][6]=
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
 		{"RecoillessRifle","","SHOP5_ITEM1NAME","","SHOP5_ITEM1DESC",""},
-		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","","",""},
+		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","","SHOP5_ITEM2DESC",""},
 		{"RecoillessRockets","","SHOP_AMMO5LABEL","","",""},
 		{"","","","","",""},
 		{"","","","","",""},
@@ -129,7 +129,7 @@ str weaponstats[11][6][6]=
 	//Machine 6
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
-		{"MOBlaster","","SHOP6_ITEM1NAME","","",""},
+		{"MOBlaster","","SHOP6_ITEM1NAME","","SHOP6_ITEM1DESC",""},
 		{"","","","","",""},
 		{"","","","","",""},
 		{"","","","","",""},
@@ -149,10 +149,10 @@ str weaponstats[11][6][6]=
 	//Machine 8 (Hell)
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
-		{"FistUpgrade","","SHOPHELL_ITEM1NAME","","",""},
-		{"KnifeUpgrade","","SHOPHELL_ITEM2NAME","","",""},
-		{"CrowbarUpgrade","","SHOPHELL_ITEM3NAME","","",""},
-		{"FireAxeUpgrade","","SHOPHELL_ITEM4NAME","","",""},
+		{"FistUpgrade","","SHOPHELL_ITEM1NAME","","SHOPHELL_ITEM1DESC",""},
+		{"KnifeUpgrade","","SHOPHELL_ITEM2NAME","","SHOPHELL_ITEM2DESC",""},
+		{"CrowbarUpgrade","","SHOPHELL_ITEM3NAME","","SHOPHELL_ITEM3DESC",""},
+		{"FireAxeUpgrade","","SHOPHELL_ITEM4NAME","","SHOPHELL_ITEM4DESC",""},
 		{"","","SHOPHELL_ITEM5NAME","","",""},
 		{"","","","","",""},
 	},
