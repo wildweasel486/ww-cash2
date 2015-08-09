@@ -1,7 +1,7 @@
 Okay I'm really gonna have to keep up to date on this. Here's some shit I could do to ww-cash2...
 
 HIGH PRIORITY:
-* Shop menu needs redoing. Badly. (Currently have phantombeta looking at it - 7/26/2015)
+* Shop menu needs redoing. Badly. (Thanks, edthebat! -ww 8/8/2015)
 * Add weapon durability and associated effects.
 
 MAJOR GAMEPLAY:
@@ -9,7 +9,7 @@ MAJOR GAMEPLAY:
 * Side-idea: offhand melee is a weapon slot of its own, can hold one weapon that takes up Zoom button, must sell melee weapon to buy another. Punches by default; knife, crowbar, and fire axe can replace? (or should fire axe be its own selectable weapon?)
 * Not so sure the dual pistols really works; replace that with a burst-fire upgrade instead?
 * Need to eventually populate the rest of the vending machines with non-placeholder weapons but I feel like I should wait until the shop menu's been replaced first because god damn what a pain
-* Disposable weapons, a la Shifter? PS20, etc.?
+* Disposable weapons, a la Shifter? PS20, etc.? (This is what the energy weapons are supposed to be, when they're implemented. -ww)
 
 AESTHETICS:
 * Could probably stand to rework the recoil. Move it to a Flash state, probably, so it doesn't clutter up the weapon animations and I can just call it with A_GunFlash?
