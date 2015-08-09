@@ -120,28 +120,6 @@ ACTOR CHCSMG : CashWeapon
 	}
 }
 
-ACTOR CHCSMGRefund : CustomInventory
-{
-	States
-	{
-	Pickup:
-		TNT1 A 0
-		TNT1 A 0 A_GiveInventory("ColdHardCash",175)
-		Stop
-	}
-}
-
-ACTOR CHCSMGRefundBargain : CustomInventory
-{
-	States
-	{
-	Pickup:
-		TNT1 A 0
-		TNT1 A 0 A_GiveInventory("ColdHardCash",125)
-		Stop
-	}
-}
-
 ACTOR PugRifleClip : Ammo
 {
 	Inventory.MaxAmount 30
@@ -149,10 +127,7 @@ ACTOR PugRifleClip : Ammo
 	Inventory.Icon ASDSP0
 }
 
-ACTOR PugFireSeq : Inventory
-{
-	Inventory.MaxAmount 1
-}
+ACTOR PugFireSeq : Inventory{}
 
 ACTOR PugRifle : CashWeapon
 {
@@ -160,7 +135,7 @@ ACTOR PugRifle : CashWeapon
 	Weapon.AmmoType1 "PugRifleClip"
 	Weapon.AmmoUse1 1
 	Weapon.AmmoGive1 0
-	Weapon.AmmoType2 "LightRifleAmmo" 
+	Weapon.AmmoType2 "LightRifleAmmo"
 	Weapon.AmmoUse2 0
 	Weapon.AmmoGive2 0
 	Weapon.Kickback 40
@@ -229,17 +204,6 @@ ACTOR PugRifle : CashWeapon
 	}
 }
 
-ACTOR PugRifleRefund : CustomInventory
-{
-	States
-	{
-	Pickup:
-		TNT1 A 0
-		TNT1 A 0 A_GiveInventory("ColdHardCash",250)
-		Stop
-	}
-}
-
 ACTOR BattleRifleClip : Ammo
 {
 	Inventory.MaxAmount 10
@@ -251,7 +215,7 @@ ACTOR BattleRifle : CashWeapon
 	Weapon.AmmoType1 "BattleRifleClip"
 	Weapon.AmmoUse1 1
 	Weapon.AmmoGive1 0
-	Weapon.AmmoType2 "HeavyRifleAmmo" 
+	Weapon.AmmoType2 "HeavyRifleAmmo"
 	Weapon.AmmoUse2 0
 	Weapon.AmmoGive2 0
 	Weapon.Kickback 40
@@ -369,16 +333,5 @@ ACTOR BattleRifle : CashWeapon
 		BRIF E 1 Offset(1,33)
 		BRIF F 1 Offset(0,32)
 		Goto Ready
-	}
-}
-
-ACTOR BattleRifleRefund : CustomInventory
-{
-	States
-	{
-	Pickup:
-		TNT1 A 0
-		TNT1 A 0 A_GiveInventory("ColdHardCash",400)
-		Stop
 	}
 }

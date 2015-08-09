@@ -1,12 +1,6 @@
-ACTOR PumpShotgunFired : Inventory
-{
-	Inventory.MaxAmount 1
-}
+ACTOR PumpShotgunFired : Inventory{}
 
-ACTOR PumpShotgunReloading : Inventory
-{
-	Inventory.MaxAmount 1
-}
+ACTOR PumpShotgunReloading : Inventory{}
 
 
 ACTOR PumpShotgunClip : Ammo
@@ -93,7 +87,7 @@ ACTOR PumpShotgun : CashWeapon
 		PSHT A 1 A_PlaySound("weapons/dryfire", 5)
 		PSHT A 1 Offset(2,34)
 		PSHT A 1 Offset(1,33)
-		Goto Ready		
+		Goto Ready
 	Reload:
 		PSHT A 0 A_JumpIfInventory("PumpShotgunClip", 6, 2)
 		PSHT A 0 A_JumpIfInventory("ShotgunAmmo", 1, 2)
@@ -178,33 +172,7 @@ ACTOR PumpShotgun : CashWeapon
 	}
 }
 
-ACTOR PumpShotgunUpgrade : Inventory
-{
-	Inventory.MaxAmount 1
-}
-
-ACTOR PumpShotgunRefund : CustomInventory
-{
-	States
-	{
-	Pickup:
-		TNT1 A 0
-		TNT1 A 0 A_GiveInventory("ColdHardCash",250)
-		TNT1 A 0 A_TakeInventory("PumpShotgunUpgrade",1)
-		Stop
-	}
-}
-
-ACTOR PumpShotgunUpgradeGiver : CustomInventory
-{
-	States
-	{
-	Pickup:
-		TNT1 A 0
-		TNT1 A 0 ACS_NamedExecute("UpgradePumpShotgun")
-		Stop
-	}
-}
+ACTOR PumpShotgunUpgrade : Inventory{}
 
 ACTOR LeverActionClip : Ammo
 {
@@ -319,7 +287,7 @@ ACTOR LeverActionRifle : CashWeapon
 		LARR A 1 Offset(-6,42) A_WeaponReady(WRF_NOBOB)
 		LARR A 1 Offset(-7,39) A_WeaponReady(WRF_NOBOB)
 		LARR A 1 Offset(-9,36) A_WeaponReady(WRF_NOBOB)
-		LARR A 1 Offset(-11,34) A_WeaponReady(WRF_NOBOB)		
+		LARR A 1 Offset(-11,34) A_WeaponReady(WRF_NOBOB)
 		LARR F 0 A_JumpIfInventory("LeverActionClip", 10, "ReloadFinish")
 		LARR F 0 A_JumpIfInventory("HeavyPistolAmmo", 1, "ReloadWork")
 	ReloadFinish:
@@ -356,17 +324,5 @@ ACTOR LeverActionRifle : CashWeapon
 		LARG A 1 Offset(-2,32)
 		LARG A 1 Offset(-1,32)
 		Goto Ready
-	}
-}
-
-ACTOR LeverActionRefund : CustomInventory
-{
-	States
-	{
-	Pickup:
-		TNT1 A 0
-		TNT1 A 0 A_GiveInventory("ColdHardCash", 125)
-		TNT1 A 0 A_TakeInventory("PumpShotgunUpgrade",1)
-		Stop
 	}
 }

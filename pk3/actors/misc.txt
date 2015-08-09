@@ -48,17 +48,6 @@ ACTOR CHCAdvancedArmor : BasicArmorPickup
 	}
 }
 
-ACTOR BloodDonor : CustomInventory
-{
-	States
-	{
-	Pickup:
-		TNT1 A 0
-		TNT1 A 0 ACS_NamedExecute("DonateBlood")
-		Stop
-	}
-}
-
 ACTOR PowerDoubleDamage : PowerDamage
 {
 	damagefactor "normal", 2.0
