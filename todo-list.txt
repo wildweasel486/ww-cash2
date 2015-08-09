@@ -44,12 +44,6 @@ Need to find better fire sound for assault rifle. (Find more way to make it stan
 
 Implement gauss rifle.
 
-Toss recoilless rifle in favor of AT4?
-
-Add plasma gatling or similar?
-
-Make "pimp cane" and golden gun so slot 7 gets actual weapons
-
 [21:56:15] <torridGristle> wildweasel, i think that the gauss rifle should use two ammo types to balance out the raw power
 [21:56:34] <wildweasel> I'm assuming batteries and the actual projectile?
 [21:56:38] <torridGristle> some sort of rifle or magnum ammunition for the projectile and an energy pack
