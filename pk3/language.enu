@@ -160,7 +160,7 @@ SHOP4_ITEM3DESC = "You're a Marine and it's about damn time you started acting l
 SHOP4_ITEM2NAME = "Submachine Gun (BARGAIN!)";
 SHOP4_ITEM2DESC = "Who can forget the dependable SMG? Might not be as powerful as the other\n"
 "heavy ordinance on offer here, but it's sure as hell more affordable! (Sorry, we\n"
-ran out of room to include the ammo for it!)\n\n"
+"ran out of room to include the ammo for it!)\n\n"
 "Ammo Type: Pistol\nSpeed: Very Fast\nDamage: Low\nAccuracy: Medium-Low\nSlot: 4\nUpgrades: None";
 
 // Shop descriptions (level 5)
