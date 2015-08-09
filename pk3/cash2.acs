@@ -398,7 +398,7 @@ script 9001(int machine)
 		{
 			if(input)
 				movestart=1;
-			if(input & BT_ZOOM)
+			if(input & BT_USE||input & BT_ZOOM)
 			{
 				CloseMenu();
 				terminate;
