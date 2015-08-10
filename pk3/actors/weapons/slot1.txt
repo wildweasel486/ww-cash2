@@ -38,17 +38,6 @@ ACTOR FistUpgradeGiver : CustomInventory
 	}
 }
 
-ACTOR FistUpgradeGiverPWYB : CustomInventory
-{
-	States
-	{
-	Pickup:
-		TNT1 A 0
-		TNT1 A 0 ACS_NamedExecute("UpgradeFistPWYB")
-		Stop
-	}
-}
-
 ACTOR MartialArts : CashWeapon replaces Fist
 {
 	Weapon.SelectionOrder 1
@@ -175,20 +164,6 @@ ACTOR CrowbarThiefPuff : CrowbarPuff
 
 ACTOR CrowbarUpgrade : Inventory{}
 
-ACTOR CrowbarUpgradeGiverPWYB : CustomInventory
-{
-	States
-	{
-	Pickup:
-		TNT1 A 0 A_JumpIfInventory("Crowbar", 1, "Upgrade")
-		TNT1 A 0 A_Print("You need a CROWBAR.")
-		Stop
-	Upgrade:
-		TNT1 A 0 ACS_NamedExecute("UpgradeCrowbarPWYB")
-		Stop
-	}
-}
-
 ACTOR Crowbar : CashWeapon
 {
 	Weapon.SelectionOrder 999
@@ -240,20 +215,6 @@ ACTOR KnifeVampPuff : CrowbarPuff
 }
 
 ACTOR KnifeUpgrade : Inventory{}
-
-ACTOR KnifeUpgradeGiverPWYB : CustomInventory
-{
-	States
-	{
-	Pickup:
-		TNT1 A 0 A_JumpIfInventory("CHCKnife", 1, "Upgrade")
-		TNT1 A 0 A_Print ("You need a KNIFE.")
-		Stop
-	Upgrade:
-		TNT1 A 0 ACS_NamedExecute("UpgradeKnifePWYB")
-		Stop
-	}
-}
 
 ACTOR CHCKnife : CashWeapon
 {
@@ -531,17 +492,3 @@ ACTOR FireAxe : CashWeapon
 }
 
 ACTOR FireAxeUpgrade : Inventory{}
-
-ACTOR FireAxeUpgradeGiverPWYB : CustomInventory
-{
-	States
-	{
-	Pickup:
-		TNT1 A 0 A_JumpIfInventory("FireAxe", 1, "Upgrade")
-		TNT1 A 0 A_Print ("You need a FIRE AXE.")
-		Stop
-	Upgrade:
-		TNT1 A 0 ACS_NamedExecute("UpgradeFireAxePWYB")
-		Stop
-	}
-}

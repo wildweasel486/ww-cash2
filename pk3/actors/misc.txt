@@ -63,16 +63,6 @@ ACTOR StrengthGiver : PowerupGiver
 	+AUTOACTIVATE
 }
 
-ACTOR StrengthGiverPWYB : CustomInventory
-{
-	States
-	{
-	Pickup:
-		TNT1 A 0 ACS_NamedExecute("StrengthPWYB")
-		Stop
-	}
-}
-
 ACTOR ThiefSphere : BlurSphere replaces BlurSphere
 {
 	Translation "250:254=208:223", "16:47=112:127", "168:191=112:127", "192:207=160:167", "240:247=232:235"
