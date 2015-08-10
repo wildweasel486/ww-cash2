@@ -168,8 +168,8 @@ SHOP2_ITEM1DESC =
 "The only handgun that UAC employees are allowed to carry - \n"
 "is it any wonder that's why this is our most popular model? \n"
 "Carries plenty of ammo and can be dual-wielded. Buy one Glox, get the second\n"
-"at half price!\n\n"
-"Ammo Type: Pistol\nSpeed: Fast (Dual Semi-Auto)\nDamage: Low\nAccuracy: Low-ish\nSlot: 2\nUpgrades: Dual-wield";
+"at half price!\n\n";
+SHOP2_ITEM1STATS = "Ammo Type: Pistol\nSpeed: Fast (Dual Semi-Auto)\nDamage: Low\nAccuracy: Low-ish\nSlot: 2\nUpgrades: Dual-wield";
 SHOP2_ITEM2NAME = "Punch Gun";
 SHOP2_ITEM2DESC = 
 "Sometimes you'd say to yourself, \"Man, I really\n"
@@ -179,13 +179,13 @@ SHOP2_ITEM2DESC =
 "strap to your wrist, that fires when you bury\n"
 "your metal-clad fist in an appropriate target.\n\n"
 "Just remember to load it, or else all you've got\n"
-"is a really heavy metal knuckle.\n\n"
-"Ammo Type: Shotgun\nSpeed: Slow\nDamage: Medium (when loaded); Low (when not)\nAccuracy: Extremely Low\nSlot: 1\nUpgrades: None";
+"is a really heavy metal knuckle.\n\n";
+SHOP2_ITEM2STATS = "Ammo Type: Shotgun\nSpeed: Slow\nDamage: Medium (when loaded); Low (when not)\nAccuracy: Extremely Low\nSlot: 1\nUpgrades: None";
 SHOP2_ITEM3NAME = "Kestrel Magnum";
 SHOP2_ITEM3DESC = "Often purchased on Earth as a self-defense weapon. Self defense from what? \n"
 "Polar bears? Panzer tanks? This thing's plenty powerful enough to take on either one, \n"
-"with stopping power to spare. (Note: this may or may not be an exaggeration. -mgmt)\n\n"
-"Ammo Type: Heavy Pistol\nSpeed: Average\nDamage: Medium\nAccuracy: Average\nSlot: 2\nUpgrades: None";
+"with stopping power to spare. (Note: this may or may not be an exaggeration. -mgmt)\n\n";
+SHOP2_ITEM3STATS = "Ammo Type: Heavy Pistol\nSpeed: Average\nDamage: Medium\nAccuracy: Average\nSlot: 2\nUpgrades: None";
 
 // Shop descriptions (level 3)
 SHOP3_NAME = "Vending Machine (Rifles)";
@@ -194,17 +194,17 @@ SHOP3_ITEM1NAME = "\"Shorty\" Shotgun";
 SHOP3_ITEM1DESC = "Boom, click-clack. Sometimes you just gotta love the satisfaction of racking a\n"
 "shotgun, and this CQB-compatible entry shotgun does not disappoint.\n"
 "(Notice: Shotgun may disappoint if you purchase the optional semi-automatic\n"
-"fire upgrade.)\n\n"
-"Ammo Type: Shotgun\nSpeed: Slow\nDamage: Medium-High\nSlot: 3\nUpgrades: Semi-Auto\n";
+"fire upgrade.)\n\n";
+SHOP3_ITEM1STATS = "Ammo Type: Shotgun\nSpeed: Slow\nDamage: Medium-High\nSlot: 3\nUpgrades: Semi-Auto\n";
 SHOP3_ITEM2NAME = "Submachine Gun";
 SHOP3_ITEM2DESC = "Who needs pinpoint accuracy out to one kilometer when you can solve up to\n"
 "nine hundred problems a minute? Put all that 9mm ammo you've probably got stocked\n"
-"up from the pistols to good use.\n\n"
-"Ammo Type: Pistol\nSpeed: Very Fast\nDamage: Low\nAccuracy: Low\nSlot: 4\nUpgrades: None";
+"up from the pistols to good use.\n\n";
+SHOP3_ITEM2STATS = "Ammo Type: Pistol\nSpeed: Very Fast\nDamage: Low\nAccuracy: Low\nSlot: 4\nUpgrades: None";
 SHOP3_ITEM3NAME = "Lever-Action Rifle";
 SHOP3_ITEM3DESC = "How the West was won. Saddle up, pardner, it's just you and your rifle. \n"
-"(Notice: The West may or may not have been won with this rifle.)\n\n"
-"Ammo Type: Magnum\nSpeed: Slow\nDamage: High\nAccuracy: Medium-High\nSlot: 3\nUpgrades: None";
+"(Notice: The West may or may not have been won with this rifle.)\n\n";
+SHOP3_ITEM3STATS = "Ammo Type: Magnum\nSpeed: Slow\nDamage: High\nAccuracy: Medium-High\nSlot: 3\nUpgrades: None";
 
 // Shop descriptions (level 4)
 SHOP4_NAME = "Vending Machine (Machine Guns)";
@@ -212,19 +212,19 @@ SHOP4_MAIN = "Whether bullet hoses or heavy emplacements, we've got all the mach
 SHOP4_ITEM1NAME = "Pugnose Assault Rifle";
 SHOP4_ITEM1DESC = "This short-barreled rifle is a favorite of SWAT and other urban-warfare \n"
 "specialists. Much more powerful and controllable than a sub-machine gun,\n"
-"though the H&K-style action is a bit difficult to work at times.\n\n"
-"Ammo Type: Light Rifle\nSpeed: Fast\nDamage: Low\nAccuracy: Average\nSlot: 4\nUpgrades: None\n";
+"though the H&K-style action is a bit difficult to work at times.\n\n";
+SHOP4_ITEM1STATS = "Ammo Type: Light Rifle\nSpeed: Fast\nDamage: Low\nAccuracy: Average\nSlot: 4\nUpgrades: None\n";
 SHOP4_ITEM3NAME = "Marksman's Battle Rifle";
 SHOP4_ITEM3DESC = "You're a Marine and it's about damn time you started acting like one, \n"
 "so grab your rifle (there are many like it but this one is yours) and soldier on! \n"
 "It might kick like a mule, but sometimes our marksmen like walking away from a\n"
-"gunfight with numb shoulders...don't ask us why.\n\n"
-"Ammo Type: Heavy Rifle\nSpeed: Slow\nDamage: High\nAccuracy: High\nSlot: 4\nUpgrades: Unimplemented\n";
+"gunfight with numb shoulders...don't ask us why.\n\n";
+SHOP4_ITEM3STATS = "Ammo Type: Heavy Rifle\nSpeed: Slow\nDamage: High\nAccuracy: High\nSlot: 4\nUpgrades: Unimplemented\n";
 SHOP4_ITEM2NAME = "Submachine Gun (BARGAIN!)";
 SHOP4_ITEM2DESC = "Who can forget the dependable SMG? Might not be as powerful as the other\n"
 "heavy ordinance on offer here, but it's sure as hell more affordable! (Sorry, we\n"
-"ran out of room to include the ammo for it!)\n\n"
-"Ammo Type: Pistol\nSpeed: Very Fast\nDamage: Low\nAccuracy: Medium-Low\nSlot: 4\nUpgrades: None";
+"ran out of room to include the ammo for it!)\n\n";
+SHOP4_ITEM2STATS = "Ammo Type: Pistol\nSpeed: Very Fast\nDamage: Low\nAccuracy: Medium-Low\nSlot: 4\nUpgrades: None";
 
 // Shop descriptions (level 5)
 SHOP5_NAME = "Vending Machine (Explosives)";
@@ -235,6 +235,7 @@ SHOP5_ITEM1DESC =
 "(Surgeon General's Warning: Use with\n"
 "widescreen resolutions may result in\n"
 "detached limbs.)";
+SHOP5_ITEM1STATS = "";
 SHOP5_ITEM2NAME = "Hand Grenades";
 SHOP5_ITEM2DESC = 
 "If there's one thing that's remained constant\n"
@@ -249,7 +250,14 @@ SHOP5_ITEM2STATS = "Ammo Type: Disposable\nSpeed: Unlimited!\nDamage: High\nAccu
 
 // Shop descriptions (level 6)
 SHOP6_NAME = "Vending Machine (Energy)";
-SHOP6_MAIN = "Fry shit with plasma.";
+SHOP6_MAIN = 
+"The latest advances in high-tech, energy-based\n"
+"weaponry are now available at affordable prices.\n"
+"All weapons are powered by their own internal,\n"
+"non-rechargable batteries, instead of those messy\n"
+"brass cartridges that often get left on the floor.\n"
+"Energy weapons: awesome-looking, AND environmentally\n"
+"conscious!";
 SHOP6_ITEM1NAME = "Plasma Darter";
 SHOP6_ITEM1DESC = "Give your foes a lethal blister (or five)\n"
 "with this state-of-the-art disposable self-\n"
@@ -265,17 +273,18 @@ SHOP7_NAME = "Vending Machine (Super Weapons)";
 SHOP7_MAIN = "There's really nothing cool here yet. Sorry. -ww";
 SHOP7_ITEM1NAME = "Test Super Weapon";
 SHOP7_ITEM1DESC = "It just shoots BFG balls and has infinite ammo. Nothing cool here.";
+SHOP7_ITEM1STATS = "";
 SHOP7_ITEM2NAME = "Golden Gun";
 SHOP7_ITEM2DESC = "Scaramanga's magnum opus (heh, get it?) is now on the market. \n"
 "You get one shot. No more, no less. That one shot will kill the one target of your choice. \n"
-"Sorry, no upgrades - you're already spending your life savings on a single shot, and you want MORE?!\n\n"
-"Ammo Type: Golden Bullet\nSpeed: N/A\nDamage: HOLY WHAT THE F--\nAccuracy: Pinpoint\nSlot: 0\nUpgrades: Why?!";
+"Sorry, no upgrades - you're already spending your life savings on a single shot, and you want MORE?!\n\n";
+SHOT7_ITEM2STATS = "Ammo Type: Golden Bullet\nSpeed: N/A\nDamage: HOLY WHAT THE F--\nAccuracy: Pinpoint\nSlot: 0\nUpgrades: Why?!";
 SHOP7_ITEM3NAME = "Pimp Cane";
 SHOP7_ITEM3DESC = "For the really, really, really rich Doomguy who needs to smack a bitch. \n"
 "The Pimp Cane is actually a shotgun concealed within a fine \n"
 "wooden cane, decorated with gold accents. Except rather than firing shotgun shells, the Pimp Cane \n"
-"is primarily loaded with money. The upshot to this: you don't need to buy ammo for it!\n\n"
-"Ammo Type: Money (100 CR per reload)\nSpeed: Slow-ish\nAccuracy: Probably alright\nSlot: 9\nUpgrades: No way, biatch!";
+"is primarily loaded with money. The upshot to this: you don't need to buy ammo for it!\n\n";
+SHOP7_ITEM3STATS = "Ammo Type: Money (100 CR per reload)\nSpeed: Slow-ish\nAccuracy: Probably alright\nSlot: 9\nUpgrades: No way, biatch!";
 
 // Shop descriptions (Hell)
 SHOPHELL_MAIN = "CORRUPTED. CONTACT VENDOR MAINTENANCE";
@@ -321,9 +330,9 @@ SHOPARMOR_MAIN = "Kevlar: protective, AND stylish. \n"
 "Warning: Armor cannot be sold or repaired. Suits will replace whatever you are wearing.";
 SHOPARMOR_ITEM1NAME = "Basic Armor";
 SHOPARMOR_ITEM1DESC = "A standard suit of kevlar; this contains a vest and shin guards. \n"
-"It isn't the best of the best, but it's useful for those on a budget.\n\n"
-"Absorption: 40 PCT\nDurability: 100";
+"It isn't the best of the best, but it's useful for those on a budget.\n\n";
+SHOPARMOR_ITEM1STATS = "Absorption: 40 PCT\nDurability: 100";
 SHOPARMOR_ITEM2NAME = "Advanced Armor";
 SHOPARMOR_ITEM2DESC = "Kevlar with ceramic plating to better absorb those pesky bullets. \n"
-"Includes vest, arm guards, leg guards, and ballistic helmet.\n\n"
-"Absorption: 66 PCT\nDurability: 200";
+"Includes vest, arm guards, leg guards, and ballistic helmet.\n\n";
+SHOPARMOR_ITEM2STATS = "Absorption: 66 PCT\nDurability: 200";
