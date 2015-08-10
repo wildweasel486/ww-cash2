@@ -6,7 +6,9 @@ HIGH PRIORITY:
 -- In slot 4: hmm, a heavy machinegun of some kind, or would that be redundant?
 -- In slot 5: Find better sprites for the Recoilless, add disposable LAWs and the incendiary rockets.
 -- In slot 6: Plasma Gatling, Heater Rifle, Gauss Rifle, Plasma Grenades?
+---- Implement gauss rifle - graphics/sounds are already in...
 -- In slot 7: Pimp Cane, Golden Gun, Spectrum Cannon (ask Pillowblaster?)
+---- Pimp Cane already has graphics.
 -- In slot HELL: Gothmog, maybe get new sprites for the Crowbar upgrade
 
 MAJOR GAMEPLAY:
@@ -16,6 +18,11 @@ MAJOR GAMEPLAY:
 * Need to eventually populate the rest of the vending machines with non-placeholder weapons but I feel like I should wait until the shop menu's been replaced first because god damn what a pain
 * Disposable weapons, a la Shifter? PS20, etc.? (This is what the energy weapons are supposed to be, when they're implemented. -ww)
 * Should dual pistols be tossed in favor of a burst-fire upgrade?
+* Durability system needs implementing. Probably have all weapons count durability out of 1000 points, with random chance per shot to be damaged by a point or so.
+-- Going along with this: should enemies have rare chance to drop their guns?
+--- Malachai's suggestion: have the dying monster check its killer's inventory for the gun they'll drop, and if present, don't drop the gun.
+--- Furthermore: dropped weapons have randomized conditions. Example: Zombieman drops a Glox pistol if the player doesn't have one; starting durability is random from 10-80% of what condition it'd be from a shop. Dropped weapons will NEVER be perfect condition; you can only be guaranteed this from a shop.
+-- Durability should probably be shown as a graph, instead of a number, just to keep players guessing.
 
 AESTHETICS:
 * Could probably stand to rework the recoil. Move it to a Flash state, probably, so it doesn't clutter up the weapon animations and I can just call it with A_GunFlash?
@@ -25,6 +32,7 @@ AESTHETICS:
 * Get actual graphics for the shop menus.
 * Lengthen the shop descriptions for anything that had to be cut down for space originally?
 * I'm not sure I like the current Magnum graphics/sounds; maybe replace them with the ones I was using before (Nmn sprites/RE4 sounds?).
+* Need to find better fire sound for assault rifle. (Find more way to make it stand out from SMG?)
 
 BALANCE ISSUES:
 * Seems like the game gets a lot easier later on; maybe raise prices across the board so it takes longer to get the really good guns
@@ -35,14 +43,12 @@ OTHER SHIT I COULD PROBABLY DO:
 * Weaker monsters randomly drop useless junk instead of cash. IOU notes, gum wrappers, expired coupons, gift receipts, etc.
 * Bigger monsters should occasionally drop really big cash items (Cacoward trophies?) instead of huge piles of small cash.
 * Should cash disappear if it lands on liquid flats or gratings? (Maybe after a delay, wet money doesn't ALWAYS equal unusable money)
+* 
 
 DONE (PROBABLY):
 * Shop menu needs redoing. Badly. (Thanks, edthebat! -ww 8/8/2015)
 
 FROM OLD TODOLIST.TXT FROM PK3:
-Need to find better fire sound for assault rifle. (Find more way to make it stand out from SMG?)
-
-Implement gauss rifle.
 
 [21:56:15] <torridGristle> wildweasel, i think that the gauss rifle should use two ammo types to balance out the raw power
 [21:56:34] <wildweasel> I'm assuming batteries and the actual projectile?
