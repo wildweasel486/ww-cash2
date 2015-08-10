@@ -314,7 +314,7 @@ script 9001(int machine)
 		hudmessage(s:"Buy it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[0]+24.0,326.1,0.03);
 		hudmessage(s:"Sell it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[1]+24.0,326.1,0.03);
 		hudmessage(s:"Fix it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[2]+24.0,326.1,0.03);
-		hudmessage(s:"Upgrd:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+24.0,326.1,0.03);
+		hudmessage(s:"AddOn:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+24.0,326.1,0.03);
 		hudmessage(s:"Cash:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,552.1,326.1,0.03);
 		hudmessage(i:CheckInventory("ColdHardCash"),s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,548.1,375.1,0.03);
 		//Machine name
@@ -351,14 +351,17 @@ script 9001(int machine)
 		hudmessage(s:"Sell it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[1]+24.0,326.1,0.03);
 		hudmessage(s:"Fix it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[2]+24.0,326.1,0.03);
 		if(machine==8)
-			hudmessage(s:"Blood Price:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+24.0,326.1,0.03);
+			hudmessage(s:"BLEED:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+24.0,326.1,0.03);
 		else
-			hudmessage(s:"Upgrd:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+24.0,326.1,0.03);
+			hudmessage(s:"AddOn:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+24.0,326.1,0.03);
 		hudmessage(s:"Cash:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,552.1,326.1,0.03);
 		hudmessage(i:weaponamounts[machine][productcursorpos[PlayerNumber()]][0],s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[0]+20.0,375.1,0.03);
 		hudmessage(i:weaponamounts[machine][productcursorpos[PlayerNumber()]][1],s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[1]+20.0,375.1,0.03);
 		hudmessage(i:weaponamounts[machine][productcursorpos[PlayerNumber()]][2],s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[2]+20.0,375.1,0.03);
-		hudmessage(i:weaponamounts[machine][productcursorpos[PlayerNumber()]][3],s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+20.0,375.1,0.03);
+		if(machine==8)
+			hudmessage(i:weaponamounts[machine][productcursorpos[PlayerNumber()]][3],s:" HP";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+20.0,375.1,0.03);
+		else
+			hudmessage(i:weaponamounts[machine][productcursorpos[PlayerNumber()]][3],s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+20.0,375.1,0.03);
 		hudmessage(i:CheckInventory("ColdHardCash"),s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,548.1,375.1,0.03);
 		//Wordy description
 		setfont("DANCOOKFONT3");
