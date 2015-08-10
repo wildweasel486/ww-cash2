@@ -58,6 +58,7 @@ SHOP_AMMO6DESC = "High-caliber pistol ammunition, usable in large handguns \n"
 "and lever-action carbines.";
 
 // Shop descriptions (PDA care packages)
+SHOPPDA_NAME = "Quine 5000 PDA";
 SHOPPDA_MAIN = "Thank you for using Quartermaster.mil, a subsidiary of MerCorp. Please \n"
 "feel free to browse our selection of care packages.\n\n"
 "Care packages, when purchased, will deposit a throwable beacon in your inventory, \n"
@@ -81,6 +82,7 @@ SHOPPDA_ITEM4DESC = "Statistically speaking, a regular squad of UAC enforcers sp
 "specifically formulated to meet that average.";
 
 // Shop descriptions (level 1)
+SHOP1_NAME = "Vending Machine (Tools & Supplies)";
 SHOP1_MAIN = "Raw materials and tools are shipped to the colonies on a daily basis. Buy materials, tools, and supplies here.";
 SHOP1_ITEM1NAME = "MediPatch";
 SHOP1_ITEM1DESC = "Doctors are expensive, and in short supply. \n"
@@ -111,6 +113,7 @@ SHOP1_ITEM4DESC = "The UAC are quite adamant that the risk of fire at their inst
 SHOP1_ITEM4STATS = "Ammo Type: N/A\nSpeed: Very Slow\nDamage: High\nSlot: 1\nUpgrades: ???";
 
 // Shop descriptions (level 2)
+SHOP2_NAME = "Vending Machine (Sidearms)";
 SHOP2_MAIN = "UAC employees are allowed to carry small sidearms for self-defense, \n"
 "providing that the weapon is chambered for a caliber no larger than 9x19mm Parabellum, \n"
 "and has a magazine size of no more than 17 rounds, \n"
@@ -135,8 +138,8 @@ SHOP2_ITEM3DESC = "Often purchased on Earth as a self-defense weapon. Self defen
 "with stopping power to spare. (Note: this may or may not be an exaggeration. -mgmt)\n\n"
 "Ammo Type: Heavy Pistol\nSpeed: Average\nDamage: Medium\nAccuracy: Average\nSlot: 2\nUpgrades: None";
 
-
 // Shop descriptions (level 3)
+SHOP3_NAME = "Vending Machine (Rifles)";
 SHOP3_MAIN = "Shotguns are primarily the domain of UAC Security. These models are designed for close quarters.";
 SHOP3_ITEM1NAME = "\"Shorty\" Shotgun";
 SHOP3_ITEM1DESC = "Boom, click-clack. Sometimes you just gotta love the satisfaction of racking a\n"
@@ -155,6 +158,7 @@ SHOP3_ITEM3DESC = "How the West was won. Saddle up, pardner, it's just you and y
 "Ammo Type: Magnum\nSpeed: Slow\nDamage: High\nAccuracy: Medium-High\nSlot: 3\nUpgrades: None";
 
 // Shop descriptions (level 4)
+SHOP4_NAME = "Vending Machine (Machine Guns)";
 SHOP4_MAIN = "Whether bullet hoses or heavy emplacements, we've got all the machinery you could want right here.";
 SHOP4_ITEM1NAME = "Pugnose Assault Rifle";
 SHOP4_ITEM1DESC = "This short-barreled rifle is a favorite of SWAT and other urban-warfare \n"
@@ -174,6 +178,7 @@ SHOP4_ITEM2DESC = "Who can forget the dependable SMG? Might not be as powerful a
 "Ammo Type: Pistol\nSpeed: Very Fast\nDamage: Low\nAccuracy: Medium-Low\nSlot: 4\nUpgrades: None";
 
 // Shop descriptions (level 5)
+SHOP5_NAME = "Vending Machine (Explosives)";
 SHOP5_MAIN = "Blow crap up.";
 SHOP5_ITEM1NAME = "Recoilless Rifle";
 SHOP5_ITEM1DESC = "Shamelessly ripped from ww-stranger.\n"
@@ -185,6 +190,7 @@ SHOP5_ITEM2DESC = "If there's one thing that's remained constant about armed con
 "Ammo Type: Disposable\nSpeed: Unlimited!\nDamage: High\nAccuracy: So-so\nSlot: Inventory\nUpgrades: None";
 
 // Shop descriptions (level 6)
+SHOP6_NAME = "Vending Machine (Energy)";
 SHOP6_MAIN = "Fry shit with plasma.";
 SHOP6_ITEM1NAME = "Plasma Darter";
 SHOP6_ITEM1DESC = "Give your foes a lethal blister (or five)\n"
@@ -197,6 +203,7 @@ SHOP6_ITEM1DESC = "Give your foes a lethal blister (or five)\n"
 SHOP6_ITEM1STATS = "Ammo Type: Disposable\nSpeed: Quick\nDamage: Fair\nAccuracy: Good\nSlot: 6\nUpgrades: None";
 
 // Shop descriptions (level 7)
+SHOP7_NAME = "Vending Machine (Super Weapons)";
 SHOP7_MAIN = "There's really nothing cool here yet. Sorry. -ww";
 SHOP7_ITEM1NAME = "Test Super Weapon";
 SHOP7_ITEM1DESC = "It just shoots BFG balls and has infinite ammo. Nothing cool here.";
@@ -247,6 +254,7 @@ SHOPHELL_ITEM5DESC = "KilL    even    F A S  T   E    R with\n"
 "(it won't last for long though...)";
 
 // Shop descriptions (Armor)
+SHOPARMOR_NAME = "Vending Machine (Armor)";
 SHOPARMOR_MAIN = "Kevlar: protective, AND stylish. \n"
 "Get today's latest fashions here.\n\n"
 "Warning: Armor cannot be sold or repaired. Suits will replace whatever you are wearing.";

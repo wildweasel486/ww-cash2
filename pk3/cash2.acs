@@ -20,50 +20,20 @@ SCRIPT "StrengthPWYB" (void)
 	}
 }
 
-/*actor = "PDAMenuActor";
-name = "Quine 5000 PDA";
-dialog = "$SHOPPDA_MAIN";
-
-actor = "CashTerminalLevel1";
-name = "Vending Machine (Tools & Supplies)";
-dialog = "$SHOP1_MAIN";
-
-actor = "CashTerminalLevel2";
-name = "Vending Machine (Sidearms)";
-dialog = "$SHOP2_MAIN";
-
-actor = "CashTerminalLevel3";
-name = "Vending Machine (Rifles)";
-dialog = "$SHOP3_MAIN";
-
-actor = "CashTerminalLevel4";
-name = "Vending Machine (Machine Guns)";
-dialog = "$SHOP4_MAIN";
-
-actor = "CashTerminalLevel5";
-name = "Vending Machine (Explosives)";
-dialog = "$SHOP5_MAIN";
-
-actor = "CashTerminalLevel6";
-name = "Vending Machine (Energy)";
-dialog = "$SHOP6_MAIN";
-
-actor = "CashTerminalLevel7";
-name = "Vending Machine (Super Weapons)";
-dialog = "$SHOP7_MAIN";
-
-actor = "CashTerminalLevelPentagram";
-name = "$SHOPHELL_NAME";
-dialog = "$SHOPHELL_MAIN";
-
-actor = "CashTerminalLevelAmmo";
-name = "$SHOPAMMO_NAME";
-dialog = "$SHOPAMMO_MAIN";
-
-actor = "CashTerminalLevelArmor";
-name = "Vending Machine (Armor)";
-dialog = "$SHOPARMOR_MAIN";*/
-
+str machinedesc[11][2]=
+{
+	{"SHOPPDA_NAME","SHOPPDA_MAIN"},
+	{"SHOP1_NAME","SHOP1_MAIN"},
+	{"SHOP2_NAME","SHOP2_MAIN"},
+	{"SHOP3_NAME","SHOP3_MAIN"},
+	{"SHOP4_NAME","SHOP4_MAIN"},
+	{"SHOP5_NAME","SHOP5_MAIN"},
+	{"SHOP6_NAME","SHOP6_MAIN"},
+	{"SHOP7_NAME","SHOP7_MAIN"},
+	{"SHOPHELL_NAME","SHOPHELL_MAIN"},
+	{"SHOPAMMO_NAME","SHOPAMMO_MAIN"},
+	{"SHOPARMOR_NAME","SHOPARMOR_MAIN"},
+};
 str weaponstats[11][6][6]=
 {
 	//PDA
@@ -347,6 +317,12 @@ script 9001(int machine)
 		hudmessage(s:"Upgrd:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+24.0,326.1,0.03);
 		hudmessage(s:"Cash:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,552.1,326.1,0.03);
 		hudmessage(i:CheckInventory("ColdHardCash"),s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,548.1,375.1,0.03);
+		//Machine name
+		setfont("DANCOOKFONT3");
+		hudmessage(l:machinedesc[machine][0];HUDMSG_PLAIN,0,CR_UNTRANSLATED,232.1,productcursorcoords[0]+3.0,0.03);
+		//Machine description
+		setfont("SMALLFONT");
+		hudmessage(l:machinedesc[machine][1];HUDMSG_PLAIN,0,CR_UNTRANSLATED,232.1,productcursorcoords[0]+200.0,0.03);
 		setfont("SHOPFONT");
 		hudmessage(s:"A";HUDMSG_PLAIN,0,CR_UNTRANSLATED,320.0,200.0,0.03);
 		delay(1);
