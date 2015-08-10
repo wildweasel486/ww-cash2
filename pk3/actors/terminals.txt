@@ -4,17 +4,16 @@
 ACTOR CashTerminalLevel1 : SwitchableDecoration replaces Chainsaw
 {
 	+USESPECIAL
-	+NOPAIN
 	+SHOOTABLE
 	+NOBLOOD
 	+DONTDRAIN
 	Scale 0.4
 	Radius 16
 	Height 56
-	Health 200
+	Health 10000
 	Mass 0x7fffffff
-	DamageFactor Telefrag, 0.0
-	Speed 0
+	DamageFactor Telefrag,0
+	PainChance 256
 	States
 	{
 	Spawn:
@@ -22,15 +21,25 @@ ACTOR CashTerminalLevel1 : SwitchableDecoration replaces Chainsaw
 		"####" AAAAA 0 A_SpawnItemEx("CHCSmallCoin", 0,0,8, random(-2,2),random(-2,2),2, random(0,359), SXF_NOCHECKPOSITION, 32)
 		"####" AAA 0 A_SpawnItemEx("CHCMediumCoin", 0,0,8, random(-2,2),random(-2,2),2, random(0,359), SXF_NOCHECKPOSITION, 96)
 		"####" A 0 A_SpawnItemEx("CHCLargeCoin", 0,0,8, random(-2,2),random(-2,2),2, random(0,359), SXF_NOCHECKPOSITION, 160)
+	See:
 		"####" A -1
-		Wait
-	Death.Thief:
+		Stop
+	Pain.Thief:
+		"####" A 1 A_JumpIfHealthLower(9800,"Broken.Thief")
+		Goto See
+	Pain:
+		"####" A 1 A_JumpIfHealthLower(9800,"Broken")
+		Goto See
+	Broken.Thief:
 		DIS1 AAAAA 0 A_SpawnItemEx("CHCLargeCoin", 0,0,8, random(-2,2),random(-2,2),2, random(0,359), SXF_NOCHECKPOSITION, 32)
 		DIS1 AAA 0 A_SpawnItemEx("CHCSmallBill", 0,0,8, random(-2,2),random(-2,2),2, random(0,359), SXF_NOCHECKPOSITION, 96)
 		DIS1 A 0 A_SpawnItemEx("CHCMediumBill", 0,0,8, random(-2,2),random(-2,2),2, random(0,359), SXF_NOCHECKPOSITION, 160)
-	Death:
+	Broken:
+		DIS1 A 0 Thing_SetSpecial(0,0,0,0,0)
 		BEXP B 0 A_ChangeFlag(USESPECIAL,0)
 		BEXP B 0 A_SetScale(1.5)
+		BEXp B 0 A_NoBlocking
+		BEXP B 0 A_ChangeFlag(SHOOTABLE,0)
 		BEXP C 5 BRIGHT A_PlaySound("world/barrelx")
 		BEXP DE 5 BRIGHT
 		Stop
