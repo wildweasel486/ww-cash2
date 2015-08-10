@@ -129,43 +129,57 @@ SHOP1_ITEM2NAME = "Crowbar";
 SHOP1_ITEM2DESC = 
 "Not since the days of the famed Black Mesa\n"
 "resonance cascade has the crowbar seen such\n"
-"popularity - sadly many choose to use it outside of its\n "
-"intended purpose, but hell, might as well make use of what you've got, right?";
+"popularity - sadly many choose to use it\n"
+"outside of its intended purpose, but hell,\n"
+"might as well make use of what you've got, right?";
 SHOP1_ITEM2STATS = "Ammo Type: N/A\nSpeed: Slow\nDamage: Medium-High\nSlot: 1\nUpgrades: ???";
 SHOP1_ITEM3NAME = "Utility knife";
 SHOP1_ITEM3DESC = 
-"The classic folding knife still finds many uses throughout the UAC complex, \n"
-"whether it be trimming wires to size, opening canned food...or occasionally a \n"
-"good stab to the face for anybody dumb enough to attack a dude with a knife.";
+"The classic folding knife still finds\n"
+"many uses throughout the UAC complex, \n"
+"whether it be trimming wires to size, \n"
+"opening canned food...or occasionally a \n"
+"good stab to the face for anybody dumb \n"
+"enough to attack a dude with a knife.";
 SHOP1_ITEM3STATS = "Ammo Type: N/A\nSpeed: Fast\nDamage: So-so\nSlot: 1\nUpgrades: ???";
 SHOP1_ITEM4NAME = "Fireman's Axe";
 SHOP1_ITEM4DESC = 
-"The UAC are quite adamant that the risk of fire at their installations \n"
-"is quite low, which is why they insist on putting these fire axes in the vending\n"
-"machines, instead of in the fire emergency cabinets where they ought to be.\n"
-"They are quite ignorant of the possibility that someone might need one in an\n"
-"actual emergency. Like right now.";
+"The UAC are quite adamant that the risk of fire\n"
+"at their installations is quite low, which is\n"
+"why they insist on putting these fire axes in\n"
+"the vending machines, instead of in the fire\n"
+"emergency cabinets where they ought to be.\n\n"
+"They are quite ignorant of the possibility\n"
+"that someone might need one in an actual\n"
+"emergency. Like right now.";
 SHOP1_ITEM4STATS = "Ammo Type: N/A\nSpeed: Very Slow\nDamage: High\nSlot: 1\nUpgrades: ???";
 
 // Shop descriptions (level 2)
 SHOP2_NAME = "Vending Machine (Sidearms)";
-SHOP2_MAIN = "UAC employees are allowed to carry small sidearms for self-defense, \n"
+SHOP2_MAIN = 
+"UAC employees are allowed to carry small sidearms for self-defense, \n"
 "providing that the weapon is chambered for a caliber no larger than 9x19mm Parabellum, \n"
 "and has a magazine size of no more than 17 rounds, \n"
 "under the terms of Union Aerospace Corporation Employee Guidelines \n"
 "Article 3, Paragraph 2. Enforcement of these guidelines is the task of UAC Security. \n"
 "This vending machine, however, could not care less about that crap. Buy whatever!";
 SHOP2_ITEM1NAME = "Glox Handgun";
-SHOP2_ITEM1DESC = "The only handgun that UAC employees are allowed to carry - \n"
+SHOP2_ITEM1DESC = 
+"The only handgun that UAC employees are allowed to carry - \n"
 "is it any wonder that's why this is our most popular model? \n"
 "Carries plenty of ammo and can be dual-wielded. Buy one Glox, get the second\n"
 "at half price!\n\n"
 "Ammo Type: Pistol\nSpeed: Fast (Dual Semi-Auto)\nDamage: Low\nAccuracy: Low-ish\nSlot: 2\nUpgrades: Dual-wield";
 SHOP2_ITEM2NAME = "Punch Gun";
-SHOP2_ITEM2DESC = "Sometimes you'd say to yourself, \"Man, I really wish I had a cheap shotgun.\" \n"
-"Enter the Punch Gun: a shotgun barrel that you strap to your wrist that fires\n"
-"when you punch stuff. Just remember to load it, or else all you've got is a\n"
-"really heavy metal knuckle.\n\n"
+SHOP2_ITEM2DESC = 
+"Sometimes you'd say to yourself, \"Man, I really\n"
+"wish I had a cheap shotgun, but I hate carrying\n"
+"long weapons and also want to punch stuff.\"\n"
+"Enter the Punch Gun: a shotgun barrel that you\n"
+"strap to your wrist, that fires when you bury\n"
+"your metal-clad fist in an appropriate target.\n\n"
+"Just remember to load it, or else all you've got\n"
+"is a really heavy metal knuckle.\n\n"
 "Ammo Type: Shotgun\nSpeed: Slow\nDamage: Medium (when loaded); Low (when not)\nAccuracy: Extremely Low\nSlot: 1\nUpgrades: None";
 SHOP2_ITEM3NAME = "Kestrel Magnum";
 SHOP2_ITEM3DESC = "Often purchased on Earth as a self-defense weapon. Self defense from what? \n"
