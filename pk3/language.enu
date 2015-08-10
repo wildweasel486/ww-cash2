@@ -187,11 +187,14 @@ SHOP5_ITEM2DESC = "If there's one thing that's remained constant about armed con
 // Shop descriptions (level 6)
 SHOP6_MAIN = "Fry shit with plasma.";
 SHOP6_ITEM1NAME = "Plasma Darter";
-SHOP6_ITEM1DESC = "Give your foes a lethal blister (or five) with this state-of-the-art disposable \n"
-"self defense weapon.\n\n"
-"PUBLIC SERVICE ANNOUNCEMENT: The UAC cares about the environment. Please recycle your empty Plasma Darter \n"
-"at this machine to receive a 25 CR refund on your deposit.\n\n"
-"Ammo Type: Disposable\nSpeed: Quick\nDamage: Fair\nAccuracy: Good\nSlot: 6\nUpgrades: None";
+SHOP6_ITEM1DESC = "Give your foes a lethal blister (or five)\n"
+"with this state-of-the-art disposable self-\n"
+"defense weapon.\n\n"
+"PUBLIC SERVICE ANNOUNCEMENT: The UAC \n"
+"cares about the environment. Please recycle \n"
+"your empty Plasma Darter at this machine to \n"
+"receive a 25 CR refund on your deposit.";
+SHOP6_ITEM1STATS = "Ammo Type: Disposable\nSpeed: Quick\nDamage: Fair\nAccuracy: Good\nSlot: 6\nUpgrades: None";
 
 // Shop descriptions (level 7)
 SHOP7_MAIN = "There's really nothing cool here yet. Sorry. -ww";
