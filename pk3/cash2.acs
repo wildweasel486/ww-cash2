@@ -59,39 +59,39 @@ str weaponstats[11][6][6]=
 	//Machine 2
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
-		{"SinglePistol","PistolUpgrade","SHOP2_ITEM1NAME","","SHOP2_ITEM1DESC",""},
-		{"PunchGun","","SHOP2_ITEM2NAME","","SHOP2_ITEM2DESC",""},
-		{"KestrelMagnum","","SHOP2_ITEM3NAME","","SHOP2_ITEM3DESC",""},
-		{"PistolAmmo","","SHOP_AMMO1LABEL","","SHOP_AMMO1DESC",""},
-		{"HeavyPistolAmmo","","SHOP_AMMO6LABEL","","SHOP_AMMO6DESC",""},
-		{"ShotgunAmmo","","SHOP_AMMO2LABEL","","SHOP_AMMO2DESC",""}
+		{"SinglePistol","PistolUpgrade","SHOP2_ITEM1NAME","NOICON","SHOP2_ITEM1DESC","SHOP2_ITEM1STATS"},
+		{"PunchGun","","SHOP2_ITEM2NAME","NOICON","SHOP2_ITEM2DESC","SHOP2_ITEM2STATS"},
+		{"KestrelMagnum","","SHOP2_ITEM3NAME","NOICON","SHOP2_ITEM3DESC","SHOP2_ITEM3STATS"},
+		{"PistolAmmo","","SHOP_AMMO1LABEL","NOICON","SHOP_AMMO1DESC",""},
+		{"HeavyPistolAmmo","","SHOP_AMMO6LABEL","NOICON","SHOP_AMMO6DESC",""},
+		{"ShotgunAmmo","","SHOP_AMMO2LABEL","NOICON","SHOP_AMMO2DESC",""}
 	},
 	//Machine 3
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
-		{"PumpShotgun","PumpShotgunUpgrade","SHOP3_ITEM1NAME","","SHOP3_ITEM1DESC",""},
-		{"CHCSMG","","SHOP3_ITEM2NAME","","SHOP3_ITEM2DESC",""},
-		{"LeverActionRifle","","SHOP3_ITEM3NAME","","SHOP3_ITEM3DESC",""},
-		{"PistolAmmo","","SHOP_AMMO1LABEL","","SHOP_AMMO1DESC",""},
-		{"ShotgunAmmo","","SHOP_AMMO2LABEL","","SHOP_AMMO2DESC",""},
-		{"HeavyPistolAmmo","","SHOP_AMMO6LABEL","","SHOP_AMMO6DESC",""}
+		{"PumpShotgun","PumpShotgunUpgrade","SHOP3_ITEM1NAME","NOICON","SHOP3_ITEM1DESC","SHOP3_ITEM1STATS"},
+		{"CHCSMG","","SHOP3_ITEM2NAME","NOICON","SHOP3_ITEM2DESC","SHOP3_ITEM2STATS"},
+		{"LeverActionRifle","","SHOP3_ITEM3NAME","NOICON","SHOP3_ITEM3DESC","SHOP3_ITEM3STATS"},
+		{"PistolAmmo","","SHOP_AMMO1LABEL","NOICON","SHOP_AMMO1DESC",""},
+		{"ShotgunAmmo","","SHOP_AMMO2LABEL","NOICON","SHOP_AMMO2DESC",""},
+		{"HeavyPistolAmmo","","SHOP_AMMO6LABEL","NOICON","SHOP_AMMO6DESC",""}
 	},
 	//Machine 4
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
-		{"PugRifle","","SHOP4_ITEM1NAME","","SHOP4_ITEM1DESC",""},
-		{"BattleRifle","","SHOP4_ITEM3NAME","","SHOP4_ITEM3DESC",""},
-		{"CHCSMG","","SHOP4_ITEM2NAME","","SHOP4_ITEM2DESC",""},
-		{"LightRifleAmmo","","SHOP_AMMO3LABEL","","SHOP_AMMO3DESC",""},
-		{"HeavyRifleAmmo","","SHOP_AMMO4LABEL","","SHOP_AMMO4DESC",""},
-		{"","","","","",""},
+		{"PugRifle","","SHOP4_ITEM1NAME","NOICON","SHOP4_ITEM1DESC","SHOP4_ITEM1STATS"},
+		{"BattleRifle","","SHOP4_ITEM3NAME","NOICON","SHOP4_ITEM3DESC","SHOP4_ITEM3STATS"},
+		{"CHCSMG","","SHOP4_ITEM2NAME","NOICON","SHOP4_ITEM2DESC","SHOP3_ITEM2STATS"},
+		{"LightRifleAmmo","","SHOP_AMMO3LABEL","NOICON","SHOP_AMMO3DESC",""},
+		{"HeavyRifleAmmo","","SHOP_AMMO4LABEL","NOICON","SHOP_AMMO4DESC",""},
+		{"","","","EMPTICON","",""},
 	},
 	//Machine 5
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
-		{"RecoillessRifle","","SHOP5_ITEM1NAME","","SHOP5_ITEM1DESC","SHOP5_ITEM1STATS"},
-		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","","SHOP5_ITEM2DESC","SHOP5_ITEM2STATS"},
-		{"RecoillessRockets","","SHOP_AMMO5LABEL","","SHOP_AMMO5DESC",""},
+		{"RecoillessRifle","","SHOP5_ITEM1NAME","NOICON","SHOP5_ITEM1DESC","SHOP5_ITEM1STATS"},
+		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","NOICON","SHOP5_ITEM2DESC","SHOP5_ITEM2STATS"},
+		{"RecoillessRockets","","SHOP_AMMO5LABEL","NOICON","SHOP_AMMO5DESC",""},
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
@@ -109,7 +109,7 @@ str weaponstats[11][6][6]=
 	//Machine 7
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
-		{"TestSuperWeapon","","SHOP7_ITEM1NAME","","SHOP7_ITEM1DESC",""},
+		{"TestSuperWeapon","","SHOP7_ITEM1NAME","","SHOP7_ITEM1DESC","SHOP7_ITEM1STATS"},
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
@@ -139,8 +139,8 @@ str weaponstats[11][6][6]=
 	//Machine 10 (Armor)
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
-		{"CHCBasicArmor","","SHOPARMOR_ITEM1NAME","","SHOPARMOR_ITEM1DESC",""},
-		{"CHCAdvancedArmor","","SHOPARMOR_ITEM2NAME","","SHOPARMOR_ITEM2DESC",""},
+		{"CHCBasicArmor","","SHOPARMOR_ITEM1NAME","","SHOPARMOR_ITEM1DESC","SHOPARMOR_ITEM1STATS"},
+		{"CHCAdvancedArmor","","SHOPARMOR_ITEM2NAME","","SHOPARMOR_ITEM2DESC","SHOPARMOR_ITEM2STATS"},
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
