@@ -318,7 +318,10 @@ script 9001(int machine)
 		hudmessage(s:"Cash:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,552.1,326.1,0.03);
 		hudmessage(i:CheckInventory("ColdHardCash"),s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,548.1,375.1,0.03);
 		//Machine name
-		setfont("DANCOOKFONT3");
+		if(machine==8)
+			setfont("HELLSHOP");
+		else
+			setfont("DANCOOKFONT3");
 		hudmessage(l:machinedesc[machine][0];HUDMSG_PLAIN,0,CR_GREEN,232.1,productcursorcoords[0]+3.0,0.03);
 		//Machine description
 		setfont("SMALLFONT");
@@ -364,7 +367,10 @@ script 9001(int machine)
 			hudmessage(i:weaponamounts[machine][productcursorpos[PlayerNumber()]][3],s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+20.0,375.1,0.03);
 		hudmessage(i:CheckInventory("ColdHardCash"),s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,548.1,375.1,0.03);
 		//Wordy description
-		setfont("DANCOOKFONT3");
+		if(machine==8)
+			setfont("HELLSHOP");
+		else
+			setfont("DANCOOKFONT3");
 		hudmessage(l:weaponstats[machine][productcursorpos[PlayerNumber()]][4];HUDMSG_PLAIN,0,CR_GREEN,232.1,productcursorcoords[0]+3.0,0.03);
 		//Basic stats
 		setfont("SMALLFONT");
@@ -477,7 +483,7 @@ script 9001(int machine)
 					{
 						Print(l:"we hOpE yOu like it...hehe");
 						GiveInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][1],1);
-						Thing_Damage2(0,weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]],"BloodDoner");
+						Thing_Damage2(0,weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]],"BloodDonor");
 					}
 				}
 			}
