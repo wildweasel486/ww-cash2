@@ -264,37 +264,40 @@ SHOP7_ITEM3DESC = "For the really, really, really rich Doomguy who needs to smac
 "Ammo Type: Money (100 CR per reload)\nSpeed: Slow-ish\nAccuracy: Probably alright\nSlot: 9\nUpgrades: No way, biatch!";
 
 // Shop descriptions (Hell)
-SHOPHELL_NAME = "CORRUPTED. CONTACT MAINTENANCE";
-SHOPHELL_MAIN = "EvEn in H E L L \n"
+SHOPHELL_MAIN = "CORRUPTED. CONTACT VENDOR MAINTENANCE";
+SHOPHELL_NAME = "EvEn in H E L L \n"
 "      there is      need for M O N E Y.\n"
 "YoU are OBviOUsLy a RiCH MAN; therefore\n"
 "          wE pLEDge oUR    s e r v i c e s\n"
 "for A     P R I C E.";
 SHOPHELL_ITEM1NAME = "hurricane fist";
-SHOPHELL_ITEM1DESC = "there's   nothing\n        w r o n g   with them\nthat you can't FiX wItH YOur H A N D S .\n"
+SHOPHELL_ITEM1DESC = "there's   nothing\n        w r o n g   with them\n"
+"that you can't FiX wItH YOur H A N D S .\n"
 "        be a quiCkEr hAnDymAn wi th this   \n         FIENDish number.\n\n"
 "(Upgrades Fists.)";
 SHOPHELL_ITEM2NAME = "hemophilia";
-SHOPHELL_ITEM2DESC = "     fancy\n           some     b l o o d ?\n\nso do we.\n"
-"thi s   wi l l     allow YoU to SuCK some B L O O D\n"
+SHOPHELL_ITEM2DESC = "     fancy\n           some\n     b l o o d ?\n\nso do we.\n"
+"thi s   wi l l     allow YoU to SuCK some\n B L O O D\n"
 "          fRom     thEir    veIns.\n\n"
 "(Upgrades Knife.)";
 SHOPHELL_ITEM3NAME = "vendor's foe";
 SHOPHELL_ITEM3DESC = "m o n e y     bY AnY MEaNs,\n"
 "         right?         well,\n"
-"a liTTlE blUnT fOrce     can get YoU FAR. SmAsh a MACHINE\n"
+"a liTTlE blUnT fOrce     can get YoU FAR. SmAsh\n a MACHINE\n"
 "    with your CRowBAr and maNy     r i c h e s\n"
 "              cAn    be    hAd...\n\n"
 "(Upgrades Crowbar.)";
 SHOPHELL_ITEM4NAME = "gothmog";
-SHOPHELL_ITEM4DESC = "wE doN'T havE the LegEndAry   A X E of the\n"
-"BALROG KING,       buT if YoU'vE any    A X E   of your OWN,\n"
+SHOPHELL_ITEM4DESC = "wE doN'T havE the LegEndAry   A X E\n"
+" of the  BALROG KING,       buT if YoU'vE any\n"
+"    A X E  of your OWN,\n"
 "wE      may be ABLE to    craft you a    \n"
 "F i T t I n G      sUbStituTE.\n\n"
 "(Upgrades Fireman's Axe.)";
 SHOPHELL_ITEM5NAME = "strength of inhuman";
 SHOPHELL_ITEM5DESC = "KilL    even    F A S  T   E    R with\n"
-"DD OO UU BB LL EE    damage with    all      weapons.\n\n"
+"DD OO UU BB LL EE    damage\n"
+" with    all      weapons.\n\n"
 "(it won't last for long though...)";
 
 // Shop descriptions (Armor)
