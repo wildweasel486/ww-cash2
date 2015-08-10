@@ -39,17 +39,17 @@ str weaponstats[11][6][6]=
 	//PDA
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
-		{"ArtiCarePackageMedical","","SHOPPDA_ITEM1NAME","NOICON","SHOPPDA_ITEM1DESC",""},
-		{"ArtiCarePackagePistol","","SHOPPDA_ITEM2NAME","NOICON","SHOPPDA_ITEM2DESC",""},
-		{"ArtiCarePackageShotgun","","SHOPPDA_ITEM3NAME","NOICON","SHOPPDA_ITEM3DESC",""},
-		{"ArtiCarePackageRifle","","SHOPPDA_ITEM4NAME","NOICON","SHOPPDA_ITEM4DESC",""},
+		{"ArtiCarePackageMedical","","SHOPPDA_ITEM1NAME","NOICON","SHOPPDA_ITEM1DESC","SHOPPDA_ITEM1STATS"},
+		{"ArtiCarePackagePistol","","SHOPPDA_ITEM2NAME","NOICON","SHOPPDA_ITEM2DESC","SHOPPDA_ITEM2STATS"},
+		{"ArtiCarePackageShotgun","","SHOPPDA_ITEM3NAME","NOICON","SHOPPDA_ITEM3DESC","SHOPPDA_ITEM3STATS"},
+		{"ArtiCarePackageRifle","","SHOPPDA_ITEM4NAME","NOICON","SHOPPDA_ITEM4DESC","SHOPPDA_ITEM4STATS"},
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""}
 	},
 	//Machine 1
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
-		{"Health","","SHOP1_ITEM1NAME","NOICON","SHOP1_ITEM1DESC",""},
+		{"Health","","SHOP1_ITEM1NAME","NOICON","SHOP1_ITEM1DESC","SHOP1_ITEM1STATS"},
 		{"CHCKnife","","SHOP1_ITEM3NAME","NOICON","SHOP1_ITEM3DESC","SHOP1_ITEM3STATS"},
 		{"Crowbar","","SHOP1_ITEM2NAME","NOICON","SHOP1_ITEM2DESC","SHOP1_ITEM2STATS"},
 		{"FireAxe","","SHOP1_ITEM4NAME","NOICON","SHOP1_ITEM4DESC","SHOP1_ITEM4STATS"},
@@ -89,8 +89,8 @@ str weaponstats[11][6][6]=
 	//Machine 5
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
-		{"RecoillessRifle","","SHOP5_ITEM1NAME","","SHOP5_ITEM1DESC",""},
-		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","","SHOP5_ITEM2DESC",""},
+		{"RecoillessRifle","","SHOP5_ITEM1NAME","","SHOP5_ITEM1DESC","SHOP5_ITEM1STATS"},
+		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","","SHOP5_ITEM2DESC","SHOP5_ITEM2STATS"},
 		{"RecoillessRockets","","SHOP_AMMO5LABEL","","SHOP_AMMO5DESC",""},
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
@@ -130,11 +130,11 @@ str weaponstats[11][6][6]=
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
 		{"PistolAmmo","","SHOP_AMMO1LABEL","","SHOP_AMMO1DESC",""},
-		{"HeavyPistolAmmo","","SHOP_AMMO6LABEL","","SHOP_AMMO2DESC",""},
-		{"ShotgunAmmo","","SHOP_AMMO2LABEL","","SHOP_AMMO3DESC",""},
-		{"LightRifleAmmo","","SHOP_AMMO3LABEL","","SHOP_AMMO4DESC",""},
-		{"HeavyRifleAmmo","","SHOP_AMMO4LABEL","","SHOP_AMMO5DESC",""},
-		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","","SHOP_AMMO6DESC",""},
+		{"HeavyPistolAmmo","","SHOP_AMMO6LABEL","","SHOP_AMMO6DESC",""},
+		{"ShotgunAmmo","","SHOP_AMMO2LABEL","","SHOP_AMMO2DESC",""},
+		{"LightRifleAmmo","","SHOP_AMMO3LABEL","","SHOP_AMMO3DESC",""},
+		{"HeavyRifleAmmo","","SHOP_AMMO4LABEL","","SHOP_AMMO4DESC",""},
+		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","","SHOP5_ITEM2DESC",""},
 	},
 	//Machine 10 (Armor)
 	{
@@ -319,10 +319,10 @@ script 9001(int machine)
 		hudmessage(i:CheckInventory("ColdHardCash"),s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,548.1,375.1,0.03);
 		//Machine name
 		setfont("DANCOOKFONT3");
-		hudmessage(l:machinedesc[machine][0];HUDMSG_PLAIN,0,CR_UNTRANSLATED,232.1,productcursorcoords[0]+3.0,0.03);
+		hudmessage(l:machinedesc[machine][0];HUDMSG_PLAIN,0,CR_GREEN,232.1,productcursorcoords[0]+3.0,0.03);
 		//Machine description
 		setfont("SMALLFONT");
-		hudmessage(l:machinedesc[machine][1];HUDMSG_PLAIN,0,CR_UNTRANSLATED,232.1,productcursorcoords[0]+200.0,0.03);
+		hudmessage(l:machinedesc[machine][1];HUDMSG_PLAIN,0,CR_GOLD,232.1,productcursorcoords[0]+200.0,0.03);
 		setfont("SHOPFONT");
 		hudmessage(s:"A";HUDMSG_PLAIN,0,CR_UNTRANSLATED,320.0,200.0,0.03);
 		delay(1);
