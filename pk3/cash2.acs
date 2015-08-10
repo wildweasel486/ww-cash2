@@ -473,7 +473,7 @@ script 9001(int machine)
 						PlaySound(0,"misc/chat2");
 					}
 					//Already upgraded
-					else if(CheckInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][1]))
+					else if(CheckInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0]))
 					{
 						Print(l:"You've already got that upgrade!");
 						PlaySound(0,"misc/chat2");
@@ -482,7 +482,7 @@ script 9001(int machine)
 					else
 					{
 						Print(l:"we hOpE yOu like it...hehe");
-						GiveInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][1],1);
+						GiveInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0],1);
 						Thing_Damage2(0,weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]],"BloodDonor");
 					}
 				}
