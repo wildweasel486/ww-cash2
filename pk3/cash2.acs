@@ -69,7 +69,7 @@ str weaponstats[11][6][6]=
 	//PDA
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
-		{"ArtiCarePackageMedical","","SHOPPDA_ITEM1NAME","","SHOPPDA_ITEM1DESC",""},
+		{"ArtiCarePackageMedical","","SHOPPDA_ITEM1NAME","CSAWA0","SHOPPDA_ITEM1DESC",""},
 		{"ArtiCarePackagePistol","","SHOPPDA_ITEM2NAME","","SHOPPDA_ITEM2DESC",""},
 		{"ArtiCarePackageShotgun","","SHOPPDA_ITEM3NAME","","SHOPPDA_ITEM3DESC",""},
 		{"ArtiCarePackageRifle","","SHOPPDA_ITEM4NAME","","SHOPPDA_ITEM4DESC",""},
@@ -81,7 +81,7 @@ str weaponstats[11][6][6]=
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
 		{"Health","","SHOP1_ITEM1NAME","","SHOP1_ITEM1DESC",""},
 		{"CHCKnife","","SHOP1_ITEM3NAME","","SHOP1_ITEM3DESC","SHOP1_ITEM3STATS"},
-		{"Crowbar","","SHOP1_ITEM2NAME","","SHOP1_ITEM2DESC","SHOP1_ITEM2STATS"},
+		{"Crowbar","","SHOP1_ITEM2NAME","CSAWA0","SHOP1_ITEM2DESC","SHOP1_ITEM2STATS"},
 		{"FireAxe","","SHOP1_ITEM4NAME","","SHOP1_ITEM4DESC","SHOP1_ITEM4STATS"},
 		{"","","","","",""},
 		{"","","","","",""}
@@ -333,11 +333,14 @@ script 9001(int machine)
 		setfont("SMALLFONT");
 		for(int i=0;i<6;i++)
 		{
+			setfont("SMALLFONT");
 			//TinyName (notice the l: so we can call it from LANGUAGE)
 			hudmessage(l:weaponstats[machine][i][2];HUDMSG_PLAIN,0,CR_UNTRANSLATED,71.1,productcursorcoords[i]+13.0,0.03);
 			//Icon
-			hudmessage(s:weaponstats[machine][i][3];HUDMSG_PLAIN,0,CR_UNTRANSLATED,71.1,productcursorcoords[i]+12.0,0.03);
+			setfont(weaponstats[machine][i][3]);
+			hudmessage(s:"A";HUDMSG_PLAIN,0,CR_UNTRANSLATED,71.1,productcursorcoords[i]+12.0,0.03);
 		}
+		setfont("SMALLFONT");
 		hudmessage(s:"Buy it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[0]+24.0,326.1,0.03);
 		hudmessage(s:"Sell it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[1]+24.0,326.1,0.03);
 		hudmessage(s:"Fix it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[2]+24.0,326.1,0.03);
@@ -360,11 +363,14 @@ script 9001(int machine)
 		setfont("SMALLFONT");
 		for(i=0;i<6;i++)
 		{
+			setfont("SMALLFONT");
 			//TinyName
 			hudmessage(l:weaponstats[machine][i][2];HUDMSG_PLAIN,0,CR_UNTRANSLATED,71.1,productcursorcoords[i]+13.0,0.03);
 			//Icon
-			hudmessage(s:weaponstats[machine][i][3];HUDMSG_PLAIN,0,CR_UNTRANSLATED,71.1,productcursorcoords[i]+12.0,0.03);
+			setfont(weaponstats[machine][i][3]);
+			hudmessage(s:"A";HUDMSG_PLAIN,0,CR_UNTRANSLATED,71.1,productcursorcoords[i]+12.0,0.03);
 		}
+		setfont("SMALLFONT");
 		hudmessage(s:"Buy it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[0]+24.0,326.1,0.03);
 		hudmessage(s:"Sell it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[1]+24.0,326.1,0.03);
 		hudmessage(s:"Fix it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[2]+24.0,326.1,0.03);
