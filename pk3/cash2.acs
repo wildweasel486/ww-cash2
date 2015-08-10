@@ -80,9 +80,9 @@ str weaponstats[11][6][6]=
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
 		{"Health","","SHOP1_ITEM1NAME","","SHOP1_ITEM1DESC",""},
-		{"CHCKnife","","SHOP1_ITEM3NAME","","SHOP1_ITEM3DESC",""},
-		{"Crowbar","","SHOP1_ITEM2NAME","","SHOP1_ITEM2DESC",""},
-		{"FireAxe","","SHOP1_ITEM4NAME","","SHOP1_ITEM4DESC",""},
+		{"CHCKnife","","SHOP1_ITEM3NAME","","SHOP1_ITEM3DESC","SHOP1_ITEM3STATS"},
+		{"Crowbar","","SHOP1_ITEM2NAME","","SHOP1_ITEM2DESC","SHOP1_ITEM2STATS"},
+		{"FireAxe","","SHOP1_ITEM4NAME","","SHOP1_ITEM4DESC","SHOP1_ITEM4STATS"},
 		{"","","","","",""},
 		{"","","","","",""}
 	},
@@ -383,7 +383,7 @@ script 9001(int machine)
 		hudmessage(l:weaponstats[machine][productcursorpos[PlayerNumber()]][4];HUDMSG_PLAIN,0,CR_UNTRANSLATED,232.1,productcursorcoords[0]+3.0,0.03);
 		//Basic stats
 		setfont("SMALLFONT");
-		hudmessage(s:weaponstats[machine][productcursorpos[PlayerNumber()]][5];HUDMSG_PLAIN,0,CR_UNTRANSLATED,232.1,productcursorcoords[0]+200.0,0.03);
+		hudmessage(l:weaponstats[machine][productcursorpos[PlayerNumber()]][5];HUDMSG_PLAIN,0,CR_UNTRANSLATED,232.1,productcursorcoords[0]+200.0,0.03);
 		setfont("SHOPFONT");
 		hudmessage(s:"1";HUDMSG_PLAIN,0,CR_UNTRANSLATED,54.1,productcursorcoords[productcursorpos[PlayerNumber()]],0.03);
 		hudmessage(s:"2";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[actioncursorpos[PlayerNumber()]],316.1,0.03);

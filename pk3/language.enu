@@ -84,29 +84,31 @@ SHOPPDA_ITEM4DESC = "Statistically speaking, a regular squad of UAC enforcers sp
 SHOP1_MAIN = "Raw materials and tools are shipped to the colonies on a daily basis. Buy materials, tools, and supplies here.";
 SHOP1_ITEM1NAME = "MediPatch";
 SHOP1_ITEM1DESC = "Doctors are expensive, and in short supply. \n"
-"That's why we at the UAC have invested considerable capital into MediPatch: \n"
-"the easy, self-applied healing agent that instantly seals and disinfects open \n"
-"wounds.\n\n"
-"(Surgeon General's Warning: Ingesting MediPatch may inadvertently seal the \n"
-"throat, lungs, or intestines. Keep away from vital orifices such as eyes or \n"
-"genitalia.)";
+"That's why we at the UAC have invested \n"
+"considerable capital into MediPatch: the easy, \n"
+"self-applied healing agent that instantly seals \n"
+"and disinfects open wounds.\n\n"
+"(Surgeon General's Warning: Ingesting MediPatch \n"
+"may inadvertently seal the throat, lungs, or \n"
+"intestines. Keep away from vital orifices \n"
+"such as eyes or genitalia.)";
 SHOP1_ITEM2NAME = "Crowbar";
 SHOP1_ITEM2DESC = "Not since the days of the famed Black Mesa resonance cascade has the\n"
 "crowbar seen such popularity - sadly many choose to use it outside of its\n "
-"intended purpose, but hell, might as well make use of what you've got, right?\n\n"
-"Ammo Type: N/A\nSpeed: Slow\nDamage: Medium-High\nSlot: 1\nUpgrades: ???";
+"intended purpose, but hell, might as well make use of what you've got, right?";
+SHOP1_ITEM2STATS = "Ammo Type: N/A\nSpeed: Slow\nDamage: Medium-High\nSlot: 1\nUpgrades: ???";
 SHOP1_ITEM3NAME = "Utility knife";
 SHOP1_ITEM3DESC = "The classic folding knife still finds many uses throughout the UAC complex, \n"
 "whether it be trimming wires to size, opening canned food...or occasionally a \n"
-"good stab to the face for anybody dumb enough to attack a dude with a knife.\n\n"
-"Ammo Type: N/A\nSpeed: Fast\nDamage: So-so\nSlot: 1\nUpgrades: ???";
+"good stab to the face for anybody dumb enough to attack a dude with a knife.";
+SHOP1_ITEM3STATS = "Ammo Type: N/A\nSpeed: Fast\nDamage: So-so\nSlot: 1\nUpgrades: ???";
 SHOP1_ITEM4NAME = "Fireman's Axe";
 SHOP1_ITEM4DESC = "The UAC are quite adamant that the risk of fire at their installations \n"
 "is quite low, which is why they insist on putting these fire axes in the vending\n"
 "machines, instead of in the fire emergency cabinets where they ought to be.\n"
 "They are quite ignorant of the possibility that someone might need one in an\n"
-"actual emergency. Like right now.\n\n"
-"Ammo Type: N/A\nSpeed: Very Slow\nDamage: High\nSlot: 1\nUpgrades: ???";
+"actual emergency. Like right now.";
+SHOP1_ITEM4STATS = "Ammo Type: N/A\nSpeed: Very Slow\nDamage: High\nSlot: 1\nUpgrades: ???";
 
 // Shop descriptions (level 2)
 SHOP2_MAIN = "UAC employees are allowed to carry small sidearms for self-defense, \n"
