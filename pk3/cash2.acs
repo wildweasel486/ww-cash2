@@ -379,8 +379,10 @@ script 9001(int machine)
 		hudmessage(i:weaponamounts[machine][productcursorpos[PlayerNumber()]][3],s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+20.0,375.1,0.03);
 		hudmessage(i:CheckInventory("ColdHardCash"),s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,548.1,375.1,0.03);
 		//Wordy description
+		setfont("DANCOOKFONT3");
 		hudmessage(l:weaponstats[machine][productcursorpos[PlayerNumber()]][4];HUDMSG_PLAIN,0,CR_UNTRANSLATED,232.1,productcursorcoords[0]+3.0,0.03);
 		//Basic stats
+		setfont("SMALLFONT");
 		hudmessage(s:weaponstats[machine][productcursorpos[PlayerNumber()]][5];HUDMSG_PLAIN,0,CR_UNTRANSLATED,232.1,productcursorcoords[0]+200.0,0.03);
 		setfont("SHOPFONT");
 		hudmessage(s:"1";HUDMSG_PLAIN,0,CR_UNTRANSLATED,54.1,productcursorcoords[productcursorpos[PlayerNumber()]],0.03);
