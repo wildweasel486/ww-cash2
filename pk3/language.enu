@@ -158,17 +158,20 @@ SHOP1_ITEM4STATS = "Ammo Type: N/A\nSpeed: Very Slow\nDamage: High\nSlot: 1\nUpg
 SHOP2_NAME = "Vending Machine (Sidearms)";
 SHOP2_MAIN = 
 "UAC employees are allowed to carry small sidearms for self-defense, \n"
-"providing that the weapon is chambered for a caliber no larger than 9x19mm Parabellum, \n"
-"and has a magazine size of no more than 17 rounds, \n"
+"providing that the weapon is chambered for a caliber no larger than\n"
+"9x19mm Parabellum, and has a magazine size of no more than 17 rounds, \n"
 "under the terms of Union Aerospace Corporation Employee Guidelines \n"
-"Article 3, Paragraph 2. Enforcement of these guidelines is the task of UAC Security. \n"
-"This vending machine, however, could not care less about that crap. Buy whatever!";
+"Article 3, Paragraph 2. Enforcement of these guidelines is the task of\n"
+"UAC Security. \n\n"
+"This vending machine, however, could not care less\n"
+"about that crap. Buy whatever!";
 SHOP2_ITEM1NAME = "Glox Handgun";
 SHOP2_ITEM1DESC = 
-"The only handgun that UAC employees are allowed to carry - \n"
-"is it any wonder that's why this is our most popular model? \n"
-"Carries plenty of ammo and can be dual-wielded. Buy one Glox, get the second\n"
-"at half price!\n\n";
+"The only handgun that UAC employees are\n"
+"allowed to carry - is it any wonder that's\n"
+"why this is our most popular model? Carries\n"
+"plenty of ammo and can be dual-wielded.\n"
+"Buy one Glox, get the second at half price!";
 SHOP2_ITEM1STATS = "Ammo Type: Pistol\nSpeed: Fast (Dual Semi-Auto)\nDamage: Low\nAccuracy: Low-ish\nSlot: 2\nUpgrades: Dual-wield";
 SHOP2_ITEM2NAME = "Punch Gun";
 SHOP2_ITEM2DESC = 
@@ -182,27 +185,45 @@ SHOP2_ITEM2DESC =
 "is a really heavy metal knuckle.\n\n";
 SHOP2_ITEM2STATS = "Ammo Type: Shotgun\nSpeed: Slow\nDamage: Medium (when loaded); Low (when not)\nAccuracy: Extremely Low\nSlot: 1\nUpgrades: None";
 SHOP2_ITEM3NAME = "Kestrel Magnum";
-SHOP2_ITEM3DESC = "Often purchased on Earth as a self-defense weapon. Self defense from what? \n"
-"Polar bears? Panzer tanks? This thing's plenty powerful enough to take on either one, \n"
-"with stopping power to spare. (Note: this may or may not be an exaggeration. -mgmt)\n\n";
+SHOP2_ITEM3DESC = "Often purchased on Earth as a self-defense\n"
+"weapon. Self defense from what? Polar bears?\n"
+"Panzer tanks? This thing's plenty powerful\n"
+"enough to take on either one, with stopping power\n"
+"to spare.\n"
+"(Note: the UAC does not advise taking on polar\n"
+"bears or Panzer tanks with this firearm.)";
 SHOP2_ITEM3STATS = "Ammo Type: Heavy Pistol\nSpeed: Average\nDamage: Medium\nAccuracy: Average\nSlot: 2\nUpgrades: None";
 
 // Shop descriptions (level 3)
-SHOP3_NAME = "Vending Machine (Rifles)";
-SHOP3_MAIN = "Shotguns are primarily the domain of UAC Security. These models are designed for close quarters.";
+SHOP3_NAME = "Vending Machine (CQB Weapons)";
+SHOP3_MAIN = "When sidearms don't pack enough punch, but military rifles are overkill,\nthese guns are certainly not compensating for anything.";
 SHOP3_ITEM1NAME = "\"Shorty\" Shotgun";
-SHOP3_ITEM1DESC = "Boom, click-clack. Sometimes you just gotta love the satisfaction of racking a\n"
-"shotgun, and this CQB-compatible entry shotgun does not disappoint.\n"
-"(Notice: Shotgun may disappoint if you purchase the optional semi-automatic\n"
-"fire upgrade.)\n\n";
-SHOP3_ITEM1STATS = "Ammo Type: Shotgun\nSpeed: Slow\nDamage: Medium-High\nSlot: 3\nUpgrades: Semi-Auto\n";
+SHOP3_ITEM1DESC = 
+"Boom, click-clack.\n"
+"Sometimes you just gotta love the satisfaction\n"
+"of racking a shotgun, and this specially\n"
+"shortened tactical entry shotgun does not\n"
+"disappoint. But if you aren't interested in\n"
+"that kind of satisfaction, perhaps you might\n"
+"consider the optional semi-auto conversion,\n"
+"which removes the need to rechamber the gun\n"
+"after every shot.";
+SHOP3_ITEM1STATS = "Ammo Type: Shotgun\nSpeed: Slow\nDamage: Medium-High\nAccuracy: Fair\nSlot: 3\nUpgrades: Semi-Auto Conversion\n";
 SHOP3_ITEM2NAME = "Submachine Gun";
-SHOP3_ITEM2DESC = "Who needs pinpoint accuracy out to one kilometer when you can solve up to\n"
-"nine hundred problems a minute? Put all that 9mm ammo you've probably got stocked\n"
-"up from the pistols to good use.\n\n";
-SHOP3_ITEM2STATS = "Ammo Type: Pistol\nSpeed: Very Fast\nDamage: Low\nAccuracy: Low\nSlot: 4\nUpgrades: None";
+SHOP3_ITEM2DESC = 
+"Who needs pinpoint accuracy out to 1 KM\n"
+"when you can solve up to 1,200 problems\n"
+"a minute? Put all that pistol ammo you've been\n"
+"hoarding to good use in this machine-pistol,\n"
+"lovingly shimmed by an amateur gunsmith\n"
+"from a pistol that had no business spewing this\n"
+"much lead at such a ridiculous speed.\n\n"
+"(Hey, being banned by name in at least one\n"
+"country must mean we're doing something right!)";
+SHOP3_ITEM2STATS = "Ammo Type: Pistol\nSpeed: Very Fast\nDamage: Low\nAccuracy: Not so great\nSlot: 4\nUpgrades: None";
 SHOP3_ITEM3NAME = "Lever-Action Rifle";
-SHOP3_ITEM3DESC = "How the West was won. Saddle up, pardner, it's just you and your rifle. \n"
+SHOP3_ITEM3DESC = 
+"How the West was won. Saddle up, pardner, it's just you and your rifle. \n"
 "(Notice: The West may or may not have been won with this rifle.)\n\n";
 SHOP3_ITEM3STATS = "Ammo Type: Magnum\nSpeed: Slow\nDamage: High\nAccuracy: Medium-High\nSlot: 3\nUpgrades: None";
 
