@@ -134,7 +134,7 @@ str weaponstats[11][6][6]=
 		{"ShotgunAmmo","","SHOP_AMMO2LABEL","","SHOP_AMMO2DESC",""},
 		{"LightRifleAmmo","","SHOP_AMMO3LABEL","","SHOP_AMMO3DESC",""},
 		{"HeavyRifleAmmo","","SHOP_AMMO4LABEL","","SHOP_AMMO4DESC",""},
-		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","","SHOP5_ITEM2DESC",""},
+		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","","SHOP5_ITEM2DESC","SHOP5_ITEM2STATS"},
 	},
 	//Machine 10 (Armor)
 	{
