@@ -110,8 +110,10 @@ SHOPPDA_ITEM4STATS = "Contains:\n"
 // Shop descriptions (level 1)
 SHOP1_NAME = "Vending Machine (Tools/Supplies)";
 SHOP1_MAIN = 
-"Raw materials and tools are shipped to the colonies on a daily basis.\n"
-"Buy materials, tools, and supplies here.";
+"Raw materials and tools are shipped to the colonies on a daily basis,\n"
+"but interstellar shipping is far from cheap, so the UAC has to break\n"
+"even on it somehow. Pocket knives, first aid, and daily work tools\n"
+"are on sale right here, for (what we hope are) reasonable prices.";
 SHOP1_ITEM1NAME = "MediPatch";
 SHOP1_ITEM1DESC = 
 "Doctors are expensive, and in short supply. \n"
@@ -162,9 +164,8 @@ SHOP2_MAIN =
 "9x19mm Parabellum, and has a magazine size of no more than 17 rounds, \n"
 "under the terms of Union Aerospace Corporation Employee Guidelines \n"
 "Article 3, Paragraph 2. Enforcement of these guidelines is the task of\n"
-"UAC Security. \n\n"
-"This vending machine, however, could not care less\n"
-"about that crap. Buy whatever!";
+"UAC Security. (This vending machine, however, could not care less\n"
+"about that crap. Buy whatever!)";
 SHOP2_ITEM1NAME = "Glox Handgun";
 SHOP2_ITEM1DESC = 
 "The only handgun that UAC employees are\n"
@@ -223,28 +224,59 @@ SHOP3_ITEM2DESC =
 SHOP3_ITEM2STATS = "Ammo Type: Pistol\nSpeed: Very Fast\nDamage: Low\nAccuracy: Not so great\nSlot: 4\nUpgrades: None";
 SHOP3_ITEM3NAME = "Lever-Action Rifle";
 SHOP3_ITEM3DESC = 
-"How the West was won. Saddle up, pardner, it's just you and your rifle. \n"
-"(Notice: The West may or may not have been won with this rifle.)\n\n";
+"How the West was won. Saddle up, pardner,\n"
+"it's just you, your rifle, and the wild frontier.\n"
+"This lever-action saddle rifle may not pack the\n"
+"same punch as a full-size battle rifle, but\n"
+"it uses the (relatively) affordable Magnum ammo,\n"
+"outperforming similar-caliber handguns\n"
+"in both damage and accuracy. It does, however,\n"
+"need to be rechambered after each shot, but the\n"
+"intuitive lever-action makes this a cinch.\n\n"
+"Ideal for those mercs that are never seen\n"
+"without their ten-gallon hats and ponchos.";
 SHOP3_ITEM3STATS = "Ammo Type: Magnum\nSpeed: Slow\nDamage: High\nAccuracy: Medium-High\nSlot: 3\nUpgrades: None";
 
 // Shop descriptions (level 4)
-SHOP4_NAME = "Vending Machine (Machine Guns)";
-SHOP4_MAIN = "Whether bullet hoses or heavy emplacements, we've got all the machinery you could want right here.";
+SHOP4_NAME = "Vending Machine (Military Surplus Weapons)";
+SHOP4_MAIN = "It worked for the Army at some point, so it can work for you, too!\nAssault rifles and other Marine-issue hardware, right here,\nwithout the need to go through boot camp first.";
 SHOP4_ITEM1NAME = "Pugnose Assault Rifle";
-SHOP4_ITEM1DESC = "This short-barreled rifle is a favorite of SWAT and other urban-warfare \n"
-"specialists. Much more powerful and controllable than a sub-machine gun,\n"
-"though the H&K-style action is a bit difficult to work at times.\n\n";
+SHOP4_ITEM1DESC = 
+"This compact assault rifle is a favorite of\n"
+"UAC SWAT and other urban-warfare, close-\n"
+"quarters operatives, with its commando-style\n"
+"folding stock and 10-inch barrel. It's much\n"
+"more powerful and controllable than an SMG,\n"
+"though the MP5-style action might be a bit\n"
+"tempermental at times. Don't expect to spray\n"
+"and pray with this, though, due to its reduced\n"
+"rate of fire.";
 SHOP4_ITEM1STATS = "Ammo Type: Light Rifle\nSpeed: Fast\nDamage: Low\nAccuracy: Average\nSlot: 4\nUpgrades: None\n";
 SHOP4_ITEM3NAME = "Marksman's Battle Rifle";
-SHOP4_ITEM3DESC = "You're a Marine and it's about damn time you started acting like one, \n"
-"so grab your rifle (there are many like it but this one is yours) and soldier on! \n"
-"It might kick like a mule, but sometimes our marksmen like walking away from a\n"
-"gunfight with numb shoulders...don't ask us why.\n\n";
+SHOP4_ITEM3DESC = 
+"When you start looking like a Marine, you'll\n"
+"start feeling like a Marine, and then, God\n"
+"dammit, you'll start acting like a Marine, so\n"
+"grab your rifle (there are many like it but\n"
+"this one is yours) and soldier on with this\n"
+"high-caliber, semi-automatic battle rifle.\n"
+"It might kick like a mule, but sometimes our\n"
+"marksmen like walking away from a gunfight\n"
+"with numb shoulders...don't ask us why.\n\n"
+"For an even more Marine-like approach, try\n"
+"the grenade launcher upgrade, which can fling\n"
+"your hand grenades WAY harder than even your\n"
+"beefy arms can handle!";
 SHOP4_ITEM3STATS = "Ammo Type: Heavy Rifle\nSpeed: Slow\nDamage: High\nAccuracy: High\nSlot: 4\nUpgrades: Unimplemented\n";
-SHOP4_ITEM2NAME = "Submachine Gun (BARGAIN!)";
-SHOP4_ITEM2DESC = "Who can forget the dependable SMG? Might not be as powerful as the other\n"
-"heavy ordinance on offer here, but it's sure as hell more affordable! (Sorry, we\n"
-"ran out of room to include the ammo for it!)\n\n";
+SHOP4_ITEM2NAME = "Submachine Gun (SALE!)";
+SHOP4_ITEM2DESC = 
+"Who can forget the dependable SMG? It\n"
+"might not be as powerful as the other\n"
+"heavy ordnance on offer here, but it's\n"
+"sure as hell more affordable! (Except for\n"
+"the ammo - we stuffed this machine so full\n"
+"of rifles that we couldn't include any\n"
+"pistol ammo for you to feed this thing!)";
 SHOP4_ITEM2STATS = "Ammo Type: Pistol\nSpeed: Very Fast\nDamage: Low\nAccuracy: Medium-Low\nSlot: 4\nUpgrades: None";
 
 // Shop descriptions (level 5)
@@ -293,7 +325,12 @@ SHOP6_ITEM1STATS = "Ammo Type: Disposable\nSpeed: Quick\nDamage: Fair\nAccuracy:
 SHOP7_NAME = "Vending Machine (Super Weapons)";
 SHOP7_MAIN = "There's really nothing cool here yet. Sorry. -ww";
 SHOP7_ITEM1NAME = "Test Super Weapon";
-SHOP7_ITEM1DESC = "It just shoots BFG balls and has infinite ammo. Nothing cool here.";
+SHOP7_ITEM1DESC = "I don't actually have any super-weapons implemented,\n"
+"so here's this stupid thing that shoots BFG balls and\n"
+"doesn't use ammo. Don't get too attached - it's going away\n"
+"as soon as better guns get made. -ww\n\n"
+"BTW, I know this text goes off the window. All the more\n"
+"reason to replace it ASAP, right?";
 SHOP7_ITEM1STATS = "";
 SHOP7_ITEM2NAME = "Golden Gun";
 SHOP7_ITEM2DESC = "Scaramanga's magnum opus (heh, get it?) is now on the market. \n"
