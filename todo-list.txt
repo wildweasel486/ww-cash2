@@ -3,7 +3,7 @@ Okay I'm really gonna have to keep up to date on this. Here's some shit I could 
 HIGH PRIORITY:
 * Add weapon durability and associated effects.
 * The rest of the weapons need adding.
--- In slot 4: hmm, a heavy machinegun of some kind, or would that be redundant?
+-- In slot 4: hmm, a heavy machinegun of some kind, or would that be redundant? Also need to make the grenade-launcher for the Battle Rifle
 -- In slot 5: Find better sprites for the Recoilless, add disposable LAWs and the incendiary rockets.
 -- In slot 6: Plasma Gatling, Heater Rifle, Gauss Rifle, Plasma Grenades?
 ---- Implement gauss rifle - graphics/sounds are already in...
@@ -32,7 +32,7 @@ AESTHETICS:
 * Get actual graphics for the shop menus.
 * Lengthen the shop descriptions for anything that had to be cut down for space originally?
 * I'm not sure I like the current Magnum graphics/sounds; maybe replace them with the ones I was using before (Nmn sprites/RE4 sounds?).
-* Need to find better fire sound for assault rifle. (Find more way to make it stand out from SMG?)
+* Need to find better fire sound for assault rifle. (Find more way to make it stand out from SMG? Maybe replace the rifle entirely?)
 
 BALANCE ISSUES:
 * Seems like the game gets a lot easier later on; maybe raise prices across the board so it takes longer to get the really good guns
