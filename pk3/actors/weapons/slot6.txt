@@ -13,6 +13,7 @@ ACTOR MOBlaster : CashWeapon
 	Weapon.AmmoUse 1
 	Weapon.AmmoGive 200
 	Weapon.SlotNumber 6
+	Tag "$SHOP6_ITEM1NAME"
 	+NOAUTOFIRE
 	+AMMO_OPTIONAL
 	States

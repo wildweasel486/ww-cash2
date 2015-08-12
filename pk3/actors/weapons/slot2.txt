@@ -23,6 +23,7 @@ ACTOR SinglePistol : CashWeapon replaces Pistol
 	Weapon.Kickback 40
 	Weapon.SlotNumber 2
 	AttackSound "weapons/gloxfire"
+	Tag "$SHOP2_ITEM1NAME"
 	+AMMO_OPTIONAL
 	+NOAUTOFIRE
 	Decal BulletChip
@@ -107,6 +108,7 @@ ACTOR DualPistols : CashWeapon // An experiment in Die Hard 2-style dualies.
 	Weapon.AmmoGive2 0
 	Weapon.SlotNumber 2
 	AttackSound "weapons/gloxfire"
+	Tag "Dual Pistols"
 	+AMMO_OPTIONAL
 	+NOAUTOFIRE
 	Decal BulletChip
@@ -302,6 +304,7 @@ ACTOR PunchGun : CashWeapon
 	+Weapon.Ammo_Optional
 	+Weapon.Alt_Ammo_Optional
 	Decal "BulletChip"
+	Tag "$SHOP2_ITEM2NAME"
 	States
 	{
 	Select:
@@ -450,6 +453,7 @@ ACTOR KestrelMagnum : CashWeapon
 	Weapon.AmmoGive2 0
 	Weapon.SlotNumber 2
 	AttackSound "Kestrel/Fire"
+	Tag "$SHOP2_ITEM3NAME"
 	+AMMO_OPTIONAL
 	+NOAUTOFIRE
 	States

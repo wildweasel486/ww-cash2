@@ -24,6 +24,7 @@ ACTOR PumpShotgun : CashWeapon
 	Weapon.AmmoUse2 0
 	Weapon.SlotNumber 3
 	Decal "BulletChip"
+	Tag "$SHOP3_ITEM1NAME"
 	+Weapon.NoAutoFire
 	+Weapon.Ammo_Optional
 	States
@@ -189,6 +190,7 @@ ACTOR LeverActionRifle : CashWeapon
 	Weapon.AmmoUse2 0
 	Weapon.SlotNumber 3
 	Decal "BulletChip"
+	Tag "$SHOP3_ITEM3NAME"
 	+Weapon.NoAutoFire
 	+Weapon.Ammo_Optional
 	States

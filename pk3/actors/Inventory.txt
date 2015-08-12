@@ -299,6 +299,7 @@ ACTOR HandGrenade
 	BounceFactor 0.4
 	WallBounceFactor 0.4
 	bouncesound "grenade/bounce"
+	Tag "$SHOP5_ITEM2NAME"
 	states
 	{
 	Spawn:

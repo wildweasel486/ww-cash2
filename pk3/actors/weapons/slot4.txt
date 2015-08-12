@@ -14,6 +14,7 @@ ACTOR CHCSMG : CashWeapon
 	Weapon.AmmoGive2 0
 	Weapon.SlotNumber 4
 	AttackSound "weapons/tmpfire"
+	Tag "$SHOP3_ITEM2NAME"
 	+Weapon.Ammo_Optional
 	+Weapon.NoAutoFire
 	States
@@ -141,6 +142,7 @@ ACTOR PugRifle : CashWeapon
 	Weapon.Kickback 40
 	Weapon.SlotNumber 4
 	AttackSound "weapons/smgfire"
+	Tag "$SHOP4_ITEM1NAME"
 	Decal BulletChip
 	+Weapon.AMMO_OPTIONAL
 	+Weapon.NoAutoFire
@@ -220,6 +222,7 @@ ACTOR BattleRifle : CashWeapon
 	Weapon.AmmoGive2 0
 	Weapon.Kickback 40
 	AttackSound "weapons/m14fire"
+	Tag "$SHOP4_ITEM2NAME"
 	+weapon.noautofire
 	+weapon.ammo_optional
 	States

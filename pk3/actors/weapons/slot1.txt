@@ -45,6 +45,7 @@ ACTOR MartialArts : CashWeapon replaces Fist
 	DamageType Melee
 	Weapon.SlotNumber 1
 	Decal ""
+	Tag "Unarmed"
 	+NOALERT
 	+NOEXTREMEDEATH
 	States
@@ -171,6 +172,7 @@ ACTOR Crowbar : CashWeapon
 	DamageType Melee
 	Weapon.SlotNumber 1
 	Decal ""
+	Tag "$SHOP1_ITEM2NAME"
 	+NOALERT
 	+NOAUTOFIRE
 	States
@@ -222,6 +224,7 @@ ACTOR CHCKnife : CashWeapon
 	Weapon.SlotNumber 1
 	Weapon.Kickback 0
 	Decal ""
+	Tag "$SHOP1_ITEM3NAME"
 	States
 	{
 	Select:
@@ -330,6 +333,7 @@ ACTOR FireAxePuff
 ACTOR FireAxe : CashWeapon
 {
 	Weapon.SlotNumber 1
+	Tag "$SHOP1_ITEM4NAME"
 	States
 	{
 	Select:

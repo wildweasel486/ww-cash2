@@ -1,6 +1,7 @@
 ACTOR TestSuperWeapon : CashWeapon
 {
 	Weapon.SlotNumber 7
+	Tag "$SHOP7_ITEM1NAME"
 	States
 	{
 	Select:
