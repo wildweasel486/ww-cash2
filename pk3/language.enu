@@ -312,7 +312,8 @@ SHOP6_MAIN =
 "Energy weapons: awesome-looking, AND environmentally\n"
 "conscious!";
 SHOP6_ITEM1NAME = "Plasma Darter";
-SHOP6_ITEM1DESC = "Give your foes a lethal blister (or five)\n"
+SHOP6_ITEM1DESC = 
+"Give your foes a lethal blister (or five)\n"
 "with this state-of-the-art disposable self-\n"
 "defense weapon.\n\n"
 "PUBLIC SERVICE ANNOUNCEMENT: The UAC \n"
@@ -320,6 +321,19 @@ SHOP6_ITEM1DESC = "Give your foes a lethal blister (or five)\n"
 "your empty Plasma Darter at this machine to \n"
 "receive a 25 CR refund on your deposit.";
 SHOP6_ITEM1STATS = "Ammo Type: Disposable\nSpeed: Quick\nDamage: Fair\nAccuracy: Good\nSlot: 6\nUpgrades: None";
+SHOP6_ITEM2NAME = "Gauss Rifle";
+SHOP6_ITEM2DESC = 
+"The Gauss Rifle uses a series of magnetic\n"
+"accelerators to propel a ferrous slug at speeds\n"
+"ordinarily reserved for fighter jets and astral\n"
+"bodies. When that shot is fired, there is little\n"
+"in the known universe that can stop it. Click\n"
+"the trigger to just fire a slug. Hold the trigger\n"
+"for a second or so to launch it even harder.\n\n"
+"Remember to purchase both kinds of ammo: you\n"
+"will need Heavy Rifle ammo (the actual slug),\n"
+"AND Gauss capacitors to charge the magnets.";
+SHOP6_ITEM2STATS = "Ammo Type: Heavy Rifle/Gauss Capacitor\nSpeed: Slow\nDamage: Ultra-High\nAccuracy: 100%\nSlot: 6\nUpgrades: None";
 
 // Shop descriptions (level 7)
 SHOP7_NAME = "Vending Machine (Super Weapons)";

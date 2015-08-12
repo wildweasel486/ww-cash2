@@ -100,7 +100,7 @@ str weaponstats[11][6][6]=
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
 		{"MOBlaster","","SHOP6_ITEM1NAME","PLASDART","SHOP6_ITEM1DESC","SHOP6_ITEM1STATS"},
-		{"","","","EMPTICON","",""},
+		{"GaussRifle","","SHOP6_ITEM2NAME","EMPTICON","SHOP6_ITEM2DESC","SHOP6_ITEM2STATS"},
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
