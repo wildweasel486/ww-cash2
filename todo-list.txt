@@ -1,36 +1,49 @@
 Okay I'm really gonna have to keep up to date on this. Here's some shit I could do to ww-cash2...
 
 HIGH PRIORITY:
-* Add weapon durability and associated effects.
 * The rest of the weapons need adding.
--- In slot 4: hmm, a heavy machinegun of some kind, or would that be redundant? Also need to make the grenade-launcher for the Battle Rifle
+-- In slot 2:
+---- I'm...really not happy with that Magnum. (see Aesthetics)
+---- Maybe bring back the silenced pistol, a bit less broken this time?
+---- How about a Kampfpistole-type grenade launcher, just to give the rich player something to spend on? (And maybe have it use the same ammo as the one in slot 5?)
+-- In slot 3:
+---- Some kind of varmint rifle (semi or straight-pull bolt-action? Hmm, there's graphics for the latter that Chronoteeth made for the abandoned ww-terror addon) with a scope upgrade maybe?
+-- In slot 4:
+---- Battle Rifle needs its upgrade implemented (find or draw graphics for the launcher attachment!)
+---- A Heavy Machine Gun that takes the Battle Rifle ammo (quicker ROF but much less ammo efficient)
+---- AA12-style autoshotgun that takes shotgun shells (less damage but quicker to shoot/reload than the upgraded Shorty?).
 -- In slot 5: Find better sprites for the Recoilless, add disposable LAWs and the incendiary rockets.
--- In slot 6: Plasma Gatling, Heater Rifle, Gauss Rifle, Plasma Grenades?
----- Implement gauss rifle - graphics/sounds are already in...
--- In slot 7: Pimp Cane, Golden Gun, Spectrum Cannon (ask Pillowblaster?)
----- Pimp Cane already has graphics.
--- In slot HELL: Gothmog, maybe get new sprites for the Crowbar upgrade
+---- Recoilless needs new graphics and behavior and needs to generally suck a lot less.
+---- Disposable LAW rockets, probably 300 CR a pop.
+---- The FLASH rocket launcher, for an explosive weapon that can shoot more than once between reloads. (Maybe ask Yholl if I can borrow the DRLA napalm logic, because I hate dealing with fire effects)
+---- Hmm, was I planning a 40mm grenade launcher at all, or did I cannibalize that idea for ww-terror? Maybe pull it over here, toss the upgrades except for the Stabilizing Fins, and make it reload slower?
+-- In slot 6:
+---- Gauss rifle - graphics/sounds are already in...(see IRC log below)
+---- Plasma Gatling - should I just borrow the recolored Doom 2.5 chaingun again, like original ww-cash?
+---- Heater Rifle - Same logic as the one in WW-BSNI but with less sucky graphics and animation.
+---- Electric Grenades - the ones from ww-terror?
+-- In slot 7:
+---- Pimp Cane already has graphics, just need to actually code it (Tyrian's coin graphics would make interesting projectiles!)
+---- The Golden Gun - High-def Goldeneye model rip might serve as a good base if it can be made detailed enough afterwards.
+---- Spectrum Cannon - ask Pillowblaster, I dunno.
+-- In slot HELL:
+---- The Vendor's Foe upgrade needs some better indication that it exists, maybe some awesome shadowy effects when swinging the crowbar around?
+---- Gothmog needs to exist. But first: fire effects? Could I get away with those being projectile trails, or would I need a sprite edit?
 
 MAJOR GAMEPLAY:
 * Offhand melee attacks, maybe? ww-cash classic had those.
 * Side-idea: offhand melee is a weapon slot of its own, can hold one weapon that takes up Zoom button, must sell melee weapon to buy another. Punches by default; knife, crowbar, and fire axe can replace? (or should fire axe be its own selectable weapon?)
 * Not so sure the dual pistols really works; replace that with a burst-fire upgrade instead?
-* Need to eventually populate the rest of the vending machines with non-placeholder weapons but I feel like I should wait until the shop menu's been replaced first because god damn what a pain
-* Disposable weapons, a la Shifter? PS20, etc.? (This is what the energy weapons are supposed to be, when they're implemented. -ww)
-* Should dual pistols be tossed in favor of a burst-fire upgrade?
 * Durability system needs implementing. Probably have all weapons count durability out of 1000 points, with random chance per shot to be damaged by a point or so.
--- Going along with this: should enemies have rare chance to drop their guns?
---- Malachai's suggestion: have the dying monster check its killer's inventory for the gun they'll drop, and if present, don't drop the gun.
---- Furthermore: dropped weapons have randomized conditions. Example: Zombieman drops a Glox pistol if the player doesn't have one; starting durability is random from 10-80% of what condition it'd be from a shop. Dropped weapons will NEVER be perfect condition; you can only be guaranteed this from a shop.
+-- Low durability makes reloads occasionally take longer, weapons occasionally jam, misfire, or fire duds.
 -- Durability should probably be shown as a graph, instead of a number, just to keep players guessing.
+* Should enemies have rare chance to drop their guns?
+-- Malachai's suggestion: have the dying monster check its killer's inventory for the gun they'll drop, and if present, don't drop the gun.
+-- Furthermore: dropped weapons have randomized conditions. Example: Zombieman drops a Glox pistol if the player doesn't have one; starting durability is random from 10-80% of what condition it'd be from a shop. Dropped weapons will NEVER be perfect condition; you can only be guaranteed this from a shop.
 
 AESTHETICS:
 * Could probably stand to rework the recoil. Move it to a Flash state, probably, so it doesn't clutter up the weapon animations and I can just call it with A_GunFlash?
 * Someone (torridGristle?) offered a nicer looking Glox pistol; look into that?
-* Language strings for shop descriptions need better line breaks; they're escaping the window.
-* Maybe find a slightly larger font for them, too? Is the Tyrian font available in BMF? (Yes it is - but would it clash with the Iron Plague/Hard Vacuum stuff?)
-* Get actual graphics for the shop menus.
-* Lengthen the shop descriptions for anything that had to be cut down for space originally?
 * I'm not sure I like the current Magnum graphics/sounds; maybe replace them with the ones I was using before (Nmn sprites/RE4 sounds?).
 * Need to find better fire sound for assault rifle. (Find more way to make it stand out from SMG? Maybe replace the rifle entirely?)
 
@@ -43,10 +56,6 @@ OTHER SHIT I COULD PROBABLY DO:
 * Weaker monsters randomly drop useless junk instead of cash. IOU notes, gum wrappers, expired coupons, gift receipts, etc.
 * Bigger monsters should occasionally drop really big cash items (Cacoward trophies?) instead of huge piles of small cash.
 * Should cash disappear if it lands on liquid flats or gratings? (Maybe after a delay, wet money doesn't ALWAYS equal unusable money)
-* 
-
-DONE (PROBABLY):
-* Shop menu needs redoing. Badly. (Thanks, edthebat! -ww 8/8/2015)
 
 FROM OLD TODOLIST.TXT FROM PK3:
 
