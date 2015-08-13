@@ -57,6 +57,11 @@ OTHER SHIT I COULD PROBABLY DO:
 * Bigger monsters should occasionally drop really big cash items (Cacoward trophies?) instead of huge piles of small cash.
 * Should cash disappear if it lands on liquid flats or gratings? (Maybe after a delay, wet money doesn't ALWAYS equal unusable money)
 
+THINGS I CAN DO WITH THE HELL VENDOR:
+* Make it mutter/whisper infernal things when you're nearby. (Actually, all machines need some kind of ambience.)
+* When destroyed, it explodes in a shower of debris and blood.
+* When dismantled with the Vendor's Foe (need a better name of that), have it erupt in DRLA Nightmare Archvile fire and say unnerving things at the player.
+
 FROM OLD TODOLIST.TXT FROM PK3:
 
 [21:56:15] <torridGristle> wildweasel, i think that the gauss rifle should use two ammo types to balance out the raw power
