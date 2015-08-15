@@ -70,7 +70,7 @@ str weaponstats[11][6][6]=
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
 		{"PumpShotgun","PumpShotgunUpgrade","SHOP3_ITEM1NAME","NOICON","SHOP3_ITEM1DESC","SHOP3_ITEM1STATS"},
-		{"CHCSMG","","SHOP3_ITEM2NAME","NOICON","SHOP3_ITEM2DESC","SHOP3_ITEM2STATS"},
+		{"CHCSMG","","SHOP3_ITEM2NAME","SMGICON","SHOP3_ITEM2DESC","SHOP3_ITEM2STATS"},
 		{"LeverActionRifle","","SHOP3_ITEM3NAME","NOICON","SHOP3_ITEM3DESC","SHOP3_ITEM3STATS"},
 		{"PistolAmmo","","SHOP_AMMO1LABEL","PSTAICON","SHOP_AMMO1DESC",""},
 		{"ShotgunAmmo","","SHOP_AMMO2LABEL","12GAICON","SHOP_AMMO2DESC",""},
@@ -79,7 +79,7 @@ str weaponstats[11][6][6]=
 	//Machine 4
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
-		{"PugRifle","","SHOP4_ITEM1NAME","NOICON","SHOP4_ITEM1DESC","SHOP4_ITEM1STATS"},
+		{"PugRifle","","SHOP4_ITEM1NAME","ARIFICON","SHOP4_ITEM1DESC","SHOP4_ITEM1STATS"},
 		{"BattleRifle","","SHOP4_ITEM3NAME","NOICON","SHOP4_ITEM3DESC","SHOP4_ITEM3STATS"},
 		{"HeavyMachineGun","","SHOP4_ITEM4NAME","M60ICON","SHOP4_ITEM4DESC","SHOP4_ITEM4STATS"},
 		{"CHCSMG","","SHOP4_ITEM2NAME","SMGICON","SHOP4_ITEM2DESC","SHOP3_ITEM2STATS"},
@@ -89,7 +89,7 @@ str weaponstats[11][6][6]=
 	//Machine 5
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
-		{"RecoillessRifle","","SHOP5_ITEM1NAME","NOICON","SHOP5_ITEM1DESC","SHOP5_ITEM1STATS"},
+		{"RecoillessRifle","","SHOP5_ITEM1NAME","RCOLICON","SHOP5_ITEM1DESC","SHOP5_ITEM1STATS"},
 		{"MGl140","","SHOP5_ITEM3NAME","MGLICON","SHOP5_ITEM3DESC","SHOP5_ITEM3STATS"},
 		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","GRNAICON","SHOP5_ITEM2DESC","SHOP5_ITEM2STATS"},
 		{"RecoillessRockets","","SHOP_AMMO5LABEL","NOICON","SHOP_AMMO5DESC",""},
