@@ -263,7 +263,6 @@ ACTOR CarePackageBeaconRifle
 
 ACTOR ArtiHandGrenade : CustomInventory
 {
-	Tag "Grenade"
 	Inventory.amount 1
 	inventory.maxamount 0x7fffffff
 	inventory.icon GRENICON
@@ -271,6 +270,7 @@ ACTOR ArtiHandGrenade : CustomInventory
 	+Inventory.invbar
 	+inventory.keepdepleted
 	Inventory.InterHubamount 0x7fffffff
+	Tag "$SHOP5_ITEM2NAME"
 	states
 	{
 	Use:
@@ -299,7 +299,6 @@ ACTOR HandGrenade
 	BounceFactor 0.4
 	WallBounceFactor 0.4
 	bouncesound "grenade/bounce"
-	Tag "$SHOP5_ITEM2NAME"
 	states
 	{
 	Spawn:
@@ -315,6 +314,92 @@ ACTOR HandGrenade
 		FRME A 1 bright A_Explode(150,256,1,1,128,15,2)
 		FRME B 1 Bright A_Quake(7,10,0,480,0)
 		FRME CDEFGHIHJKLMNOPQRS 1 bright
+		stop
+	}
+}
+
+ACTOR ArtiElectricGrenade : CustomInventory
+{
+	Inventory.amount 1
+	inventory.maxamount 0x7fffffff
+	inventory.icon EGRNICON
+	inventory.usesound "grenade/throw"
+	+Inventory.invbar
+	+inventory.keepdepleted
+	Inventory.InterHubamount 0x7fffffff
+	Tag "$SHOP6_ITEM6NAME"
+	states
+	{
+	Use:
+		TNT1 A 0 A_FireCustomMissile("ElectricGrenade", 0, 0)
+		stop
+	}
+}
+
+ACTOR ElectricGrenade
+{
+	Radius 4
+	Height 3
+	Speed 30
+	Scale 0.55
+	Damage (1)
+	Gravity 0.75
+	DamageType "PlayerElectricGrenade"
+	+NOBLOCKMAP 
+	+DROPOFF 
+	+MISSILE 
+	+ACTIVATEIMPACT 
+	+ACTIVATEPCROSS
+	+CANBOUNCEWATER
+	obituary "%o would make a good conductor, says %k."
+	BounceType Doom
+	BounceFactor 0.4
+	WallBounceFactor 0.4
+	bouncesound "grenade/bounce"
+	states
+	{
+	Spawn:
+		EGRN A 2 Bright A_Countdown
+		EGRN BCDEFGH 2 Bright
+		loop
+	Death:
+		EGRN C 35 Bright
+		STFL A 0 A_AlertMonsters
+		STFL A 0 A_SetTranslucent(0.75,1)
+		STFL A 0 A_PlaySound("grenade/elecexplode",0,1.0,0,0.1)
+		STFL A 0 Bright A_Quake(7,10,0,512,0)
+		STFL A 1 Bright A_Explode(8,192)
+		STFL B 1 Bright A_SetScale(0.6)
+		STFL C 1 Bright A_Explode(8,200)
+		STFL D 1 Bright A_SetScale(0.7)
+		STFL E 1 Bright A_Explode(8,208)
+		STFL F 1 Bright A_SetScale(0.8)
+		STFL G 1 Bright A_Explode(8,216)
+		STFL H 1 Bright A_SetScale(0.9)
+		STFL I 1 Bright A_Explode(8,224)
+		STFL J 1 Bright A_SetScale(1.0)
+		STFL K 1 Bright A_Explode(8,232)
+		STFL L 1 Bright A_SetScale(1.2)
+		STFL M 1 Bright A_Explode(8,240)
+		STFL N 1 Bright A_SetScale(1.4)
+		STFL O 1 Bright A_Explode(8,248)
+		STFL P 1 Bright A_SetScale(1.6)
+		STFL A 1 Bright A_Explode(8,256)
+		STFL B 1 Bright A_SetScale(1.8)
+		STFL C 1 Bright A_Explode(8,264)
+		STFL D 1 Bright A_SetScale(2.0)
+		STFL E 1 Bright A_Explode(8,272)
+		STFL F 1 Bright A_SetScale(2.25)
+		STFL G 1 Bright A_Explode(8,280)
+		STFL H 1 Bright A_SetScale(2.5)
+		STFL I 1 Bright A_Explode(8,288)
+		STFL J 1 Bright A_SetScale(2.75)
+		STFL K 1 Bright A_Explode(8,296)
+		STFL L 1 Bright A_SetScale(3.0)
+		STFL M 1 Bright A_Explode(8,304)
+		STFL N 1 Bright A_SetScale(3.25)
+		STFL O 1 Bright A_Explode(8,312)
+		STFL P 1 Bright A_SetScale(3.5)
 		stop
 	}
 }

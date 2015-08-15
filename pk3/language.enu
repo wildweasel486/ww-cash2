@@ -366,6 +366,17 @@ SHOP6_ITEM2DESC =
 "will need Heavy Rifle ammo (the actual slug),\n"
 "AND Gauss capacitors to charge the magnets.";
 SHOP6_ITEM2STATS = "Ammo Type: Heavy Rifle/Gauss Capacitor\nSpeed: Slow\nDamage: Ultra-High\nAccuracy: 100%\nSlot: 6\nUpgrades: None";
+SHOP6_ITEM6NAME = "Electric Grenades";
+SHOP6_ITEM6DESC = 
+"As useful as the typical hand grenade can be,\n"
+"it tends to leave quite a mess, with all that\n"
+"nasty shrapnel embedding itself in all the walls,\n"
+"and all that. It also leaves really nasty-looking\n"
+"wounds. These energy-based electric-shock bombs\n"
+"burst into a great arc of high-voltage electricity,\n"
+"eliminating enemies without poking a hundred holes\n"
+"in the walls. Also works well for disabling machines.\n";
+SHOP6_ITEM6STATS = "Ammo Type: Disposable\nSpeed: Unlimited!\nDamage: Medium (Stun Effect)\nAccuracy: So-so\nSlot: Inventory\nUpgrades: None";
 
 // Shop descriptions (level 7)
 SHOP7_NAME = "Vending Machine (Super Weapons)";

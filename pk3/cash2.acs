@@ -91,7 +91,7 @@ str weaponstats[11][6][6]=
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
 		{"RecoillessRifle","","SHOP5_ITEM1NAME","NOICON","SHOP5_ITEM1DESC","SHOP5_ITEM1STATS"},
 		{"MGl140","","SHOP5_ITEM3NAME","MGLICON","SHOP5_ITEM3DESC","SHOP5_ITEM3STATS"},
-		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","NOICON","SHOP5_ITEM2DESC","SHOP5_ITEM2STATS"},
+		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","GRNAICON","SHOP5_ITEM2DESC","SHOP5_ITEM2STATS"},
 		{"RecoillessRockets","","SHOP_AMMO5LABEL","NOICON","SHOP_AMMO5DESC",""},
 		{"40mmAmmo","","SHOP_AMMO7LABEL","40MAICON","SHOP_AMMO7DESC",""},
 		{"","","","EMPTICON","",""},
@@ -101,7 +101,7 @@ str weaponstats[11][6][6]=
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
 		{"MOBlaster","","SHOP6_ITEM1NAME","PLASDART","SHOP6_ITEM1DESC","SHOP6_ITEM1STATS"},
 		{"GaussRifle","","SHOP6_ITEM2NAME","EMPTICON","SHOP6_ITEM2DESC","SHOP6_ITEM2STATS"},
-		{"","","","EMPTICON","",""},
+		{"ArtiElectricGrenade","","SHOP6_ITEM6NAME","EGRAICON","SHOP6_ITEM6DESC","SHOP6_ITEM6STATS"},
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
@@ -213,8 +213,8 @@ int weaponamounts[11][6][7]=
 	{
 		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
 		{100,25,0,0,1,1,1},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
+		{2500,1250,0,0,1,1,1},
+		{130,0,0,0,1,1,0x7fffffff},
 		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0}
