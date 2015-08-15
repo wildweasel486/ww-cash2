@@ -12,6 +12,11 @@ coinstack1 coinstk1
 coinstack2 coinstk2
 
 weapons/dryfire DRYFIRE
+Dryfire/Pistol EMPTYP
+Dryfire/SMG EMPTYT
+Dryfire/Rifle EMPTYM
+Dryfire/Revolver EMPTYR
+Dryfire/Heavy EMPTYH
 
 // Inventory
 
