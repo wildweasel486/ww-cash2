@@ -17,6 +17,7 @@
 #include "actors/weapons/slot4/battlerifle.txt"
 #include "actors/weapons/slot4/blackboarlmg.txt"
 #include "actors/weapons/slot5/recoilless.txt"
+#include "actors/weapons/slot5/grenadelauncher.txt"
 #include "actors/weapons/slot6/plasmadarter.txt"
 #include "actors/weapons/slot6/gaussrifle.txt"
 #include "actors/weapons/slot7/testsuperweapon.txt"

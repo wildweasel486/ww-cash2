@@ -154,3 +154,20 @@ ACTOR DroppedHeavyRifleAmmo : CustomInventory
 		Stop
 	}
 }
+
+ACTOR 40mmAmmo : Ammo
+{
+	Inventory.Amount 6
+	Inventory.MaxAmount 0x7fffffff
+	Inventory.Icon "40MPA0"
+	Scale 0.3
+	Inventory.PickupMessage "Picked up some 40mm HE grenades."
+	Inventory.PickupSound "MGL/Load"
+	Tag "40mm HE Grenade"
+	States
+	{
+	Spawn:
+		40MP A -1
+		Stop
+	}
+}
