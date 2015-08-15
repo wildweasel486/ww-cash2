@@ -124,6 +124,17 @@ weapons/m14in m14load2
 weapons/m14back m14load3
 weapons/m14fwd m14load4
 
+M60/FireLoop M60Loop
+M60/FireStop M60Stop
+M60/BeltMove M60Belt
+M60/GripOn M60Grip2
+M60/GripOff M60Grip
+M60/Open M60Open
+M60/Load M60Load
+M60/Close M60Close
+M60/Bolt M60Bolt
+M60/Enemyfire M60Enemy
+
 // Slot 5
 
 $random weapons/flakfire { flak1 flak2 flak3 }
@@ -131,6 +142,11 @@ flak1 dsflak1
 flak2 dsflak2
 flak3 dsflak3  
 weapons/flakload dsflakld
+
+MGL/Fire MGLFire
+MGL/Open MGLOpen
+MGL/Load MGLLoad
+MGL/Close MGLClose
 
 // Slot 6
 

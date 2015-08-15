@@ -1,0 +1,124 @@
+ACTOR SMGClip : Ammo
+{
+	Inventory.MaxAmount 32
+	Ammo.BackpackAmount 0
+}
+
+ACTOR CHCSMG : CashWeapon
+{
+	Weapon.AmmoType1 "SMGClip"
+	Weapon.AmmoUse1 1
+	Weapon.AmmoGive1 0
+	Weapon.AmmoType2 "PistolAmmo"
+	Weapon.AmmoUse2 0
+	Weapon.AmmoGive2 0
+	Weapon.SlotNumber 4
+	AttackSound "weapons/tmpfire"
+	Tag "$SHOP3_ITEM2NAME"
+	+Weapon.Ammo_Optional
+	+Weapon.NoAutoFire
+	States
+	{
+	Select:
+		TECG A 1 A_Raise
+		Loop
+	Deselect:
+		TECG A 1 A_Lower
+		Loop
+	Ready:
+		TECG A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		Loop
+	Fire:
+		TECG A 0 A_JumpIfNoAmmo("Dryfire")
+		TECG B 0 A_GunFlash
+		TECG B 0 A_AlertMonsters
+		TECG B 1 BRIGHT A_FireBullets(5, 3, -1, 6, "BulletPuff", 1)
+		TECG C 0 A_SetPitch(pitch - 0.9)
+		TECG C 1 Offset(10,38)
+		TECG A 1 Offset(11,39) A_Refire
+		TECG A 1 Offset(11,40) A_WeaponReady(WRF_NOBOB)
+		TECG A 1 Offset(10,39) A_WeaponReady(WRF_NOBOB)
+		TECG A 1 Offset(8,38) A_WeaponReady(WRF_NOBOB)
+		TECG A 1 Offset(6,36) A_WeaponReady(WRF_NOBOB)
+		TECG A 1 Offset(3,34) A_WeaponReady(WRF_NOBOB)
+		TECG A 1 Offset(1,33) A_WeaponReady(WRF_NOBOB)
+		TECG A 1 Offset(-1,31) A_WeaponReady(WRF_NOBOB)
+		Goto Ready
+	Dryfire:
+		TECG A 1 A_PlaySound("weapons/dryfire")
+		Goto Ready
+	Reload:
+		TECG A 0 A_JumpIfInventory("SMGClip", 32, 2)
+		TECG A 0 A_JumpIfInventory("PistolAmmo", 1, 2)
+		TECG A 1 A_WeaponReady(WRF_NOFIRE)
+		Goto Ready
+		TECR A 1 Offset(-1,32)
+		TECR A 1 Offset(-2,32)
+		TECR A 1 Offset(-4,33)
+		TECR A 1 Offset(-6,34)
+		TECR B 1 Offset(-7,36)
+		TECR C 1 Offset(-8,37)
+		TECR D 1 Offset(-8,38)
+		TECR E 1 Offset(-8,39)
+		TECR F 1 Offset(-8,41)
+		TECR F 1 Offset(-8,42)
+		TECR F 1 Offset(-7,41)
+		TECR F 1 Offset(-5,39)
+		TECR G 1 Offset(-3,36) A_PlayWeaponSound("weapons/tmpout")
+		TECR G 1 Offset(-3,35)
+		TECR H 1 Offset(-2,34)
+		TECR H 1 Offset(-1,33)
+		TECR I 1 Offset(1,32)
+		TECR I 1 Offset(1,31)
+		TECR I 1 Offset(1,30)
+		TECR I 1 Offset(2,29)
+		TECR I 1 Offset(3,30)
+		TECR I 1 Offset(3,31)
+		TECR I 1 Offset(4,32)
+		TECR I 1 Offset(4,33)
+		TECR I 1 Offset(3,34)
+		TECR I 1 Offset(3,35)
+		TECR I 1 Offset(2,36)
+		TECR I 1 Offset(2,37)
+		TECR I 1 Offset(1,38)
+		TECR I 1 Offset(1,39)
+		TECR J 1 Offset(1,40)
+		TECR K 1 Offset(-1,41)
+	ReloadWork:
+		ASDS A 0
+		ASDS A 0 A_TakeInventory("PistolAmmo",1)
+		ASDS A 0 A_GiveInventory("SMGClip",1)
+		ASDS A 0 A_JumpIfInventory("SMGClip",32,"ReloadFinish")
+		ASDS A 0 A_JumpIfInventory("PistolAmmo",1,"ReloadWork")
+	ReloadFinish:
+		TECR L 1 Offset(-2,42) A_PlayWeaponSound("weapons/tmpin")
+		TECR L 1 Offset(-3,43)
+		TECR L 1 Offset(-4,44)
+		TECR L 1 Offset(-3,43)
+		TECR L 1 Offset(-2,42)
+		TECR L 1 Offset(-1,41)
+		TECR L 1 Offset(1,40)
+		TECR L 1 Offset(1,39)
+		TECR L 1 Offset(2,38)
+		TECR M 1 Offset(3,37)
+		TECR N 1 Offset(4,36)
+		TECR O 1 Offset(5,35)
+		TECR P 1 Offset(6,34)
+		TECR Q 1 Offset(7,33)
+		TECR R 1 Offset(9,35) A_PlayWeaponSound("weapons/tmppull")
+		TECR S 1 Offset(12,38)
+		TECR T 1 Offset(15,41)
+		TECR U 1 Offset(17,43)
+		TECR V 1 Offset(18,44)
+		TECR W 1 Offset(19,45)
+		TECG A 1 Offset(17,43)
+		TECG A 1 Offset(14,40)
+		TECG A 1 Offset(10,37)
+		TECG A 1 Offset(6,35)
+		TECG A 1 Offset(3,34)
+		TECG A 1 Offset(1,33)
+		Goto Ready
+	}
+}
+
+
