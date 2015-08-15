@@ -78,3 +78,14 @@ FROM OLD TODOLIST.TXT FROM PK3:
 [21:59:37] <torridGristle> oh that'd be really cool
 [22:00:07] <torridGristle> different actors for different ranges of charge for more of an impact from the higher charge
 [22:00:32] <torridGristle> maybe some shrapnel in a small range
+
+DIFFICULTY SETTINGS:
+
+Difficulty will be available in six settings. They primarily affect cash drops, and are available in HMP and UV spawns.
+
+DITCH-DIGGER - 2x cash spawns, HMP monsters.
+WAGE SLAVE - 2x cash spawns, UV monsters.
+TEAM LEADER - 1x cash spawns, HMP monsters. (default)
+MIDDLE MANAGER - 1x cash spawns, UV monsters.
+VP OF MARKETING - 0.5x cash spawns, HMP monsters.
+CHIEF EXECUTIVE - 0.5x cash spawns, UV monsters.
