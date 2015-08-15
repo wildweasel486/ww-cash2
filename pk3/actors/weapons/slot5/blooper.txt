@@ -9,6 +9,8 @@ ACTOR Blooper : CashWeapon
 	Weapon.AmmoUse1 1
 	Weapon.AmmoType2 "40mmAmmo"
 	Weapon.SlotNumber 5
+	+Weapon.Ammo_Optional
+	+Weapon.NoAutoFire
 	States
 	{
 	Spawn:
