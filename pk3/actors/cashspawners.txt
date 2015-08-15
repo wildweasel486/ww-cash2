@@ -1,6 +1,9 @@
+ACTOR CHCHealthBonus : HealthBonus {}
+
 ACTOR CashBonus1 : RandomSpawner replaces HealthBonus
 {
 	DropItem "CHCSmallCoin"
+	DropItem "CHCHealthBonus"
 }
 
 ACTOR CashBonus2 : RandomSpawner replaces ArmorBonus
@@ -164,39 +167,57 @@ ACTOR CashNazi : WolfensteinSS replaces WolfensteinSS
 ACTOR BriefcaseOrMachine : RandomSpawner replaces Backpack
 {
 	DropItem "CashTerminalLevelAmmo"
+	DropItem "CashTerminalLevelAmmo"
 	DropItem "CHCBriefcaseFullaDosh"
 }
 
 ACTOR MoneyFromClip : RandomSpawner replaces Clip
 {
 	Dropitem "CHCMediumCoin"
+	Dropitem "CHCMediumCoin"
+	Dropitem "DroppedPistolAmmo"
+	Dropitem "DroppedHeavyPistolAmmo"
 }
 ACTOR MoneyFromAmmoBox : RandomSpawner replaces ClipBox
 {
 	Dropitem "CHCSmallBill"
+	Dropitem "CHCSmallBill"
+	Dropitem "PistolAmmo"
+	Dropitem "HeavyPistolAmmo"
+	Dropitem "LightRifleAmmo"
 }
 ACTOR MoneyFromShell : RandomSpawner replaces Shell
 {
 	Dropitem "CHCLargeCoin"
+	Dropitem "DroppedShotgunAmmo"
 }
 ACTOR MoneyFromShellBox : RandomSpawner replaces ShellBox
 {
 	Dropitem "CHCMediumBill"
+	Dropitem "ShotgunAmmo"
+	Dropitem "HeavyRifleAmmo"
 }
 
 ACTOR MoneyFromRocket : RandomSpawner replaces RocketAmmo
 {
 	Dropitem "CHCSmallBill"
+	Dropitem "CHCSmallBill"
+	Dropitem "ArtiHandGrenade"
 }
 ACTOR MoneyFromRocketBox : RandomSpawner replaces RocketBox
 {
 	Dropitem "CHCLargeBill"
+	Dropitem "CHCLargeBill"
+	Dropitem "40mmAmmo"
+	Dropitem "ArtiHandGrenade"
 }
 ACTOR MoneyFromCell : RandomSpawner replaces Cell
 {
 	Dropitem "CHCLargeCoin"
+	Dropitem "ArtiElectricGrenade"
 }
 ACTOR MoneyFromCellPack : RandomSpawner replaces CellPack
 {
 	Dropitem "CHCLargeBill"
+	Dropitem "ArtiElectricGrenade"
 }

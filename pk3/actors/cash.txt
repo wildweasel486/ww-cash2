@@ -22,6 +22,8 @@ ACTOR ColdHardCash : CustomInventory
 	}
 }
 
+// This actor is "thrown" when the Drop Cash key is pressed.
+// "Dosh! Grab it while ye can, lads!"
 ACTOR CHCDosh
 {
 	PROJECTILE
