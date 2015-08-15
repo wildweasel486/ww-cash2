@@ -69,7 +69,7 @@ ACTOR ShotgunAmmo : Ammo
 	Inventory.MaxAmount 0x7fffffff
 	Inventory.Icon SHELA0
 	Inventory.PickupMessage "Picked up 10 shotgun ammo."
-	Scale 0.125
+	Scale 0.25
 	Tag "Shotg."
 	States
 	{
@@ -163,7 +163,7 @@ ACTOR 40mmAmmo : Ammo
 	Scale 0.3
 	Inventory.PickupMessage "Picked up some 40mm HE grenades."
 	Inventory.PickupSound "MGL/Load"
-	Tag "40mm HE Grenade"
+	Tag "40mm"
 	States
 	{
 	Spawn:
