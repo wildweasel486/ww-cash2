@@ -8,7 +8,7 @@ ACTOR M60Loaded : Ammo
 	+IGNORESKILL
 }
 
-ACTOR WWTM60 : CashWeapon
+ACTOR HeavyMachineGun : CashWeapon
 {
 	Weapon.SlotNumber 4
 	Weapon.AmmoType1 "M60Loaded"
@@ -19,7 +19,7 @@ ACTOR WWTM60 : CashWeapon
 	Weapon.AmmoUse2 0
 	Inventory.Icon "M60ICON"
 	Scale 0.65
-	Tag "$WWTWEP8NAME"
+	Tag "$SHOP4_ITEM4NAME"
 	+Weapon.Ammo_Optional
 	+Weapon.NoAutoFire
 	+Weapon.NoAlert

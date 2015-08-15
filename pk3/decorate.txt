@@ -33,6 +33,7 @@ ACTOR WWCashPlayer : DoomPlayer
 {
 	Player.MaxHealth 100
 	// Make sure all newly defined weapons that reload are included here so they start with ammo.
+	// Hmm, here's a thought: have the weapons give this ammo, since players can't just pick up more than one? (or will that potentially conflict with eventual enemy weapon drops? food for thought)
 	Player.StartItem DualPistolsClip1 17
 	Player.StartItem DualPistolsClip2 17
 	Player.StartItem PumpShotgunClip 6

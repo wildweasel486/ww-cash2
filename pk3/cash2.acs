@@ -81,10 +81,10 @@ str weaponstats[11][6][6]=
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
 		{"PugRifle","","SHOP4_ITEM1NAME","NOICON","SHOP4_ITEM1DESC","SHOP4_ITEM1STATS"},
 		{"BattleRifle","","SHOP4_ITEM3NAME","NOICON","SHOP4_ITEM3DESC","SHOP4_ITEM3STATS"},
-		{"CHCSMG","","SHOP4_ITEM2NAME","NOICON","SHOP4_ITEM2DESC","SHOP3_ITEM2STATS"},
+		{"HeavyMachineGun","","SHOP4_ITEM4NAME","M60ICON","SHOP4_ITEM4DESC","SHOP4_ITEM4STATS"},
+		{"CHCSMG","","SHOP4_ITEM2NAME","SMGICON","SHOP4_ITEM2DESC","SHOP3_ITEM2STATS"},
 		{"LightRifleAmmo","","SHOP_AMMO3LABEL","NOICON","SHOP_AMMO3DESC",""},
 		{"HeavyRifleAmmo","","SHOP_AMMO4LABEL","NOICON","SHOP_AMMO4DESC",""},
-		{"","","","EMPTICON","",""},
 	},
 	//Machine 5
 	{
@@ -194,10 +194,10 @@ int weaponamounts[11][6][7]=
 		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
 		{500,250,0,0,1,1,1},
 		{800,400,0,0,1,1,1},
+		{1600,800,0,0,1,1,1},
 		{250,125,0,0,1,1,1},
 		{35,0,0,0,45,0,0x7fffffff},
-		{50,0,0,0,15,0,0x7fffffff},
-		{0,0,0,0,0,0,0}
+		{50,0,0,0,15,0,0x7fffffff}
 	},
 	//Machine 5
 	{
