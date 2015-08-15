@@ -1,0 +1,138 @@
+// Fist
+// Gloved fists, as usual, by Scuba Steve.
+
+ACTOR FistPuff
+{
+	ActiveSound ""
+	AttackSound ""
+	SeeSound ""
+	+PUFFONACTORS
+	+NOEXTREMEDEATH
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay
+	Crash:
+		TNT1 A 1 A_PlaySound("fist/wall")
+		Stop
+	XDeath:
+		TNT1 A 1 A_PlaySound("fist/hit")
+		Stop
+	}
+}
+
+ACTOR FistUpgrade : Inventory
+{
+	Inventory.MaxAmount 1
+}
+
+ACTOR FistUpgradeGiver : CustomInventory
+{
+	States
+	{
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecute("UpgradeFist")
+		Stop
+	}
+}
+
+ACTOR MartialArts : CashWeapon replaces Fist
+{
+	Weapon.SelectionOrder 1
+	Weapon.Kickback 40
+	DamageType Melee
+	Weapon.SlotNumber 1
+	Decal ""
+	Tag "Unarmed"
+	+NOALERT
+	+NOEXTREMEDEATH
+	States
+	{
+	Ready:
+		PUNG A 1 A_WeaponReady
+		Loop
+	Deselect:
+		PUNG A 0 A_Lower
+		PUNG A 1 A_Lower
+		Loop
+	Select:
+		PUNG A 0 A_Raise
+		PUNG A 1 A_Raise
+		Loop
+	Fire:
+		PUNG A 0 A_JumpIfInventory("FistUpgrade", 1, "FireFast")
+		PUNG A 1 Offset(0,33)
+		PUNG A 1 Offset(0,35)
+		PUNG A 1 Offset(0,39)
+		PUNG A 1 Offset(0,44)
+		PUNG A 1 Offset(0,56)
+	Refire:
+		TNT1 A 1 A_PlaySound("fist/miss")
+		PUNG BC 1 Offset(1,33) A_SetAngle(angle - 1.0)
+		PUNG D 0 A_CustomPunch(4,0,0,"FistPuff")
+		PUNG D 1 Offset(10,35) A_SetAngle(angle - 1.5)
+		PUNG D 1 Offset(40,40) A_SetAngle(angle - 0.5)
+		PUNG D 1 Offset(80,50) A_SetAngle(angle + 0.5)
+		PUNG D 1 Offset(120,65) A_SetAngle(angle + 1.0)
+		PUNG D 1 Offset(160,90) A_SetAngle(angle + 0.5)
+		TNT1 A 4
+		TNT1 A 0 A_Refire
+		PUNG A 1 Offset(5,56)
+		PUNG A 1 Offset(4,44)
+		PUNG A 1 Offset(3,39)
+		PUNG A 1 Offset(2,35)
+		PUNG A 1 Offset(1,33)
+		Goto Ready
+	Hold:
+		TNT1 A 1 A_PlaySound("fist/miss")
+		PUNG EF 1 Offset(-1,33) A_SetAngle(angle + 1.0)
+		PUNG G 0 A_CustomPunch(4,0,0,"FistPuff")
+		PUNG G 1 Offset(-10,35) A_SetAngle(angle + 1.5)
+		PUNG G 1 Offset(-40,40) A_SetAngle(angle + 0.5)
+		PUNG G 1 Offset(-80,50) A_SetAngle(angle - 0.5)
+		PUNG G 1 Offset(-120,65) A_SetAngle(angle - 1.0)
+		PUNG G 1 Offset(-160,90) A_SetAngle(angle - 0.5)
+		TNT1 A 4
+		TNT1 A 0 A_Refire("Refire")
+		PUNG A 1 Offset(5,56)
+		PUNG A 1 Offset(4,44)
+		PUNG A 1 Offset(3,39)
+		PUNG A 1 Offset(2,35)
+		PUNG A 1 Offset(1,33)
+		Goto Ready
+	FireFast:
+		PUNG A 1 Offset(0,33)
+		PUNG A 1 Offset(0,35)
+	RefireFast:
+		PUNG B 0 A_PlaySound("fist/miss")
+		PUNG B 0 Offset(1,33) A_SetAngle(angle - 0.5)
+		PUNG B 1 A_CustomPunch(6,0,0,"FistPuff")
+		PUNG C 1 A_SetAngle(angle - 0.8)
+		PUNG D 1 A_SetAngle(angle + 0.5)
+		PUNG C 1 A_SetAngle(angle + 0.8)
+		PUNG B 1 A_SetAngle(angle + 1.1)
+		TNT1 A 0 A_Refire("HoldFast")
+		PUNG A 1 Offset(5,56)
+		PUNG A 1 Offset(4,44)
+		PUNG A 1 Offset(3,39)
+		PUNG A 1 Offset(2,35)
+		PUNG A 1 Offset(1,33)
+		Goto Ready
+	HoldFast:
+		PUNG E 0 A_PlaySound("fist/miss")
+		PUNG E 0 Offset(1,33) A_SetAngle(angle + 0.5)
+		PUNG E 1 A_CustomPunch(6,0,0,"FistPuff")
+		PUNG F 1 A_SetAngle(angle + 0.8)
+		PUNG G 1 A_SetAngle(angle - 0.5)
+		PUNG F 1 A_SetAngle(angle - 0.8)
+		PUNG E 1 A_SetAngle(angle - 1.1)
+		TNT1 A 0 A_Refire("RefireFast")
+		PUNG A 1 Offset(5,56)
+		PUNG A 1 Offset(4,44)
+		PUNG A 1 Offset(3,39)
+		PUNG A 1 Offset(2,35)
+		PUNG A 1 Offset(1,33)
+		Goto Ready
+	}
+}

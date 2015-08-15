@@ -1,0 +1,84 @@
+ACTOR PugRifleClip : Ammo
+{
+	Inventory.MaxAmount 30
+	Ammo.BackpackAmount 0
+	Inventory.Icon ASDSP0
+}
+
+ACTOR PugFireSeq : Inventory{}
+
+ACTOR PugRifle : CashWeapon
+{
+	Weapon.SelectionOrder 400
+	Weapon.AmmoType1 "PugRifleClip"
+	Weapon.AmmoUse1 1
+	Weapon.AmmoGive1 0
+	Weapon.AmmoType2 "LightRifleAmmo"
+	Weapon.AmmoUse2 0
+	Weapon.AmmoGive2 0
+	Weapon.Kickback 40
+	Weapon.SlotNumber 4
+	AttackSound "weapons/smgfire"
+	Tag "$SHOP4_ITEM1NAME"
+	Decal BulletChip
+	+Weapon.AMMO_OPTIONAL
+	+Weapon.NoAutoFire
+	States
+	{
+	Ready:
+		ASDS A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		Loop
+	Deselect:
+		ASDS A 1 A_Lower
+		Loop
+	Select:
+		ASDS A 1 A_Raise
+		Loop
+	Fire:
+		ASDS A 0 A_JumpIfNoAmmo("DryFire")
+		ASDF A 0 A_GunFlash
+		TECG C 0 A_SetPitch(pitch - 0.3)
+		ASDF B 1 BRIGHT A_FireBullets(3,3,1,10,"BulletPuff",1)
+		TECG C 0 A_SetPitch(pitch - 0.5)
+		ASDF A 1 BRIGHT A_AlertMonsters
+		TECG C 0 A_SetPitch(pitch + 0.3)
+		ASDS A 0 A_JumpIfInventory("PugFireSeq", 1, "TakeFireSeq")
+		ASDS A 2 A_GiveInventory("PugFireSeq", 1)
+		Goto FireFinish
+	TakeFireSeq:
+		ASDS A 1 A_TakeInventory("PugFireSeq", 1)
+	FireFinish:
+		TECG C 0 A_SetPitch(pitch + 0.5)
+		ASDS A 0 A_Refire
+		Goto Ready
+	DryFire:
+		ASDS A 1 A_PlaySound("weapons/dryfire", 5)
+		ASDS A 1
+		Goto Ready
+	Reload:
+		ASDS A 0 A_JumpIfInventory("PugRifleClip",30,2)
+		ASDS A 0 A_JumpIfInventory("LightRifleAmmo",1,"ReloadStart")
+		ASDS A 1
+		Goto Ready
+	ReloadStart:
+		ASDR AB 1
+		ASDR C 1 A_PlayWeaponSound("weapons/smgback")
+		ASDR DDEEE 1
+		ASDR FFFGGHHII 1
+		ASDR J 3 A_PlayWeaponSound("weapons/smgout")
+		ASDR KLMNOP 3
+	ReloadWork:
+		ASDS A 0
+		ASDS A 0 A_TakeInventory("LightRifleAmmo",1)
+		ASDS A 0 A_GiveInventory("PugRifleClip",1)
+		ASDS A 0 A_JumpIfInventory("PugRifleClip",30,"ReloadFinish")
+		ASDS A 0 A_JumpIfInventory("LightRifleAmmo",1,"ReloadWork")
+	ReloadFinish:
+		ASDR Q 2
+		ASDR R 2 A_PlayWeaponSound("weapons/smgin")
+		ASDR SSSTTTTUUUVV 1
+		ASDR W 4 A_PlayWeaponSound("weapons/smgfwd")
+		ASDR X 3
+		goto Ready
+	}
+}

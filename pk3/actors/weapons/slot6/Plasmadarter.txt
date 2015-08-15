@@ -1,22 +1,4 @@
-ACTOR GaussRifle : Weapon
-{
-	+Weapon.NoAutoFire
-	States
-	{
-	Select:
-		GAUS A 1 A_Raise
-		Loop
-	Deselect:
-		GAUS A 1 A_Lower
-		Loop
-	Ready:
-		GAUS A 1 A_WeaponReady
-		Loop
-	Fire:
-		GAUS A 1 A_FireRailgunRight
-		Goto Ready
-	}
-}
+
 
 ACTOR MOBlasterAmmo : Ammo
 {

@@ -1,0 +1,171 @@
+ACTOR PunchGunLoaded : Ammo{}
+
+ACTOR PunchGunPuff
+{
+	ActiveSound ""
+	AttackSound "weapons/punchgunwall"
+	SeeSound "weapons/punchgunpunch"
+	Scale 0.75
+	RenderStyle Add
+	Alpha 0.9
+	+NOGRAVITY
+	+NOEXTREMEDEATH
+	+PUFFONACTORS
+	States
+	{
+	Spawn:
+		POOF ABCDE 3
+		Stop
+	Melee:
+		POOF ABCDE 3
+		Stop
+	Crash:
+		POOF ABCDE 3
+		Stop
+	}
+}
+
+ACTOR PunchGun : CashWeapon
+{
+	Weapon.AmmoType1 "PunchGunLoaded"
+	Weapon.AmmoUse1 1
+	Weapon.AmmoGive1 0
+	Weapon.AmmoType2 "ShotgunAmmo"
+	Weapon.AmmoUse2 0
+	Weapon.AmmoGive2 0
+	Weapon.SlotNumber 1 // Yes, this is a slot 1 weapon, but it's only in slot2.txt because it comes from machine #2
+	+Weapon.Ammo_Optional
+	+Weapon.Alt_Ammo_Optional
+	Decal "BulletChip"
+	Tag "$SHOP2_ITEM2NAME"
+	States
+	{
+	Select:
+		PNCI A 1 A_Raise
+		PNCI A 0 A_Raise
+		Loop
+	Deselect:
+		PNCI A 1 A_Lower
+		PNCI A 0 A_Lower
+		Loop
+	Ready:
+		PNCI A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		Loop
+	Fire:
+		PNCI A 1 Offset(-5,40)
+		PNCI A 1 Offset(-12,60)
+		TNT1 A 1
+	Hold:
+		PNCH A 1 Offset(-50,150)
+		PNCH A 1 Offset(-40,120)
+		PNCH A 1 Offset(-30,80)
+		PNCH A 1 Offset(-20,30) A_PlaySound("weapons/punchgunswing", 6)
+		PNCH A 1 A_JumpIfCloser(96, "FireShotgun")
+		Goto JustPunchEm
+	FireShotgun:
+		PNCH A 0 A_JumpIfNoAmmo("JustPunchEm")
+		PNCH A 0 A_PlaySound("weapons/punchgunfire", CHAN_WEAPON)
+		PNCH A 0 A_GunFlash
+		PNCH B 0 A_FireBullets(15, 10, 8, 5, "BulletPuff", 1)
+		PNCH B 0 A_CustomPunch(60, 1, 0, "PunchGunPuff")
+		PNCH B 1 BRIGHT Offset(-15,40)
+		PNCH C 1 BRIGHT Offset(-13,38) A_AlertMonsters
+		Goto DontFireShotgun
+	JustPunchEm:
+		PNCH A 1 Offset(-15,40) A_CustomPunch(60, 1, 0, "PunchGunPuff")
+		PNCH A 1 Offset(-13,38)
+		Goto DontFireShotgun
+	DontFireShotgun:
+		PNCH A 1 Offset(-12,39)
+		PNCH A 1 Offset(-11,40)
+		PNCH A 1 Offset(-12,42)
+		PNCH A 1 Offset(-13,44)
+		PNCH A 1 Offset(-15,47)
+		PNCH A 1 Offset(-17,50)
+		PNCH A 1 Offset(-19,57)
+		PNCH A 1 Offset(-22,65)
+		PNCH A 1 Offset(-25,72)
+		PNCH A 1 Offset(-29,82)
+		PNCH A 1 Offset(-35,90)
+		PNCH A 1 Offset(-42,100)
+		PNCH A 1 Offset(-49,110)
+		PNCH A 1 Offset(-59,111)
+		PNCH A 1 Offset(-70,122)
+		PNCH A 1 Offset(-80,134)
+		PNCH A 1 Offset(-90,150)
+		PNCI A 1 Offset(-12,60)
+		PNCI A 1 Offset(-7,50)
+		PNCI A 1 Offset(-3,40) A_Refire
+		Goto Ready
+	Altfire:
+		PNCH A 1 Offset(-50,150)
+		PNCH A 1 Offset(-30,120)
+		PNCH A 1 Offset(-15,80)
+		PNCH A 1 Offset(-5,60)
+		PNCH D 1 Offset(1,48)
+		PNCH E 1 Offset(2,49)
+		PNCH F 1 Offset(3,50) A_PlaySound("weapons/punchgunclunk", 6)
+		PNCH G 1 Offset(4,51) A_JumpIfInventory("PunchGunLoaded", 1, "PunchShotgun")
+		Goto JustPunchEmAgain
+	PunchShotgun:
+		PNCH A 0 A_PlaySound("weapons/punchgunfire", CHAN_WEAPON)
+		PNCH A 0 A_GunFlash
+		PNCH I 1 BRIGHT Offset(1,54) A_FireBullets(15, 10, 8, 5, "BulletPuff", 1)
+		PNCH J 1 BRIGHT Offset(-2,57) A_TakeInventory("PunchGunLoaded", 1)
+		PNCH K 1 Offset(-1,55) A_AlertMonsters
+		PNCH F 1 Offset(-9,51)
+		PNCH E 1 Offset(-11,52)
+		PNCH D 1 Offset(-14,54)
+		Goto PunchDontShotgun
+	JustPunchEmAgain:
+		PNCH L 1 Offset(-1,50)
+		PNCH M 1 Offset(-3,49)
+		PNCH K 1 Offset(-5,48)
+		PNCH F 1 Offset(-9,51)
+		PNCH E 1 Offset(-11,52)
+		PNCH D 1 Offset(-14,54)
+		Goto PunchDontShotgun
+	PunchDontShotgun:
+		PNCH A 1 Offset(-17,56)
+		PNCH A 1 Offset(-22,65)
+		PNCH A 1 Offset(-29,82)
+		PNCH A 1 Offset(-42,100)
+		PNCH A 1 Offset(-49,110)
+		PNCH A 1 Offset(-59,111)
+		PNCH A 1 Offset(-70,122)
+		PNCH A 1 Offset(-80,134)
+		PNCH A 1 Offset(-90,150)
+		PNCI A 1 Offset(-12,60)
+		PNCI A 1 Offset(-7,50)
+		PNCI A 1 Offset(-3,40) A_Refire
+		Goto Ready
+	Reload:
+		PNCI A 0 A_JumpIfInventory("PunchGunLoaded", 1, 2)
+		PNCI A 0 A_JumpIfInventory("ShotgunAmmo", 1, 2)
+		PNCI A 1 A_WeaponReady(WRF_NOFIRE)
+		Goto Ready
+		PNCH A 1 Offset(-45,115)
+		PNCH A 1 Offset(-40,105)
+		PNCH A 1 Offset(-22,100)
+		PNCH A 1 Offset(-10,95)
+		PNCH A 1 Offset(-7,90)
+		PNCR A 1 Offset(-3,89)
+		PNCR B 1 Offset(-2,89)
+		PNCR C 1 Offset(-1,89)
+		PNCR D 1 Offset(1,90)
+		PNCR E 1 Offset(3,91)
+		PNCR F 1 Offset(4,92)
+		PNCR G 1 Offset(5,93)
+		PNCR H 1 Offset(6,94) A_PlaySound("weapons/punchgunload")
+		PNCR I 1 Offset(5,94) A_TakeInventory("ShotgunAmmo", 1)
+		PNCR J 1 Offset(3,92) A_GiveInventory("PunchGunLoaded", 1)
+		PNCH A 1 Offset(-5,90)
+		PNCH A 1 Offset(-10,100)
+		PNCH A 1 Offset(-16,110)
+		PNCH A 1 Offset(-24,111)
+		PNCI A 1 Offset(-12,60)
+		PNCI A 1 Offset(-7,50)
+		PNCI A 1 Offset(-3,40) A_Refire
+		Goto Ready
+	}
+}

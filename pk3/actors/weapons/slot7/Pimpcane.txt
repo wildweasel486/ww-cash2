@@ -1,0 +1,22 @@
+
+ACTOR PimpCane : CashWeapon
+{
+	Weapon.SlotNumber 9
+	States
+	{
+	Select:
+		PIMP A 1 A_Raise
+		Loop
+	Deselect:
+		PIMP A 1 A_Lower
+		Loop
+	Ready:
+		PIMP A 1 A_WeaponReady
+		Loop
+	Fire:
+		PIMP D 1 BRIGHT A_FireBullets(7, 7, 7, 7, "BulletPuff", 0)
+		PIMP CB 1 BRIGHT
+		PIMP A 10
+		Goto Ready
+	}
+}

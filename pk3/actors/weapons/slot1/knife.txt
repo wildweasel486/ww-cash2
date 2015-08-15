@@ -1,0 +1,95 @@
+ACTOR KnifeUpgrade : Inventory{}
+
+ACTOR CHCKnife : CashWeapon
+{
+	+NOALERT
+	Weapon.SlotNumber 1
+	Weapon.Kickback 0
+	Decal ""
+	Tag "$SHOP1_ITEM3NAME"
+	States
+	{
+	Select:
+		KNIF A 0 A_Raise
+		KNIF A 1 A_Raise
+		Loop
+	Deselect:
+		KNIF A 0 A_Lower
+		KNIF A 1 A_Lower
+		Loop
+	Ready:
+		KNIF A 0 A_JumpIfInventory("KnifeUpgrade", 1, "ReadyVamp")
+		KNIF A 1 A_WeaponReady
+		Loop
+	ReadyVamp:
+		KNIF BCDC 2 A_WeaponReady
+		Goto Ready
+	Fire:
+		KNIF A 0 A_JumpIfInventory("KnifeUpgrade", 1, "FireVamp")
+		KNIF A 1 Offset(10,28)
+		KNIF A 1 Offset(30,20)
+		KNIF A 1 Offset(60,10)
+		KNIF A 1 Offset(100,12)
+		KNIF A 1 Offset(150,14)
+		KNIF A 1 Offset(180,16)
+		KNIF A 1 Offset(200,20)
+		KNIF A 1 Offset(210,22) A_PlaySound("knife/miss", 5)
+		KNIF A 1 Offset(215,23)
+		KNIF A 1 Offset(180,1)
+		KNIF A 1 Offset(130,-15)
+		KNIF A 1 Offset(50,-40) A_CustomPunch(15,0,0,"KnifePuff",80)
+		KNIF A 1 Offset(-10,-60)
+		KNIF A 1 Offset(-80,-55)
+		KNIF A 1 Offset(-160,-50)
+		TNT1 A 3
+		KNIF A 1 Offset(-30,82)
+		KNIF A 1 Offset(-20,62)
+		KNIF A 1 Offset(-10,42)
+		KNIF A 1 Offset(0,32)
+		Goto Ready
+	FireVamp:
+		KNIF B 1 Offset(10,28)
+		KNIF B 1 Offset(30,20)
+		KNIF B 1 Offset(60,10)
+		KNIF B 1 Offset(100,12)
+		KNIF B 1 Offset(150,14)
+		KNIF B 1 Offset(180,16)
+		KNIF B 1 Offset(200,20)
+		KNIF C 1 Offset(210,22) A_PlaySound("knife/miss", 5)
+		KNIF C 1 Offset(215,23)
+		KNIF D 1 Offset(180,1)
+		KNIF D 1 Offset(130,-15)
+		KNIF D 1 Offset(50,-40) A_CustomPunch(15,0,0,"KnifePuff",80,0.25)
+		KNIF C 1 Offset(-10,-60)
+		KNIF C 1 Offset(-80,-55)
+		KNIF B 1 Offset(-160,-50)
+		TNT1 A 3
+		KNIF B 1 Offset(-30,82)
+		KNIF B 1 Offset(-20,62)
+		KNIF B 1 Offset(-10,42)
+		KNIF B 1 Offset(0,32)
+		Goto Ready
+	}
+}
+
+ACTOR KnifePuff
+{
+	ActiveSound ""
+	AttackSound ""
+	SeeSound ""
+	+PUFFONACTORS
+	+NOEXTREMEDEATH
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay
+	Crash:
+		TNT1 A 1 A_PlaySound("knife/wall")
+		Stop
+	XDeath:
+		TNT1 A 1 A_PlaySound("knife/stab")
+		Stop
+	}
+}
+
+ACTOR KnifeVampPuff : KnifePuff {}

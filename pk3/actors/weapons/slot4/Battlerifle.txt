@@ -1,0 +1,133 @@
+
+ACTOR BattleRifleClip : Ammo
+{
+	Inventory.MaxAmount 10
+}
+
+ACTOR BattleRifle : CashWeapon
+{
+	Weapon.SlotNumber 4
+	Weapon.AmmoType1 "BattleRifleClip"
+	Weapon.AmmoUse1 1
+	Weapon.AmmoGive1 0
+	Weapon.AmmoType2 "HeavyRifleAmmo"
+	Weapon.AmmoUse2 0
+	Weapon.AmmoGive2 0
+	Weapon.Kickback 40
+	AttackSound "weapons/m14fire"
+	Tag "$SHOP4_ITEM2NAME"
+	+weapon.noautofire
+	+weapon.ammo_optional
+	States
+	{
+	Select:
+		BRIF A 1 A_Raise
+		Loop
+	Deselect:
+		BRIF A 1 A_Lower
+		Loop
+	Ready:
+		BRIF A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		Loop
+	Fire:
+		BRIF A 0 A_JumpIfNoAmmo("Dryfire")
+		BRIF A 0 A_GunFlash
+		BRIF A 0 A_AlertMonsters
+		BRIF A 0 A_Recoil(0.2)
+		BRIF B 1 BRIGHT A_FireBullets(0.5, 0.5, -1, 50, "BulletPuff", 1)
+		BRIF C 1 BRIGHT A_SetPitch(pitch - 0.5)
+		BRIF A 0 A_SetAngle(angle - 0.1)
+		BRIF D 1 BRIGHT A_SetPitch(pitch - 1.0)
+		BRIF A 0 A_SetAngle(angle - 0.2)
+		BRIF E 1 A_SetPitch(pitch - 1.5)
+		BRIF A 0 A_SetAngle(angle - 0.3)
+		BRIF E 1 A_SetPitch(pitch - 0.8)
+		BRIF A 0 A_SetAngle(angle - 0.2)
+		BRIF E 1 A_SetPitch(pitch - 0.5)
+		BRIF A 0 A_SetAngle(angle - 0.1)
+		BRIF F 1 A_SetPitch(pitch + 0.5)
+		BRIF A 0 A_SetAngle(angle + 0.2)
+		BRIF A 1 A_SetPitch(pitch + 0.5)
+		BRIF A 0 A_SetAngle(angle + 0.2)
+		BRIF A 1 A_SetPitch(pitch + 0.5)
+		BRIF A 0 A_SetAngle(angle + 0.1)
+		Goto Ready
+	Dryfire:
+		BRIF A 1 A_PlaySound("weapons/dryfire", 5)
+		Goto Ready
+	Reload:
+		BRIF A 0 A_JumpIfInventory("BattleRifleClip",10,2)
+		BRIF A 0 A_JumpIfInventory("HeavyRifleAmmo",1,"ReloadStart")
+		BRIF A 4
+		Goto Ready
+	ReloadStart:
+		BRIF FEG 1
+		BRIF G 1 Offset(1,33)
+		BRIF G 1 Offset(3,36)
+		BRIF G 1 Offset(6,39)
+		BRIF G 1 Offset(9,42)
+		BRIF G 1 Offset(11,46)
+		BRIR A 1 Offset(12,52)
+		BRIR A 1 Offset(13,55) A_PlaySound("weapons/m14out", 5)
+		BRIR B 1 Offset(14,57)
+		BRIR B 1 Offset(15,60)
+		BRIR C 1 Offset(16,62)
+		BRIR C 1 Offset(17,61)
+		BRIR C 1 Offset(17,62)
+		BRIR C 1 Offset(16,63)
+		BRIR C 1 Offset(14,64)
+		BRIR C 1 Offset(11,65)
+		BRIR C 1 Offset(9,66)
+		BRIR C 1 Offset(8,67)
+		BRIR C 1 Offset(8,66)
+		BRIR C 1 Offset(8,64)
+		BRIR C 1 Offset(9,61)
+		BRIR C 1 Offset(9,57)
+		BRIR C 1 Offset(10,53)
+		BRIR C 1 Offset(10,49)
+		BRIR C 1 Offset(10,46)
+		BRIR C 1 Offset(11,44)
+		BRIR C 1 Offset(11,42)
+		BRIR C 1 Offset(11,41) A_PlaySound("weapons/m14in", 6)
+		BRIR B 1 Offset(12,40)
+		BRIR B 1 Offset(13,41)
+		BRIR A 1 Offset(11,43)
+		BRIR A 1 Offset(9,46)
+	ReloadWork:
+		ASDS A 0
+		ASDS A 0 A_TakeInventory("HeavyRifleAmmo",1)
+		ASDS A 0 A_GiveInventory("BattleRifleClip",1)
+		ASDS A 0 A_JumpIfInventory("BattleRifleClip",10,"ReloadFinish")
+		ASDS A 0 A_JumpIfInventory("HeavyRifleAmmo",1,"ReloadWork")
+	ReloadFinish:
+		BRIF G 1 Offset(8,50)
+		BRIF G 1 Offset(8,55)
+		BRIF G 1 Offset(8,59)
+		BRIF G 1 Offset(7,56)
+		BRIF G 1 Offset(6,52)
+		BRIF G 1 Offset(5,50)
+		BRIF G 1 Offset(4,48)
+		BRIF G 1 Offset(4,46)
+		BRIF G 1 Offset(4,45)
+		BRIR D 1 Offset(3,44)
+		BRIR D 1 Offset(2,43)
+		BRIR E 1 Offset(1,42)
+		BRIR E 1 Offset(-1,41) A_PlaySound("weapons/m14back", 5)
+		BRIR F 1 Offset(-4,41)
+		BRIR F 1 Offset(-7,42)
+		BRIR G 1 Offset(-10,43)
+		BRIR G 1 Offset(-12,43) A_PlaySound("weapons/m14fwd", 6)
+		BRIR H 1 Offset(-13,44)
+		BRIR H 1 Offset(-14,44)
+		BRIR I 1 Offset(-15,45)
+		BRIR I 1 Offset(-13,44)
+		BRIR J 1 Offset(-11,42)
+		BRIR J 1 Offset(-8,40)
+		BRIF G 1 Offset(-6,37)
+		BRIF G 1 Offset(-4,35)
+		BRIF E 1 Offset(-2,34)
+		BRIF E 1 Offset(1,33)
+		BRIF F 1 Offset(0,32)
+		Goto Ready
+	}
+}

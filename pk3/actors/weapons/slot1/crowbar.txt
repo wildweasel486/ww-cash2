@@ -1,0 +1,75 @@
+// Crowbar
+// Sprites from Redneck Rampage.
+
+ACTOR CrowbarPuff
+{
+	ActiveSound ""
+	AttackSound ""
+	SeeSound ""
+	+PUFFONACTORS
+	+NOEXTREMEDEATH
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay
+	Crash:
+		TNT1 A 1 A_PlaySound("crowbar/wall")
+		Stop
+	XDeath:
+		TNT1 A 1 A_PlaySound("crowbar/hit")
+		Stop
+	}
+}
+
+ACTOR CrowbarThiefPuff : CrowbarPuff
+{
+	DamageType "Thief"
+}
+
+ACTOR CrowbarUpgrade : Inventory{}
+
+ACTOR Crowbar : CashWeapon
+{
+	Weapon.SelectionOrder 999
+	Weapon.Kickback 20
+	DamageType Melee
+	Weapon.SlotNumber 1
+	Decal ""
+	Tag "$SHOP1_ITEM2NAME"
+	+NOALERT
+	+NOAUTOFIRE
+	States
+	{
+	Ready:
+		CBAR A 1 A_WeaponReady
+		Loop
+	Deselect:
+		CBAR A 1 A_Lower
+		Loop
+	Select:
+		CBAR A 1 A_Raise
+		Loop
+	Fire:
+		CBAR A 1 Offset(10,40)
+		CBAR A 1 Offset(20,55)
+		CBAR A 1 Offset(30,75)
+		CBAR A 1 Offset(40,110)
+	Hold:
+		TNT1 A 10
+		CBAR B 1 Offset(1, 32) A_PlayWeaponSound("crowbar/swing")
+		CBAR B 0 A_JumpIfInventory("CrowbarUpgrade", 1, "Thief")
+		CBAR C 1 A_CustomPunch(80, 1, 0, "CrowbarPuff", 96)
+	FireFinish:
+		CBAR DEF 1
+		TNT1 A 10
+		TNT1 A 1 A_Refire
+		CBAR A 1 Offset(40,110)
+		CBAR A 1 Offset(30,75)
+		CBAR A 1 Offset(20,55)
+		CBAR A 1 Offset(10,40)
+		Goto Ready
+	Thief:
+		CBAR C 1 A_CustomPunch(80, 1, 0, "CrowbarThiefPuff", 96)
+		Goto FireFinish
+	}
+}
