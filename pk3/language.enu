@@ -70,7 +70,7 @@ SHOP_AMMO6DESC =
 SHOP_AMMO7LABEL = "6x 40mm Grenade Ammo";
 SHOP_AMMO7DESC = 
 "40mm high-explosive grenades, fits most handheld\n"
-"grenade launchers."
+"grenade launchers.";
 
 // Shop descriptions (PDA care packages)
 SHOPPDA_NAME = "Quartermaster.MIL (Care Package Delivery)";
