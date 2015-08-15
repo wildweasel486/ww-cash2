@@ -15,7 +15,7 @@ ACTOR BattleRifle : CashWeapon
 	Weapon.AmmoGive2 0
 	Weapon.Kickback 40
 	AttackSound "weapons/m14fire"
-	Tag "$SHOP4_ITEM2NAME"
+	Tag "$SHOP4_ITEM3NAME"
 	+weapon.noautofire
 	+weapon.ammo_optional
 	States
