@@ -90,10 +90,10 @@ str weaponstats[11][6][6]=
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
 		{"RecoillessRifle","","SHOP5_ITEM1NAME","NOICON","SHOP5_ITEM1DESC","SHOP5_ITEM1STATS"},
+		{"MGl140","","SHOP5_ITEM3NAME","MGLICON","SHOP5_ITEM3DESC","SHOP5_ITEM3STATS"},
 		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","NOICON","SHOP5_ITEM2DESC","SHOP5_ITEM2STATS"},
 		{"RecoillessRockets","","SHOP_AMMO5LABEL","NOICON","SHOP_AMMO5DESC",""},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
+		{"40mmAmmo","","SHOP_AMMO7LABEL","40MAICON","SHOP_AMMO7DESC",""},
 		{"","","","EMPTICON","",""},
 	},
 	//Machine 6
@@ -203,10 +203,10 @@ int weaponamounts[11][6][7]=
 	{
 		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
 		{2000,1000,0,0,1,1,1},
+		{1200,600,0,0,1,1,1},
 		{75,0,0,0,1,0,0x7fffffff},
 		{200,0,0,0,1,0,0x7fffffff},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
+		{65,0,0,0,6,0,0x7fffffff},
 		{0,0,0,0,0,0,0}
 	},
 	//Machine 6

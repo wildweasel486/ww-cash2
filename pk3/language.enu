@@ -67,6 +67,10 @@ SHOP_AMMO6LABEL = "14x Magnum Ammo";
 SHOP_AMMO6DESC = 
 "High-caliber pistol ammunition, usable in large\n"
 "handguns and lever-action carbines.";
+SHOP_AMMO7LABEL = "6x 40mm Grenade Ammo";
+SHOP_AMMO7DESC = 
+"40mm high-explosive grenades, fits most handheld\n"
+"grenade launchers."
 
 // Shop descriptions (PDA care packages)
 SHOPPDA_NAME = "Quartermaster.MIL (Care Package Delivery)";
@@ -313,6 +317,21 @@ SHOP5_ITEM2DESC =
 "corners, and explode into shrapnel with\n"
 "an effective range of around 15M.";
 SHOP5_ITEM2STATS = "Ammo Type: Disposable\nSpeed: Unlimited!\nDamage: High\nAccuracy: So-so\nSlot: Inventory\nUpgrades: None";
+SHOP5_ITEM3NAME = "Grenade Launcher";
+SHOP5_ITEM3DESC = 
+"Originally meant as a lighter alternative\n"
+"to cumbersome bazookas and mortars, this\n"
+"grenade launcher can hold up to six high-\n"
+"explosive grenade shells, which it can fire\n"
+"in very quick succession, with much higher\n"
+"accuracy, and much less collateral damage.\n"
+"Sadly, its effective range is a bit lower\n"
+"than that of a missile launcher or recoilless\n"
+"rifle, HOWEVER, you can fix that with the\n"
+"optional purchase of the Stablizing Fins\n"
+"upgrade, making your grenades fly quite\n"
+"a lot farther.";
+SHOP5_ITEM3STATS = "Ammo Type: 40mm Grenade\nSpeed: Moderate\nDamage: High\nAccuracy: Only as good as you are\nSlot: 5\nUpgrades: Stabilizing Fins (Extended Range)";
 
 // Shop descriptions (level 6)
 SHOP6_NAME = "Vending Machine (Energy)";
