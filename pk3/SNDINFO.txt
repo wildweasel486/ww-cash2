@@ -159,3 +159,6 @@ blasterexp2 lasrhit2
 blasterexp3 lasrhit3
 
 gauss/fire GAUSSFIR
+gauss/charge GAUSSCHG
+gauss/load GAUSSLD
+gauss/unload GAUSSOUT

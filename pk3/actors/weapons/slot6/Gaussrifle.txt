@@ -1,5 +1,23 @@
+ACTOR GaussLoaded : Ammo
+{
+	Inventory.MaxAmount 5
+	+IGNORESKILL
+}
+
+ACTOR GaussCapacitor : Ammo
+{
+	Inventory.MaxAmount 100
+	+IGNORESKILL
+}
+
+ACTOR GaussCharge : Inventory {}
+
 ACTOR GaussRifle : Weapon
 {
+	Weapon.SlotNumber 6
+	Weapon.AmmoType1 "GaussLoaded"
+	Weapon.AmmoType2 "HeavyRifleAmmo"
+	AttackSound "gauss/fire"
 	+Weapon.NoAutoFire
 	States
 	{
@@ -13,7 +31,35 @@ ACTOR GaussRifle : Weapon
 		GAUS A 1 A_WeaponReady
 		Loop
 	Fire:
-		GAUS A 1 A_FireRailgunRight
+		GAUS A 1 A_RailAttack(100, 4, 1, none, none, RGF_FULLBRIGHT, 0, "GaussPuff", 0, 0, 0, 0, 1.0, 0.0, "GaussTrail")
 		Goto Ready
+	}
+}
+
+ACTOR GaussTrail
+{
+	RenderStyle Add
+	Alpha 0.9
+	Scale 0.25
+	+AlwaysPuff
+	+NoGravity
+	States
+	{
+	Spawn:
+		GTRL OPQRS 2 BRIGHT
+		Stop
+	}
+}
+
+ACTOR GaussPuff
+{
+	RenderStyle Add
+	Alpha 0.9
+	+NoGravity
+	States
+	{
+	Spawn:
+		GPUF EFGHIJKL 2 BRIGHT
+		Stop
 	}
 }
