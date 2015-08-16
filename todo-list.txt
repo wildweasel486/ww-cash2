@@ -56,6 +56,7 @@ OTHER SHIT I COULD PROBABLY DO:
 * Weaker monsters randomly drop useless junk instead of cash. IOU notes, gum wrappers, expired coupons, gift receipts, etc.
 * Bigger monsters should occasionally drop really big cash items (Cacoward trophies?) instead of huge piles of small cash.
 * Should cash disappear if it lands on liquid flats or gratings? (Maybe after a delay, wet money doesn't ALWAYS equal unusable money)
+* It'd be funny if the Wolfenstein Nazis dropped Wolf3D treasures that are worth more money, to give the player a reason to go visit the secret levels. (or alternatively, make for really confusing PWADs.)
 
 THINGS I CAN DO WITH THE HELL VENDOR:
 * Make it mutter/whisper infernal things when you're nearby. (Actually, all machines need some kind of ambience.)
