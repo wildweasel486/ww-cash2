@@ -173,3 +173,73 @@ ACTOR CHCBriefcaseFullaDosh : CustomInventory
 		Stop
 	}
 }
+
+// Stuff dropped by Nazis...
+
+ACTOR NaziGold1 : CustomInventory
+{
+	Inventory.PickupMessage "Nazi gold...?"
+	-DROPPED
+	States
+	{
+	Spawn:
+		NGLD AA 0 A_ChangeFlag("DROPPED", 0)
+		NGLD A -1
+		Stop
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("ColdHardCash",100)
+		Stop
+	}
+}
+
+ACTOR NaziGold2 : CustomInventory
+{
+	Inventory.PickupMessage "Nazi gold...?"
+	-DROPPED
+	States
+	{
+	Spawn:
+		NGLD AA 0 A_ChangeFlag("DROPPED", 0)
+		NGLD B -1
+		Stop
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("ColdHardCash",100)
+		Stop
+	}
+}
+
+ACTOR NaziGold3 : CustomInventory
+{
+	Inventory.PickupMessage "Nazi gold...?"
+	-DROPPED
+	States
+	{
+	Spawn:
+		NGLD AA 0 A_ChangeFlag("DROPPED", 0)
+		NGLD C -1
+		Stop
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("ColdHardCash",100)
+		Stop
+	}
+}
+
+ACTOR NaziGold4 : CustomInventory
+{
+	Inventory.PickupMessage "Nazi gold...?"
+	-DROPPED
+	States
+	{
+	Spawn:
+		NGLD AA 0 A_ChangeFlag("DROPPED", 0)
+		NGLD D -1
+		Stop
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("ColdHardCash",100)
+		Stop
+	}
+}

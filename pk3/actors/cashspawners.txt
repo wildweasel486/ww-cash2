@@ -154,14 +154,16 @@ ACTOR SpiderCashtermind : SpiderMastermind replaces SpiderMastermind
 	DropItem "CHCSmallCoin"
 }
 
+ACTOR NaziGoldSpawner : RandomSpawner
+{
+	DropItem "NaziGold1"
+	DropItem "NaziGold2"
+	DropItem "NaziGold3"
+	DropItem "NaziGold4"
+}
 ACTOR CashNazi : WolfensteinSS replaces WolfensteinSS
 {
-	DropItem "CHCSmallCoin"
-	DropItem "CHCSmallCoin"
-	DropItem "CHCSmallCoin"
-	DropItem "CHCMediumCoin"
-	DropItem "CHCMediumCoin"
-	DropItem "CHCMediumCoin"
+	DropItem "NaziGoldSpawner"
 }
 
 ACTOR BriefcaseOrMachine : RandomSpawner replaces Backpack
