@@ -110,6 +110,17 @@ LeverAction/Load LEVERLOD
 LeverAction/Back LEVERBAK
 LeverAction/Fwd LEVERFWD
 
+$random Striker/Fire { Striker/Fire1 Striker/Fire2 }
+Striker/Fire1 StkFire1
+Striker/Fire2 StkFire2
+Striker/EnemyFire StkEnemy
+Striker/Load StkLoad
+Striker/Pickup StkPick
+Striker/Eject StkEject
+Striker/Ready StkReady
+Striker/Clipout StkClipO
+Striker/Clipin StkClipI
+
 // Slot 4
 
 weapons/smgfire dssmg1

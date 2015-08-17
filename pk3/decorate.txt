@@ -12,6 +12,7 @@
 #include "actors/weapons/slot2/punchgun.txt"
 #include "actors/weapons/slot3/shortyshotgun.txt"
 #include "actors/weapons/slot3/leveraction.txt"
+#include "actors/weapons/slot3/striker.txt"
 #include "actors/weapons/slot4/smg.txt"
 #include "actors/weapons/slot4/assaultrifle.txt"
 #include "actors/weapons/slot4/battlerifle.txt"
