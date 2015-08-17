@@ -41,7 +41,7 @@ ACTOR SinglePistol : CashWeapon replaces Pistol
 	Fire:
 		GLOK A 0 A_JumpIfNoAmmo("DryFire") // Prevent the player firing if he's out of ammo
 		GLOK A 0 A_GunFlash
-		GLOK B 1 BRIGHT A_FireBullets(4,2,-1,7.5,"BulletPuff",1)
+		GLOK B 1 BRIGHT A_FireBullets(4,2,-1,9.5,"BulletPuff",1)
 		TECG C 0 A_SetPitch(pitch - 0.4)
 		GLOK C 1 BRIGHT A_AlertMonsters
 		TECG C 0 A_SetPitch(pitch - 0.3)
@@ -130,7 +130,7 @@ ACTOR DualPistols : CashWeapon // An experiment in Die Hard 2-style dualies.
 		Goto Fire2Check
 	Fire1:
 		GLOK A 0 A_GunFlash
-		DGLK B 1 BRIGHT A_FireBullets(6, 2, -1, 7.5, "BulletPuff", 0)
+		DGLK B 1 BRIGHT A_FireBullets(6, 2, -1, 9.5, "BulletPuff", 0)
 		TECG C 0 A_SetPitch(pitch - 0.4)
         DGLK C 1 BRIGHT A_TakeInventory("DualPistolsClip1", 1)
 		TECG C 0 A_SetPitch(pitch - 0.5)
@@ -147,7 +147,7 @@ ACTOR DualPistols : CashWeapon // An experiment in Die Hard 2-style dualies.
 	Fire2:
 		GLOK A 0 A_GunFlash
 		DGLK E 0 A_AlertMonsters
-		DGLK E 0 BRIGHT A_FireBullets(6, 2, -1, 7.5, "BulletPuff", 0)
+		DGLK E 0 BRIGHT A_FireBullets(6, 2, -1, 9.5, "BulletPuff", 0)
 		TECG C 0 A_SetPitch(pitch - 0.4)
 		DGLK E 1 A_WeaponReady
 		TECG C 0 A_SetPitch(pitch - 0.5)
