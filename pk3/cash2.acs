@@ -34,7 +34,7 @@ str machinedesc[11][2]=
 	{"SHOPAMMO_NAME","SHOPAMMO_MAIN"},
 	{"SHOPARMOR_NAME","SHOPARMOR_MAIN"},
 };
-str weaponstats[11][6][6]=
+str weaponstats[11][8][6]=
 {
 	//PDA
 	{
@@ -43,6 +43,8 @@ str weaponstats[11][6][6]=
 		{"ArtiCarePackagePistol","","SHOPPDA_ITEM2NAME","NOICON","SHOPPDA_ITEM2DESC","SHOPPDA_ITEM2STATS"},
 		{"ArtiCarePackageShotgun","","SHOPPDA_ITEM3NAME","NOICON","SHOPPDA_ITEM3DESC","SHOPPDA_ITEM3STATS"},
 		{"ArtiCarePackageRifle","","SHOPPDA_ITEM4NAME","NOICON","SHOPPDA_ITEM4DESC","SHOPPDA_ITEM4STATS"},
+		{"","","","EMPTICON","",""},
+		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""}
 	},
@@ -54,6 +56,8 @@ str weaponstats[11][6][6]=
 		{"Crowbar","","SHOP1_ITEM2NAME","NOICON","SHOP1_ITEM2DESC","SHOP1_ITEM2STATS"},
 		{"FireAxe","","SHOP1_ITEM4NAME","NOICON","SHOP1_ITEM4DESC","SHOP1_ITEM4STATS"},
 		{"","","","EMPTICON","",""},
+		{"","","","EMPTICON","",""},
+		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""}
 	},
 	//Machine 2
@@ -64,7 +68,9 @@ str weaponstats[11][6][6]=
 		{"KestrelMagnum","","SHOP2_ITEM3NAME","NOICON","SHOP2_ITEM3DESC","SHOP2_ITEM3STATS"},
 		{"PistolAmmo","","SHOP_AMMO1LABEL","PSTAICON","SHOP_AMMO1DESC",""},
 		{"HeavyPistolAmmo","","SHOP_AMMO6LABEL","MAGAICON","SHOP_AMMO6DESC",""},
-		{"ShotgunAmmo","","SHOP_AMMO2LABEL","12GAICON","SHOP_AMMO2DESC",""}
+		{"ShotgunAmmo","","SHOP_AMMO2LABEL","12GAICON","SHOP_AMMO2DESC",""},
+		{"","","","EMPTICON","",""},
+		{"","","","EMPTICON","",""}
 	},
 	//Machine 3
 	{
@@ -74,7 +80,9 @@ str weaponstats[11][6][6]=
 		{"LeverActionRifle","","SHOP3_ITEM3NAME","NOICON","SHOP3_ITEM3DESC","SHOP3_ITEM3STATS"},
 		{"PistolAmmo","","SHOP_AMMO1LABEL","PSTAICON","SHOP_AMMO1DESC",""},
 		{"ShotgunAmmo","","SHOP_AMMO2LABEL","12GAICON","SHOP_AMMO2DESC",""},
-		{"HeavyPistolAmmo","","SHOP_AMMO6LABEL","MAGAICON","SHOP_AMMO6DESC",""}
+		{"HeavyPistolAmmo","","SHOP_AMMO6LABEL","MAGAICON","SHOP_AMMO6DESC",""},
+		{"","","","EMPTICON","",""},
+		{"","","","EMPTICON","",""}
 	},
 	//Machine 4
 	{
@@ -85,6 +93,8 @@ str weaponstats[11][6][6]=
 		{"CHCSMG","","SHOP4_ITEM2NAME","SMGICON","SHOP4_ITEM2DESC","SHOP3_ITEM2STATS"},
 		{"LightRifleAmmo","","SHOP_AMMO3LABEL","LRFAICON","SHOP_AMMO3DESC",""},
 		{"HeavyRifleAmmo","","SHOP_AMMO4LABEL","HRFAICON","SHOP_AMMO4DESC",""},
+		{"","","","EMPTICON","",""},
+		{"","","","EMPTICON","",""}
 	},
 	//Machine 5
 	{
@@ -95,6 +105,8 @@ str weaponstats[11][6][6]=
 		{"RecoillessRockets","","SHOP_AMMO5LABEL","NOICON","SHOP_AMMO5DESC",""},
 		{"40mmAmmo","","SHOP_AMMO7LABEL","40MAICON","SHOP_AMMO7DESC",""},
 		{"","","","EMPTICON","",""},
+		{"","","","EMPTICON","",""},
+		{"","","","EMPTICON","",""}
 	},
 	//Machine 6
 	{
@@ -105,6 +117,8 @@ str weaponstats[11][6][6]=
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
+		{"","","","EMPTICON","",""},
+		{"","","","EMPTICON","",""}
 	},
 	//Machine 7
 	{
@@ -115,6 +129,8 @@ str weaponstats[11][6][6]=
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
+		{"","","","EMPTICON","",""},
+		{"","","","EMPTICON","",""}
 	},
 	//Machine 8 (Hell)
 	{
@@ -125,6 +141,8 @@ str weaponstats[11][6][6]=
 		{"FireAxeUpgrade","","SHOPHELL_ITEM4NAME","","SHOPHELL_ITEM4DESC",""},
 		{"StrengthGiver","","SHOPHELL_ITEM5NAME","","SHOPHELL_ITEM5DESC",""},
 		{"","","","EMPTICON","",""},
+		{"","","","EMPTICON","",""},
+		{"","","","EMPTICON","",""}
 	},
 	//Machine 9 (Ammo)
 	{
@@ -135,6 +153,8 @@ str weaponstats[11][6][6]=
 		{"LightRifleAmmo","","SHOP_AMMO3LABEL","LRFAICON","SHOP_AMMO3DESC",""},
 		{"HeavyRifleAmmo","","SHOP_AMMO4LABEL","HRFAICON","SHOP_AMMO4DESC",""},
 		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","GRNAICON","SHOP5_ITEM2DESC","SHOP5_ITEM2STATS"},
+		{"","","","EMPTICON","",""},
+		{"","","","EMPTICON","",""}
 	},
 	//Machine 10 (Armor)
 	{
@@ -145,9 +165,11 @@ str weaponstats[11][6][6]=
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""},
+		{"","","","EMPTICON","",""},
+		{"","","","EMPTICON","",""}
 	}
 };
-int weaponamounts[11][6][7]=
+int weaponamounts[11][8][7]=
 {
 	//PDA
 	{
@@ -156,6 +178,8 @@ int weaponamounts[11][6][7]=
 		{300,0,0,0,1,0,0x7fffffff},
 		{350,0,0,0,1,0,0x7fffffff},
 		{500,0,0,0,1,0,0x7fffffff},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0}
 	},
@@ -167,6 +191,8 @@ int weaponamounts[11][6][7]=
 		{60,30,0,0,1,1,1},
 		{90,45,0,0,1,1,1},
 		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0}
 	},
 	//Machine 2
@@ -177,7 +203,9 @@ int weaponamounts[11][6][7]=
 		{300,150,0,0,1,1,1},
 		{15,0,0,0,30,0,0x7fffffff},
 		{20,0,0,0,14,0,0x7fffffff},
-		{25,0,0,0,10,0,0x7fffffff}
+		{25,0,0,0,10,0,0x7fffffff},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0}
 	},
 	//Machine 3
 	{
@@ -187,7 +215,9 @@ int weaponamounts[11][6][7]=
 		{250,125,0,0,1,1,1},
 		{15,0,0,0,30,0,0x7fffffff},
 		{25,0,0,0,10,0,0x7fffffff},
-		{20,0,0,0,14,0,0x7fffffff}
+		{20,0,0,0,14,0,0x7fffffff},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0}
 	},
 	//Machine 4
 	{
@@ -197,7 +227,9 @@ int weaponamounts[11][6][7]=
 		{1600,800,0,0,1,1,1},
 		{250,125,0,0,1,1,1},
 		{35,0,0,0,45,0,0x7fffffff},
-		{50,0,0,0,15,0,0x7fffffff}
+		{50,0,0,0,15,0,0x7fffffff},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0}
 	},
 	//Machine 5
 	{
@@ -207,6 +239,8 @@ int weaponamounts[11][6][7]=
 		{75,0,0,0,1,0,0x7fffffff},
 		{200,0,0,0,1,0,0x7fffffff},
 		{65,0,0,0,6,0,0x7fffffff},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0}
 	},
 	//Machine 6
@@ -217,12 +251,16 @@ int weaponamounts[11][6][7]=
 		{130,0,0,0,1,1,0x7fffffff},
 		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0}
 	},
 	//Machine 7
 	{
 		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
 		{25000,0,0,0,1,0,1},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0},
@@ -237,6 +275,8 @@ int weaponamounts[11][6][7]=
 		{2000,0,0,85,1,0,1},
 		{1750,0,0,80,1,0,1},
 		{800,0,0,50,1,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0}
 	},
 	//Machine 9 (Ammo)
@@ -247,13 +287,17 @@ int weaponamounts[11][6][7]=
 		{15,0,0,0,10,0,0x7fffffff},
 		{20,0,0,0,45,0,0x7fffffff},
 		{38,0,0,0,15,0,0x7fffffff},
-		{60,0,0,0,1,0,0x7fffffff}
+		{60,0,0,0,1,0,0x7fffffff},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0}
 	},
 	//Machine 10 (Armor)
 	{
 		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
 		{75,0,0,0,1,0,0},
 		{150,0,0,0,1,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0},
@@ -270,8 +314,6 @@ int actioncursorcoords[4]=
 };
 
 int menuopen[8];
-int productcursorpos[8];
-int actioncursorpos[8];
 //Shop menu -- Big thanks to Psychic, by Xaser and team
 //Making it a numbered script until I can figure out how to assign a named to the actors in DECORATE...
 script 9001(int machine)
@@ -284,7 +326,8 @@ script 9001(int machine)
 	menuopen[PlayerNumber()]=1;
 	setplayerproperty(0,1,PROP_TOTALLYFROZEN);
 	sethudsize(640,400,0);
-	int input,oldinput,movestart,moveloop,movedelay=6,choicedelay=1;
+	int input,oldinput,movestart,moveloop,movedelay=6,choicedelay=1,listoffset,productcursorpos,
+	actioncursorpos;
 	while(1)
 	{
 		if(GetActorProperty(0,APROP_Health)<=0)
@@ -344,9 +387,9 @@ script 9001(int machine)
 		{
 			setfont("SMALLFONT");
 			//TinyName
-			hudmessage(l:weaponstats[machine][i][2];HUDMSG_PLAIN,0,CR_GOLD,71.1,productcursorcoords[i]+13.0,0.03);
+			hudmessage(l:weaponstats[machine][i+listoffset][2];HUDMSG_PLAIN,0,CR_GOLD,71.1,productcursorcoords[i]+13.0,0.03);
 			//Icon
-			setfont(weaponstats[machine][i][3]);
+			setfont(weaponstats[machine][i+listoffset][3]);
 			hudmessage(s:"A";HUDMSG_PLAIN,0,CR_UNTRANSLATED,71.1,productcursorcoords[i]+14.0,0.03);
 		}
 		setfont("SMALLFONT");
@@ -358,26 +401,26 @@ script 9001(int machine)
 		else
 			hudmessage(s:"AddOn:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+24.0,326.1,0.03);
 		hudmessage(s:"Cash:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,552.1,326.1,0.03);
-		hudmessage(i:weaponamounts[machine][productcursorpos[PlayerNumber()]][0],s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[0]+20.0,375.1,0.03);
-		hudmessage(i:weaponamounts[machine][productcursorpos[PlayerNumber()]][1],s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[1]+20.0,375.1,0.03);
-		hudmessage(i:weaponamounts[machine][productcursorpos[PlayerNumber()]][2],s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[2]+20.0,375.1,0.03);
+		hudmessage(i:weaponamounts[machine][productcursorpos][0],s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[0]+20.0,375.1,0.03);
+		hudmessage(i:weaponamounts[machine][productcursorpos][1],s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[1]+20.0,375.1,0.03);
+		hudmessage(i:weaponamounts[machine][productcursorpos][2],s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[2]+20.0,375.1,0.03);
 		if(machine==8)
-			hudmessage(i:weaponamounts[machine][productcursorpos[PlayerNumber()]][3],s:" HP";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+20.0,375.1,0.03);
+			hudmessage(i:weaponamounts[machine][productcursorpos][3],s:" HP";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+20.0,375.1,0.03);
 		else
-			hudmessage(i:weaponamounts[machine][productcursorpos[PlayerNumber()]][3],s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+20.0,375.1,0.03);
+			hudmessage(i:weaponamounts[machine][productcursorpos][3],s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[3]+20.0,375.1,0.03);
 		hudmessage(i:CheckInventory("ColdHardCash"),s:" cr";HUDMSG_PLAIN,0,CR_UNTRANSLATED,548.1,375.1,0.03);
 		//Wordy description
 		if(machine==8)
 			setfont("HELLSHOP");
 		else
 			setfont("DANCOOKFONT3");
-		hudmessage(l:weaponstats[machine][productcursorpos[PlayerNumber()]][4];HUDMSG_PLAIN,0,CR_GREEN,232.1,productcursorcoords[0]+3.0,0.03);
+		hudmessage(l:weaponstats[machine][productcursorpos][4];HUDMSG_PLAIN,0,CR_GREEN,232.1,productcursorcoords[0]+3.0,0.03);
 		//Basic stats
 		setfont("SMALLFONT");
-		hudmessage(l:weaponstats[machine][productcursorpos[PlayerNumber()]][5];HUDMSG_PLAIN,0,CR_GOLD,232.1,productcursorcoords[0]+200.0,0.03);
+		hudmessage(l:weaponstats[machine][productcursorpos][5];HUDMSG_PLAIN,0,CR_GOLD,232.1,productcursorcoords[0]+200.0,0.03);
 		setfont("SHOPFONT");
-		hudmessage(s:"1";HUDMSG_PLAIN,0,CR_UNTRANSLATED,54.1,productcursorcoords[productcursorpos[PlayerNumber()]],0.03);
-		hudmessage(s:"2";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[actioncursorpos[PlayerNumber()]],316.1,0.03);
+		hudmessage(s:"1";HUDMSG_PLAIN,0,CR_UNTRANSLATED,54.1,productcursorcoords[productcursorpos],0.03);
+		hudmessage(s:"2";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[actioncursorpos],316.1,0.03);
 		hudmessage(s:"A";HUDMSG_PLAIN,0,CR_UNTRANSLATED,320.0,200.0,0.03);
 		input=GetPlayerInput(-1,INPUT_BUTTONS);
 		oldinput=GetPlayerInput(-1,INPUT_OLDBUTTONS);
@@ -397,21 +440,25 @@ script 9001(int machine)
 				terminate;
 			}
 			if(input & BT_BACK)
-				productcursorpos[PlayerNumber()]++;
+				productcursorpos++;
 			if(input & BT_FORWARD)
-				productcursorpos[PlayerNumber()]--;
+				productcursorpos--;
 			if(input & BT_RIGHT||input & BT_MOVERIGHT)
-				actioncursorpos[PlayerNumber()]++;
+				actioncursorpos++;
 			if(input & BT_LEFT||input & BT_MOVELEFT)
-				actioncursorpos[PlayerNumber()]--;
-			if(productcursorpos[PlayerNumber()]>5)
-				productcursorpos[PlayerNumber()]=0;
-			if(productcursorpos[PlayerNumber()]<0)
-				productcursorpos[PlayerNumber()]=5;
-			if(actioncursorpos[PlayerNumber()]>3)
-				actioncursorpos[PlayerNumber()]=0;
-			if(actioncursorpos[PlayerNumber()]<0)
-				actioncursorpos[PlayerNumber()]=3;
+				actioncursorpos--;
+			if(productcursorpos>5)
+			if(productcursorpos>7)
+				productcursorpos=0;
+			if(productcursorpos<0)
+				productcursorpos=7;
+			if(actioncursorpos>3)
+				actioncursorpos=0;
+			if(actioncursorpos<0)
+				actioncursorpos=3;
+			listoffset=productcursorpos-5;
+			if(listoffset<0)
+				listoffset=0;
 		}
 		if(movestart)
 		{
@@ -430,16 +477,16 @@ script 9001(int machine)
 			if(machine==8)
 			{
 				//Buy
-				if(actioncursorpos[PlayerNumber()]==0)
+				if(actioncursorpos==0)
 				{
 					//Can't afford it
-					if(CheckInventory("ColdHardCash")<weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]])
+					if(CheckInventory("ColdHardCash")<weaponamounts[machine][productcursorpos][actioncursorpos])
 					{
 						Print(s:"fOul vAgrANt! BEGONE wiTh yoU!");
 						PlaySound(0,"misc/chat2");
 					}
 					//Already upgraded
-					else if(CheckInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0])>=weaponamounts[machine][productcursorpos[PlayerNumber()]][6])
+					else if(CheckInventory(weaponstats[machine][productcursorpos][0])>=weaponamounts[machine][productcursorpos][6])
 					{
 						Print(l:"You've already got that upgrade!");
 						PlaySound(0,"misc/chat2");
@@ -448,32 +495,32 @@ script 9001(int machine)
 					else
 					{
 						Print(l:"we hOpE yOu like it...hehe");
-						GiveInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0],
-							weaponamounts[machine][productcursorpos[PlayerNumber()]][4]);
-						TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+						GiveInventory(weaponstats[machine][productcursorpos][0],
+							weaponamounts[machine][productcursorpos][4]);
+						TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos][actioncursorpos]);
 					}
 				}
 				//Sell
-				else if(actioncursorpos[PlayerNumber()]==1)
+				else if(actioncursorpos==1)
 				{
 					Print(s:"Can't sell this!");
 					PlaySound(0,"misc/chat2");
 				}
 				//Fix
-				else if(actioncursorpos[PlayerNumber()]==2)
+				else if(actioncursorpos==2)
 				{
 				}
 				//Blood Price
-				else if(actioncursorpos[PlayerNumber()]==3)
+				else if(actioncursorpos==3)
 				{
 					//Can't afford it
-					if(GetActorProperty(0,APROP_Health)<weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]])
+					if(GetActorProperty(0,APROP_Health)<weaponamounts[machine][productcursorpos][actioncursorpos])
 					{
 						Print(s:"iT woULd bE a SHAME to kILL YOU lIKe ThiS.\nTRY AgaIn LatER.");
 						PlaySound(0,"misc/chat2");
 					}
 					//Already upgraded
-					else if(CheckInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0]))
+					else if(CheckInventory(weaponstats[machine][productcursorpos][0]))
 					{
 						Print(l:"You've already got that upgrade!");
 						PlaySound(0,"misc/chat2");
@@ -482,24 +529,24 @@ script 9001(int machine)
 					else
 					{
 						Print(l:"we hOpE yOu like it...hehe");
-						GiveInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0],1);
-						Thing_Damage2(0,weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]],"BloodDonor");
+						GiveInventory(weaponstats[machine][productcursorpos][0],1);
+						Thing_Damage2(0,weaponamounts[machine][productcursorpos][actioncursorpos],"BloodDonor");
 					}
 				}
 			}
 			else
 			{
 				//Buy
-				if(actioncursorpos[PlayerNumber()]==0)
+				if(actioncursorpos==0)
 				{
 					//Can't afford it
-					if(CheckInventory("ColdHardCash")<weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]])
+					if(CheckInventory("ColdHardCash")<weaponamounts[machine][productcursorpos][actioncursorpos])
 					{
 						Print(l:"SHOP_NOMONEY");
 						PlaySound(0,"misc/chat2");
 					}
 					//Health (special case)
-					else if(!StrCmp(weaponstats[machine][productcursorpos[PlayerNumber()]][0],"Health"))
+					else if(!StrCmp(weaponstats[machine][productcursorpos][0],"Health"))
 					{
 						//Health full
 						if(GetActorProperty(0,APROP_Health)>=GetActorProperty(0,APROP_SpawnHealth))
@@ -512,11 +559,11 @@ script 9001(int machine)
 						{
 							Print(l:"SHOP_ITEMBOUGHT");
 							HealThing(10);
-							TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+							TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos][actioncursorpos]);
 						}
 					}
 					//Armor 1 (special case)
-					else if(!StrCmp(weaponstats[machine][productcursorpos[PlayerNumber()]][0],"CHCBasicArmor"))
+					else if(!StrCmp(weaponstats[machine][productcursorpos][0],"CHCBasicArmor"))
 					{
 						//Armor full
 						if(CheckInventory("BasicArmor")>=100)
@@ -528,13 +575,13 @@ script 9001(int machine)
 						else
 						{
 							Print(l:"SHOP_ITEMBOUGHT");
-							GiveInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0],
-								weaponamounts[machine][productcursorpos[PlayerNumber()]][4]);
-							TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+							GiveInventory(weaponstats[machine][productcursorpos][0],
+								weaponamounts[machine][productcursorpos][4]);
+							TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos][actioncursorpos]);
 						}
 					}
 					//Armor 2 (special case)
-					else if(!StrCmp(weaponstats[machine][productcursorpos[PlayerNumber()]][0],"CHCAdvancedArmor"))
+					else if(!StrCmp(weaponstats[machine][productcursorpos][0],"CHCAdvancedArmor"))
 					{
 						//Armor full
 						if(CheckInventory("BasicArmor")>=200)
@@ -546,13 +593,13 @@ script 9001(int machine)
 						else
 						{
 							Print(l:"SHOP_ITEMBOUGHT");
-							GiveInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0],
-								weaponamounts[machine][productcursorpos[PlayerNumber()]][4]);
-							TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+							GiveInventory(weaponstats[machine][productcursorpos][0],
+								weaponamounts[machine][productcursorpos][4]);
+							TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos][actioncursorpos]);
 						}
 					}
 					//Inventory full
-					else if(CheckInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0])>=weaponamounts[machine][productcursorpos[PlayerNumber()]][6])
+					else if(CheckInventory(weaponstats[machine][productcursorpos][0])>=weaponamounts[machine][productcursorpos][6])
 					{
 						Print(l:"TXT_HAVEENOUGH");
 						PlaySound(0,"misc/chat2");
@@ -561,16 +608,16 @@ script 9001(int machine)
 					else
 					{
 							Print(l:"SHOP_ITEMBOUGHT");
-						GiveInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0],
-							weaponamounts[machine][productcursorpos[PlayerNumber()]][4]);
-						TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+						GiveInventory(weaponstats[machine][productcursorpos][0],
+							weaponamounts[machine][productcursorpos][4]);
+						TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos][actioncursorpos]);
 					}
 				}
 				//Sell
-				else if(actioncursorpos[PlayerNumber()]==1)
+				else if(actioncursorpos==1)
 				{
 					//Health (special case)
-					if(!StrCmp(weaponstats[machine][productcursorpos[PlayerNumber()]][0],"Health"))
+					if(!StrCmp(weaponstats[machine][productcursorpos][0],"Health"))
 					{
 						//Health too low
 						if(GetActorProperty(0,APROP_Health)<=5)
@@ -583,17 +630,17 @@ script 9001(int machine)
 						{
 							Print(s:"Thank you for your kind donation!");
 							Thing_Damage2(0,5,"BloodDoner");
-							GiveInventory("ColdHardCash",weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+							GiveInventory("ColdHardCash",weaponamounts[machine][productcursorpos][actioncursorpos]);
 						}
 					}
 					//Can't be sold
-					else if(weaponamounts[machine][productcursorpos[PlayerNumber()]][5]==0)
+					else if(weaponamounts[machine][productcursorpos][5]==0)
 					{
 						Print(s:"Can't sell this!");
 						PlaySound(0,"misc/chat2");
 					}
 					//Inventory empty
-					else if(CheckInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0])==0)
+					else if(CheckInventory(weaponstats[machine][productcursorpos][0])==0)
 					{
 						Print(l:"SHOP_NOSELL");
 						PlaySound(0,"misc/chat2");
@@ -603,51 +650,51 @@ script 9001(int machine)
 					{
 						Print(l:"SHOP_ITEMSOLD");
 						//Take the item
-						TakeInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0],
-							weaponamounts[machine][productcursorpos[PlayerNumber()]][5]);
+						TakeInventory(weaponstats[machine][productcursorpos][0],
+							weaponamounts[machine][productcursorpos][5]);
 						//Take the upgrade
-						TakeInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][1],
-							weaponamounts[machine][productcursorpos[PlayerNumber()]][5]);
+						TakeInventory(weaponstats[machine][productcursorpos][1],
+							weaponamounts[machine][productcursorpos][5]);
 						//Glock (special case)
-						if(!StrCmp(weaponstats[machine][productcursorpos[PlayerNumber()]][0],"SinglePistol")&&CheckInventory("DualPistols"))
+						if(!StrCmp(weaponstats[machine][productcursorpos][0],"SinglePistol")&&CheckInventory("DualPistols"))
 						{
 							TakeInventory("DualPistols",1);
 							GiveInventory("ColdHardCash",50);
 						}
 						//MO Blaster (special case
-						if(!StrCmp(weaponstats[machine][productcursorpos[PlayerNumber()]][0],"MOBlaster"))
+						if(!StrCmp(weaponstats[machine][productcursorpos][0],"MOBlaster"))
 							TakeInventory("MoBlasterAmmo",9999);
 						//Give some money
-						GiveInventory("ColdHardCash",weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+						GiveInventory("ColdHardCash",weaponamounts[machine][productcursorpos][actioncursorpos]);
 					}
 				}
 				//Fix
-				else if(actioncursorpos[PlayerNumber()]==2)
+				else if(actioncursorpos==2)
 				{
 				}
 				//Upgrade
-				else if(actioncursorpos[PlayerNumber()]==3)
+				else if(actioncursorpos==3)
 				{
 					//Can't afford it
-					if(CheckInventory("ColdHardCash")<weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]])
+					if(CheckInventory("ColdHardCash")<weaponamounts[machine][productcursorpos][actioncursorpos])
 					{
 						Print(l:"SHOP_NOMONEY");
 						PlaySound(0,"misc/chat2");
 					}
 					//No upgrade for this item
-					else if(!StrCmp(weaponstats[machine][productcursorpos[PlayerNumber()]][1],""))
+					else if(!StrCmp(weaponstats[machine][productcursorpos][1],""))
 					{
 						Print(s:"No upgrade available!");
 						PlaySound(0,"misc/chat2");
 					}
 					//Don't own the base item
-					else if(!CheckInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][0]))
+					else if(!CheckInventory(weaponstats[machine][productcursorpos][0]))
 					{
 						Print(s:"You need the item before you can upgrade!");
 						PlaySound(0,"misc/chat2");
 					}
 					//Already upgraded
-					else if(CheckInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][1]))
+					else if(CheckInventory(weaponstats[machine][productcursorpos][1]))
 					{
 						Print(l:"You've already got that upgrade!");
 						PlaySound(0,"misc/chat2");
@@ -656,11 +703,11 @@ script 9001(int machine)
 					else
 					{
 						Print(l:"SHOP_UPGRADEBOUGHT");
-						GiveInventory(weaponstats[machine][productcursorpos[PlayerNumber()]][1],1);
+						GiveInventory(weaponstats[machine][productcursorpos][1],1);
 						//Glock (special case)
-						if(!StrCmp(weaponstats[machine][productcursorpos[PlayerNumber()]][0],"SinglePistol"))
+						if(!StrCmp(weaponstats[machine][productcursorpos][0],"SinglePistol"))
 							GiveInventory("DualPistols",1);
-						TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos[PlayerNumber()]][actioncursorpos[PlayerNumber()]]);
+						TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos][actioncursorpos]);
 					}
 				}
 			}
