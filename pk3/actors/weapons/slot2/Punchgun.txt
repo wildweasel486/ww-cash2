@@ -1,4 +1,8 @@
-ACTOR PunchGunLoaded : Ammo{}
+ACTOR PunchGunLoaded : Ammo
+{
+	Inventory.MaxAmount 2
+	+IGNORESKILL
+}
 
 ACTOR PunchGunPuff
 {
@@ -140,7 +144,7 @@ ACTOR PunchGun : CashWeapon
 		PNCI A 1 Offset(-3,40) A_Refire
 		Goto Ready
 	Reload:
-		PNCI A 0 A_JumpIfInventory("PunchGunLoaded", 1, 2)
+		PNCI A 0 A_JumpIfInventory("PunchGunLoaded", 0, 2)
 		PNCI A 0 A_JumpIfInventory("ShotgunAmmo", 1, 2)
 		PNCI A 1 A_WeaponReady(WRF_NOFIRE)
 		Goto Ready
