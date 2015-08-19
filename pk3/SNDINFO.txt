@@ -77,14 +77,7 @@ weapons/gloxfire GLOCKFIR
 weapons/gloxout GLOCKOUT
 weapons/gloxin GLOCKIN
 
-//Kestrel/Fire KestrFir
-//$random Kestrel/Fire { Kestrel1 Kestrel2 }
-Kestrel1 Kestrel1
-Kestrel2 Kestrel2
-$random Kestrel/Fire { SNS501 SNS502 SNS503 }
-SNS501 SNS501
-SNS502 SNS502
-SNS503 SNS503
+Kestrel/Fire KestrFir
 Kestrel/Clipout KestrOut
 Kestrel/Clipin KestrIn
 
