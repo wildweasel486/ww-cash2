@@ -108,7 +108,7 @@ ACTOR StrikerAutoShotgun : CashWeapon
 	ReloadWork:
 		STKG E 0 A_TakeInventory("ShotgunAmmo", 1)
 		STKG E 0 A_GiveInventory("StrikerLoaded", 1)
-		STKG E 0 A_JumpIfInventory("StrikerLoaded", 12, "ReloadFinish")
+		STKG E 0 A_JumpIfInventory("StrikerLoaded", 0, "ReloadFinish")
 		STKG E 0 A_JumpIfInventory("ShotgunAmmo", 1, "ReloadWork")
 	ReloadFinish:
 		STKG E 1 Offset(28,100) A_PlaySound("Striker/Clipin", 5)
