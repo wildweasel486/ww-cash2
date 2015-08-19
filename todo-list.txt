@@ -1,3 +1,63 @@
+AN INVENTORY OF ALL SHOPS AND WHAT SHIT THEY'RE GONNA CARRY
+LEVEL 1: TOOLS
+- Medipatch
+- Utility knife
+- Crowbar
+- Fireman's axe
+- A flashlight or togglable NVGs for the inventory, maybe?
+- Flares?
+LEVEL 2: SIDEARMS
+- Glox pistol / dual-wield upgrade
+- Punch Gun
+- Kestrel Magnum
+- Silenced pistol, probably that P38 from original ww-cash but less unbalanced
+- "Blooper" grenade launcher
+- Pistol ammo
+- Shotgun ammo
+- Magnum ammo
+LEVEL 3: RIFLES
+- Shorty shotgun
+- Lever-action rifle
+- SMG
+- Varmint rifle/Contender? (takes Light Rifle ammo)
+- Pistol ammo
+- Shotgun ammo
+- Magnum ammo
+LEVEL 4: AUTOMATICS
+- Assault rifle
+- Battle rifle
+- Heavy machine gun
+- Automatic shotgun
+- SMG
+- Sentry Turret
+- Light rifle ammo
+- Heavy rifle ammo
+- Shotgun ammo
+LEVEL 5: EXPLOSIVES
+- Disposable LAWs
+- Recoilless rifle
+- Grenade launcher
+- Flamethrower
+- Hand grenades
+- MANIC mines
+- Recoilless shells
+- 40mm grenade shells
+- Flamer fuel
+LEVEL 6: ENERGY
+- Plasma darter
+- Plasma gatling
+- Gauss rifle
+- Electric grenades
+- Gauss capacitors
+LEVEL 7: SUPER
+- Spectrum cannon
+- Golden Gun
+- Pimp Cane
+- Incendiary missile launcher
+- Incendiary missiles
+
+ORIGINAL TO-DO LIST FOLLOWS...
+
 Okay I'm really gonna have to keep up to date on this. Here's some shit I could do to ww-cash2...
 
 HIGH PRIORITY:
