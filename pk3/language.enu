@@ -3,21 +3,22 @@
 TXT_YES = "Yes";
 TXT_NO = "No";
 
-QUITMSG = "Press Y to liquidate all assets.";
-QUITMSG1 = "Press Y to file for Chapter 11.";
-QUITMSG2 = "Press Y to donate all possessions\nto Goodwill.";
-QUITMSG3 = "Press Y to invest in penny stocks.";
-QUITMSG4 = "Press Y to get caught embezzling.";
-QUITMSG5 = "Press Y to get shut down by PayPal.";
-QUITMSG6 = "Press Y to surrender to a diet of\ninstant noodles and salt.";
-QUITMSG7 = "Press Y to get swamped in loans.";
-QUITMSG8 = "Press Y to default on payments.";
-QUITMSG9 = "Press Y to be directed to a\ncollections agency.";
-QUITMSG10 = "Press Y to be repossessed.";
-QUITMSG11 = "Press Y to get foreclosed.";
-QUITMSG12 = "Press Y to go bankrupt.";
-QUITMSG13 = "Press Y to refinance.";
-QUITMSG14 = "Press Y to eat crow.";
+QUITMSG = "Press Y to liquidate all assets.\nPress N to monetize them.";
+QUITMSG1 = "Press Y to file for Chapter 11.\nPress N to file for bankruptcy protection.";
+QUITMSG2 = "Press Y to donate all possessions\nto Goodwill.\nPress N to flip them on eBay at 100% profit.";
+QUITMSG3 = "Press Y to invest in penny stocks.\nPress N to invest in the UAC.";
+QUITMSG4 = "Press Y to get caught embezzling.\nPress N if you're more honest than that.";
+QUITMSG5 = "Press Y to get shut down by PayPal.\nPress N to fight it and win.";
+QUITMSG6 = "Press Y to surrender to a diet of\ninstant noodles and salt.\nPress N if you're more of a lobster and caviar\nsort of person.";
+QUITMSG7 = "Press Y to get swamped in loans.\nPress N to manage them smartly.";
+QUITMSG8 = "Press Y to default on payments.\nPress N to salvage your credit rating.";
+QUITMSG9 = "Press Y to be directed to a collections agency.\nPress N to direct THEM to YOUR collections agency.";
+QUITMSG10 = "Press Y to be repossessed.\nPress N to expose the repossessors as frauds.";
+QUITMSG11 = "Press Y to get foreclosed.\nPress N to profit on foreclosed property.";
+QUITMSG12 = "Press Y to go bankrupt.\nPress N to have your debt forgiven.";
+QUITMSG13 = "Press Y to succumb to crippling\nstudent loan debt.\nPress N to fight it in court and win.";
+QUITMSG14 = "Press Y to eat crow.\nPress N if crow doesn't really sound that tasty.";
+DOSY = "";
 
 STARTUP1 = "Cold Hard Cash 2 alpha version.";
 STARTUP2 = "Report all bugs to wildweasel at zdoom forums";
