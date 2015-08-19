@@ -419,7 +419,7 @@ script 9001(int machine)
 		setfont("SMALLFONT");
 		hudmessage(l:weaponstats[machine][productcursorpos][5];HUDMSG_PLAIN,0,CR_GOLD,232.1,productcursorcoords[0]+200.0,0.03);
 		setfont("SHOPFONT");
-		hudmessage(s:"1";HUDMSG_PLAIN,0,CR_UNTRANSLATED,54.1,productcursorcoords[productcursorpos],0.03);
+		hudmessage(s:"1";HUDMSG_PLAIN,0,CR_UNTRANSLATED,54.1,productcursorcoords[productcursorpos-listoffset],0.03);
 		hudmessage(s:"2";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[actioncursorpos],316.1,0.03);
 		hudmessage(s:"A";HUDMSG_PLAIN,0,CR_UNTRANSLATED,320.0,200.0,0.03);
 		input=GetPlayerInput(-1,INPUT_BUTTONS);
