@@ -103,7 +103,7 @@ ACTOR HeavyMachineGun : CashWeapon
 		"####" F 1 Offset(1,33) A_ClearRefire
 		Goto Ready
 	Reload:
-		"####" "#" 0 A_JumpIfInventory("M60Loaded", 200, 2)
+		"####" "#" 0 A_JumpIfInventory("M60Loaded", 0, 2)
 		"####" "#" 0 A_JumpIfInventory("HeavyRifleAmmo", 1, 2)
 		"####" "#" 1
 		Goto Ready
