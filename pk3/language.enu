@@ -41,35 +41,35 @@ SHOP_SELL = "Sell (1/2 purchase price)";
 
 // Shop descriptions (Ammo types/El Ammo Bandito!)
 SHOPAMMO_NAME = "Bienvenido Al Ammo Bandito!";
-SHOPAMMO_MAIN = 
+SHOPAMMO_MAIN =
 "Please make sure ahead of time which type of ammo your weapon needs. \n"
 "The Munitions Department will not give refunds.";
 SHOP_AMMO1LABEL = "30x Pistol Ammo";
-SHOP_AMMO1DESC = 
+SHOP_AMMO1DESC =
 "Small-caliber pistol cartridges, intended\n"
 "for basic handguns and machine-pistols.";
 SHOP_AMMO2LABEL = "10x Shotgun Ammo";
-SHOP_AMMO2DESC = 
+SHOP_AMMO2DESC =
 "12-gauge shotgun shells, filled with\n"
 "double-aught buckshot.";
 SHOP_AMMO3LABEL = "45x Light Rifle Ammo";
-SHOP_AMMO3DESC = 
+SHOP_AMMO3DESC =
 "Rifle ammunition, adhering to NATO 5.56x45mm\n"
 "standards for assault rifle cartridges.";
-SHOP_AMMO4LABEL = "10x Heavy Rifle Ammo";
-SHOP_AMMO4DESC = 
+SHOP_AMMO4LABEL = "15x Heavy Rifle Ammo";
+SHOP_AMMO4DESC =
 "Rifle ammunition, adhering to NATO 7.62x51mm\n"
 "standards for sniper and marksman rifles.";
 SHOP_AMMO5LABEL = "1x Recoilless Ammo";
-SHOP_AMMO5DESC = 
+SHOP_AMMO5DESC =
 "84mm self-propelled shells for a recoilless\n"
 "rifle.";
 SHOP_AMMO6LABEL = "14x Magnum Ammo";
-SHOP_AMMO6DESC = 
+SHOP_AMMO6DESC =
 "High-caliber pistol ammunition, usable in large\n"
 "handguns and lever-action carbines.";
 SHOP_AMMO7LABEL = "6x 40mm Grenade Ammo";
-SHOP_AMMO7DESC = 
+SHOP_AMMO7DESC =
 "40mm high-explosive grenades, fits most handheld\n"
 "grenade launchers.";
 
@@ -114,13 +114,13 @@ SHOPPDA_ITEM4STATS = "Contains:\n"
 
 // Shop descriptions (level 1)
 SHOP1_NAME = "Vending Machine (Tools/Supplies)";
-SHOP1_MAIN = 
+SHOP1_MAIN =
 "Raw materials and tools are shipped to the colonies on a daily basis,\n"
 "but interstellar shipping is far from cheap, so the UAC has to break\n"
 "even on it somehow. Pocket knives, first aid, and daily work tools\n"
 "are on sale right here, for (what we hope are) reasonable prices.";
 SHOP1_ITEM1NAME = "MediPatch";
-SHOP1_ITEM1DESC = 
+SHOP1_ITEM1DESC =
 "Doctors are expensive, and in short supply. \n"
 "That's why we at the UAC have invested \n"
 "considerable capital into MediPatch: the easy, \n"
@@ -133,7 +133,7 @@ SHOP1_ITEM1DESC =
 SHOP1_ITEM1STATS = "Restores 10 health immediately upon purchase.\n"
 "Sell this item to donate blood (takes 5 health for 10 cr).";
 SHOP1_ITEM2NAME = "Crowbar";
-SHOP1_ITEM2DESC = 
+SHOP1_ITEM2DESC =
 "Not since the days of the famed Black Mesa\n"
 "resonance cascade has the crowbar seen such\n"
 "popularity - sadly many choose to use it\n"
@@ -141,7 +141,7 @@ SHOP1_ITEM2DESC =
 "might as well make use of what you've got, right?";
 SHOP1_ITEM2STATS = "Ammo Type: N/A\nSpeed: Slow\nDamage: Medium-High\nSlot: 1\nUpgrades: ???";
 SHOP1_ITEM3NAME = "Utility knife";
-SHOP1_ITEM3DESC = 
+SHOP1_ITEM3DESC =
 "The classic folding knife still finds\n"
 "many uses throughout the UAC complex, \n"
 "whether it be trimming wires to size, \n"
@@ -150,7 +150,7 @@ SHOP1_ITEM3DESC =
 "enough to attack a dude with a knife.";
 SHOP1_ITEM3STATS = "Ammo Type: N/A\nSpeed: Fast\nDamage: So-so\nSlot: 1\nUpgrades: ???";
 SHOP1_ITEM4NAME = "Fireman's Axe";
-SHOP1_ITEM4DESC = 
+SHOP1_ITEM4DESC =
 "The UAC are quite adamant that the risk of fire\n"
 "at their installations is quite low, which is\n"
 "why they insist on putting these fire axes in\n"
@@ -163,7 +163,7 @@ SHOP1_ITEM4STATS = "Ammo Type: N/A\nSpeed: Very Slow\nDamage: High\nSlot: 1\nUpg
 
 // Shop descriptions (level 2)
 SHOP2_NAME = "Vending Machine (Sidearms)";
-SHOP2_MAIN = 
+SHOP2_MAIN =
 "UAC employees are allowed to carry small sidearms for self-defense, \n"
 "providing that the weapon is chambered for a caliber no larger than\n"
 "9x19mm Parabellum, and has a magazine size of no more than 17 rounds, \n"
@@ -172,7 +172,7 @@ SHOP2_MAIN =
 "UAC Security. (This vending machine, however, could not care less\n"
 "about that crap. Buy whatever!)";
 SHOP2_ITEM1NAME = "Glox Handgun";
-SHOP2_ITEM1DESC = 
+SHOP2_ITEM1DESC =
 "The only handgun that UAC employees are\n"
 "allowed to carry - is it any wonder that's\n"
 "why this is our most popular model? Carries\n"
@@ -180,7 +180,7 @@ SHOP2_ITEM1DESC =
 "Buy one Glox, get the second at half price!";
 SHOP2_ITEM1STATS = "Ammo Type: Pistol\nSpeed: Fast (Dual Semi-Auto)\nDamage: Low\nAccuracy: Low-ish\nSlot: 2\nUpgrades: Dual-wield";
 SHOP2_ITEM2NAME = "Punch Gun";
-SHOP2_ITEM2DESC = 
+SHOP2_ITEM2DESC =
 "Sometimes you'd say to yourself, \"Man, I really\n"
 "wish I had a cheap shotgun, but I hate carrying\n"
 "long weapons and also want to punch stuff.\"\n"
@@ -204,7 +204,7 @@ SHOP2_ITEM3STATS = "Ammo Type: Heavy Pistol\nSpeed: Average\nDamage: Medium\nAcc
 SHOP3_NAME = "Vending Machine (CQB Weapons)";
 SHOP3_MAIN = "When sidearms don't pack enough punch, but military rifles are overkill,\nthese guns are certainly not compensating for anything.";
 SHOP3_ITEM1NAME = "\"Shorty\" Shotgun";
-SHOP3_ITEM1DESC = 
+SHOP3_ITEM1DESC =
 "Boom, click-clack.\n"
 "Sometimes you just gotta love the satisfaction\n"
 "of racking a shotgun, and this specially\n"
@@ -216,7 +216,7 @@ SHOP3_ITEM1DESC =
 "after every shot.";
 SHOP3_ITEM1STATS = "Ammo Type: Shotgun\nSpeed: Slow\nDamage: Medium-High\nAccuracy: Fair\nSlot: 3\nUpgrades: Semi-Auto Conversion\n";
 SHOP3_ITEM2NAME = "Submachine Gun";
-SHOP3_ITEM2DESC = 
+SHOP3_ITEM2DESC =
 "Who needs pinpoint accuracy out to 1 KM\n"
 "when you can solve up to 1,200 problems\n"
 "a minute? Put all that pistol ammo you've been\n"
@@ -228,7 +228,7 @@ SHOP3_ITEM2DESC =
 "country must mean we're doing something right!)";
 SHOP3_ITEM2STATS = "Ammo Type: Pistol\nSpeed: Very Fast\nDamage: Low\nAccuracy: Not so great\nSlot: 4\nUpgrades: None";
 SHOP3_ITEM3NAME = "Lever-Action Rifle";
-SHOP3_ITEM3DESC = 
+SHOP3_ITEM3DESC =
 "How the West was won. Saddle up, pardner,\n"
 "it's just you, your rifle, and the wild frontier.\n"
 "This lever-action saddle rifle may not pack the\n"
@@ -246,7 +246,7 @@ SHOP3_ITEM3STATS = "Ammo Type: Magnum\nSpeed: Slow\nDamage: High\nAccuracy: Medi
 SHOP4_NAME = "Vending Machine (Military Surplus Weapons)";
 SHOP4_MAIN = "It worked for the Army at some point, so it can work for you, too!\nAssault rifles and other Marine-issue hardware, right here,\nwithout the need to go through boot camp first.";
 SHOP4_ITEM1NAME = "Pugnose Assault Rifle";
-SHOP4_ITEM1DESC = 
+SHOP4_ITEM1DESC =
 "This compact assault rifle is a favorite of\n"
 "UAC SWAT and other urban-warfare, close-\n"
 "quarters operatives, with its commando-style\n"
@@ -258,7 +258,7 @@ SHOP4_ITEM1DESC =
 "rate of fire.";
 SHOP4_ITEM1STATS = "Ammo Type: Light Rifle\nSpeed: Fast\nDamage: Low\nAccuracy: Average\nSlot: 4\nUpgrades: None\n";
 SHOP4_ITEM3NAME = "Marksman's Battle Rifle";
-SHOP4_ITEM3DESC = 
+SHOP4_ITEM3DESC =
 "When you start looking like a Marine, you'll\n"
 "start feeling like a Marine, and then, God\n"
 "dammit, you'll start acting like a Marine, so\n"
@@ -274,7 +274,7 @@ SHOP4_ITEM3DESC =
 "beefy arms can handle!";
 SHOP4_ITEM3STATS = "Ammo Type: Heavy Rifle\nSpeed: Slow\nDamage: High\nAccuracy: High\nSlot: 4\nUpgrades: Unimplemented\n";
 SHOP4_ITEM2NAME = "Submachine Gun (SALE!)";
-SHOP4_ITEM2DESC = 
+SHOP4_ITEM2DESC =
 "Who can forget the dependable SMG? It\n"
 "might not be as powerful as the other\n"
 "heavy ordnance on offer here, but it's\n"
@@ -301,14 +301,14 @@ SHOP4_ITEM4STATS = "Ammo Type: Heavy Rifle\nSpeed: Faster than most\nAccuracy: M
 SHOP5_NAME = "Vending Machine (Explosives)";
 SHOP5_MAIN = "Blow crap up.";
 SHOP5_ITEM1NAME = "Recoilless Rifle";
-SHOP5_ITEM1DESC = 
+SHOP5_ITEM1DESC =
 "Shamelessly ripped from ww-stranger.\n"
 "(Surgeon General's Warning: Use with\n"
 "widescreen resolutions may result in\n"
 "detached limbs.)";
 SHOP5_ITEM1STATS = "";
 SHOP5_ITEM2NAME = "Hand Grenades";
-SHOP5_ITEM2DESC = 
+SHOP5_ITEM2DESC =
 "If there's one thing that's remained constant\n"
 "about armed conflict over the last few hundred\n"
 "years, it's that muscle-propelled explosives\n"
@@ -319,7 +319,7 @@ SHOP5_ITEM2DESC =
 "an effective range of around 15M.";
 SHOP5_ITEM2STATS = "Ammo Type: Disposable\nSpeed: Unlimited!\nDamage: High\nAccuracy: So-so\nSlot: Inventory\nUpgrades: None";
 SHOP5_ITEM3NAME = "Grenade Launcher";
-SHOP5_ITEM3DESC = 
+SHOP5_ITEM3DESC =
 "Originally meant as a lighter alternative\n"
 "to cumbersome bazookas and mortars, this\n"
 "grenade launcher can hold up to six high-\n"
@@ -336,7 +336,7 @@ SHOP5_ITEM3STATS = "Ammo Type: 40mm Grenade\nSpeed: Moderate\nDamage: High\nAccu
 
 // Shop descriptions (level 6)
 SHOP6_NAME = "Vending Machine (Energy)";
-SHOP6_MAIN = 
+SHOP6_MAIN =
 "The latest advances in high-tech, energy-based\n"
 "weaponry are now available at affordable prices.\n"
 "All weapons are powered by their own internal,\n"
@@ -345,7 +345,7 @@ SHOP6_MAIN =
 "Energy weapons: awesome-looking, AND environmentally\n"
 "conscious!";
 SHOP6_ITEM1NAME = "Plasma Darter";
-SHOP6_ITEM1DESC = 
+SHOP6_ITEM1DESC =
 "Give your foes a lethal blister (or five)\n"
 "with this state-of-the-art disposable self-\n"
 "defense weapon.\n\n"
@@ -355,7 +355,7 @@ SHOP6_ITEM1DESC =
 "receive a 25 CR refund on your deposit.";
 SHOP6_ITEM1STATS = "Ammo Type: Disposable\nSpeed: Quick\nDamage: Fair\nAccuracy: Good\nSlot: 6\nUpgrades: None";
 SHOP6_ITEM2NAME = "Gauss Rifle";
-SHOP6_ITEM2DESC = 
+SHOP6_ITEM2DESC =
 "The Gauss Rifle uses a series of magnetic\n"
 "accelerators to propel a ferrous slug at speeds\n"
 "ordinarily reserved for fighter jets and astral\n"
@@ -368,7 +368,7 @@ SHOP6_ITEM2DESC =
 "AND Gauss capacitors to charge the magnets.";
 SHOP6_ITEM2STATS = "Ammo Type: Heavy Rifle/Gauss Capacitor\nSpeed: Slow\nDamage: Ultra-High\nAccuracy: 100%\nSlot: 6\nUpgrades: None";
 SHOP6_ITEM6NAME = "Electric Grenades";
-SHOP6_ITEM6DESC = 
+SHOP6_ITEM6DESC =
 "As useful as the typical hand grenade can be,\n"
 "it tends to leave quite a mess, with all that\n"
 "nasty shrapnel embedding itself in all the walls,\n"
