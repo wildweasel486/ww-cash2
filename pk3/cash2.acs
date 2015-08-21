@@ -514,7 +514,7 @@ script 9001(int machine)
 				else if(actioncursorpos==3)
 				{
 					//Can't afford it
-					if(GetActorProperty(0,APROP_Health)<weaponamounts[machine][productcursorpos][actioncursorpos])
+					if(GetActorProperty(0,APROP_Health)<=weaponamounts[machine][productcursorpos][actioncursorpos])
 					{
 						Print(s:"iT woULd bE a SHAME to kILL YOU lIKe ThiS.\nTRY AgaIn LatER.");
 						PlaySound(0,"misc/chat2");
