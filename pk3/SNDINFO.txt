@@ -1,3 +1,5 @@
+// Money pickups
+
 $random pickups/coin { coin1 coin2 coin3 }
 $random pickups/mcoin { mcoin1 mcoin2 }
 $random pickups/coinpile { coinstack1 coinstack2 }
@@ -10,6 +12,19 @@ mcoin1 mcoin1
 mcoin2 mcoin2
 coinstack1 coinstk1
 coinstack2 coinstk2
+
+// Shop menu sounds
+
+shop/open SHOPOPEN
+shop/close SHOPCLOS
+shop/movevert SHOPMOVV
+shop/movehorz SHOPMOVH
+shop/error SHOPEROR
+shop/buy SHOPBUY
+shop/sell SHOPSELL
+shop/repair SHOPFIX
+shop/upgrade SHOPUPGD
+shop/bleed SHOPBLED
 
 weapons/dryfire DRYFIRE
 Dryfire/Pistol EMPTYP
