@@ -1,6 +1,3 @@
-clearplayerclasses
-addplayerclass "WWCashPlayer"
-
 addkeysection "Cold Hard Cash 2" ww-cash2
 alias dropcash "Use ColdHardCash"
 defaultbind b dropcash
