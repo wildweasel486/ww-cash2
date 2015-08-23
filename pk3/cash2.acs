@@ -325,6 +325,7 @@ script 9001(int machine)
 		CloseMenu();
 		terminate;
 	}
+	PlaySound(0,"shop/open");
 	menuopen[PlayerNumber()]=1;
 	setplayerproperty(0,1,PROP_TOTALLYFROZEN);
 	sethudsize(640,400,0);
@@ -442,16 +443,16 @@ script 9001(int machine)
 				terminate;
 			}
 			if(input & BT_BACK) {
-				productcursorpos++; 
+				productcursorpos++;
 				PlaySound(0, "shop/movevert"); }
 			if(input & BT_FORWARD) {
-				productcursorpos--; 
+				productcursorpos--;
 				PlaySound(0, "shop/movevert"); }
 			if(input & BT_RIGHT||input & BT_MOVERIGHT) {
-				actioncursorpos++; 
+				actioncursorpos++;
 				PlaySound(0, "shop/movehorz"); }
 			if(input & BT_LEFT||input & BT_MOVELEFT) {
-				actioncursorpos--; 
+				actioncursorpos--;
 				PlaySound(0, "shop/movehorz"); }
 			if(productcursorpos>5)
 			if(productcursorpos>7)
@@ -490,14 +491,14 @@ script 9001(int machine)
 					{
 						PlaySound(0, "shop/error");
 						Print(s:"fOul vAgrANt! BEGONE wiTh yoU!");
-						
+
 					}
 					//Already upgraded
 					else if(CheckInventory(weaponstats[machine][productcursorpos][0])>=weaponamounts[machine][productcursorpos][6])
 					{
 						PlaySound(0, "shop/error");
 						Print(l:"You've already got that upgrade!");
-						
+
 					}
 					//Can buy it
 					else
@@ -514,7 +515,7 @@ script 9001(int machine)
 				{
 					PlaySound(0, "shop/error");
 					Print(s:"Can't sell this!");
-					
+
 				}
 				//Fix
 				else if(actioncursorpos==2)
@@ -528,14 +529,14 @@ script 9001(int machine)
 					{
 						PlaySound(0, "shop/error");
 						Print(s:"iT woULd bE a SHAME to kILL YOU lIKe ThiS.\nTRY AgaIn LatER.");
-						
+
 					}
 					//Already upgraded
 					else if(CheckInventory(weaponstats[machine][productcursorpos][0]))
 					{
 						PlaySound(0, "shop/error");
 						Print(l:"You've already got that upgrade!");
-						
+
 					}
 					//Can buy it
 					else
@@ -557,7 +558,7 @@ script 9001(int machine)
 					{
 						PlaySound(0, "shop/error");
 						Print(l:"SHOP_NOMONEY");
-						
+
 					}
 					//Health (special case)
 					else if(!StrCmp(weaponstats[machine][productcursorpos][0],"Health"))
@@ -567,7 +568,7 @@ script 9001(int machine)
 						{
 							PlaySound(0, "shop/error");
 							Print(l:"TXT_HAVEENOUGH");
-							
+
 						}
 						//Can buy it
 						else
@@ -586,7 +587,7 @@ script 9001(int machine)
 						{
 							PlaySound(0, "shop/error");
 							Print(l:"TXT_HAVEENOUGH");
-							
+
 						}
 						//Can buy it
 						else
@@ -606,7 +607,7 @@ script 9001(int machine)
 						{
 							PlaySound(0, "shop/error");
 							Print(l:"TXT_HAVEENOUGH");
-							
+
 						}
 						//Can buy it
 						else
@@ -623,7 +624,7 @@ script 9001(int machine)
 					{
 						PlaySound(0, "shop/error");
 						Print(l:"TXT_HAVEENOUGH");
-						
+
 					}
 					//Can buy it
 					else
@@ -646,7 +647,7 @@ script 9001(int machine)
 						{
 							PlaySound(0, "shop/error");
 							Print(s:"Dude, you NEED that blood!");
-							
+
 						}
 						//Can sell it
 						else
