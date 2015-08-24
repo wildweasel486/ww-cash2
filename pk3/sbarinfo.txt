@@ -85,3 +85,19 @@ statusbar fullscreen, fullscreenoffsets // ZDoom HUD
     
     drawkeybar 6, vertical, reverserows, auto, -10, 2, 0, 3, auto;
 }
+
+Statusbar automap, fullscreenoffsets
+{
+	DrawString SMALLFONT, darkgrey, "Pistol ammo:", 0, -10, 0, alignment(left);
+	DrawNumber 4, SMALLFONT, grey, ammo PistolAmmo, alignment(right), 100, -10, 0;
+	DrawString SMALLFONT, darkgrey, "Magnum ammo:", 0, -20, 0, alignment(left);
+	DrawNumber 4, SMALLFONT, grey, ammo HeavyPistolAmmo, alignment(right), 100, -20, 0;
+	DrawString SMALLFONT, darkgrey, "Shotgun ammo:", 0, -30, 0, alignment(left);
+	DrawNumber 4, SMALLFONT, grey, ammo ShotgunAmmo, alignment(right), 100, -30, 0;
+	DrawString SMALLFONT, darkgrey, "Light Rifle ammo:", 0, -40, 0, alignment(left);
+	DrawNumber 4, SMALLFONT, grey, ammo LightRifleAmmo, alignment(right), 100, -40, 0;
+	DrawString SMALLFONT, darkgrey, "Heavy Rifle ammo:", 0, -50, 0, alignment(left);
+	DrawNumber 4, SMALLFONT, grey, ammo HeavyRifleAmmo, alignment(right), 100, -50, 0;
+	DrawString SMALLFONT, darkgrey, "Grenade ammo:", 0, -60, 0, alignment(left);
+	DrawNumber 4, SMALLFONT, grey, ammo GrenadeAmmo, alignment(right), 100, -60, 0;
+}
