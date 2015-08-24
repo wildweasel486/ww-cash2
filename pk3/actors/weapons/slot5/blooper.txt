@@ -7,7 +7,7 @@ ACTOR Blooper : CashWeapon
 {
 	Weapon.AmmoType1 "BlooperLoaded"
 	Weapon.AmmoUse1 1
-	Weapon.AmmoType2 "40mmAmmo"
+	Weapon.AmmoType2 "GrenadeAmmo"
 	Weapon.SlotNumber 5
 	+Weapon.Ammo_Optional
 	+Weapon.NoAutoFire

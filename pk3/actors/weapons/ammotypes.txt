@@ -155,7 +155,7 @@ ACTOR DroppedHeavyRifleAmmo : CustomInventory
 	}
 }
 
-ACTOR 40mmAmmo : Ammo
+ACTOR GrenadeAmmo : Ammo
 {
 	Inventory.Amount 6
 	Inventory.MaxAmount 0x7fffffff
