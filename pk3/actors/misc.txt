@@ -27,10 +27,11 @@ ACTOR CHCBasicArmor : BasicArmorPickup
 	Armor.SaveAmount 100
 	Armor.SavePercent 40
 	Inventory.PickupMessage "Picked up a suit of Basic Armor."
+	Scale 0.25
 	States
 	{
 	Spawn:
-		ARM1 A -1
+		RMR2 A -1
 		Stop
 	}
 }
@@ -40,10 +41,11 @@ ACTOR CHCAdvancedArmor : BasicArmorPickup
 	Armor.SaveAmount 200
 	Armor.SavePercent 66
 	Inventory.PickupMessage "Picked up a suit of Advanced Armor."
+	Scale 0.25
 	States
 	{
 	Spawn:
-		ARM2 A -1
+		RMR3 A -1
 		Stop
 	}
 }
