@@ -23,6 +23,26 @@ ACTOR PDAMenuActor
 	}
 }
 
+// ============
+// = HYPOSTIM =
+// ============
+
+ACTOR ArtiHypostim : HealthPickup
+{
+	Health 100
+	+COUNTITEM
+	Inventory.Icon VIALICON
+	Inventory.PickupMessage "Picked up a HypoStim."
+	Tag "$MISC_HYPOSTIM"
+	HealthPickup.AutoUse 3
+	Scale 0.25
+	States
+	{
+	Spawn:
+		VIAL A -1
+		Loop
+	}
+}
 
 
 // =================

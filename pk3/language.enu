@@ -452,3 +452,6 @@ SHOPARMOR_ITEM2NAME = "Advanced Armor";
 SHOPARMOR_ITEM2DESC = "Kevlar with ceramic plating to better absorb those pesky bullets. \n"
 "Includes vest, arm guards, leg guards, and ballistic helmet.\n\n";
 SHOPARMOR_ITEM2STATS = "Absorption: 66 PCT\nDurability: 200";
+
+// Other things not in the shop
+MISC_HYPOSTIM = "HypoStim Automatic Healing Agent";

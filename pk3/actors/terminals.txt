@@ -119,6 +119,7 @@ ACTOR CashTerminalLevelPentagram : CashTerminalLevel1 replaces Berserk
 	{
 	Spawn:
 		DIS8 A 0 NODELAY Thing_SetSpecial(0,226,9001,0,8)
+		"####" A 0 A_SpawnItemEx("ArtiHypostim", 0,0,8, random(-2,2),random(-2,2),2, random(0,359), SXF_NOCHECKPOSITION)
 		Goto Super::Spawn+1
 	}
 }
