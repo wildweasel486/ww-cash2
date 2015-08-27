@@ -51,4 +51,5 @@ ACTOR WWCashPlayer : DoomPlayer
 	Player.StartItem PistolAmmo 51
 	Player.StartItem ColdHardCash 100
 	Player.StartItem CHCPDA
+	Player.DisplayName "Big Spender"
 }
