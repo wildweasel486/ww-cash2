@@ -6,22 +6,6 @@ SCRIPT "ActivatePDA" (VOID)
     ACS_ExecuteAlways(9001,0);
 }
 
-SCRIPT "StrengthPWYB" (void)
-{
-	int health = GetActorProperty(0, APROP_HEALTH);
-	if (health <= 50)
-	{
-		PlaySound(0, "shop/error");
-		Print(s:"iT woULd bE a SHAME to kILL YOU lIKe ThiS.\nTRY AgaIn LatER.");
-	}
-	else
-	{
-		PlaySound(0, "shop/bleed");
-		Thing_Damage2(0, 50, "BloodDonor");
-		GiveInventory("StrengthGiver",1);
-	}
-}
-
 str machinedesc[11][2]=
 {
 	{"SHOPPDA_NAME","SHOPPDA_MAIN"},
@@ -36,7 +20,8 @@ str machinedesc[11][2]=
 	{"SHOPAMMO_NAME","SHOPAMMO_MAIN"},
 	{"SHOPARMOR_NAME","SHOPARMOR_MAIN"},
 };
-str weaponstats[11][8][6]=
+//Important! Always end the array with a null entry (see below) as a delimiter
+str weaponstats[11][9][6]=
 {
 	//PDA
 	{
@@ -45,9 +30,10 @@ str weaponstats[11][8][6]=
 		{"ArtiCarePackagePistol","","SHOPPDA_ITEM2NAME","NOICON","SHOPPDA_ITEM2DESC","SHOPPDA_ITEM2STATS"},
 		{"ArtiCarePackageShotgun","","SHOPPDA_ITEM3NAME","NOICON","SHOPPDA_ITEM3DESC","SHOPPDA_ITEM3STATS"},
 		{"ArtiCarePackageRifle","","SHOPPDA_ITEM4NAME","NOICON","SHOPPDA_ITEM4DESC","SHOPPDA_ITEM4STATS"},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
+		{"ArtiCarePackageMedical","","SHOPPDA_ITEM1NAME","NOICON","SHOPPDA_ITEM1DESC","SHOPPDA_ITEM1STATS"},
+		{"ArtiCarePackagePistol","","SHOPPDA_ITEM2NAME","NOICON","SHOPPDA_ITEM2DESC","SHOPPDA_ITEM2STATS"},
+		{"ArtiCarePackageShotgun","","SHOPPDA_ITEM3NAME","NOICON","SHOPPDA_ITEM3DESC","SHOPPDA_ITEM3STATS"},
+		{"ArtiCarePackageRifle","","SHOPPDA_ITEM4NAME","NOICON","SHOPPDA_ITEM4DESC","SHOPPDA_ITEM4STATS"},
 		{"","","","EMPTICON","",""}
 	},
 	//Machine 1
@@ -57,9 +43,6 @@ str weaponstats[11][8][6]=
 		{"CHCKnife","","SHOP1_ITEM3NAME","NOICON","SHOP1_ITEM3DESC","SHOP1_ITEM3STATS"},
 		{"Crowbar","","SHOP1_ITEM2NAME","NOICON","SHOP1_ITEM2DESC","SHOP1_ITEM2STATS"},
 		{"FireAxe","","SHOP1_ITEM4NAME","NOICON","SHOP1_ITEM4DESC","SHOP1_ITEM4STATS"},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""}
 	},
 	//Machine 2
@@ -71,7 +54,6 @@ str weaponstats[11][8][6]=
 		{"PistolAmmo","","SHOP_AMMO1LABEL","PSTAICON","SHOP_AMMO1DESC",""},
 		{"HeavyPistolAmmo","","SHOP_AMMO6LABEL","MAGAICON","SHOP_AMMO6DESC",""},
 		{"ShotgunAmmo","","SHOP_AMMO2LABEL","12GAICON","SHOP_AMMO2DESC",""},
-		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""}
 	},
 	//Machine 3
@@ -83,7 +65,6 @@ str weaponstats[11][8][6]=
 		{"PistolAmmo","","SHOP_AMMO1LABEL","PSTAICON","SHOP_AMMO1DESC",""},
 		{"ShotgunAmmo","","SHOP_AMMO2LABEL","12GAICON","SHOP_AMMO2DESC",""},
 		{"HeavyPistolAmmo","","SHOP_AMMO6LABEL","MAGAICON","SHOP_AMMO6DESC",""},
-		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""}
 	},
 	//Machine 4
@@ -95,7 +76,6 @@ str weaponstats[11][8][6]=
 		{"CHCSMG","","SHOP4_ITEM2NAME","SMGICON","SHOP4_ITEM2DESC","SHOP3_ITEM2STATS"},
 		{"LightRifleAmmo","","SHOP_AMMO3LABEL","LRFAICON","SHOP_AMMO3DESC",""},
 		{"HeavyRifleAmmo","","SHOP_AMMO4LABEL","HRFAICON","SHOP_AMMO4DESC",""},
-		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""}
 	},
 	//Machine 5
@@ -106,8 +86,6 @@ str weaponstats[11][8][6]=
 		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","GRNAICON","SHOP5_ITEM2DESC","SHOP5_ITEM2STATS"},
 		{"RecoillessRockets","","SHOP_AMMO5LABEL","NOICON","SHOP_AMMO5DESC",""},
 		{"40mmAmmo","","SHOP_AMMO7LABEL","40MAICON","SHOP_AMMO7DESC",""},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""}
 	},
 	//Machine 6
@@ -116,22 +94,12 @@ str weaponstats[11][8][6]=
 		{"MOBlaster","","SHOP6_ITEM1NAME","PLASDART","SHOP6_ITEM1DESC","SHOP6_ITEM1STATS"},
 		{"GaussRifle","","SHOP6_ITEM2NAME","GAUSICON","SHOP6_ITEM2DESC","SHOP6_ITEM2STATS"},
 		{"ArtiElectricGrenade","","SHOP6_ITEM6NAME","EGRAICON","SHOP6_ITEM6DESC","SHOP6_ITEM6STATS"},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""}
 	},
 	//Machine 7
 	{
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
 		{"TestSuperWeapon","","SHOP7_ITEM1NAME","","SHOP7_ITEM1DESC","SHOP7_ITEM1STATS"},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""}
 	},
 	//Machine 8 (Hell)
@@ -142,8 +110,6 @@ str weaponstats[11][8][6]=
 		{"CrowbarUpgrade","","SHOPHELL_ITEM3NAME","","SHOPHELL_ITEM3DESC",""},
 		{"FireAxeUpgrade","","SHOPHELL_ITEM4NAME","","SHOPHELL_ITEM4DESC",""},
 		{"StrengthGiver","","SHOPHELL_ITEM5NAME","","SHOPHELL_ITEM5DESC",""},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""}
 	},
 	//Machine 9 (Ammo)
@@ -155,7 +121,6 @@ str weaponstats[11][8][6]=
 		{"LightRifleAmmo","","SHOP_AMMO3LABEL","LRFAICON","SHOP_AMMO3DESC",""},
 		{"HeavyRifleAmmo","","SHOP_AMMO4LABEL","HRFAICON","SHOP_AMMO4DESC",""},
 		{"ArtiHandGrenade","","SHOP5_ITEM2NAME","GRNAICON","SHOP5_ITEM2DESC","SHOP5_ITEM2STATS"},
-		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""}
 	},
 	//Machine 10 (Armor)
@@ -163,11 +128,6 @@ str weaponstats[11][8][6]=
 		//ActorName,UpgradeName,TinyName,Icon,Description,Statistics
 		{"CHCBasicArmor","","SHOPARMOR_ITEM1NAME","ARM1ICON","SHOPARMOR_ITEM1DESC","SHOPARMOR_ITEM1STATS"},
 		{"CHCAdvancedArmor","","SHOPARMOR_ITEM2NAME","ARM2ICON","SHOPARMOR_ITEM2DESC","SHOPARMOR_ITEM2STATS"},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
-		{"","","","EMPTICON","",""},
 		{"","","","EMPTICON","",""}
 	}
 };
@@ -330,7 +290,9 @@ script 9001(int machine)
 	setplayerproperty(0,1,PROP_TOTALLYFROZEN);
 	sethudsize(640,400,0);
 	int input,oldinput,movestart,moveloop,movedelay=6,choicedelay=1,listoffset,productcursorpos,
-	actioncursorpos;
+	actioncursorpos,listlength;
+	for(int i=0;StrCmp(weaponstats[machine][i][2],"");i++)
+		listlength++;
 	while(1)
 	{
 		if(GetActorProperty(0,APROP_Health)<=0)
@@ -346,15 +308,17 @@ script 9001(int machine)
 		input & BT_JUMP||input & BT_ATTACK||input & BT_ZOOM||input & BT_LEFT||
 		input & BT_MOVELEFT||input & BT_RIGHT||input & BT_MOVERIGHT))||!menuopen[PlayerNumber()])
 			break;
-		setfont("SMALLFONT");
-		for(int i=0;i<6;i++)
+		//Draw the framework of the menu here
+		for(i=0;i<6&&StrCmp(weaponstats[machine][i][2],"");i++)
 		{
 			setfont("SMALLFONT");
 			//TinyName (notice the l: so we can call it from LANGUAGE)
-			hudmessage(l:weaponstats[machine][i][2];HUDMSG_PLAIN,0,CR_GOLD,71.1,productcursorcoords[i]+13.0,0.03);
+			hudmessage(l:weaponstats[machine][i+listoffset][2];HUDMSG_PLAIN,0,CR_GOLD,71.1,productcursorcoords[i]+13.0,0.03);
 			//Icon
-			setfont(weaponstats[machine][i][3]);
+			setfont(weaponstats[machine][i+listoffset][3]);
 			hudmessage(s:"A";HUDMSG_PLAIN,0,CR_UNTRANSLATED,71.1,productcursorcoords[i]+14.0,0.03);
+			setfont("SHOPFONT");
+			hudmessage(s:"3";HUDMSG_PLAIN,0,CR_UNTRANSLATED,54.1,productcursorcoords[i],0.03);
 		}
 		setfont("SMALLFONT");
 		hudmessage(s:"Buy it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[0]+24.0,326.1,0.03);
@@ -384,16 +348,20 @@ script 9001(int machine)
 			CloseMenu();
 			terminate;
 		}
+		setfont("SHOPFONT");
+		hudmessage(s:"1";HUDMSG_PLAIN,0,CR_UNTRANSLATED,54.1,productcursorcoords[productcursorpos-listoffset],0.03);
+		hudmessage(s:"2";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[actioncursorpos],316.1,0.03);
 		//Draw the framework of the menu here
-		setfont("SMALLFONT");
-		for(i=0;i<6;i++)
+		for(i=0;i<6&&StrCmp(weaponstats[machine][i][2],"");i++)
 		{
 			setfont("SMALLFONT");
-			//TinyName
+			//TinyName (notice the l: so we can call it from LANGUAGE)
 			hudmessage(l:weaponstats[machine][i+listoffset][2];HUDMSG_PLAIN,0,CR_GOLD,71.1,productcursorcoords[i]+13.0,0.03);
 			//Icon
 			setfont(weaponstats[machine][i+listoffset][3]);
 			hudmessage(s:"A";HUDMSG_PLAIN,0,CR_UNTRANSLATED,71.1,productcursorcoords[i]+14.0,0.03);
+			setfont("SHOPFONT");
+			hudmessage(s:"3";HUDMSG_PLAIN,0,CR_UNTRANSLATED,54.1,productcursorcoords[i],0.03);
 		}
 		setfont("SMALLFONT");
 		hudmessage(s:"Buy it:";HUDMSG_PLAIN,0,CR_UNTRANSLATED,actioncursorcoords[0]+24.0,326.1,0.03);
@@ -454,11 +422,10 @@ script 9001(int machine)
 			if(input & BT_LEFT||input & BT_MOVELEFT) {
 				actioncursorpos--;
 				PlaySound(0, "shop/movehorz"); }
-			if(productcursorpos>5)
-			if(productcursorpos>7)
+			if(productcursorpos>listlength-1)
 				productcursorpos=0;
 			if(productcursorpos<0)
-				productcursorpos=7;
+				productcursorpos=listlength-1;
 			if(actioncursorpos>3)
 				actioncursorpos=0;
 			if(actioncursorpos<0)
