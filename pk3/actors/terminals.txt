@@ -138,7 +138,6 @@ ACTOR CashTerminalLevelAmmo : CashTerminalLevel1
 // ARMOR TERMINAL: PROTECTION, MAN!
 ACTOR CashTerminalLevelArmor : CashTerminalLevel1
 {
-	ConversationID 1337
 	States
 	{
 	Spawn:

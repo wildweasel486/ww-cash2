@@ -47,128 +47,103 @@ ACTOR CHCSmallCoin : CustomInventory
 	Inventory.PickupSound "pickups/coin"
 	Inventory.PickupMessage "Picked up 1 CR."
 	Scale 0.75
-	-DROPPED
+	+DONTGIB
 	States
 	{
 	Spawn:
-		COIN BB 0 A_ChangeFlag("DROPPED", 0)
 		COIN A -1
 		Stop
 	Pickup:
-		TNT1 A 0
 		TNT1 A 0 A_GiveInventory("ColdHardCash",1)
 		Stop
 	}
 }
 
-ACTOR CHCMediumCoin : CustomInventory
+ACTOR CHCMediumCoin : CHCSmallCoin
 {
 	Inventory.PickupSound "pickups/mcoin"
 	Inventory.PickupMessage "Picked up 5 CR."
-	Scale 0.75
-	-DROPPED
 	States
 	{
 	Spawn:
-		COIN BB 0 A_ChangeFlag("DROPPED", 0)
 		COIN B -1
 		Stop
 	Pickup:
-		TNT1 A 0
 		TNT1 A 0 A_GiveInventory("ColdHardCash",5)
 		Stop
 	}
 }
 
-ACTOR CHCLargeCoin : CustomInventory
+ACTOR CHCLargeCoin : CHCSmallCoin
 {
 	Inventory.PickupSound "pickups/coinpile"
 	Inventory.PickupMessage "Picked up 10 CR."
-	Scale 0.75
-	-DROPPED
 	States
 	{
 	Spawn:
-		COIN BB 0 A_ChangeFlag("DROPPED", 0)
 		COIN C -1
 		Stop
 	Pickup:
-		TNT1 A 0
 		TNT1 A 0 A_GiveInventory("ColdHardCash",10)
 		Stop
 	}
 }
 
-ACTOR CHCSmallBill : CustomInventory
+ACTOR CHCSmallBill : CHCSmallCoin
 {
 	Inventory.PickupSound "pickups/bill"
 	Inventory.PickupMessage "Picked up 25 CR."
 	Scale 0.45
-	-DROPPED
 	States
 	{
 	Spawn:
-		COIN BB 0 A_ChangeFlag("DROPPED", 0)
 		CASH A -1
 		Stop
 	Pickup:
-		TNT1 A 0
 		TNT1 A 0 A_GiveInventory("ColdHardCash",25)
 		Stop
 	}
 }
 
-ACTOR CHCMediumBill : CustomInventory
+ACTOR CHCMediumBill : CHCSmallBill
 {
 	Inventory.PickupSound "pickups/bigbill"
 	Inventory.PickupMessage "Picked up 50 CR."
-	Scale 0.45
-	-DROPPED
 	States
 	{
 	Spawn:
-		COIN BB 0 A_ChangeFlag("DROPPED", 0)
 		CASH B -1
 		Stop
 	Pickup:
-		TNT1 A 0
 		TNT1 A 0 A_GiveInventory("ColdHardCash",50)
 		Stop
 	}
 }
 
-ACTOR CHCLargeBill : CustomInventory
+ACTOR CHCLargeBill : CHCMediumBill
 {
-	Inventory.PickupSound "pickups/bigbill"
 	Inventory.PickupMessage "Picked up 100 CR."
-	Scale 0.45
-	-DROPPED
 	States
 	{
 	Spawn:
-		COIN BB 0 A_ChangeFlag("DROPPED", 0)
 		CASH C -1
 		Stop
 	Pickup:
-		TNT1 A 0
 		TNT1 A 0 A_GiveInventory("ColdHardCash",100)
 		Stop
 	}
 }
 
-ACTOR CHCBriefcaseFullaDosh : CustomInventory
+ACTOR CHCBriefcaseFullaDosh : CHCSmallCoin
 {
 	Inventory.PickupMessage "Picked up an attache containing 750 CR."
 	Scale 0.125
-	-DROPPED
 	States
 	{
 	Spawn:
-		COIN BB 0 A_ChangeFlag("DROPPED", 0)
 		BCAS A -1
 		Stop
 	Pickup:
-		TNT1 A 0
 		TNT1 A 0 A_GiveInventory("ColdHardCash",750)
 		Stop
 	}
@@ -179,67 +154,44 @@ ACTOR CHCBriefcaseFullaDosh : CustomInventory
 ACTOR NaziGold1 : CustomInventory
 {
 	Inventory.PickupMessage "Nazi gold...?"
-	-DROPPED
+	+DONTGIB
 	States
 	{
 	Spawn:
-		NGLD AA 0 A_ChangeFlag("DROPPED", 0)
 		NGLD A -1
 		Stop
 	Pickup:
-		TNT1 A 0
 		TNT1 A 0 A_GiveInventory("ColdHardCash",100)
 		Stop
 	}
 }
 
-ACTOR NaziGold2 : CustomInventory
+ACTOR NaziGold2 : NaziGold1
 {
-	Inventory.PickupMessage "Nazi gold...?"
-	-DROPPED
 	States
 	{
 	Spawn:
-		NGLD AA 0 A_ChangeFlag("DROPPED", 0)
 		NGLD B -1
 		Stop
-	Pickup:
-		TNT1 A 0
-		TNT1 A 0 A_GiveInventory("ColdHardCash",100)
-		Stop
 	}
 }
 
-ACTOR NaziGold3 : CustomInventory
+ACTOR NaziGold3 : NaziGold1
 {
-	Inventory.PickupMessage "Nazi gold...?"
-	-DROPPED
 	States
 	{
 	Spawn:
-		NGLD AA 0 A_ChangeFlag("DROPPED", 0)
 		NGLD C -1
 		Stop
-	Pickup:
-		TNT1 A 0
-		TNT1 A 0 A_GiveInventory("ColdHardCash",100)
-		Stop
 	}
 }
 
-ACTOR NaziGold4 : CustomInventory
+ACTOR NaziGold4 : NaziGold1
 {
-	Inventory.PickupMessage "Nazi gold...?"
-	-DROPPED
 	States
 	{
 	Spawn:
-		NGLD AA 0 A_ChangeFlag("DROPPED", 0)
 		NGLD D -1
-		Stop
-	Pickup:
-		TNT1 A 0
-		TNT1 A 0 A_GiveInventory("ColdHardCash",100)
 		Stop
 	}
 }

@@ -15,10 +15,9 @@ ACTOR CashWeapon : Weapon
 	States
 	{
 	Flash:
-		TNT1 A 1 BRIGHT A_Light2
-		TNT1 A 1 BRIGHT A_Light1
-		TNT1 A 1 BRIGHT A_Light0
-		Stop
+		TNT1 A 1 A_Light2
+		TNT1 A 1 A_Light1
+		Goto LightDone
 	}
 }
 
