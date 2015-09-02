@@ -471,9 +471,16 @@ script 9001(int machine)
 						PlaySound(0, "shop/error");
 						Print(l:"You've already got that upgrade!");
 					}
+					//Check for invulnerability and refuse sale?
+					else if(GetActorProperty(0,APROP_Invulnerable))
+					{
+						PlaySound(0, "shop/error");
+						Print(l:"Your blood's no good to us right now... try again later!");
+					}
 					//Can buy it
 					else
 					{
+
 						PlaySound(0, "shop/bleed");
 						Print(l:"we hOpE yOu like it...hehe");
 						GiveInventory(weaponstats[machine][productcursorpos][0],1);
