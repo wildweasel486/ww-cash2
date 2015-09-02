@@ -47,7 +47,36 @@ ListMenu "HelpTopicsMenu"
 	StaticText 4, 35, "AaBbCcDdEeFfGgHhIiJj"
 	StaticText 4, 55, "KkLlMmNnOoPpQqRrSsTt"
 	StaticText 4, 75, "UuVvWwXxYyZz0123456789"
-	
+
 	StaticText 4, 100, "Daniel Cook is a VERY AWESOME person."
 	StaticText 4, 125, "Seriously: Cook = 100% Awesome!"
+}
+
+OptionMenu "OptionsMenu"
+{
+	Title "OPTIONS"
+	Submenu "Customize Controls",		"CustomizeControls"
+	Submenu "Mouse options",			"MouseOptions"
+	Submenu "Joystick options",			"JoystickOptions"
+	StaticText " "
+	Submenu "Player Setup",				"PlayerMenu"
+	Submenu "Gameplay Options",			"GameplayOptions"
+	Submenu "Compatibility Options",	"CompatibilityOptions"
+	Submenu "Automap Options",			"AutomapOptions"
+	Submenu "HUD Options",				"HUDOptions"
+	Submenu "Miscellaneous Options",	"MiscOptions"
+	Submenu "Sound Options",			"SoundOptions"
+	Submenu "Display Options",			"VideoOptions"
+	Submenu "Set video mode",			"VideoModeMenu"
+	StaticText " "
+	SafeCommand "Reset to defaults",	"reset2defaults"
+	SafeCommand	"Reset to last saved",	"reset2saved"
+	Command "Go to console",			"menuconsole"
+	StaticText " "
+	Submenu "Cold Hard Cash Options",	"CHCOptions"
+}
+OptionMenu "CHCOptions"
+{
+	Title "Cold Hard Cash Options"
+	Option "Auto-Reload","autoreload","OnOff"
 }

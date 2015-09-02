@@ -33,13 +33,9 @@ ACTOR PunchGun : CashWeapon
 {
 	Weapon.AmmoType1 "PunchGunLoaded"
 	Weapon.AmmoUse1 1
-	Weapon.AmmoGive1 0
 	Weapon.AmmoType2 "ShotgunAmmo"
-	Weapon.AmmoUse2 0
-	Weapon.AmmoGive2 0
 	Weapon.SlotNumber 1 // Yes, this is a slot 1 weapon, but it's only in slot2.txt because it comes from machine #2
 	+Weapon.Ammo_Optional
-	+Weapon.Alt_Ammo_Optional
 	Decal "BulletChip"
 	Tag "$SHOP2_ITEM2NAME"
 	States

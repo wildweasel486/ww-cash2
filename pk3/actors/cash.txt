@@ -36,8 +36,7 @@ ACTOR CHCDosh
 		CASH B 1
 		Loop
 	Death:
-		TNT1 A 0 A_SpawnItemEx("CHCMediumBill", 0,0,0,0,0,0,0, SXF_NOCHECKPOSITION)
-		TNT1 A 1
+		TNT1 A 1 A_SpawnItemEx("CHCMediumBill", 0,0,0,0,0,0,0, SXF_NOCHECKPOSITION)
 		Stop
 	}
 }

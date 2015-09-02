@@ -3,142 +3,143 @@
 
 ACTOR Magnum : DoomWeapon
 {
-   Inventory.PickupSound "misc/w_pkup"
-   Inventory.PickupMessage "You got the ''Eastwood'' Magnum .357 revolver! Do you feel lucky, punk? (2)"
-   Obituary "%o didn't feel lucky and got %p's head blew off. %g went ahead and made %k's day."
-   Weapon.UpSound "Weapons/MagnumUp"
-   Weapon.AmmoType1 "MagnumClip"
-   Weapon.AmmoType2 "Boolet"
-   Weapon.AmmoGive1 6
-   Weapon.AmmoGive2 24
-   Weapon.AmmoUse1 1
-   Weapon.AmmoUse2 0
-   Weapon.Kickback 1350
-   Weapon.SlotNumber 2
-   AttackSound "weapons/MagnumPreFire"
-   +AMMO_OPTIONAL
-   +NOAUTOFIRE
-   +NOALERT
-   States
-   {
-   Spawn:
-      REVG X -1
-      Loop
-   Ready:
-      REVG A 1 A_WeaponReady
-      Loop
-   Deselect:
-      REVG A 0 A_ZoomFactor(1)
-      REVG A 0 A_TakeInventory("MagnumDried",9)
-      REVG A 1 A_Lower
-      REVG A 0 A_Lower
-      Loop
-   Select:
-      REVG A 1 A_Raise
-      REVG A 0 A_Raise
-      Loop
-   Fire:
-      REVF A 0 A_JumpIfNoAmmo("DryFire")
-      REVF A 0 A_GunFlash
-      REVF A 0 A_AlertMonsters
-      REVF A 0 A_JumpIfInventory("CaliberUpgrade",1,2)
-      REVF A 0 A_RailAttack(200,4,1,"none","none",RGF_SILENT,0,"BulletPuff",0,0,16384) 
-      Goto GoAhead
-      REVF A 0 A_PlaySoundEx("Weapons/WolgirHEndFire","Normal")
-      REVF A 0 A_RailAttack(400,4,1,"none","none",RGF_SILENT,0,"CaliberPuff",0,0,16384) 
-   GoAhead:
-      REVG B 1
-      REVF A 0 A_PlaySoundEx("Weapons/MagnumFire","SoundSlot6")
-      REVF A 0 A_Recoil(13+random(3,-3))
-      REVF A 0 ACS_Execute(851,0,120+random(45,-45),80+random(20,-20))
-      REVF A 1 BRIGHT A_ZoomFactor(0.6)
-      REVF B 1 BRIGHT ACS_Execute(851,0,90+random(35,-35),60+random(15,-15))
-      REVF C 1 ACS_Execute(851,0,70+random(25,-25),40+random(9,-9))
-      REVF C 0 A_ZoomFactor(0.85)
-      REVF D 1 ACS_Execute(851,0,45+random(15,-15),25+random(5,-5))
-      REVF E 1 A_ZoomFactor(0.93)
-      REVF E 1 A_ZoomFactor(0.95)
-      REVF F 1 A_ZoomFactor(0.97)
-      REVF F 1 A_ZoomFactor(0.98)
-      REVF G 1 A_ZoomFactor(0.99)
-      REVF G 1 A_ZoomFactor(1)
-      REVG A 0 A_PlaySoundEx("Weapons/MagnumChamber","SoundSlot5")
-      REVG ABCAA 2
-      //REVG A 4 A_ReFire
-      Goto Ready
-   DryFire:
-      REVG A 0 A_JumpIfInventory("MagnumDried",3,"Reload")
-      REVG A 0 A_GiveInventory("MagnumDried",1)
-      REVG A 0 A_PlaySound("Weapons/MagnumDry")
-      REVD A 2
-      REVG A 8
-      Goto Ready
-   AltFire:
-   Reload:
-      REVG A 0 A_TakeInventory("MagnumDried",9)
-      REVG A 1
-      REVG A 0 A_JumpIfInventory("MagnumClip", 6, "Ready")
-      REVG A 0 A_JumpIfInventory("Boolet", 4, 1)
-      Goto Ready
-   //Raise:
-      REVN ABC 2 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
-   //HoldTheMag:
-      REVR AAAAABCDEFGH 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
-   //Open:
-      REVO A 0 A_PlaySoundEx("Weapons/MagnumOpen","SoundSlot5")
-      REVO AAABCDEFG 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
-   //AroundTheMag:
-      REVU ABCD 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
-   //Out:
-      REVO C 0 A_PlaySoundEx("Weapons/MagnumOut","SoundSlot6")
-      REVU EFGHIJKLMNOOOOO 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
-      Goto ReloadWorking
-   ReloadWorking:
-      TNT1 A 0 A_TakeInventory("Boolet", 4)
-      TNT1 A 0 A_GiveInventory("MagnumClip", 1)
-      TNT1 A 0 A_JumpIfInventory("MagnumClip", 6,2)
-      TNT1 A 0 A_JumpIfInventory("Boolet",4,2)
-      TNT1 A 0
-      Goto ReloadFinish
-      TNT1 A 0
-      Goto ReloadWorking
-   ReloadFinish:
-   //Load:
-      REVL ABCDE 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
-      REVL A 0 A_PlaySoundEx("Weapons/MagnumIn","SoundSlot5")
-      REVL FGHHHGGF 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
-      REVL IJKLM 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
-      REVL X 5 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
-      REVL NOPQR 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
-   //Close:
-      REVO D 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
-      REVO D 0 A_PlaySoundEx("Weapons/MagnumClose","SoundSlot6")
-      REVO CBAAA 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
-   //UnHoldTheMag:
-      REVR HGFEDCBA 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
-   //Lower:
-      REVN CBA 2 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
-   //Spin:
-      REVH A 0 A_PlaySoundEx("Weapons/MagnumSpin","SoundSlot5")
-      REVH ABCDEFGHIJKLMN 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
-      REVG BCABCABBCCCAAAA 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
-      Goto Ready
-   Flash:
-       TNT1 A 5 A_Light2
-       TNT1 A 3 A_Light1
-       Goto LightDone
-   }
+	Inventory.PickupSound "misc/w_pkup"
+	Inventory.PickupMessage "You got the ''Eastwood'' Magnum .357 revolver! Do you feel lucky, punk? (2)"
+	Obituary "%o didn't feel lucky and got %p's head blew off. %g went ahead and made %k's day."
+	Weapon.UpSound "Weapons/MagnumUp"
+	Weapon.AmmoType1 "MagnumClip"
+	Weapon.AmmoType2 "Boolet"
+	Weapon.AmmoGive1 6
+	Weapon.AmmoGive2 24
+	Weapon.AmmoUse1 1
+	Weapon.AmmoUse2 1
+	Weapon.Kickback 1350
+	Weapon.SlotNumber 2
+	AttackSound "weapons/MagnumPreFire"
+	+AMMO_CHECKBOTH
+	+NOAUTOFIRE
+	+NOALERT
+	States
+	{
+	Spawn:
+		REVG X -1
+		Loop
+	Ready:
+		REVG A 1 A_WeaponReady
+		Loop
+	Deselect:
+		REVG A 0 A_ZoomFactor(1)
+		REVG A 0 A_TakeInventory("MagnumDried",9)
+		REVG A 1 A_Lower
+		REVG A 0 A_Lower
+		Loop
+	Select:
+		REVG A 1 A_Raise
+		REVG A 0 A_Raise
+		Loop
+	Fire:
+		REVF A 0 A_JumpIfInventory("MagnumClip",1,1)
+		Goto DryFire
+		REVF A 0 A_GunFlash
+		REVF A 0 A_AlertMonsters
+		REVF A 0 A_JumpIfInventory("CaliberUpgrade",1,2)
+		REVF A 0 A_RailAttack(200,4,1,"none","none",RGF_SILENT,0,"BulletPuff",0,0,16384)
+		Goto GoAhead
+		REVF A 0 A_PlaySoundEx("Weapons/WolgirHEndFire","Normal")
+		REVF A 0 A_RailAttack(400,4,1,"none","none",RGF_SILENT,0,"CaliberPuff",0,0,16384)
+	GoAhead:
+		REVG B 1
+		REVF A 0 A_PlaySoundEx("Weapons/MagnumFire","SoundSlot6")
+		REVF A 0 A_Recoil(13+random(3,-3))
+		REVF A 0 ACS_Execute(851,0,120+random(45,-45),80+random(20,-20))
+		REVF A 1 BRIGHT A_ZoomFactor(0.6)
+		REVF B 1 BRIGHT ACS_Execute(851,0,90+random(35,-35),60+random(15,-15))
+		REVF C 1 ACS_Execute(851,0,70+random(25,-25),40+random(9,-9))
+		REVF C 0 A_ZoomFactor(0.85)
+		REVF D 1 ACS_Execute(851,0,45+random(15,-15),25+random(5,-5))
+		REVF E 1 A_ZoomFactor(0.93)
+		REVF E 1 A_ZoomFactor(0.95)
+		REVF F 1 A_ZoomFactor(0.97)
+		REVF F 1 A_ZoomFactor(0.98)
+		REVF G 1 A_ZoomFactor(0.99)
+		REVF G 1 A_ZoomFactor(1)
+		REVG A 0 A_PlaySoundEx("Weapons/MagnumChamber","SoundSlot5")
+		REVG ABCAA 2
+		REVG A 0 A_CheckReload
+		//REVG A 4 A_ReFire
+		Goto Ready
+	DryFire:
+		REVG A 0 A_JumpIfInventory("MagnumDried",3,"Reload")
+		REVG A 0 A_GiveInventory("MagnumDried",1)
+		REVG A 0 A_PlaySound("Weapons/MagnumDry")
+		REVD A 2
+		REVG A 8
+		Goto Ready
+	AltFire:
+	Reload:
+		REVG A 0 A_TakeInventory("MagnumDried",9)
+		REVG A 1 A_WeaponReady(WRF_NOFIRE)
+		REVG A 0 A_JumpIfInventory("MagnumClip", 6, "Ready")
+		REVG A 0 A_JumpIfInventory("Boolet", 4, 1)
+		Goto Ready
+	//Raise:
+		REVN ABC 2 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+	//HoldTheMag:
+		REVR AAAAABCDEFGH 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+	//Open:
+		REVO A 0 A_PlaySoundEx("Weapons/MagnumOpen","SoundSlot5")
+		REVO AAABCDEFG 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+	//AroundTheMag:
+		REVU ABCD 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+	//Out:
+		REVO C 0 A_PlaySoundEx("Weapons/MagnumOut","SoundSlot6")
+		REVU EFGHIJKLMNOOOOO 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+		Goto ReloadWorking
+	ReloadWorking:
+		TNT1 A 0 A_TakeInventory("Boolet", 4)
+		TNT1 A 0 A_GiveInventory("MagnumClip", 1)
+		TNT1 A 0 A_JumpIfInventory("MagnumClip", 6,2)
+		TNT1 A 0 A_JumpIfInventory("Boolet",4,2)
+		TNT1 A 0
+		Goto ReloadFinish
+		TNT1 A 0
+		Goto ReloadWorking
+	ReloadFinish:
+	//Load:
+		REVL ABCDE 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+		REVL A 0 A_PlaySoundEx("Weapons/MagnumIn","SoundSlot5")
+		REVL FGHHHGGF 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+		REVL IJKLM 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+		REVL X 5 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+		REVL NOPQR 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+	//Close:
+		REVO D 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+		REVO D 0 A_PlaySoundEx("Weapons/MagnumClose","SoundSlot6")
+		REVO CBAAA 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+	//UnHoldTheMag:
+		REVR HGFEDCBA 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+	//Lower:
+		REVN CBA 2 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+	//Spin:
+		REVH A 0 A_PlaySoundEx("Weapons/MagnumSpin","SoundSlot5")
+		REVH ABCDEFGHIJKLMN 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+		REVG BCABCABBCCCAAAA 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+		Goto Ready
+	Flash:
+		TNT1 A 5 A_Light2
+		TNT1 A 3 A_Light1
+		Goto LightDone
+	}
 }
 
 ACTOR MagnumClip : Ammo
 {
-Inventory.MaxAmount 6
-Ammo.BackpackAmount 0
-Ammo.BackpackMaxAmount 6
-Inventory.Icon REVGX0
+	Inventory.MaxAmount 6
+	+INVENTORY.IGNORESKILL
+	Inventory.Icon REVGX0
 }
 
 ACTOR MagnumDried : Inventory
 {
-     Inventory.MaxAmount 3
+	Inventory.MaxAmount 3
 }

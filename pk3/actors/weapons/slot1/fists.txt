@@ -21,17 +21,13 @@ ACTOR FistPuff
 	}
 }
 
-ACTOR FistUpgrade : Inventory
-{
-	Inventory.MaxAmount 1
-}
+ACTOR FistUpgrade : Inventory{}
 
 ACTOR FistUpgradeGiver : CustomInventory
 {
 	States
 	{
 	Pickup:
-		TNT1 A 0
 		TNT1 A 0 ACS_NamedExecute("UpgradeFist")
 		Stop
 	}

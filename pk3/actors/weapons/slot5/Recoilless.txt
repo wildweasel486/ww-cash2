@@ -3,7 +3,6 @@ ACTOR RecoillessRifle : CashWeapon
 	Weapon.SelectionOrder 600
 	Weapon.Kickback 200
 	Weapon.AmmoType "RecoillessRockets"
-	Weapon.AmmoGive 0
 	Weapon.AmmoUse 1
 	Weapon.SlotNumber 5
 	AttackSound "weapons/flakfire"

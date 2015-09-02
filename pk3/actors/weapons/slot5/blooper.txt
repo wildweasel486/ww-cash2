@@ -1,7 +1,4 @@
-ACTOR BlooperLoaded : Ammo
-{
-	Inventory.MaxAmount 1
-}
+ACTOR BlooperLoaded : Ammo{}
 
 ACTOR Blooper : CashWeapon
 {
@@ -9,7 +6,8 @@ ACTOR Blooper : CashWeapon
 	Weapon.AmmoUse1 1
 	Weapon.AmmoType2 "GrenadeAmmo"
 	Weapon.SlotNumber 5
-	+Weapon.Ammo_Optional
+	+Weapon.NoAutoAim
+	+Weapon.AMMO_CHECKBOTH
 	+Weapon.NoAutoFire
 	States
 	{
@@ -26,7 +24,8 @@ ACTOR Blooper : CashWeapon
 		HANG A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		Loop
 	Fire:
-		HANG A 0 A_JumpIfNoAmmo("Dryfire")
+		HANG A 0 A_JumpIfInventory("BlooperLoaded", 1, 1)
+		Goto Dryfire
 		HANF A 2 BRIGHT A_FireCustomMissile("LauncherGrenade", 0, 1, 8)
 		HANG A 1 Offset(1,33)
 		HANG A 1 Offset(3,35)
@@ -40,11 +39,16 @@ ACTOR Blooper : CashWeapon
 		HANG A 1 Offset(1,32)
 		Goto Ready
 	Dryfire:
+		HANG A 0 A_JumpIf(CallACS("Autoreload")==1,"Reload")
 		HANG A 1 A_PlaySound("Dryfire/Heavy",6)
 		HANG A 1 Offset(2,34)
 		HANG A 1 Offset(1,33)
-		Goto Ready	
+		Goto Ready
 	Reload:
+		HANG A 0 A_JumpIfInventory("BlooperLoaded", 1, 2)
+		HANG A 0 A_JumpIfInventory("GrenadeAmmo", 1, 2)
+		HANG A 1 A_WeaponReady(WRF_NOFIRE)
+		Goto Ready
 		HANG BCDEFGHIJKLMNOPQRSTUVWX 1
 		HANG X 1 A_GiveInventory("BlooperLoaded",1)
 		HANG XWVUTSRQPONMLKJIHGFEDCB 1

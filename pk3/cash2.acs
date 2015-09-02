@@ -1,6 +1,10 @@
 #include "zcommon.acs"
 #library "CASH2"
 
+Script "AutoReload"(void)
+{
+	SetResultValue(GetCVar("autoreload"));
+}
 SCRIPT "ActivatePDA" (VOID)
 {
     ACS_ExecuteAlways(9001,0);
@@ -127,139 +131,110 @@ str weaponstats[11][9][6]=
 		{"","","","EMPTICON","",""}
 	}
 };
-int weaponamounts[11][8][7]=
+int weaponamounts[11][9][8]=
 {
 	//PDA
 	{
-		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
-		{400,0,0,0,1,0,0x7fffffff},
-		{300,0,0,0,1,0,0x7fffffff},
-		{350,0,0,0,1,0,0x7fffffff},
-		{500,0,0,0,1,0,0x7fffffff},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0}
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt,isweapon(bool)
+		{400,0,0,0,1,0,0x7fffffff,0},
+		{300,0,0,0,1,0,0x7fffffff,0},
+		{350,0,0,0,1,0,0x7fffffff,0},
+		{500,0,0,0,1,0,0x7fffffff,0},
+		{0,0,0,0,0,0,0,0}
 	},
 	//Machine 1
 	{
-		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
-		{25,10,0,0,10,5,100},
-		{50,25,0,0,1,1,1},
-		{60,30,0,0,1,1,1},
-		{90,45,0,0,1,1,1},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0}
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt,isweapon(bool)
+		{25,10,0,0,10,5,100,0},
+		{50,25,0,0,1,1,1,1},
+		{60,30,0,0,1,1,1,1},
+		{90,45,0,0,1,1,1,1},
+		{0,0,0,0,0,0,0,0}
 	},
 	//Machine 2
 	{
-		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
-		{200,100,0,100,1,1,1},
-		{75,37,0,0,1,1,1},
-		{300,150,0,0,1,1,1},
-		{15,0,0,0,30,0,0x7fffffff},
-		{20,0,0,0,14,0,0x7fffffff},
-		{25,0,0,0,10,0,0x7fffffff},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0}
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt,isweapon(bool)
+		{200,100,0,100,1,1,1,1},
+		{75,37,0,0,1,1,1,1},
+		{300,150,0,0,1,1,1,1},
+		{15,0,0,0,30,0,0x7fffffff,0},
+		{20,0,0,0,14,0,0x7fffffff,0},
+		{25,0,0,0,10,0,0x7fffffff,0},
+		{0,0,0,0,0,0,0,0}
 	},
 	//Machine 3
 	{
-		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
-		{400,250,0,600,1,1,1},
-		{350,175,0,0,1,1,1},
-		{250,125,0,0,1,1,1},
-		{15,0,0,0,30,0,0x7fffffff},
-		{25,0,0,0,10,0,0x7fffffff},
-		{20,0,0,0,14,0,0x7fffffff},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0}
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt,isweapon(bool)
+		{400,250,0,600,1,1,1,1},
+		{350,175,0,0,1,1,1,1},
+		{250,125,0,0,1,1,1,1},
+		{15,0,0,0,30,0,0x7fffffff,0},
+		{25,0,0,0,10,0,0x7fffffff,0},
+		{20,0,0,0,14,0,0x7fffffff,0},
+		{0,0,0,0,0,0,0,0}
 	},
 	//Machine 4
 	{
-		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
-		{500,250,0,0,1,1,1},
-		{800,400,0,0,1,1,1},
-		{1600,800,0,0,1,1,1},
-		{250,125,0,0,1,1,1},
-		{35,0,0,0,45,0,0x7fffffff},
-		{50,0,0,0,15,0,0x7fffffff},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0}
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt,isweapon(bool)
+		{500,250,0,0,1,1,1,1},
+		{800,400,0,0,1,1,1,1},
+		{1600,800,0,0,1,1,1,1},
+		{250,125,0,0,1,1,1,1},
+		{35,0,0,0,45,0,0x7fffffff,0},
+		{50,0,0,0,15,0,0x7fffffff,0},
+		{0,0,0,0,0,0,0,0}
 	},
 	//Machine 5
 	{
-		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
-		{2000,1000,0,0,1,1,1},
-		{1200,600,0,0,1,1,1},
-		{75,0,0,0,1,0,0x7fffffff},
-		{200,0,0,0,1,0,0x7fffffff},
-		{65,0,0,0,6,0,0x7fffffff},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0}
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt,isweapon(bool)
+		{2000,1000,0,0,1,1,1,1},
+		{1200,600,0,0,1,1,1,1},
+		{75,0,0,0,1,0,0x7fffffff,0},
+		{200,0,0,0,1,0,0x7fffffff,0},
+		{65,0,0,0,6,0,0x7fffffff,0},
+		{0,0,0,0,0,0,0,0}
 	},
 	//Machine 6
 	{
-		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
-		{100,25,0,0,1,1,1},
-		{2500,1250,0,0,1,1,1},
-		{130,0,0,0,1,1,0x7fffffff},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0}
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt,isweapon(bool)
+		{100,25,0,0,1,1,1,1},
+		{2500,1250,0,0,1,1,1,1},
+		{130,0,0,0,1,1,0x7fffffff,0},
+		{0,0,0,0,0,0,0,0}
 	},
 	//Machine 7
 	{
-		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
-		{25000,0,0,0,1,0,1},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0}
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt,isweapon(bool)
+		{25000,0,0,0,1,0,1,1},
+		{0,0,0,0,0,0,0,0},
 	},
 	//Machine 8 (Hell)
 	{
-		//buy,sell,fix,bloodprice,buyamt,sellamt,maxamt
-		{1000,0,0,65,1,0,1},
-		{1500,0,0,75,1,0,1},
-		{2000,0,0,85,1,0,1},
-		{1750,0,0,80,1,0,1},
-		{800,0,0,50,1,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0}
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt,isweapon(bool)
+		{1000,0,0,65,1,0,1,0},
+		{1500,0,0,75,1,0,1,0},
+		{2000,0,0,85,1,0,1,0},
+		{1750,0,0,80,1,0,1,0},
+		{800,0,0,50,1,0,0,0},
+		{0,0,0,0,0,0,0,0}
 	},
 	//Machine 9 (Ammo)
 	{
-		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
-		{10,0,0,0,30,0,0x7fffffff},
-		{12,0,0,0,14,0,0x7fffffff},
-		{15,0,0,0,10,0,0x7fffffff},
-		{20,0,0,0,45,0,0x7fffffff},
-		{38,0,0,0,15,0,0x7fffffff},
-		{60,0,0,0,1,0,0x7fffffff},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0}
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt,isweapon(bool)
+		{10,0,0,0,30,0,0x7fffffff,0},
+		{12,0,0,0,14,0,0x7fffffff,0},
+		{15,0,0,0,10,0,0x7fffffff,0},
+		{20,0,0,0,45,0,0x7fffffff,0},
+		{38,0,0,0,15,0,0x7fffffff,0},
+		{60,0,0,0,1,0,0x7fffffff,0},
+		{0,0,0,0,0,0,0,0},
 	},
 	//Machine 10 (Armor)
 	{
-		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt
-		{75,0,0,0,1,0,0},
-		{150,0,0,0,1,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0},
-		{0,0,0,0,0,0,0}
+		//buy,sell,fix,upgrade,buyamt,sellamt,maxamt,isweapon(bool)
+		{75,0,0,0,1,0,0,0},
+		{150,0,0,0,1,0,0,0},
+		{0,0,0,0,0,0,0,0}
 	},
 };
 int productcursorcoords[6]=
@@ -454,14 +429,12 @@ script 9001(int machine)
 					{
 						PlaySound(0, "shop/error");
 						Print(s:"fOul vAgrANt! BEGONE wiTh yoU!");
-
 					}
 					//Already upgraded
 					else if(CheckInventory(weaponstats[machine][productcursorpos][0])>=weaponamounts[machine][productcursorpos][6])
 					{
 						PlaySound(0, "shop/error");
 						Print(l:"You've already got that upgrade!");
-
 					}
 					//Can buy it
 					else
@@ -478,7 +451,6 @@ script 9001(int machine)
 				{
 					PlaySound(0, "shop/error");
 					Print(s:"Can't sell this!");
-
 				}
 				//Fix
 				else if(actioncursorpos==2)
@@ -492,14 +464,12 @@ script 9001(int machine)
 					{
 						PlaySound(0, "shop/error");
 						Print(s:"iT woULd bE a SHAME to kILL YOU lIKe ThiS.\nTRY AgaIn LatER.");
-
 					}
 					//Already upgraded
 					else if(CheckInventory(weaponstats[machine][productcursorpos][0]))
 					{
 						PlaySound(0, "shop/error");
 						Print(l:"You've already got that upgrade!");
-
 					}
 					//Can buy it
 					else
@@ -521,7 +491,6 @@ script 9001(int machine)
 					{
 						PlaySound(0, "shop/error");
 						Print(l:"SHOP_NOMONEY");
-
 					}
 					//Health (special case)
 					else if(!StrCmp(weaponstats[machine][productcursorpos][0],"Health"))
@@ -531,7 +500,6 @@ script 9001(int machine)
 						{
 							PlaySound(0, "shop/error");
 							Print(l:"TXT_HAVEENOUGH");
-
 						}
 						//Can buy it
 						else
@@ -550,7 +518,6 @@ script 9001(int machine)
 						{
 							PlaySound(0, "shop/error");
 							Print(l:"TXT_HAVEENOUGH");
-
 						}
 						//Can buy it
 						else
@@ -558,7 +525,7 @@ script 9001(int machine)
 							PlaySound(0, "shop/buy");
 							Print(l:"SHOP_ITEMBOUGHT");
 							GiveInventory(weaponstats[machine][productcursorpos][0],
-								weaponamounts[machine][productcursorpos][4]);
+							weaponamounts[machine][productcursorpos][4]);
 							TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos][actioncursorpos]);
 						}
 					}
@@ -570,7 +537,6 @@ script 9001(int machine)
 						{
 							PlaySound(0, "shop/error");
 							Print(l:"TXT_HAVEENOUGH");
-
 						}
 						//Can buy it
 						else
@@ -578,7 +544,7 @@ script 9001(int machine)
 							PlaySound(0, "shop/buy");
 							Print(l:"SHOP_ITEMBOUGHT");
 							GiveInventory(weaponstats[machine][productcursorpos][0],
-								weaponamounts[machine][productcursorpos][4]);
+							weaponamounts[machine][productcursorpos][4]);
 							TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos][actioncursorpos]);
 						}
 					}
@@ -587,14 +553,22 @@ script 9001(int machine)
 					{
 						PlaySound(0, "shop/error");
 						Print(l:"TXT_HAVEENOUGH");
-
 					}
 					//Can buy it
 					else
 					{
 						PlaySound(0, "shop/buy");
 							Print(l:"SHOP_ITEMBOUGHT");
-						GiveInventory(weaponstats[machine][productcursorpos][0],
+						if(weaponamounts[machine][productcursorpos][7]&&
+						!CheckInventory(weaponstats[machine][productcursorpos][0])&&
+						!GetCVAR("neverswitchonpickup"))
+						{
+							GiveInventory(weaponstats[machine][productcursorpos][0],
+							weaponamounts[machine][productcursorpos][4]);
+							SetWeapon(weaponstats[machine][productcursorpos][0]);
+						}
+						else
+							GiveInventory(weaponstats[machine][productcursorpos][0],
 							weaponamounts[machine][productcursorpos][4]);
 						TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos][actioncursorpos]);
 					}
@@ -610,7 +584,6 @@ script 9001(int machine)
 						{
 							PlaySound(0, "shop/error");
 							Print(s:"Dude, you NEED that blood!");
-
 						}
 						//Can sell it
 						else

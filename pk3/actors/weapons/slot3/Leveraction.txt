@@ -1,21 +1,20 @@
 ACTOR LeverActionClip : Ammo
 {
 	Inventory.MaxAmount 10
+	+INVENTORY.IGNORESKILL
 }
 
 ACTOR LeverActionRifle : CashWeapon
 {
 	Weapon.AmmoType1 "LeverActionClip"
-	Weapon.AmmoGive1 0
 	Weapon.AmmoUse1 1
 	Weapon.AmmoType2 "HeavyPistolAmmo"
-	Weapon.AmmoGive2 0
-	Weapon.AmmoUse2 0
+	Weapon.AmmoUse2 1
 	Weapon.SlotNumber 3
 	Decal "BulletChip"
 	Tag "$SHOP3_ITEM3NAME"
 	+Weapon.NoAutoFire
-	+Weapon.Ammo_Optional
+	+Weapon.AMMO_CHECKBOTH
 	States
 	{
 	Select:
@@ -31,7 +30,8 @@ ACTOR LeverActionRifle : CashWeapon
 		LARG A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		Loop
 	Fire:
-		LARG A 0 A_JumpIfNoAmmo("Dryfire")
+		LARG A 0 A_JumpIfInventory("LeverActionClip",1,1)
+		Goto DryFire
 		LARG B 0 A_PlayWeaponSound("LeverAction/Fire")
 		LARG B 0 A_GunFlash
 		LARG B 0 A_AlertMonsters
@@ -48,7 +48,8 @@ ACTOR LeverActionRifle : CashWeapon
 		LARG A 1 Offset(2,35) A_SetPitch(pitch + 0.5)
 		LARG A 1 Offset(2,33) A_SetPitch(pitch + 0.25)
 		LARG A 1 Offset(1,31)
-		LARG A 0 A_JumpIfNoAmmo("Ready")
+		LARG A 0 A_JumpIfInventory("LeverActionClip",1,1)
+		Goto Ready
 		LARG E 1 Offset(-3,33) A_PlaySound("LeverAction/Back", 5)
 		LARG E 1 Offset(-7,35)
 		LARG E 1 Offset(-13,38)
@@ -68,8 +69,10 @@ ACTOR LeverActionRifle : CashWeapon
 		LARG A 1 Offset(-4,33)
 		LARG A 1 Offset(-2,32)
 		LARG A 1 Offset(-1,32)
+		LARG A 0 A_CheckReload
 		Goto Ready
 	Dryfire:
+		LARG A 0 A_JumpIf(CallACS("Autoreload")==1,"Reload")
 		LARG A 1 A_PlaySound("weapons/dryfire", 5)
 		LARG A 1 Offset(2,34)
 		LARG A 1 Offset(1,33)
