@@ -224,7 +224,6 @@ ACTOR MoneyFromCellPack : RandomSpawner replaces CellPack
 	Dropitem "ArtiElectricGrenade"
 }
 
-
 ACTOR StealthCashZombieman : CashZombieman replaces StealthZombieMan
 {
 	+STEALTH

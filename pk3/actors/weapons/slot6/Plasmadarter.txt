@@ -13,7 +13,6 @@ ACTOR MOBlaster : CashWeapon
 	Weapon.SlotNumber 6
 	Tag "$SHOP6_ITEM1NAME"
 	+NOAUTOFIRE
-	+AMMO_OPTIONAL
 	States
 	{
 	Ready:
@@ -31,6 +30,7 @@ ACTOR MOBlaster : CashWeapon
 		BLSF A 2 BRIGHT A_FireCustomMissile("BlasterShot",0,1,10,0)
 		BLST CED 1 A_AlertMonsters
 		BLST CBA 1 A_WeaponReady
+		BLST A 0 A_CheckReload
 		Goto Ready
     Flash:
 		TNT1 A 1 A_Light2
