@@ -48,6 +48,7 @@ ACTOR LeverActionRifle : CashWeapon
 		LARG A 1 Offset(2,35) A_SetPitch(pitch + 0.5)
 		LARG A 1 Offset(2,33) A_SetPitch(pitch + 0.25)
 		LARG A 1 Offset(1,31)
+		LARG A 0 A_CheckReload
 		LARG A 0 A_JumpIfInventory("LeverActionClip",1,1)
 		Goto Ready
 		LARG E 1 Offset(-3,33) A_PlaySound("LeverAction/Back", 5)
@@ -69,7 +70,6 @@ ACTOR LeverActionRifle : CashWeapon
 		LARG A 1 Offset(-4,33)
 		LARG A 1 Offset(-2,32)
 		LARG A 1 Offset(-1,32)
-		LARG A 0 A_CheckReload
 		Goto Ready
 	Dryfire:
 		LARG A 0 A_JumpIf(CallACS("Autoreload")==1,"Reload")

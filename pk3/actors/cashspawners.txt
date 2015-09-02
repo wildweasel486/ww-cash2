@@ -63,7 +63,7 @@ ACTOR CashCaco : Cacodemon replaces Cacodemon
 	DropItem "CHCMediumCoin"
 }
 
-ACTOR CashKnight : HellKnight replaces HellKnight 
+ACTOR CashKnight : HellKnight replaces HellKnight
 {
 	DropItem "CHCLargeCoin"
 	DropItem "CHCLargeCoin"
@@ -222,4 +222,96 @@ ACTOR MoneyFromCellPack : RandomSpawner replaces CellPack
 {
 	Dropitem "CHCLargeBill"
 	Dropitem "ArtiElectricGrenade"
+}
+
+
+ACTOR StealthCashZombieman : CashZombieman replaces StealthZombieMan
+{
+	+STEALTH
+	RenderStyle Translucent
+	Alpha 0
+	Obituary "$OB_STEALTHZOMBIEMAN"
+}
+ACTOR StealthCashShotgunguy : CashShotgunguy replaces StealthShotgunGuy
+{
+	+STEALTH
+	RenderStyle Translucent
+	Alpha 0
+	Obituary "$OB_STEALTHSHOTGUNGUY"
+}
+ACTOR StealthCashDoomimp : CashDoomimp replaces StealthDoomImp
+{
+	+STEALTH
+	RenderStyle Translucent
+	Alpha 0
+	Obituary "$OB_STEALTHIMP"
+	HitObituary "$OB_STEALTHIMP"
+}
+ACTOR StealthCashChaingunguy : CashChaingunguy replaces StealthChaingunGuy
+{
+	+STEALTH
+	RenderStyle Translucent
+	Alpha 0
+	Obituary "$OB_STEALTHCHAINGUY"
+}
+ACTOR StealthCashDemon : CashDemon replaces StealthDemon
+{
+	+STEALTH
+	RenderStyle Translucent
+	Alpha 0
+	Obituary "$OB_STEALTHDEMON"
+	HitObituary "$OB_STEALTHDEMON"
+}
+ACTOR StealthCashCaco : CashCaco replaces StealthCacodemon
+{
+	+STEALTH
+	RenderStyle Translucent
+	Alpha 0
+	Obituary "$OB_STEALTHCACO"
+	HitObituary "$OB_STEALTHCACO"
+}
+ACTOR StealthCashKnight : CashKnight replaces StealthHellKnight
+{
+	+STEALTH
+	RenderStyle Translucent
+	Alpha 0
+	Obituary "$OB_STEALTHKNIGHT"
+	HitObituary "$OB_STEALTHKNIGHT"
+}
+ACTOR StealthCashFatso : CashFatso replaces StealthFatso
+{
+	+STEALTH
+	RenderStyle Translucent
+	Alpha 0
+	Obituary "$OB_STEALTHFATSO"
+}
+ACTOR StealthCashtron : Cashtron replaces StealthArachnotron
+{
+	+STEALTH
+	RenderStyle Translucent
+	Alpha 0
+	Obituary "$OB_STEALTHBABY"
+}
+ACTOR StealthCashRevvy : CashRevvy replaces StealthRevenant
+{
+	+STEALTH
+	RenderStyle Translucent
+	Alpha 0
+	Obituary "$OB_STEALTHUNDEAD"
+	HitObituary "$OB_STEALTHUNDEAD"
+}
+ACTOR StealthCashVile : CashVile replaces StealthArchvile
+{
+	+STEALTH
+	RenderStyle Translucent
+	Alpha 0
+	Obituary "$OB_STEALTHVILE"
+}
+ACTOR StealthCashBaron : CashBaron replaces StealthBaron
+{
+	+STEALTH
+	RenderStyle Translucent
+	Alpha 0
+	Obituary "$OB_STEALTHBARON"
+	HitObituary "$OB_STEALTHBARON"
 }
