@@ -597,7 +597,7 @@ script 9001(int machine)
 						{
 							PlaySound(0, "shop/bleed");
 							Print(s:"Thank you for your kind donation!");
-							Thing_Damage2(0,5,"BloodDoner");
+							Thing_Damage2(0,5,"BloodDonor");
 							GiveInventory("ColdHardCash",weaponamounts[machine][productcursorpos][actioncursorpos]);
 						}
 					}

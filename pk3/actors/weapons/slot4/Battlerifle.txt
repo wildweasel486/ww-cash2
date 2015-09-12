@@ -50,6 +50,7 @@ ACTOR BattleRifle : CashWeapon
 		BRIF A 0 A_SetAngle(angle + 0.2)
 		BRIF A 1 A_SetPitch(pitch + 0.5)
 		BRIF A 0 A_SetAngle(angle + 0.1)
+		BRIF A 0 A_CheckReload
 		Goto Ready
 	Dryfire:
 		BRIF A 0 A_JumpIf(CallACS("Autoreload")==1,"Reload")
