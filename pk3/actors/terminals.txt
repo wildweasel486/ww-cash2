@@ -3,6 +3,7 @@
 // LEVEL 1 TERMINAL: TOOLS AND FIRST AID
 ACTOR CashTerminalLevel1 : SwitchableDecoration replaces Chainsaw
 {
+	+NOTAUTOAIMED
 	+USESPECIAL
 	+SHOOTABLE
 	+NOBLOOD
