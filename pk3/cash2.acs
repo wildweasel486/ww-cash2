@@ -5,10 +5,6 @@ Script "AutoReload"(void)
 {
 	SetResultValue(GetCVar("autoreload"));
 }
-SCRIPT "ActivatePDA" (VOID)
-{
-    ACS_ExecuteAlways(9001,0);
-}
 
 str machinedesc[11][2]=
 {
@@ -248,13 +244,17 @@ int actioncursorcoords[4]=
 
 int menuopen[8];
 //Shop menu -- Big thanks to Psychic, by Xaser and team
-//Making it a numbered script until I can figure out how to assign a named to the actors in DECORATE...
-script 9001(int machine)
+script "WWcashActivateVendor"(int machine)
 {
-	if(menuopen[PlayerNumber()]||GetActorProperty(0,APROP_Health)<=0)
-	{
-		CloseMenu();
+	SetActivatorToTarget(0);
+	if(menuopen[PlayerNumber()]||GetActorProperty(0,APROP_Health)<=0||!CheckInventory("ColdHardCash"))
 		terminate;
+	//Skip this part for the PDA (Machine 0)
+	if(machine)
+	{
+		hudmessage(s:"Tap (",k:"+zoom",s:") to use this machine.";HUDMSG_PLAIN,887,CR_GOLD,0.5,0.3,0.1);
+		if(!(GetPlayerInput(-1,INPUT_BUTTONS) & BT_ZOOM))
+			terminate;
 	}
 	PlaySound(0,"shop/open");
 	menuopen[PlayerNumber()]=1;
@@ -378,21 +378,32 @@ script 9001(int machine)
 				movestart=1;
 			if(input & BT_USE||input & BT_ZOOM)
 			{
-				CloseMenu();
+				PlaySound(0,"shop/close");
+				setplayerproperty(0,0,PROP_TOTALLYFROZEN);
+				delay(35);
+				menuopen[PlayerNumber()]=0;
 				terminate;
 			}
-			if(input & BT_BACK) {
+			if(input & BT_BACK)
+			{
 				productcursorpos++;
-				PlaySound(0, "shop/movevert"); }
-			if(input & BT_FORWARD) {
+				PlaySound(0,"shop/movevert");
+			}
+			if(input & BT_FORWARD)
+			{
 				productcursorpos--;
-				PlaySound(0, "shop/movevert"); }
-			if(input & BT_RIGHT||input & BT_MOVERIGHT) {
+				PlaySound(0,"shop/movevert");
+			}
+			if(input & BT_RIGHT||input & BT_MOVERIGHT)
+			{
 				actioncursorpos++;
-				PlaySound(0, "shop/movehorz"); }
-			if(input & BT_LEFT||input & BT_MOVELEFT) {
+				PlaySound(0,"shop/movehorz");
+			}
+			if(input & BT_LEFT||input & BT_MOVELEFT)
+			{
 				actioncursorpos--;
-				PlaySound(0, "shop/movehorz"); }
+				PlaySound(0,"shop/movehorz");
+			}
 			if(productcursorpos>listlength-1)
 				productcursorpos=0;
 			if(productcursorpos<0)
@@ -427,19 +438,19 @@ script 9001(int machine)
 					//Can't afford it
 					if(CheckInventory("ColdHardCash")<weaponamounts[machine][productcursorpos][actioncursorpos])
 					{
-						PlaySound(0, "shop/error");
+						PlaySound(0,"shop/error");
 						Print(s:"fOul vAgrANt! BEGONE wiTh yoU!");
 					}
 					//Already upgraded
 					else if(CheckInventory(weaponstats[machine][productcursorpos][0])>=weaponamounts[machine][productcursorpos][6])
 					{
-						PlaySound(0, "shop/error");
+						PlaySound(0,"shop/error");
 						Print(l:"You've already got that upgrade!");
 					}
 					//Can buy it
 					else
 					{
-						PlaySound(0, "shop/upgrade");
+						PlaySound(0,"shop/upgrade");
 						Print(l:"we hOpE yOu like it...hehe");
 						GiveInventory(weaponstats[machine][productcursorpos][0],
 							weaponamounts[machine][productcursorpos][4]);
@@ -449,7 +460,7 @@ script 9001(int machine)
 				//Sell
 				else if(actioncursorpos==1)
 				{
-					PlaySound(0, "shop/error");
+					PlaySound(0,"shop/error");
 					Print(s:"Can't sell this!");
 				}
 				//Fix
@@ -462,26 +473,25 @@ script 9001(int machine)
 					//Can't afford it
 					if(GetActorProperty(0,APROP_Health)<=weaponamounts[machine][productcursorpos][actioncursorpos])
 					{
-						PlaySound(0, "shop/error");
+						PlaySound(0,"shop/error");
 						Print(s:"iT woULd bE a SHAME to kILL YOU lIKe ThiS.\nTRY AgaIn LatER.");
 					}
 					//Already upgraded
 					else if(CheckInventory(weaponstats[machine][productcursorpos][0]))
 					{
-						PlaySound(0, "shop/error");
+						PlaySound(0,"shop/error");
 						Print(l:"You've already got that upgrade!");
 					}
 					//Check for invulnerability and refuse sale?
 					else if(GetActorProperty(0,APROP_Invulnerable))
 					{
-						PlaySound(0, "shop/error");
+						PlaySound(0,"shop/error");
 						Print(l:"Your blood's no good to us right now... try again later!");
 					}
 					//Can buy it
 					else
 					{
-
-						PlaySound(0, "shop/bleed");
+						PlaySound(0,"shop/bleed");
 						Print(l:"we hOpE yOu like it...hehe");
 						GiveInventory(weaponstats[machine][productcursorpos][0],1);
 						Thing_Damage2(0,weaponamounts[machine][productcursorpos][actioncursorpos],"BloodDonor");
@@ -496,7 +506,7 @@ script 9001(int machine)
 					//Can't afford it
 					if(CheckInventory("ColdHardCash")<weaponamounts[machine][productcursorpos][actioncursorpos])
 					{
-						PlaySound(0, "shop/error");
+						PlaySound(0,"shop/error");
 						Print(l:"SHOP_NOMONEY");
 					}
 					//Health (special case)
@@ -505,13 +515,13 @@ script 9001(int machine)
 						//Health full
 						if(GetActorProperty(0,APROP_Health)>=GetActorProperty(0,APROP_SpawnHealth))
 						{
-							PlaySound(0, "shop/error");
+							PlaySound(0,"shop/error");
 							Print(l:"TXT_HAVEENOUGH");
 						}
 						//Can buy it
 						else
 						{
-							PlaySound(0, "shop/buy");
+							PlaySound(0,"shop/buy");
 							Print(l:"SHOP_ITEMBOUGHT");
 							HealThing(10);
 							TakeInventory("ColdHardCash",weaponamounts[machine][productcursorpos][actioncursorpos]);
@@ -523,13 +533,13 @@ script 9001(int machine)
 						//Armor full
 						if(CheckInventory("BasicArmor")>=100)
 						{
-							PlaySound(0, "shop/error");
+							PlaySound(0,"shop/error");
 							Print(l:"TXT_HAVEENOUGH");
 						}
 						//Can buy it
 						else
 						{
-							PlaySound(0, "shop/buy");
+							PlaySound(0,"shop/buy");
 							Print(l:"SHOP_ITEMBOUGHT");
 							GiveInventory(weaponstats[machine][productcursorpos][0],
 							weaponamounts[machine][productcursorpos][4]);
@@ -542,13 +552,13 @@ script 9001(int machine)
 						//Armor full
 						if(CheckInventory("BasicArmor")>=200)
 						{
-							PlaySound(0, "shop/error");
+							PlaySound(0,"shop/error");
 							Print(l:"TXT_HAVEENOUGH");
 						}
 						//Can buy it
 						else
 						{
-							PlaySound(0, "shop/buy");
+							PlaySound(0,"shop/buy");
 							Print(l:"SHOP_ITEMBOUGHT");
 							GiveInventory(weaponstats[machine][productcursorpos][0],
 							weaponamounts[machine][productcursorpos][4]);
@@ -558,13 +568,13 @@ script 9001(int machine)
 					//Inventory full
 					else if(CheckInventory(weaponstats[machine][productcursorpos][0])>=weaponamounts[machine][productcursorpos][6])
 					{
-						PlaySound(0, "shop/error");
+						PlaySound(0,"shop/error");
 						Print(l:"TXT_HAVEENOUGH");
 					}
 					//Can buy it
 					else
 					{
-						PlaySound(0, "shop/buy");
+						PlaySound(0,"shop/buy");
 							Print(l:"SHOP_ITEMBOUGHT");
 						if(weaponamounts[machine][productcursorpos][7]&&
 						!CheckInventory(weaponstats[machine][productcursorpos][0])&&
@@ -589,13 +599,13 @@ script 9001(int machine)
 						//Health too low
 						if(GetActorProperty(0,APROP_Health)<=5)
 						{
-							PlaySound(0, "shop/error");
+							PlaySound(0,"shop/error");
 							Print(s:"Dude, you NEED that blood!");
 						}
 						//Can sell it
 						else
 						{
-							PlaySound(0, "shop/bleed");
+							PlaySound(0,"shop/bleed");
 							Print(s:"Thank you for your kind donation!");
 							Thing_Damage2(0,5,"BloodDonor");
 							GiveInventory("ColdHardCash",weaponamounts[machine][productcursorpos][actioncursorpos]);
@@ -604,19 +614,19 @@ script 9001(int machine)
 					//Can't be sold
 					else if(weaponamounts[machine][productcursorpos][5]==0)
 					{
-						PlaySound(0, "shop/error");
+						PlaySound(0,"shop/error");
 						Print(s:"Can't sell this!");
 					}
 					//Inventory empty
 					else if(CheckInventory(weaponstats[machine][productcursorpos][0])==0)
 					{
-						PlaySound(0, "shop/error");
+						PlaySound(0,"shop/error");
 						Print(l:"SHOP_NOSELL");
 					}
 					//Can sell it
 					else
 					{
-						PlaySound(0, "shop/sell");
+						PlaySound(0,"shop/sell");
 						Print(l:"SHOP_ITEMSOLD");
 						//Take the item
 						TakeInventory(weaponstats[machine][productcursorpos][0],
@@ -647,31 +657,31 @@ script 9001(int machine)
 					//Can't afford it
 					if(CheckInventory("ColdHardCash")<weaponamounts[machine][productcursorpos][actioncursorpos])
 					{
-						PlaySound(0, "shop/error");
+						PlaySound(0,"shop/error");
 						Print(l:"SHOP_NOMONEY");
 					}
 					//No upgrade for this item
 					else if(!StrCmp(weaponstats[machine][productcursorpos][1],""))
 					{
-						PlaySound(0, "shop/error");
+						PlaySound(0,"shop/error");
 						Print(s:"No upgrade available!");
 					}
 					//Don't own the base item
 					else if(!CheckInventory(weaponstats[machine][productcursorpos][0]))
 					{
-						PlaySound(0, "shop/error");
+						PlaySound(0,"shop/error");
 						Print(s:"You need the item before you can upgrade!");
 					}
 					//Already upgraded
 					else if(CheckInventory(weaponstats[machine][productcursorpos][1]))
 					{
-						PlaySound(0, "shop/error");
+						PlaySound(0,"shop/error");
 						Print(l:"You've already got that upgrade!");
 					}
 					//Can buy it
 					else
 					{
-						PlaySound(0, "shop/upgrade");
+						PlaySound(0,"shop/upgrade");
 						Print(l:"SHOP_UPGRADEBOUGHT");
 						GiveInventory(weaponstats[machine][productcursorpos][1],1);
 						//Glock (special case)
@@ -691,7 +701,7 @@ script 9001(int machine)
 }
 function void CloseMenu(void)
 {
-	PlaySound(0, "shop/close");
+	PlaySound(0,"shop/close");
 	setplayerproperty(0,0,PROP_TOTALLYFROZEN);
 	menuopen[PlayerNumber()]=0;
 }
