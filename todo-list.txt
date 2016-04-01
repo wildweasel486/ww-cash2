@@ -88,7 +88,7 @@ HIGH PRIORITY:
 ---- Spectrum Cannon - ask Pillowblaster, I dunno.
 -- In slot HELL:
 ---- The Vendor's Foe upgrade needs some better indication that it exists, maybe some awesome shadowy effects when swinging the crowbar around?
----- Gothmog needs to exist. But first: fire effects? Could I get away with those being projectile trails, or would I need a sprite edit?
+---- Gothmog needs to exist. But first: fire effects? Could I get away with those being projectile trails, or would I need a sprite edit? (probably both)
 
 MAJOR GAMEPLAY:
 * Offhand melee attacks, maybe? ww-cash classic had those.
@@ -102,7 +102,7 @@ MAJOR GAMEPLAY:
 -- Furthermore: dropped weapons have randomized conditions. Example: Zombieman drops a Glox pistol if the player doesn't have one; starting durability is random from 10-80% of what condition it'd be from a shop. Dropped weapons will NEVER be perfect condition; you can only be guaranteed this from a shop.
 
 AESTHETICS:
-* Could probably stand to rework the recoil. Move it to a Flash state, probably, so it doesn't clutter up the weapon animations and I can just call it with A_GunFlash?
+* Could probably stand to rework the recoil. Move it to a Flash state, probably, so it doesn't clutter up the weapon animations and I can just call it with A_GunFlash? (no need; anonymous functions can be used instead)
 * Someone (torridGristle?) offered a nicer looking Glox pistol; look into that?
 * I'm not sure I like the current Magnum graphics/sounds; maybe replace them with the ones I was using before (Nmn sprites/RE4 sounds?).
 * Need to find better fire sound for assault rifle. (Find more way to make it stand out from SMG? Maybe replace the rifle entirely?)
@@ -150,3 +150,4 @@ TEAM LEADER - 1x cash spawns, HMP monsters. (default)
 MIDDLE MANAGER - 1x cash spawns, UV monsters.
 VP OF MARKETING - 0.5x cash spawns, HMP monsters.
 CHIEF EXECUTIVE - 0.5x cash spawns, UV monsters.
+DONALD TRUMP - 0.25x cash spawns, NM monsters.
