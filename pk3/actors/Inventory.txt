@@ -7,7 +7,7 @@ ACTOR CHCPDA : CustomInventory
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("ActivatePDA")
+		TNT1 A 0 ACS_NamedExecuteAlways("WWcashActivateVendor",0)
 		Fail
 	}
 }

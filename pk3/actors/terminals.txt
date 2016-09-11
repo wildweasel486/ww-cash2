@@ -1,10 +1,9 @@
 // Weapon terminals. They take your money, they give you stuff.
 
 // LEVEL 1 TERMINAL: TOOLS AND FIRST AID
-ACTOR CashTerminalLevel1 : SwitchableDecoration replaces Chainsaw
+ACTOR CashTerminalLevel1 replaces Chainsaw
 {
 	+NOTAUTOAIMED
-	+USESPECIAL
 	+SHOOTABLE
 	+NOBLOOD
 	+DONTDRAIN
@@ -16,16 +15,24 @@ ACTOR CashTerminalLevel1 : SwitchableDecoration replaces Chainsaw
 	DamageFactor Telefrag,0
 	PainChance 256
 	+LAXTELEFRAGDMG
+	+LOOKALLAROUND
+	var int user_terminal;
 	States
 	{
 	Spawn:
-		DIS1 A 0 NODELAY Thing_SetSpecial(0,226,9001,0,1)
+		DIS1 A 0 NODELAY A_SetUserVar("user_terminal",1)
 		"####" AAAAA 0 A_SpawnItemEx("CHCSmallCoin",frandom(-16,16),frandom(-16,16),0,0,0,0,0,SXF_NOCHECKPOSITION, 32)
 		"####" AAA 0 A_SpawnItemEx("CHCMediumCoin",frandom(-16,16),frandom(-16,16),0,0,0,0,0,SXF_NOCHECKPOSITION, 96)
 		"####" A 0 A_SpawnItemEx("CHCLargeCoin",frandom(-16,16),frandom(-16,16),0,0,0,0,0,SXF_NOCHECKPOSITION, 160)
+	Idle:
+		"####" "#" 1 A_LookEx(LOF_NOSOUNDCHECK)
+		Wait
 	See:
-		"####" A -1
-		Stop
+		"####" "#" 1 A_JumpIfCloser(radius*3,"InRange")
+		Goto Idle
+	InRange:
+		"####" "#" 1 ACS_NamedExecuteAlways("WWcashActivateVendor",0,user_terminal)
+		Goto See
 	Pain.Thief:
 		"####" A 1 A_JumpIfHealthLower(9800,"Broken.Thief")
 		Goto See
@@ -37,8 +44,6 @@ ACTOR CashTerminalLevel1 : SwitchableDecoration replaces Chainsaw
 		DIS1 AAA 0 A_SpawnItemEx("CHCSmallBill",0,0,8,random(-2,2),random(-2,2),2,random(0,359),SXF_NOCHECKPOSITION, 96)
 		DIS1 A 0 A_SpawnItemEx("CHCMediumBill",0,0,8,random(-2,2),random(-2,2),2,random(0,359),SXF_NOCHECKPOSITION, 160)
 	Broken:
-		DIS1 A 0 Thing_SetSpecial(0,0,0,0,0)
-		BEXP B 0 A_ChangeFlag(USESPECIAL,0)
 		BEXP B 0 A_SetScale(1.5)
 		BEXP B 0 A_ChangeFlag(SHOOTABLE,0)
 		BEXP C 5 BRIGHT A_PlaySound("world/barrelx")
@@ -53,7 +58,7 @@ ACTOR CashTerminalLevel2 : CashTerminalLevel1 replaces Shotgun
 	States
 	{
 	Spawn:
-		DIS2 A 0 NODELAY Thing_SetSpecial(0,226,9001,0,2)
+		DIS2 A 0 NODELAY A_SetUserVar("user_terminal",2)
 		Goto Super::Spawn+1
 	}
 }
@@ -64,7 +69,7 @@ ACTOR CashTerminalLevel3 : CashTerminalLevel1 replaces SuperShotgun
 	States
 	{
 	Spawn:
-		DIS3 A 0 NODELAY Thing_SetSpecial(0,226,9001,0,3)
+		DIS3 A 0 NODELAY A_SetUserVar("user_terminal",3)
 		Goto Super::Spawn+1
 	}
 }
@@ -75,7 +80,7 @@ ACTOR CashTerminalLevel4 : CashTerminalLevel1 replaces Chaingun
 	States
 	{
 	Spawn:
-		DIS4 A 0 NODELAY Thing_SetSpecial(0,226,9001,0,4)
+		DIS4 A 0 NODELAY A_SetUserVar("user_terminal",4)
 		Goto Super::Spawn+1
 	}
 }
@@ -86,7 +91,7 @@ ACTOR CashTerminalLevel5 : CashTerminalLevel1 replaces RocketLauncher
 	States
 	{
 	Spawn:
-		DIS5 A 0 NODELAY Thing_SetSpecial(0,226,9001,0,5)
+		DIS5 A 0 NODELAY A_SetUserVar("user_terminal",5)
 		Goto Super::Spawn+1
 	}
 }
@@ -97,7 +102,7 @@ ACTOR CashTerminalLevel6 : CashTerminalLevel1 replaces PlasmaRifle
 	States
 	{
 	Spawn:
-		DIS6 A 0 NODELAY Thing_SetSpecial(0,226,9001,0,6)
+		DIS6 A 0 NODELAY A_SetUserVar("user_terminal",6)
 		Goto Super::Spawn+1
 	}
 }
@@ -108,7 +113,7 @@ ACTOR CashTerminalLevel7 : CashTerminalLevel1 replaces BFG9000
 	States
 	{
 	Spawn:
-		DIS7 A 0 NODELAY Thing_SetSpecial(0,226,9001,0,7)
+		DIS7 A 0 NODELAY A_SetUserVar("user_terminal",7)
 		Goto Super::Spawn+1
 	}
 }
@@ -119,7 +124,7 @@ ACTOR CashTerminalLevelPentagram : CashTerminalLevel1 replaces Berserk
 	States
 	{
 	Spawn:
-		DIS8 A 0 NODELAY Thing_SetSpecial(0,226,9001,0,8)
+		DIS8 A 0 NODELAY A_SetUserVar("user_terminal",8)
 		"####" A 0 A_SpawnItemEx("ArtiHypostim",frandom(-16,16),frandom(-16,16),0,0,0,0,0,SXF_NOCHECKPOSITION)
 		Goto Super::Spawn+1
 	}
@@ -131,7 +136,7 @@ ACTOR CashTerminalLevelAmmo : CashTerminalLevel1
 	States
 	{
 	Spawn:
-		DIS9 A 0 NODELAY Thing_SetSpecial(0,226,9001,0,9)
+		DIS9 A 0 NODELAY A_SetUserVar("user_terminal",9)
 		Goto Super::Spawn+1
 	}
 }
@@ -142,7 +147,7 @@ ACTOR CashTerminalLevelArmor : CashTerminalLevel1
 	States
 	{
 	Spawn:
-		DISA A 0 NODELAY Thing_SetSpecial(0,226,9001,0,10)
+		DISA A 0 NODELAY A_SetUserVar("user_terminal",10)
 		Goto Super::Spawn+1
 	}
 }
