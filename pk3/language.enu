@@ -455,3 +455,41 @@ SHOPARMOR_ITEM2STATS = "Absorption: 66 PCT\nDurability: 200";
 
 // Other things not in the shop
 MISC_HYPOSTIM = "HypoStim Automatic Healing Agent";
+
+// Loot boxes!
+SHOPLOOTBOX_ITEMNAME = "CHC2 Premium Loot Crate";
+SHOPLOOTBOX_ITEMDESC = "It's the hottest trend in online store front - \n"
+"pay a little money now, get random loot!";
+SHOPLOOTBOX_ITEMSTATS = "SSR Chance: 3.25 PCT\nVoid in Belgium\nNo refunds!";
+SHOPLOOTBOX_YOUGET1 = "You get an anime girl avatar, a pack of emoji, a voice quote, and the Easter Bunny skin for a character you don't even own.";
+SHOPLOOTBOX_YOUGET2 = "You get 200 Alloy Plates, a Fieldron, and a coupon for 25% off Platinum currency on the official website.";
+SHOPLOOTBOX_YOUGET3 = "You get a three hour Affinity booster.";
+SHOPLOOTBOX_YOUGET4 = "You gain access to a handful of confusing dance emotes.";
+SHOPLOOTBOX_YOUGET5 = "You get two Hanas, an Abel, and a one-star Ogma.";
+SHOPLOOTBOX_YOUGET6 = "You get a bafflingly cute girl named M16. She does not come with bullets.";
+SHOPLOOTBOX_YOUGET7 = "You are introduced to a girl wearing a battleship on her waist. She greets you as "Admiral," before realizing she has the wrong person and excuses herself.";
+SHOPLOOTBOX_YOUGET8 = "You get 50 Hero Feathers and an Orb.";
+SHOPLOOTBOX_YOUGET9 = "You get a "free rental" coupon for a gun that you're not sure actually exists.";
+SHOPLOOTBOX_YOUGET10 = "You get a ten gallon hat, a colorful handkerchief, and a VR headset with googly eyes glued to it.";
+SHOPLOOTBOX_YOUGET11 = "You get a camouflage pattern paint job for a gun that isn't in this mod.";
+SHOPLOOTBOX_YOUGET12 = "You get an arm patch depicting Chef Excellence, smiling calmly and declaring itself to be "An Excellent Armpatch."";
+SHOPLOOTBOX_YOUGET13 = "You unlock three basketball players from the Los Angeles Lakers' 2017 season.";
+SHOPLOOTBOX_YOUGET14 = "You get a deck of cards depicting the Great Hot Dog War. Umm...";
+SHOPLOOTBOX_YOUGET15 = "You get three Lands.";
+SHOPLOOTBOX_YOUGET16 = "You get a Drowzee, an Omanyte, a Super Potion card, and a colorless energy card.";
+SHOPLOOTBOX_YOUGET17 = "Inside the loot box is another loot box with a large padlock and a stenciled "Mann Co" logo.";
+SHOPLOOTBOX_YOUGET18 = "You get a kit that lets you dye your pet dark green.";
+SHOPLOOTBOX_YOUGET19 = "You get the Pot of Greed card, which allows you to draw two cards from the top of your deck and add them to your hand.";
+SHOPLOOTBOX_YOUGET20 = "You get a Health Bonus bottle with a Genuine StatTrak(tm) kill counter on it.";
+SHOPLOOTBOX_YOUGET21 = "You get 5 Stat Points to distribute into your Old Spice(tm) Swagger(R) statistics window.";
+SHOPLOOTBOX_YOUGET22 = "You get a handful of new facial hair options to choose from, the next time you visit the Aesthetician.";
+SHOPLOOTBOX_YOUGET23 = "You get a trading card of New Japan Pro Wrestling's Toru Yano making a goofy face.";
+SHOPLOOTBOX_YOUGET24 = "You get a trading card featuring Hulk Hogan ripping off his shirt.";
+SHOPLOOTBOX_YOUGET25 = "You get a trading card of Michael Jordan...from his golf career.";
+SHOPLOOTBOX_YOUGET26 = "You get a trading card of "Tecmo Bo" Jackson.";
+SHOPLOOTBOX_YOUGET27 = "You get four Mod Cards to alter the conditions of your next league race.";
+SHOPLOOTBOX_YOUGET28 = "You get a handful of Gems, a larger handful of Shards, and a recording of some girl saying "GG, WP".";
+SHOPLOOTBOX_YOUGET29 = "You get a pack of backdrop graphics for your avatar.";
+SHOPLOOTBOX_YOUGET30 = "You get an exclusive mouse cursor skin of a sports car with an arrow lazily extruded out of the hood.";
+SHOPLOOTBOX_YOUGET31 = "You get a maid costume and a cat ear headband.";
+SHOPLOOTBOX_YOUGET32 = "You get a Cactuar card, and it's not even the Rare version.";

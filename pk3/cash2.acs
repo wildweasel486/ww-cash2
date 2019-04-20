@@ -30,7 +30,8 @@ str weaponstats[11][9][6]=
 		{"ArtiCarePackagePistol","","SHOPPDA_ITEM2NAME","NOICON","SHOPPDA_ITEM2DESC","SHOPPDA_ITEM2STATS"},
 		{"ArtiCarePackageShotgun","","SHOPPDA_ITEM3NAME","NOICON","SHOPPDA_ITEM3DESC","SHOPPDA_ITEM3STATS"},
 		{"ArtiCarePackageRifle","","SHOPPDA_ITEM4NAME","NOICON","SHOPPDA_ITEM4DESC","SHOPPDA_ITEM4STATS"},
-		{"","","","EMPTICON","",""}
+		{"CHC2LootCrate","","SHOPLOOTBOX_ITEMNAME","NOICON","SHOPLOOTBOX_ITEMDESC","SHOPLOOTBOX_ITEMSTATS"},
+        {"","","","EMPTICON","",""}
 	},
 	//Machine 1
 	{
@@ -136,6 +137,7 @@ int weaponamounts[11][9][8]=
 		{300,0,0,0,1,0,0x7fffffff,0},
 		{350,0,0,0,1,0,0x7fffffff,0},
 		{500,0,0,0,1,0,0x7fffffff,0},
+        {200,0,0,0,1,0,0x7fffffff,0},
 		{0,0,0,0,0,0,0,0}
 	},
 	//Machine 1
@@ -704,4 +706,11 @@ function void CloseMenu(void)
 	PlaySound(0,"shop/close");
 	setplayerproperty(0,0,PROP_TOTALLYFROZEN);
 	menuopen[PlayerNumber()]=0;
+}
+
+script "CHC2LootCrate" (void)
+{
+    str CHC2LootMsg = strparam(s:"SHOPLOOTBOX_YOUGET", i:random(1,32));
+    
+    print(l:CHC2LootMsg);
 }

@@ -384,3 +384,14 @@ ACTOR IncendiaryGrenade // Let's use this later as a base for the MANIC Mines
 	}
 }
 */
+
+// LOOT BOXES!
+ACTOR CHC2LootCrate : CustomInventory
+{
+    States
+    {
+    Pickup:
+        TNT1 A 0 ACS_NamedExecute("CHC2LootCrate")
+        Stop
+    }
+}
